@@ -6,30 +6,33 @@
 
   // Katalog: { id, bild, name, akk, mut }
   var KATALOG = {};
-  [["spiel", false], ["mut", true]].forEach(function (q) {
+  [["spiel", false], ["mut", true], ["abenteuer", true]].forEach(function (q) {
     I[q[0]].forEach(function (f) { KATALOG[f[0]] = { id: f[0], bild: f[1], name: f[2], akk: f[3], mut: q[1] }; });
   });
   T.fundArt = function (id) { return KATALOG[id] || KATALOG.seerose; };
 
   T.spieleAn = function () { return T.speicher.get("spieleAn") !== false; };
 
-  // Sokrates findet etwas. quelle: "spiel" | "mut". Gibt { eintrag, art } zurück (oder null, wenn ausgeschaltet).
-  T.findeEtwas = function (quelle) {
+  // Sokrates findet etwas. quelle: "spiel" | "mut" | "abenteuer"; artId wählt einen bestimmten Schatz.
+  // Gibt { eintrag, art } zurück (oder null, wenn ausgeschaltet).
+  T.findeEtwas = function (quelle, artId) {
     if (!T.spieleAn()) return null;
-    var liste = I[quelle === "mut" ? "mut" : "spiel"];
+    var liste = I[quelle === "mut" || quelle === "abenteuer" ? quelle : "spiel"];
+    if (artId) liste = liste.filter(function (f) { return f[0] === artId; });
     var vorhanden = {};
     T.speicher.get("funde").forEach(function (f) { vorhanden[f.art] = true; });
     var neu = liste.filter(function (f) { return !vorhanden[f[0]]; });
     var wahl = T.zufall(neu.length ? neu : liste);
     var eintrag = { id: T.neueId(), art: wahl[0], x: null, y: null, zeit: Date.now() };
     T.speicher.aendere("funde", function (arr) { arr.push(eintrag); return arr; });
-    return { eintrag: eintrag, art: T.fundArt(wahl[0]) };
+    return { eintrag: eintrag, art: T.fundArt(wahl[0]), quelle: quelle };
   };
 
   // Kleiner Hinweis „Sokrates hat … gefunden!“ mit Link zum Teich
   T.fundHinweis = function (fund) {
     if (!fund) return null;
-    var text = T.fuelle(fund.art.mut ? I.gefundenMut : I.gefundenSpiel, { was: fund.art.akk });
+    var vorlage = fund.quelle === "abenteuer" ? T.inhalt.abenteuer.belohnung : (fund.art.mut ? I.gefundenMut : I.gefundenSpiel);
+    var text = T.fuelle(vorlage, { was: fund.art.akk });
     var p = T.el("p", { class: "fund" + (fund.art.mut ? " mut" : "") }, [
       T.el("span", { class: "fund-bild" }, [T.bild(fund.art.bild)]),
       T.el("span", {}, [T.el("span", { class: "lesen", text: text }), " ", T.el("a", { href: "#mein-teich", text: I.ansehen })])

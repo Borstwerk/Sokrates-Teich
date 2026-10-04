@@ -31,7 +31,8 @@
       bewegung: "auto",  // auto | normal | ruhig
       spieleAn: true,
       funde: [],           // [{ id, art, x, y, zeit }] – x/y in Prozent, null = noch in der Schatzkiste
-      alarmRunden: []      // [{ zeit, antworten: [{ text, stufe }] }] – die letzten Runden
+      alarmRunden: [],     // [{ zeit, antworten: [{ text, stufe }] }] – die letzten Runden
+      abenteuer: {}        // { truhe: {…}, zentrale: {…}, fall: {…} }
     };
   }
 

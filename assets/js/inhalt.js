@@ -280,6 +280,11 @@ Teich.inhalt = {
       ["stern", "i-stern", "Stern", "einen Stern"],
       ["regenbogen", "i-regenbogen", "Regenbogen", "einen Regenbogen"]
     ],
+    abenteuer: [
+      ["kristall", "i-kristall", "Kristall", "einen Kristall"],
+      ["laterne", "i-laterne", "Laterne", "eine Laterne"],
+      ["kompass", "i-kompass", "Kompass", "einen Kompass"]
+    ],
     gefundenSpiel: "Sokrates hat {was} für deinen Teich gefunden!",
     gefundenMut: "Für deinen Mut hat Sokrates {was} gefunden!",
     ansehen: "Zu deinem Teich",
@@ -438,5 +443,185 @@ Teich.inhalt = {
     ],
     endeTitel: "Alle Paare gefunden!",
     ende: ["Alle Gefühle sind okay. Auch die schwierigen.", "Welches Gefühl kennst du gut?"]
+  },
+
+  /*
+   * Abenteuer: größere Spiele für Kinder ab etwa 8 Jahren.
+   * Die versunkene Truhe (Rätsel), Alarmzentrale (Strategie), Detektiv-Fall (Geschichte).
+   */
+  abenteuer: {
+    titel: "Abenteuer",
+    unter: "Größere Spiele zum Knobeln und Entdecken",
+    liste: [
+      { id: "spiel-truhe",    name: "Die versunkene Truhe", unter: "Vier Schlösser, vier Rätsel",          bild: "i-truhe" },
+      { id: "spiel-zentrale", name: "Alarmzentrale",        unter: "Mach es für Sokrates leichter",         bild: "i-lampe" },
+      { id: "spiel-fall",     name: "Detektiv Sokrates",    unter: "Wo ist das kleine Glühwürmchen?",       bild: "i-lupe" }
+    ],
+    fortschritt: {
+      truhe: "{anzahl} von 4 Schlössern offen",
+      truheFertig: "Geöffnet!",
+      zentrale: "{anzahl} von {von} Missionen geschafft",
+      fall: "{anzahl} Hinweise gefunden",
+      fallFertig: "Fall gelöst!"
+    },
+    belohnung: "Für dieses Abenteuer bekommst du {was}!"
+  },
+
+  truhe: {
+    intro: [
+      "Unter dem alten Steg habe ich eine Truhe gefunden!",
+      "Sie hat vier Schlösser. Zu jedem Schloss gehört ein Rätsel.",
+      "Du kannst anfangen, wo du willst. Und du kannst jederzeit aufhören. Ich merke mir, welche Schlösser schon offen sind."
+    ],
+    schloesser: [
+      { id: "zaehlen", name: "Zahlen-Schloss", bild: "i-frosch" },
+      { id: "muster",  name: "Muster-Schloss", bild: "i-stern" },
+      { id: "logik",   name: "Stein-Schloss",  bild: "i-steine" },
+      { id: "schiebe", name: "Bild-Schloss",   bild: "sokrates-1" }
+    ],
+    offen: "Klick! Das {name} ist offen.",
+    nochZu: "Welches Schloss willst du dir ansehen?",
+    zaehlen: {
+      aufgabe: "Auf dem Schloss steht: Zähle die Tiere im Teich. Das ist der Code.",
+      falsch: "Noch nicht ganz. Zähl die {name} noch mal in Ruhe.",
+      tipp: "Tipp",
+      oeffnen: "Schloss öffnen"
+    },
+    muster: {
+      aufgabe: "Welche Bilder fehlen? Schau, wie die Reihe weitergeht.",
+      runde: "Reihe {nr} von {von}",
+      falsch: "Hmm, das passt hier noch nicht. Schau noch mal.",
+      gut: "Genau!"
+    },
+    logik: {
+      aufgabe: "Die Tiere wollen auf den Steinen sitzen. Lies die Hinweise. Tipp erst ein Tier an, dann einen Stein.",
+      steine: ["links", "in der Mitte", "rechts"],
+      pruefen: "Sitzen alle richtig?",
+      falsch: "Fast! Schau noch mal auf den Hinweis, der markiert ist.",
+      leer: "Es sitzen noch nicht alle Tiere auf einem Stein."
+    },
+    schiebe: {
+      aufgabe: "Schieb die Teile, bis das Bild wieder stimmt. Tipp auf ein Teil neben der Lücke.",
+      zahlen: "Zahlen zeigen",
+      ohneZahlen: "Zahlen verstecken",
+      mischen: "Neu mischen"
+    },
+    endeTitel: "Die Truhe ist offen!",
+    ende: ["In der Truhe glitzert ein Kristall. Und darunter liegt ein alter Schlüssel.", "Wofür der wohl ist? Vielleicht braucht Detektiv Sokrates ihn noch …"],
+    nochmal: "Neue Rätsel"
+  },
+
+  zentrale: {
+    intro: [
+      "Willkommen in der Alarmzentrale!",
+      "Bei jeder Mission ist meine Alarmanlage ganz schön laut. Du darfst bis zu drei Hilfen aussuchen.",
+      "Probier aus, was die Alarmanlage leiser macht. Es gibt immer mehrere gute Wege."
+    ],
+    waehle: "Such dir eine Mission aus:",
+    hilfen: "Hilfen: {anzahl} von {von}",
+    alarm: "Alarm: {wert} von 10",
+    los: "Los, Sokrates!",
+    zuLaut: "Schon leiser! Aber noch etwas laut. Probier eine andere Hilfe aus.",
+    geschafft: "Aha! Das hat mir geholfen:",
+    gelernt: "Situationen kann man verändern. Dann wird es leichter.",
+    naechste: "Nächste Mission",
+    alle: "Alle Missionen",
+    zurueck: "← Alle Missionen",
+    alleGeschafft: "Du hast alle Missionen geschafft!",
+    maxHilfen: 3,
+    ziel: 3,
+    faktoren: {
+      fremd:   ["i-person", "Jemand Unbekanntes"],
+      neu:     ["i-ort", "Ein neuer Ort"],
+      viele:   ["i-gruppe", "Viele Menschen"],
+      frage:   ["i-frage", "Jemand fragt mich etwas"],
+      schauen: ["i-auge", "Alle schauen her"],
+      zeit:    ["i-warten", "Es muss schnell gehen"],
+      laut:    ["i-lautsprecher", "Laut und trubelig"]
+    },
+    // wirkt: { faktor: wie viel leiser }, gesamt: macht alles etwas leiser
+    werkzeuge: [
+      { id: "freund",       bild: "i-herz",      name: "Freundin oder Freund dabei",      wirkt: { fremd: 1, viele: 1, schauen: 1 } },
+      { id: "eltern",       bild: "i-haus",      name: "Mama oder Papa dabei",            wirkt: { fremd: 2, neu: 1 } },
+      { id: "kennenlernen", bild: "i-winken",    name: "Die Person vorher kurz treffen",  wirkt: { fremd: 2 } },
+      { id: "hingehen",     bild: "i-fuss",      name: "Den Ort vorher anschauen",        wirkt: { neu: 2 } },
+      { id: "zeigen",       bild: "i-zeigen",    name: "Antworten darf ich zeigen",       wirkt: { frage: 2 } },
+      { id: "aufschreiben", bild: "i-stift",     name: "Aufschreiben ist erlaubt",        wirkt: { frage: 2 } },
+      { id: "gruppe",       bild: "i-gruppe",    name: "Kleine Gruppe statt alle",        wirkt: { viele: 2, schauen: 1 } },
+      { id: "rand",         bild: "i-seerose",   name: "Ein ruhiger Platz am Rand",       wirkt: { laut: 1, schauen: 1, viele: 1 } },
+      { id: "zeit",         bild: "i-warten",    name: "Genug Zeit lassen",               wirkt: { zeit: 2, frage: 1 } },
+      { id: "ueben",        bild: "i-steine",    name: "Zu Hause vorher üben",            wirkt: { frage: 1, neu: 1 } },
+      { id: "atmen",        bild: "sokrates-1",  name: "Vorher mit Sokrates atmen",       gesamt: 1 }
+    ],
+    missionen: [
+      { id: "lehrerin",   bild: "i-person",    titel: "Eine neue Lehrerin kommt in die Klasse", faktoren: { fremd: 3, viele: 2, frage: 2, schauen: 2 } },
+      { id: "baecker",    bild: "i-broetchen", titel: "Beim Bäcker ein Brötchen kaufen",        faktoren: { fremd: 2, frage: 2, zeit: 2, laut: 1 } },
+      { id: "geburtstag", bild: "i-gruppe",    titel: "Geburtstag bei einem Kind aus der Klasse", faktoren: { neu: 2, viele: 3, laut: 2, fremd: 1 } },
+      { id: "arzt",       bild: "i-arzt",      titel: "Zum Arzt gehen",                         faktoren: { fremd: 2, neu: 2, frage: 3 } },
+      { id: "training",   bild: "i-ball",      titel: "Das erste Training im Sportverein",      faktoren: { fremd: 2, neu: 2, viele: 2, schauen: 2 } },
+      { id: "vorne",      bild: "i-tafel",     titel: "Vor der Klasse etwas zeigen",            faktoren: { schauen: 3, viele: 2, frage: 2 } },
+      { id: "restaurant", bild: "i-durst",     titel: "Im Restaurant etwas bestellen",          faktoren: { fremd: 2, frage: 2, laut: 1, viele: 1, schauen: 1 } },
+      { id: "museum",     bild: "i-ort",       titel: "Ein Ausflug ins Museum",                 faktoren: { neu: 3, viele: 2, laut: 1, fremd: 1 } }
+    ]
+  },
+
+  fall: {
+    titel: "Das verschwundene Glühwürmchen",
+    intro: [
+      "Heute Morgen war es am Teich so dunkel.",
+      "Funkel, das kleinste Glühwürmchen, ist verschwunden!",
+      "Hilfst du mir, Funkel zu finden? Wir untersuchen verschiedene Orte und sammeln Hinweise."
+    ],
+    karte: "Wohin gehen wir?",
+    akte: "Deine Akte",
+    akteLeer: "Noch keine Hinweise.",
+    untersuchen: "Untersuch das Bild. Irgendwo ist ein Hinweis versteckt.",
+    tipp: "Tipp",
+    gefunden: "Ein Hinweis!",
+    fragen: "Wie fragt Sokrates?",
+    fragenText: "Es gibt viele Wege. Alle funktionieren.",
+    wege: [
+      { id: "freund",       bild: "i-herz",      name: "Freundin fragt mit",  vorher: "Sokrates' Freundin fragt für ihn. {Person} antwortet:" },
+      { id: "karte",        bild: "i-karte",     name: "Karte zeigen",         vorher: "{Person} liest die Karte „Hast du Funkel gesehen?“ und nickt:" },
+      { id: "aufschreiben", bild: "i-stift",     name: "Aufschreiben",         vorher: "{Person} liest den Zettel und sagt:" },
+      { id: "zeigen",       bild: "i-zeigen",    name: "Auf ein Bild zeigen",  vorher: "Sokrates zeigt ein Bild von Funkel. {Person} versteht sofort:" },
+      { id: "fluestern",    bild: "i-fluestern", name: "Flüstern",             vorher: "Sokrates flüstert seiner Freundin etwas zu. Sie fragt weiter. {Person} sagt:" },
+      { id: "sprechen",     bild: "i-sprechen",  name: "Selbst fragen",        vorher: "Sokrates fragt leise. {Person} lächelt:" }
+    ],
+    orte: [
+      { id: "teich", name: "Am Teich", bild: "i-seerose",
+        person: { name: "Die Ente", bild: "i-ente" },
+        antwort: "„Gestern Abend ist Funkel Richtung Schulhof geflogen.“",
+        suche: { bild: "i-stern", x: 600, y: 300, text: "Glitzerstaub auf einer Seerose. Funkel war hier." } },
+      { id: "schulhof", name: "Schulhof", bild: "i-tafel",
+        person: { name: "Der Hausmeister", bild: "person:8" },
+        antwort: "„Ich habe gestern Abend ein kleines Licht gesehen. Neben ihm kroch eine Schnecke.“",
+        suche: { bild: "i-schnecke", x: 700, y: 470, text: "Eine glitzernde Schleimspur. Sie führt zum Markt." } },
+      { id: "markt", name: "Markt", bild: "i-broetchen",
+        person: { name: "Die Bäckerin", bild: "person:1" },
+        antwort: "„Die kleine Schnecke hatte sich verlaufen. Funkel hat ihr den Weg geleuchtet.“",
+        suche: { bild: "i-karte", x: 430, y: 496, text: "Ein Zettel mit einer Zeichnung: ein kleines Haus aus Holz am Wasser." } },
+      { id: "spielplatz", name: "Spielplatz", bild: "i-ball",
+        person: { name: "Der Junge vom Spielplatz", bild: "person:3" },
+        antwort: "„Die kleine Schnecke wohnt bei der alten Bootshütte am Teich!“",
+        suche: { bild: "i-gluehwurm", x: 365, y: 470, text: "Leuchtpunkte im Sand. Sie zeigen zurück zum Teich." } }
+    ],
+    huette: { id: "huette", name: "Alte Bootshütte", bild: "i-schluessel" },
+    frageWo: "Wo ist Funkel? Schau in deine Akte.",
+    optionen: [["schulhof", "Auf dem Schulhof"], ["markt", "Auf dem Markt"], ["spielplatz", "Auf dem Spielplatz"], ["huette", "In der alten Bootshütte"]],
+    nichtDa: "Hmm, das passt noch nicht zu allen Hinweisen. Schau noch mal in die Akte.",
+    richtig: "Ja! Alle Hinweise zeigen zur alten Bootshütte.",
+    mehrHinweise: "Sammle noch ein paar Hinweise. Dann können wir überlegen, wo Funkel ist.",
+    ueberlegen: "Wo ist Funkel?",
+    zu: "Die Tür ist abgeschlossen. Ein alter Schlüssel würde passen … Vielleicht liegt einer in der versunkenen Truhe?",
+    zurTruhe: "Zur versunkenen Truhe",
+    aufschliessen: "Mit dem Schlüssel aufschließen",
+    endeTitel: "Fall gelöst!",
+    ende: [
+      "Da ist Funkel! Und die kleine Schnecke mit ihrer Familie.",
+      "Die Tür ist gestern zugefallen. Funkel kam nicht mehr heraus.",
+      "Danke, Detektivin oder Detektiv! Heute Abend leuchtet es am Teich wieder."
+    ],
+    nochmal: "Fall noch mal spielen"
   }
 };

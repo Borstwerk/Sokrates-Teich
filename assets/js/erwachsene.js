@@ -33,6 +33,7 @@
     $("e-bewegung").value = T.speicher.get("bewegung") || "auto";
     $("e-spiele").checked = T.spieleAn();
     alarmErgebnis();
+    zentraleErgebnis();
     $("e-belohnung").value = T.speicher.get("belohnung") || "";
     $("e-stimme-feld").hidden = !T.vorlesen.verfuegbar();
     $("speicher-warnung").hidden = T.speicher.funktioniert();
@@ -55,6 +56,20 @@
       T.el("thead", {}, [T.el("tr", {}, [T.el("th", { scope: "col", text: "Situation" }), T.el("th", { scope: "col", text: "Alarmanlage" })])]),
       T.el("tbody", {}, zeilen)
     ]));
+  }
+
+  // Häufig gewählte Hilfen in der Alarmzentrale
+  function zentraleErgebnis() {
+    var box = $("e-zentrale");
+    box.textContent = "";
+    var hilfen = ((T.speicher.get("abenteuer") || {}).zentrale || {}).hilfen || {};
+    var oft = Object.keys(hilfen).sort(function (a, b) { return hilfen[b] - hilfen[a]; }).slice(0, 5);
+    if (!oft.length) { box.appendChild(T.el("p", { class: "leise", text: "Noch nicht gespielt." })); return; }
+    box.appendChild(T.el("p", { class: "leise", text: "Am häufigsten gewählt:" }));
+    box.appendChild(T.el("ol", {}, oft.map(function (id) {
+      var w = T.inhalt.zentrale.werkzeuge.find(function (x) { return x.id === id; });
+      return T.el("li", { text: (w ? w.name : id) + " (" + hilfen[id] + "×)" });
+    })));
   }
 
   $("e-spiele").addEventListener("change", function (e) { T.speicher.set("spieleAn", e.target.checked); gespeichert(); });

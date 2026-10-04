@@ -56,6 +56,11 @@ Wenn das Kind keine Lust hat: aufhören. Sokrates wartet.
   *Seerosen-Boot* übt ruhiges Atmen, der *Alarmanlagen-Detektiv* zeigt, wo die Alarmanlage laut oder leise
   ist (das Ergebnis der letzten Runde steht unter *Für Erwachsene*), *Ohne Worte* übt Antworten mit Daumen
   und Zeigen.
+- **Abenteuer** (eher ab 8 Jahren): *Die versunkene Truhe* ist ein Rätselspiel ohne therapeutischen
+  Anspruch – einfach zum Spaßhaben. In der *Alarmzentrale* wählt das Kind Hilfen aus, die eine Situation
+  leichter machen; was es oft wählt, steht unter *Für Erwachsene* und ist ein guter Gesprächsanlass.
+  In *Detektiv Sokrates* sind alle sechs Wege zu fragen gleich viel wert – auch Karte, Zeigen oder
+  Aufschreiben bringen denselben Hinweis.
 - **Dein Teich:** Nach jedem Spiel findet Sokrates etwas für den Teich. Für echten Mut gibt es besondere
   Schätze (Glühwürmchen, Goldstein, Stern, Regenbogen). Das Kind legt die Schätze selbst in seinen Teich.
   Wer das nicht möchte: *Für Erwachsene → Spiele und Teich-Schätze anzeigen* ausschalten.

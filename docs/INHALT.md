@@ -224,3 +224,17 @@ Beispiele:
 > *Fund:* „Sokrates hat einen Frosch für deinen Teich gefunden!“ · für echten Mut: „Für deinen Mut hat
 > Sokrates ein Glühwürmchen gefunden!“
 
+## Abenteuer
+
+Texte in `assets/js/inhalt.js` (Abschnitte `abenteuer`, `truhe`, `zentrale`, `fall`). Missionen der
+Alarmzentrale und ihre Hilfen sind dort als Daten beschrieben und lassen sich erweitern.
+
+> *Truhe:* „Unter dem alten Steg habe ich eine Truhe gefunden! Sie hat vier Schlösser.“ – bei einem
+> Fehler: „Noch nicht ganz. Zähl die Frösche noch mal in Ruhe.“
+
+> *Alarmzentrale:* „Probier aus, was die Alarmanlage leiser macht. Es gibt immer mehrere gute Wege.“ –
+> „Aha! Das hat mir geholfen: … Situationen kann man verändern. Dann wird es leichter.“
+
+> *Detektiv Sokrates:* „Wie fragt Sokrates? Es gibt viele Wege. Alle funktionieren.“ – „Sokrates zeigt
+> ein Bild von Funkel. Der Hausmeister versteht sofort: …“
+

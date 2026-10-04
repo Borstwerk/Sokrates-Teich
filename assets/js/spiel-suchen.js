@@ -131,7 +131,7 @@
         [SOKRATES, [{ x: 114, y: 236, s: 0.5 }, { x: 590, y: 318, s: 0.8, vorne: busch(548, 326, 1) }, { x: 700, y: 492, s: 0.7 }]],
         [ding("buch", "Buch", "i-buch", 38), [{ x: 150, y: 480, s: 1 }, { x: 720, y: 404, s: 1 }, { x: 440, y: 340, s: 1 }]],
         [ding("stern", "Stern", "i-stern", 36), [{ x: 640, y: 352, s: 1 }, { x: 230, y: 352, s: 1 }, { x: 30, y: 420, s: 1 }]],
-        [ding("blume", "Blume", "i-blume", 38), [{ x: 22, y: 304, s: 1 }, { x: 590, y: 300, s: 1 }, { x: 780, y: 320, s: 1 }]]
+        [ding("blume", "Blume", "i-blume", 38), [{ x: 22, y: 304, s: 1 }, { x: 515, y: 300, s: 1 }, { x: 780, y: 320, s: 1 }]]
       ]
     },
     markt: {
@@ -267,6 +267,12 @@
     });
     gebaut = true;
   }
+
+  // Für andere Spiele (Detektiv Sokrates): Hintergründe und Figuren
+  T.wimmel = {
+    hintergrund: function (id) { return SZENEN[id].hinten(); },
+    person: person, baum: baum, busch: busch, icon: icon, himmel: himmel
+  };
 
   T.ansichten["spiel-suchen"] = {
     zeige: function () {

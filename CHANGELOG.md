@@ -5,6 +5,11 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 ## [Unreleased]
 
 ### Neu
+- **Abenteuer** für Kinder ab etwa 8: *Die versunkene Truhe* (vier Rätsel), *Alarmzentrale*
+  (Situationen mit Hilfen leichter machen) und *Detektiv Sokrates* (Fall mit Orten, Hinweisen und sechs
+  gleichwertigen Wegen zu fragen). Fortschritt wird gespeichert, die Abenteuer greifen ineinander
+  (Schlüssel aus der Truhe öffnet die Bootshütte). Neue Teich-Schätze: Kristall, Kompass, Laterne.
+- *Für Erwachsene:* häufig gewählte Hilfen aus der Alarmzentrale.
 - **Spiele** (ohne Zeitdruck, ohne Verlieren, ohne Sprechen): Seerosen-Boot (Atmen), Alarmanlagen-Detektiv,
   Ohne Worte (Daumen und Zeigen), Wo ist Sokrates? (drei Suchbilder) und Gefühle-Memory.
 - **Dein Teich:** Nach jedem Spiel findet Sokrates einen Schatz; echter Mut (Mut-Steine, Mut-Schatz)
