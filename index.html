@@ -690,12 +690,8 @@
 
     <section class="e-abschnitt" id="e-hilfe" tabindex="-1">
       <h2><svg class="e-icon" aria-hidden="true"><use href="#i-hand"/></svg>Hilfe finden</h2>
-      <ul>
-        <li>Erster Weg: <strong>Kinderärztin oder Kinderarzt</strong> ansprechen.</li>
-        <li>Behandelt wird selektiver Mutismus vor allem von <strong>Kinder- und Jugendlichenpsychotherapeut:innen</strong> (meist Verhaltenstherapie) und von <strong>Logopäd:innen mit Mutismus-Schwerpunkt</strong>. Gut ist, wenn Eltern und Schule einbezogen werden.</li>
-        <li>Für einen ersten Termin in einer psychotherapeutischen Sprechstunde hilft die <strong>Terminservicestelle 116117</strong>.</li>
-        <li>Selbsthilfe und Therapeutenlisten: <strong>Mutismus Selbsthilfe Deutschland e.V.</strong> (mutismus.de) und <strong>StillLeben e.V.</strong> (selektiver-mutismus.de).</li>
-      </ul>
+      <p>Behandelt wird selektiver Mutismus vor allem von <strong>Kinder- und Jugendlichenpsychotherapeut:innen</strong> (meist Verhaltenstherapie) und von <strong>Logopäd:innen mit Mutismus-Schwerpunkt</strong>. Der Wegweiser zeigt alle Wege zu einem Platz – mit einer Liste für eure Anfragen, einem Brief an Praxen und einem Steckbrief fürs Erstgespräch.</p>
+      <nav class="weiter" data-weiter="wegweiser" aria-label="Wegweiser: Hilfe finden"></nav>
 
       <h3>Buchtipps</h3>
       <ul>
@@ -770,6 +766,57 @@
   </section>
 
   <!-- ================= Für Lehrkräfte ================= -->
+  <!-- Für Erwachsene: Wegweiser „Hilfe finden“ -->
+  <section class="ansicht erwachsene" id="ansicht-wegweiser" data-ansicht="wegweiser" hidden>
+    <h1 tabindex="-1">Hilfe finden: der Wegweiser</h1>
+    <p id="wg-intro"></p>
+    <p class="leise" id="wg-stand"></p>
+    <nav class="e-navi" aria-label="Abschnitte">
+      <button class="knopf klein" type="button" data-ziel="wg-wege">Wege</button>
+      <button class="knopf klein" type="button" data-ziel="wg-suche">Unsere Suche</button>
+      <button class="knopf klein" type="button" data-ziel="wg-brief">Brief an Praxen</button>
+      <button class="knopf klein" type="button" data-ziel="wg-steckbrief">Steckbrief</button>
+    </nav>
+    <div class="kasten wg-wichtig" id="wg-wichtig"></div>
+
+    <section class="e-abschnitt" id="wg-wege" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-ort"/></svg><span id="wg-wege-titel"></span></h2>
+      <ol class="wg-wege" id="wg-wege-liste"></ol>
+      <h3 id="wg-warten-titel"></h3>
+      <ul id="wg-warten"></ul>
+      <p class="leise" id="wg-hinweis"></p>
+    </section>
+
+    <section class="e-abschnitt" id="wg-suche" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-kiste"/></svg><span id="wg-suche-titel"></span></h2>
+      <p id="wg-suche-text"></p>
+      <form class="wg-form" id="wg-suche-form" onsubmit="return false"></form>
+      <p class="raetsel-meldung" id="wg-suche-meldung" aria-live="polite"></p>
+      <p class="leise" id="wg-suche-zaehler" aria-live="polite"></p>
+      <div class="wg-tabelle-rahmen" id="wg-suche-liste"></div>
+    </section>
+
+    <section class="e-abschnitt" id="wg-brief" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-sprechen"/></svg><span id="wg-brief-titel"></span></h2>
+      <p id="wg-brief-text"></p>
+      <form class="wg-form" id="wg-brief-form" onsubmit="return false"></form>
+      <div class="knoepfe">
+        <button class="knopf haupt" type="button" id="wg-brief-drucken"></button>
+        <button class="knopf" type="button" id="wg-brief-kopieren"></button>
+      </div>
+      <p class="leise" id="wg-brief-meldung" aria-live="polite"></p>
+      <div class="blatt-rahmen"><div id="wg-brief-vorschau"></div></div>
+    </section>
+
+    <section class="e-abschnitt" id="wg-steckbrief" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-person"/></svg><span id="wg-steck-titel"></span></h2>
+      <p id="wg-steck-text"></p>
+      <form class="wg-form" id="wg-steck-form" onsubmit="return false"></form>
+      <div class="knoepfe"><button class="knopf haupt" type="button" id="wg-steck-drucken"></button></div>
+      <div class="blatt-rahmen"><div id="wg-steck-vorschau"></div></div>
+    </section>
+  </section>
+
   <section class="ansicht erwachsene" id="ansicht-lehrkraefte" data-ansicht="lehrkraefte" hidden>
     <h1 tabindex="-1">Für Lehrkräfte</h1>
     <p id="lk-intro"></p>
@@ -846,6 +893,7 @@
 <script src="assets/js/spiel-comic.js"></script>
 <script src="assets/js/erwachsene.js"></script>
 <script src="assets/js/lehrkraefte.js"></script>
+<script src="assets/js/wegweiser.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/webapp.js"></script>
 </body>

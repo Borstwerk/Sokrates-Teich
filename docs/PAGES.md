@@ -266,6 +266,17 @@ schlägt, Warnzeichen, Körper-Notizen) · Alltag · Schule · Aus den Spielen �
 
 ---
 
+## 10b. Wegweiser „Hilfe finden“ – `#wegweiser` (seit Version 1.8)
+
+- **Zweck:** Familien ohne Therapieplatz Orientierung und Werkzeuge geben. Ersetzt keine Therapie und keine
+  Beratung; Stand und Geltungsbereich (Deutschland, gesetzlich versichert) stehen oben.
+- **Aufbau:** Sprungmarken · Kasten „Gut zu wissen“ (Nicht-Sprechen ist kein Ausschlussgrund) · acht Wege als
+  nummerierte Karten · „Während ihr wartet“ · **Unsere Therapieplatz-Suche** (Formular, Tabelle, Druck als
+  Kontaktprotokoll mit Unterschriftszeile) · **Brief an Praxen** (Vorschau, Druck, Text kopieren; nutzt Name,
+  Alter, Eltern und Kontakt) · **Steckbrief** (acht Beobachtungsfelder + Daten aus der Seite).
+- **Erreichbar** über die Weiter-Karte im Abschnitt „Hilfe finden“ auf „Für Erwachsene“; Zurück führt dorthin.
+- Quellen und Prüfstand: `docs/recherche/03-hilfe-finden.md`.
+
 ## Offene Punkte
 
 - Soll das Panzer-Meter Einträge speichern (Verlauf über Tage)? Vorschlag: **nein** für den Anfang – es ist

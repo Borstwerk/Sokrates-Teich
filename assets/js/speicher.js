@@ -33,7 +33,10 @@
       funde: [],           // [{ id, art, x, y, zeit }] – x/y in Prozent, null = noch in der Schatzkiste
       alarmRunden: [],     // [{ zeit, antworten: [{ text, stufe }] }] – die letzten Runden
       abenteuer: {},       // { truhe: {…}, zentrale: {…}, fall: {…} }
-      koerperNotizen: []   // [{ zeit, stelle }] – was das Kind unter „Mein Körper“ gemerkt hat
+      koerperNotizen: [],  // [{ zeit, stelle }] – was das Kind unter „Mein Körper“ gemerkt hat
+      suchListe: [],       // Wegweiser: [{ id, praxis, art, datum, weg, antwort, wartezeit, notiz }]
+      wgAlter: "", wgSprichtMit: "", wgFluestert: "", wgZeigt: "", wgStill: "",
+      wgSeit: "", wgHilft: "", wgSchwer: "", wgBisher: ""
     };
   }
 

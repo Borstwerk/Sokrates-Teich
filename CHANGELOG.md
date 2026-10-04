@@ -4,6 +4,17 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 
 ## [Unreleased]
 
+### Neu: Wegweiser „Hilfe finden“
+- Eigene Seite unter „Für Erwachsene“: acht Wege zu Hilfe in Deutschland – Kinderarzt, Logopädie mit
+  Mutismus-Schwerpunkt, Psychotherapie (116117, PTV 11), Kostenerstattung nach § 13 Abs. 3 SGB V,
+  SPZ/Kinder- und Jugendpsychiatrie, Erziehungsberatung und Schulpsychologie, Jugendamt (§ 35a SGB VIII),
+  Selbsthilfe. Mit dem klaren Hinweis: Nicht-Sprechen ist kein Grund gegen eine Therapie.
+- **Unsere Therapieplatz-Suche:** Anfragen notieren (Praxis, Datum, Antwort, Wartezeit) und als
+  Kontaktprotokoll drucken – zum Beispiel für die Kostenerstattung.
+- **Brief an Praxen** (drucken oder als E-Mail-Text kopieren) und **Steckbrief** fürs Erstgespräch, ergänzt um
+  das, was das Kind auf der Seite gezeigt hat (Mut-Schatz, Mut-Steine, Körper-Notizen, Hilfen).
+- Recherche mit Quellen und Prüfstand: `docs/recherche/03-hilfe-finden.md`.
+
 ### Neu: Spielformen
 - **Funkelpost** (neuer Bereich „Zu zweit“): ein Brief in zwei geheimen Hälften, nur zusammen lösbar.
   Gerät weitergeben oder als Bastelbogen ausdrucken. Sechs Briefe.

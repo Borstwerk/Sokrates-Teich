@@ -4,7 +4,7 @@
  *
  * Nach Änderungen an Dateien: VERSION erhöhen, damit Geräte die neue Fassung laden.
  */
-var VERSION = "sokrates-teich-1.7.0";
+var VERSION = "sokrates-teich-1.8.0";
 
 var DATEIEN = [
   "./",
@@ -48,6 +48,7 @@ var DATEIEN = [
   "assets/js/teich.js",
   "assets/js/vorlesen.js",
   "assets/js/webapp.js",
+  "assets/js/wegweiser.js",
   "assets/fonts/andika-latin-400-normal.woff2",
   "assets/fonts/andika-latin-700-normal.woff2",
   "assets/icons/apple-touch-icon.png",

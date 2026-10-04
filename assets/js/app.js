@@ -52,8 +52,8 @@
     if (document.getElementById("dialog").open) T.schliesseDialog();
 
     document.querySelectorAll(".ansicht").forEach(function (s) { s.hidden = s.dataset.ansicht !== id; });
-    // Zurück-Knopf oben: aus Spielen zur Spiele-Übersicht, von den Lehrkräften zu „Für Erwachsene“
-    var N = T.inhalt.navi, ziel = /^spiel-/.test(id) ? "spiele" : id === "lehrkraefte" ? "erwachsene" : "teich";
+    // Zurück-Knopf oben: aus Spielen zur Spiele-Übersicht, von Lehrkräften und Wegweiser zu „Für Erwachsene“
+    var N = T.inhalt.navi, ziel = /^spiel-/.test(id) ? "spiele" : (id === "lehrkraefte" || id === "wegweiser") ? "erwachsene" : "teich";
     zurueck.setAttribute("href", "#" + ziel);
     zurueck.textContent = N[ziel];
     document.body.dataset.ansicht = id;

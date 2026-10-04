@@ -644,6 +644,133 @@ Teich.inhalt = {
     nochmal: "Fall noch mal spielen"
   },
 
+  /* ---------- Für Erwachsene: Wegweiser „Hilfe finden“ ---------- */
+  wegweiser: {
+    intro: "Ein Therapieplatz für ein Kind mit selektivem Mutismus ist oft schwer zu finden. Hier stehen die Wege, die es in Deutschland gibt, und Werkzeuge für die Suche: eine Liste für eure Anfragen, ein Brief an Praxen und ein Steckbrief für das Erstgespräch.",
+    stand: "Stand: Oktober 2026 · für gesetzlich Versicherte in Deutschland",
+    wichtigTitel: "Gut zu wissen",
+    wichtig: [
+      "Dass ein Kind nicht spricht, ist kein Grund gegen eine Therapie. Es ist der Ausgangspunkt. Mutismus-Therapie beginnt bewusst ohne Sprechen: erst Vertrauen und nonverbale Antworten, dann kleine Schritte – ohne Sprechdruck.",
+      "Sagt eine Praxis deshalb ab, fehlt dort meist die Erfahrung mit Mutismus. Fragt gezielt nach Mutismus-Erfahrung und sucht weiter. Ihr macht nichts falsch."
+    ],
+    wegeTitel: "Die Wege im Überblick",
+    wege: [
+      { bild: "i-arzt", titel: "Kinderärztin oder Kinderarzt", punkte: [
+        "Erste Anlaufstelle: Hören, Sprachentwicklung und andere Ursachen abklären lassen.",
+        "Kann ein Rezept für Sprachtherapie (Logopädie) ausstellen und an ein Sozialpädiatrisches Zentrum (SPZ) oder die Kinder- und Jugendpsychiatrie überweisen.",
+        "Tipp: Brief und Steckbrief von dieser Seite ausdrucken und mitnehmen."
+      ] },
+      { bild: "i-sprechen", titel: "Logopädie mit Mutismus-Schwerpunkt", punkte: [
+        "Viele Mutismus-Konzepte kommen aus der Sprachtherapie, zum Beispiel KoMut, DortMuT oder SYMUT. Fragt gezielt nach Praxen, die damit arbeiten.",
+        "Verordnet wird mit einem Heilmittel-Rezept. Aber: Mutismus selbst steht nicht im Heilmittelkatalog, die Kostenübernahme ist nicht einheitlich geregelt. Bittet die Ärztin oder den Arzt, sich an den Hinweisen für Ärzt:innen von StillLeben e.V. zu orientieren, und fragt vorher bei eurer Krankenkasse nach.",
+        "Kinder und Jugendliche unter 18 Jahren zahlen für Heilmittel nichts zu."
+      ] },
+      { bild: "i-herz", titel: "Psychotherapie für Kinder und Jugendliche", punkte: [
+        "Erster Schritt ist eine psychotherapeutische Sprechstunde. Einen Termin vermittelt die Terminservicestelle: Telefon 116117 oder 116117.de.",
+        "Nach der Sprechstunde bekommt ihr das Formular PTV 11. Es hält fest, ob eine Behandlung nötig ist (und ob sie dringend ist). Gut aufheben!",
+        "Parallel auf mehrere Wartelisten setzen lassen und jede Anfrage unten in „Unsere Therapieplatz-Suche“ notieren.",
+        "Gut passt eine Praxis, die schrittweise arbeitet (meist Verhaltenstherapie) und Eltern und Schule einbezieht."
+      ] },
+      { bild: "i-kiste", titel: "Kein Kassenplatz? Kostenerstattung", punkte: [
+        "Findet ihr in zumutbarer Zeit keinen Kassenplatz, kann die Krankenkasse eine Therapie bei einer approbierten Privatpraxis bezahlen (Kostenerstattung nach § 13 Abs. 3 SGB V).",
+        "Dafür braucht ihr meist: das PTV 11, eine Liste eurer Anfragen mit Absagen und Wartezeiten (oft reichen 5 bis 10) und eine Privatpraxis, die einen Platz anbietet.",
+        "Den Antrag vor Beginn der Therapie bei der Krankenkasse stellen. Die Liste unten lässt sich dafür ausdrucken.",
+        "Kassen entscheiden unterschiedlich. Gegen eine Ablehnung könnt ihr Widerspruch einlegen."
+      ] },
+      { bild: "i-haus", titel: "SPZ oder Kinder- und Jugendpsychiatrie", punkte: [
+        "Mit Überweisung: gründliche Abklärung durch ein Team aus Ärzt:innen, Psycholog:innen und Therapeut:innen.",
+        "Eine Diagnose von hier braucht ihr oft für Anträge beim Jugendamt.",
+        "Viele Kliniken haben Ambulanzen, die auch ambulant behandeln."
+      ] },
+      { bild: "i-gruppe", titel: "Erziehungsberatung und Schulpsychologie", punkte: [
+        "Erziehungsberatungsstellen sind kostenlos und ohne Überweisung erreichbar. Sie beraten Eltern und kennen oft Angebote in der Nähe.",
+        "Der schulpsychologische Dienst berät Schule und Eltern, etwa zu Absprachen im Unterricht und zum Nachteilsausgleich bei mündlichen Leistungen."
+      ] },
+      { bild: "i-hand", titel: "Jugendamt: Eingliederungshilfe", punkte: [
+        "Schränkt der Mutismus die Teilhabe deutlich ein – etwa in der Schule – und voraussichtlich länger als sechs Monate, kann Eingliederungshilfe nach § 35a SGB VIII beantragt werden, zum Beispiel eine Schulbegleitung.",
+        "Nötig sind ein schriftlicher Antrag und eine fachliche Stellungnahme (z. B. Kinder- und Jugendpsychiatrie oder SPZ), oft auch eine Stellungnahme der Schule.",
+        "Die Jugendämter entscheiden unterschiedlich. Lasst euch dabei beraten, zum Beispiel von einer Selbsthilfe-Organisation."
+      ] },
+      { bild: "i-ort", titel: "Selbsthilfe und Fachleute-Listen", punkte: [
+        "Mutismus Selbsthilfe Deutschland e.V. (mutismus.de) und StillLeben e.V. (selektiver-mutismus.de) bieten Informationen, Ansprechpersonen und Hinweise auf Fachleute.",
+        "Austausch mit anderen Eltern entlastet – und sie kennen oft Praxen in eurer Gegend."
+      ] }
+    ],
+    wartenTitel: "Während ihr wartet",
+    warten: [
+      "Die Wartezeit ist nicht verloren. Druck herausnehmen, nonverbale Antworten annehmen, kleine Mut-Schritte gehen: Das sind dieselben Grundsätze, mit denen auch eine Therapie arbeitet.",
+      "Mit Schule oder Kita sprechen und das Infoblatt mitgeben.",
+      "Mut-Steine und Mut-Schatz nutzen. Was das Kind dort geschafft hat, erscheint im Steckbrief und hilft der Therapie beim Einstieg."
+    ],
+    hinweis: "Sorgfältig recherchiert, aber keine Rechts- oder Sozialberatung. Krankenkassen und Ämter entscheiden im Einzelfall. In Österreich und der Schweiz gelten andere Wege.",
+
+    suche: {
+      titel: "Unsere Therapieplatz-Suche",
+      text: "Notiert jede Anfrage, auch wenn niemand zurückruft. So behaltet ihr den Überblick, und für eine Kostenerstattung habt ihr die Liste gleich parat. Die Einträge bleiben auf diesem Gerät.",
+      praxis: "Praxis oder Name", art: "Art", datum: "Datum", weg: "Wie angefragt", antwort: "Antwort", wartezeit: "Genannte Wartezeit", notiz: "Notiz",
+      arten: ["Psychotherapie", "Logopädie", "SPZ oder Klinik", "Beratung", "Sonstiges"],
+      wege: ["Telefon", "E-Mail", "Anrufbeantworter", "Persönlich", "Online-Formular"],
+      antworten: ["Absage", "Warteliste", "Kein Rückruf", "Termin angeboten", "Noch offen"],
+      eintragen: "Anfrage eintragen",
+      fehltPraxis: "Bitte mindestens die Praxis oder den Namen eintragen.",
+      leer: "Noch keine Anfragen notiert.",
+      zaehler: "{anzahl} Anfragen · davon {absagen} Absagen oder ohne Rückruf",
+      loeschen: "Löschen",
+      loeschenFrage: "Diesen Eintrag löschen?",
+      drucken: "Liste drucken",
+      druckTitel: "Kontaktprotokoll: Suche nach einem Therapieplatz",
+      druckFelder: ["Kind (Name, Geburtsdatum)", "Versichert bei / Versichertennummer", "PTV 11 vom"],
+      druckFuss: "Erstellt mit „Sokrates' Teich“.",
+      unterschrift: "Ort, Datum, Unterschrift"
+    },
+
+    brief: {
+      titel: "Brief an Praxen",
+      text: "Zum Ausdrucken oder als Text für eine E-Mail. Er erklärt kurz, warum Nicht-Sprechen kein Hindernis für eine Therapie ist. Name und Kontakt kommen aus den Feldern hier und aus „Für Lehrkräfte“.",
+      alter: "Alter des Kindes", alterBeispiel: "z. B. 9 Jahre",
+      absender: "Unterschrift (Eltern)", kontakt: "Telefon oder E-Mail",
+      drucken: "Brief drucken", kopieren: "Text kopieren", kopiert: "Kopiert – jetzt in eine E-Mail einfügen.",
+      kopierenGeht: "Kopieren ging nicht. Bitte den Text unten markieren und kopieren.",
+      betreff: "Anfrage Therapieplatz – selektiver Mutismus",
+      anrede: "Sehr geehrte Damen und Herren,",
+      absaetze: [
+        "wir suchen einen Therapieplatz für unser Kind{name}{alter}. Unser Kind hat selektiven Mutismus: Zu Hause spricht es normal, in der Schule und bei fremden Menschen bleibt die Stimme aus Angst aus.",
+        "Selektiver Mutismus ist eine Angststörung (ICD-10 F94.0, ICD-11 6B06). Dass unser Kind in Ihrer Praxis anfangs nicht sprechen wird, gehört zum Störungsbild. Es ist der Ausgangspunkt der Behandlung, kein Hindernis: Bewährte Ansätze beginnen ohne Sprechanforderung, lassen nonverbale Antworten zu und bauen das Sprechen in kleinen Schritten auf (schrittweise Annäherung, Stimulus Fading, Shaping), möglichst unter Einbezug von Eltern und Schule.",
+        "Wir unterstützen die Therapie gern aktiv und bringen Beobachtungen mit: wo und mit wem unser Kind spricht, flüstert oder sich ohne Worte verständigt.",
+        "Haben Sie Erfahrung mit selektivem Mutismus oder einen Platz auf Ihrer Warteliste? Bitte geben Sie uns auch bei einer Absage kurz Bescheid. Das hilft uns bei der weiteren Suche."
+      ],
+      gruss: "Mit freundlichen Grüßen",
+      quellen: "Fachliche Grundlage u. a.: ASHA Practice Portal „Selective Mutism“; Hipolito et al. (2023), systematische Übersicht zu Interventionen bei selektivem Mutismus; Leitlinien des Interdisziplinären Mutismus-Forums."
+    },
+
+    steckbrief: {
+      titel: "Steckbrief für Therapie und Ärztin",
+      text: "Fasst zusammen, was ihr beobachtet und was das Kind auf dieser Seite selbst gezeigt hat. Das spart beim Erstgespräch Zeit, gerade wenn das Kind dort noch nicht spricht. Alle Felder sind freiwillig.",
+      felder: [
+        ["wgSprichtMit", "Spricht mit …", "z. B. Eltern, Bruder, Oma – zu Hause, im Auto"],
+        ["wgFluestert", "Flüstert oder spricht leise mit …", "z. B. beste Freundin, nur wenn niemand zuhört"],
+        ["wgZeigt", "Verständigt sich ohne Worte (nicken, zeigen, schreiben) mit …", "z. B. Klassenlehrerin, Trainer"],
+        ["wgStill", "Bleibt ganz still bei …", "z. B. Ärztinnen, Verkäufer, vor der Klasse"],
+        ["wgSeit", "Seit wann fällt es auf?", "z. B. seit dem Kita-Start mit 3 Jahren"],
+        ["wgHilft", "Was hilft?", "z. B. Wahlfragen, vertraute Person dabei, Zeit"],
+        ["wgSchwer", "Was ist besonders schwer?", "z. B. Toilette in der Schule, Telefonieren"],
+        ["wgBisher", "Bisherige Hilfe", "z. B. Diagnostik im SPZ, Logopädie, Absprachen mit der Schule"]
+      ],
+      ausSeite: "Aus „Sokrates' Teich“",
+      ausSeiteText: "Vom Kind selbst gewählt oder eingetragen – Gesprächsanlässe, keine Messwerte.",
+      mutSchatz: "Mutige Momente im Mut-Schatz",
+      mutSteine: "Geschaffte Mut-Steine",
+      keineSteine: "noch keine",
+      koerper: "Körper-Notizen (wo die Alarmanlage gespürt wird)",
+      alarm: "Laute Alarmanlage (Alarmanlagen-Detektiv)",
+      hilfen: "Häufig gewählte Hilfen (Alarmzentrale)",
+      nichts: "–",
+      drucken: "Steckbrief drucken",
+      druckTitel: "Steckbrief: selektiver Mutismus",
+      druckUnter: "Von den Eltern ausgefüllt. Zum Erstgespräch mitbringen."
+    }
+  },
+
   /* ---------- Navigation: Rückweg je nach Bereich ---------- */
   navi: {
     teich: "← Zum Teich",
@@ -652,6 +779,7 @@ Teich.inhalt = {
     weiter: {
       erwachsene: { bild: "i-buch", titel: "Für Erwachsene", unter: "Wissen, Einstellungen, Material für die Schule" },
       lehrkraefte: { bild: "i-tafel", titel: "Für Lehrkräfte", unter: "Infoblatt und Erklär-Karten zum Ausdrucken" },
+      wegweiser: { bild: "i-hand", titel: "Hilfe finden: der Wegweiser", unter: "Wege zur Therapie, Liste für die Suche, Brief an Praxen" },
       teich: { bild: "i-frosch", titel: "Dein Teich", unter: "Hier wohnen deine Schätze" },
       spiele: { bild: "i-spiel", titel: "Spiele", unter: "Noch etwas spielen?" },
       "spiel-werkstatt": { bild: "i-stern", titel: "In die Werkstatt", unter: "Gestalte etwas Eigenes für deinen Teich" }
