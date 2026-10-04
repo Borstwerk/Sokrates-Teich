@@ -1,0 +1,536 @@
+/* Sokrates' Teich – Stile. Tokens siehe DESIGN.md */
+
+@font-face { font-family: "Andika"; font-weight: 400; font-display: swap; src: url("../fonts/andika-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Andika"; font-weight: 700; font-display: swap; src: url("../fonts/andika-latin-700-normal.woff2") format("woff2"); }
+
+:root {
+  --paper: #FBF6EC; --ink: #2E3A2F; --ink-soft: #55624F;
+  --sand: #EBD9B4; --sand-dark: #D9C291; --water: #DCEFF2; --water-deep: #2F6F7E;
+  --moss: #3F6E3A; --skin: #9CC27A; --skin-dark: #6F9A52; --haut-hell: #F3D9B5;
+  --shell: #C9944A; --shell-dark: #8C6230; --star: #F2B544; --stone: #CFC8B8;
+  --alarm: #E46F4F; --rot: #B5523A; --focus: #1F5F6E; --weiss: #FFFFFF;
+  --radius: 18px; --line: 3px;
+  --paper-shadow: 0 4px 0 rgba(46,58,47,.18);
+  --slow: .7s cubic-bezier(.45,0,.25,1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: "Andika", system-ui, sans-serif; font-size: 22px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+[hidden] { display: none !important; }
+.nur-vorleser { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Leiste ---------- */
+.leiste {
+  max-width: 1080px; margin: 0 auto; padding: 16px 16px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.leiste .platz { flex: 1; }
+body[data-ansicht="teich"] .zurueck { visibility: hidden; }
+
+main { max-width: 1080px; margin: 0 auto; padding: 8px 16px 72px; }
+.ansicht > * { animation: hoch .5s cubic-bezier(.2,.7,.3,1) both; }
+.ansicht > *:nth-child(2) { animation-delay: .06s; }
+.ansicht > *:nth-child(3) { animation-delay: .12s; }
+.ansicht > *:nth-child(4) { animation-delay: .18s; }
+.ansicht > *:nth-child(n+5) { animation-delay: .24s; }
+@keyframes hoch { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+h1 { font-size: clamp(34px, 6vw, 48px); line-height: 1.15; margin: 12px 0 16px; }
+h1:focus { outline: none; }
+h2 { font-size: 30px; line-height: 1.25; margin: 40px 0 12px; }
+h3 { font-size: 24px; line-height: 1.3; margin: 28px 0 8px; }
+p { margin: 0 0 12px; }
+.leise { color: var(--ink-soft); font-size: 18px; }
+a { color: var(--water-deep); }
+
+/* ---------- Knöpfe ---------- */
+.knopf {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 60px; padding: 8px 24px; border-radius: var(--radius);
+  border: var(--line) solid var(--ink); box-shadow: var(--paper-shadow);
+  font-weight: 700; font-size: 21px; line-height: 1.2; text-decoration: none; cursor: pointer;
+  background: var(--weiss); color: var(--ink); transition: transform .15s;
+}
+.knopf:hover { transform: translateY(-2px); }
+.knopf:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(46,58,47,.18); }
+.knopf.haupt { background: var(--moss); color: var(--weiss); }
+.knopf.klein { min-height: 48px; padding: 6px 16px; font-size: 18px; }
+.knopf.gefahr { background: var(--weiss); color: var(--rot); border-color: var(--rot); }
+.knopf svg { width: 30px; height: 30px; flex: none; }
+.knopf[aria-pressed="true"] { background: var(--star); color: var(--ink); }
+.knoepfe { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 20px; }
+
+/* ---------- Sokrates ---------- */
+.sokrates { --hx: 0; --hy: 0; --ly: 0; --tx: 0; --ty: 0; --smile: 1; --flat: 0; --worry: 0; }
+.lvl-1 { --hx: 0;    --hy: 0;  --ly: 0;   --tx: 0;  --ty: 0;   --smile: 1; --flat: 0; --worry: 0; }
+.lvl-2 { --hx: -16;  --hy: 2;  --ly: -5;  --tx: 4;  --ty: 0;   --smile: 0; --flat: 1; --worry: 0; }
+.lvl-3 { --hx: -40;  --hy: 5;  --ly: -14; --tx: 10; --ty: -2;  --smile: 0; --flat: 0; --worry: 1; }
+.lvl-4 { --hx: -62;  --hy: 8;  --ly: -24; --tx: 16; --ty: -4;  --smile: 0; --flat: 0; --worry: 1; }
+.lvl-5 { --hx: -125; --hy: 16; --ly: -34; --tx: 28; --ty: -12; --smile: 0; --flat: 0; --worry: 1; }
+.s-head  { transform: translate(calc(var(--hx) * 1px), calc(var(--hy) * 1px)); transition: transform var(--slow); }
+.s-leg   { transform: translateY(calc(var(--ly) * 1px)); transition: transform var(--slow); }
+.s-tail  { transform: translate(calc(var(--tx) * 1px), calc(var(--ty) * 1px)); transition: transform var(--slow); }
+.s-smile { opacity: var(--smile); transition: opacity .4s; }
+.s-flat  { opacity: var(--flat);  transition: opacity .4s; }
+.s-worry { opacity: var(--worry); transition: opacity .4s; }
+.s-lid   { transform-box: fill-box; transform-origin: center top; transform: scaleY(0); animation: blinzeln 7s infinite; }
+@keyframes blinzeln { 0%, 94%, 100% { transform: scaleY(0); } 96%, 98% { transform: scaleY(1); } }
+
+/* ---------- Szene (Teich-Bild) ---------- */
+.szene {
+  position: relative; background: var(--water); border: var(--line) solid var(--ink);
+  border-radius: 28px; overflow: hidden; aspect-ratio: 3 / 2; min-height: 200px;
+}
+.szene .ufer { position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: var(--sand); border-top: var(--line) solid var(--ink); }
+.szene > svg.sokrates { position: absolute; left: 4%; bottom: 6%; width: 78%; height: auto; }
+.szene .deko { position: absolute; top: 12px; left: 14px; display: flex; gap: 10px; }
+.szene .deko figure { margin: 0; text-align: center; font-size: 15px; font-weight: 700; line-height: 1.2; }
+.szene .deko svg { width: 60px; height: 60px; margin: 0 auto 2px; }
+.alarm { position: absolute; top: 12px; right: 14px; text-align: center; font-size: 15px; font-weight: 700; }
+.alarm .lampe {
+  width: 44px; height: 44px; margin: 0 auto 2px; border-radius: 50% 50% 8px 8px;
+  border: var(--line) solid var(--ink); background: #D9D4C7; position: relative;
+}
+.alarm .lampe::after {
+  content: ""; position: absolute; inset: 3px; border-radius: inherit; background: var(--alarm);
+  opacity: var(--glow, 0); transition: opacity var(--slow);
+}
+.alarm.an .lampe { animation: glimmen 2.6s ease-in-out infinite; }
+@keyframes glimmen { 0%, 100% { box-shadow: 0 0 0 0 rgba(228,111,79,0); } 50% { box-shadow: 0 0 0 10px rgba(228,111,79,.22); } }
+
+/* ---------- Sprechblase ---------- */
+.mit-blase { display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px; align-items: center; }
+.blase {
+  position: relative; background: var(--weiss); border: var(--line) solid var(--ink);
+  border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--paper-shadow);
+}
+.blase::before {
+  content: ""; position: absolute; left: -16px; top: 42px; width: 26px; height: 26px; background: var(--weiss);
+  border-left: var(--line) solid var(--ink); border-bottom: var(--line) solid var(--ink); transform: rotate(45deg);
+}
+.blase .titel { display: block; font-size: 27px; font-weight: 700; line-height: 1.25; margin-bottom: 6px; }
+.blase p:last-child { margin-bottom: 0; }
+
+.mit-blase.kompakt { grid-template-columns: .8fr 1.2fr; }
+.kompakt .szene { aspect-ratio: 16 / 9; }
+
+/* ---------- Teich (Start) ---------- */
+.orte { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.ort {
+  position: relative; display: flex; align-items: center; gap: 14px; height: 100%;
+  padding: 14px 16px; border-radius: 24px; border: var(--line) solid var(--ink); box-shadow: var(--paper-shadow);
+  background: var(--weiss); color: var(--ink); text-decoration: none; transition: transform .15s;
+}
+.ort:hover { transform: translateY(-3px); }
+.ort .bild { flex: none; width: 82px; height: 82px; border-radius: 50%; background: var(--water); border: var(--line) solid var(--ink); display: grid; place-items: center; overflow: hidden; }
+.ort .bild svg { width: 60px; height: 60px; }
+.ort .bild svg.sokrates { width: 76px; height: auto; }
+.ort b { display: block; font-size: 23px; line-height: 1.2; }
+.ort span { display: block; font-size: 17px; line-height: 1.35; color: var(--ink-soft); }
+.ort .marke {
+  position: absolute; top: -14px; right: 12px; background: var(--star); border: var(--line) solid var(--ink);
+  border-radius: 99px; padding: 0 12px; font-size: 16px; font-weight: 700; color: var(--ink);
+}
+.erwachsene-link { margin-top: 48px; text-align: center; font-size: 18px; }
+
+/* ---------- Geschichte ---------- */
+.buchseite { background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 28px; padding: 24px; box-shadow: var(--paper-shadow); }
+.buchseite .mit-blase { grid-template-columns: 1.1fr 1fr; }
+.buchseite .titel { font-size: 30px; font-weight: 700; line-height: 1.25; margin-bottom: 10px; }
+.buchseite .text p { margin-bottom: 6px; }
+.punkte { display: flex; gap: 8px; justify-content: center; margin: 18px 0 0; padding: 0; list-style: none; }
+.punkte li { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--ink); }
+.punkte li.da { background: var(--ink); }
+.blaettern { display: flex; justify-content: space-between; gap: 14px; margin-top: 18px; flex-wrap: wrap; }
+
+/* ---------- Panzer-Meter ---------- */
+.stufen { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.stufe {
+  width: 100%; height: 100%; min-height: 64px; font-size: 17px; font-weight: 700; line-height: 1.25;
+  background: var(--weiss); border: var(--line) solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--paper-shadow); padding: 8px 6px 10px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 4px; transition: transform .15s;
+}
+.stufe svg { width: 100%; max-width: 110px; height: auto; }
+.stufe .nr { font-size: 15px; color: var(--ink-soft); }
+.stufe[aria-pressed="true"] { background: var(--star); }
+.stufe:hover { transform: translateY(-2px); }
+
+/* ---------- Mut-Steine ---------- */
+.weg-wahl { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 24px; }
+.teich-weg { background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; overflow: hidden; }
+.teich-weg .ufer-text { background: var(--sand); padding: 12px 20px; font-weight: 700; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+.teich-weg .ufer-text.oben { border-bottom: var(--line) solid var(--ink); }
+.teich-weg .ufer-text.unten { border-top: var(--line) solid var(--ink); }
+.teich-weg .ufer-text svg { width: 40px; height: 40px; }
+.steine { list-style: none; margin: 0; padding: 20px 16px; display: flex; flex-direction: column; gap: 14px; }
+.steine li { display: flex; align-items: center; gap: 10px; }
+.steine li:nth-child(even) { padding-left: 12%; }
+.stein {
+  flex: 0 1 auto; display: flex; align-items: center; gap: 16px; text-align: left;
+  background: transparent; border: none; padding: 4px; cursor: pointer; border-radius: 22px; font-size: 20px; line-height: 1.35;
+}
+.stein:hover .form { transform: translateY(-2px); }
+.stein .form {
+  flex: none; width: 88px; height: 66px; display: grid; place-items: center;
+  background: var(--stone); border: var(--line) solid var(--ink); box-shadow: var(--paper-shadow);
+  border-radius: 48% 52% 45% 55% / 58% 46% 54% 42%; font-weight: 700; font-size: 22px; transition: transform .15s;
+}
+.stein.geschafft .form { background: #FCE3A6; }
+.stein .form svg { width: 34px; height: 34px; }
+.stein .wie-oft { display: block; font-size: 16px; color: var(--ink-soft); font-weight: 700; }
+.steine .sitzt { width: 70px; flex: none; }
+.stein.neu .form { animation: aufleuchten .5s ease-out; }
+@keyframes aufleuchten { 0% { box-shadow: 0 0 0 0 rgba(242,181,68,.9); } 100% { box-shadow: 0 0 0 18px rgba(242,181,68,0); } }
+.eigen-liste { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 10px; }
+.eigen-liste li { display: flex; align-items: center; gap: 10px; background: var(--weiss); border: 2px solid var(--ink); border-radius: 14px; padding: 8px 12px; font-size: 19px; }
+.eigen-liste li span { flex: 1 1 200px; }
+.eigen-liste li { flex-wrap: wrap; }
+.eigen-neu { display: flex; gap: 10px; flex-wrap: wrap; }
+.eigen-neu input { flex: 1; min-width: 220px; }
+
+/* ---------- Ruhe-Ecke ---------- */
+.ruhe-teich { position: relative; background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; overflow: hidden; min-height: 420px; display: grid; place-items: center; padding: 24px 16px 130px; }
+.kreis {
+  width: 220px; height: 220px; border-radius: 50%; border: 6px solid var(--water-deep); background: rgba(255,255,255,.55);
+  display: grid; place-items: center; text-align: center; font-size: 26px; font-weight: 700; line-height: 1.2;
+  transform: scale(.7); transition-property: transform; transition-timing-function: ease-in-out;
+}
+.kreis.gross { transform: scale(1.12); }
+.ruhe-teich .schwimmt { position: absolute; left: 50%; bottom: 8px; width: 210px; margin-left: -105px; }
+.ruhe-teich .wellen { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; overflow: hidden; }
+.ruhe-teich .welle { position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; animation: wellen 16s linear infinite; }
+.ruhe-teich .welle.hinten { animation-duration: 24s; animation-direction: reverse; bottom: 6px; }
+@keyframes wellen { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.atem-balken { height: 18px; border-radius: 99px; border: 2px solid var(--ink); background: var(--weiss); overflow: hidden; margin: 18px 0 6px; }
+.atem-balken span { display: block; height: 100%; width: 0; background: var(--water-deep); transition-property: width; transition-timing-function: linear; }
+.atemzuege { font-size: 18px; color: var(--ink-soft); text-align: center; }
+.pause-zahl { font-size: 64px; font-weight: 700; text-align: center; min-height: 1.3em; }
+
+/* ---------- Karten ---------- */
+.karten { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.karte {
+  width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  padding: 18px 12px; background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 22px; box-shadow: var(--paper-shadow);
+  font-weight: 700; font-size: 21px; line-height: 1.3; text-align: center; cursor: pointer; transition: transform .15s;
+}
+.karte:hover { transform: translateY(-2px); }
+.karte svg { width: 84px; height: 84px; }
+.karte svg.sokrates { width: 120px; height: auto; }
+.karte-gross { text-align: center; }
+.karte-gross svg { width: min(220px, 50vw); height: auto; margin: 0 auto 16px; }
+.karte-gross p { font-size: clamp(32px, 6vw, 52px); font-weight: 700; line-height: 1.2; }
+
+/* ---------- Mut-Schatz ---------- */
+.schatz-oben { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: center; }
+.glas { width: 100%; max-width: 280px; height: auto; margin: 0 auto; }
+.glas .steinchen circle { transition: opacity .4s; }
+.zaehler { font-size: 26px; font-weight: 700; }
+.schatz-liste { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 10px; }
+.schatz-liste li { display: flex; align-items: center; gap: 14px; background: var(--weiss); border: 2px solid var(--ink); border-radius: 16px; padding: 8px 14px; font-size: 19px; line-height: 1.35; }
+.schatz-liste li svg { width: 40px; height: 40px; flex: none; }
+.schatz-liste .datum { margin-left: auto; color: var(--ink-soft); font-size: 16px; white-space: nowrap; }
+.arten { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+.art { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 6px; background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 18px; box-shadow: var(--paper-shadow); cursor: pointer; font-weight: 700; font-size: 18px; line-height: 1.25; }
+.art svg { width: 54px; height: 54px; }
+.art:hover { background: var(--water); }
+
+/* ---------- Dialog ---------- */
+dialog {
+  width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 28px 24px 24px;
+  border: var(--line) solid var(--ink); border-radius: 28px; background: var(--paper); color: var(--ink); box-shadow: 0 8px 0 rgba(46,58,47,.25);
+}
+dialog.breit { width: min(860px, calc(100vw - 32px)); }
+dialog::backdrop { background: rgba(46,58,47,.45); }
+dialog h2 { margin-top: 0; }
+
+/* ---------- Erwachsene ---------- */
+.erwachsene { font-size: 19px; line-height: 1.6; max-width: 820px; }
+.erwachsene h2 { font-size: 26px; }
+.erwachsene ul { padding-left: 24px; }
+.erwachsene li { margin-bottom: 6px; }
+.tabelle { width: 100%; border-collapse: collapse; margin: 12px 0; }
+.tabelle th, .tabelle td { border: 2px solid var(--ink); padding: 8px 12px; text-align: left; vertical-align: top; }
+.tabelle th { background: var(--sand); }
+.kasten { background: var(--sand); border-radius: var(--radius); padding: 14px 20px; margin: 16px 0; }
+.kasten a { color: var(--ink); }
+.erwachsene { overflow-wrap: anywhere; }
+.feld { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; margin: 16px 0; }
+.feld select { width: 100%; max-width: 560px; }
+.feld label { font-weight: 700; }
+input[type="text"], input[type="number"], select {
+  min-height: 52px; padding: 8px 14px; border: var(--line) solid var(--ink); border-radius: 14px; background: var(--weiss); max-width: 100%;
+}
+input[type="range"] { width: min(360px, 100%); accent-color: var(--moss); }
+.check { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+.check input { width: 26px; height: 26px; accent-color: var(--moss); }
+details { margin: 20px 0; background: var(--weiss); border: 2px solid var(--ink); border-radius: var(--radius); padding: 10px 18px; font-size: 18px; }
+details summary { font-weight: 700; cursor: pointer; min-height: 40px; display: flex; align-items: center; }
+.hinweis-speicher { background: #F6DCD3; border: 2px solid var(--rot); border-radius: 14px; padding: 10px 16px; font-size: 18px; }
+
+/* ---------- Karten: Größe am Bildschirm ---------- */
+.karten-werkzeug { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; margin: 18px 0 4px; padding: 12px 16px; background: var(--weiss); border: 2px solid var(--ink); border-radius: var(--radius); font-size: 18px; }
+.karten-werkzeug .gruppe { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.karten-werkzeug .werkzeug-titel { font-weight: 700; }
+.karten-werkzeug select { min-height: 48px; font-size: 18px; }
+.karten-werkzeug input[type="number"] { width: 96px; min-height: 48px; font-size: 18px; }
+.karten-werkzeug .info { flex-basis: 100%; color: var(--ink-soft); font-size: 16px; }
+.karten[data-groesse="klein"] { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.karten[data-groesse="klein"] .karte { font-size: 17px; padding: 12px 8px; }
+.karten[data-groesse="klein"] .karte svg { width: 56px; height: 56px; }
+.karten[data-groesse="klein"] .karte svg.sokrates { width: 84px; height: auto; }
+.karten[data-groesse="gross"] { grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); }
+.karten[data-groesse="gross"] .karte { font-size: 28px; padding: 28px 16px; }
+.karten[data-groesse="gross"] .karte svg { width: 130px; height: 130px; }
+.karten[data-groesse="gross"] .karte svg.sokrates { width: 190px; height: auto; }
+
+/* ---------- Für Lehrkräfte ---------- */
+.blatt-rahmen { background: var(--sand); border-radius: 22px; padding: 20px; margin-top: 16px; overflow-x: auto; }
+.blatt { background: #fff; color: var(--ink); max-width: 820px; margin: 0 auto; padding: 32px 36px; box-shadow: 0 6px 0 rgba(46,58,47,.15); border-radius: 6px; font-size: 16px; line-height: 1.45; }
+.lk-titel { display: flex; align-items: center; gap: 18px; border-bottom: 3px solid var(--ink); padding-bottom: 12px; margin-bottom: 16px; }
+.lk-titel svg { width: 120px; height: auto; flex: none; }
+.lk-titel h2 { margin: 0; font-size: 28px; }
+.lk-titel p { margin: 0; color: var(--ink-soft); }
+.lk-spalten { columns: 2 300px; column-gap: 24px; }
+.lk-abschnitt { break-inside: avoid; margin: 0 0 14px; padding: 10px 14px 6px; border: 2px solid var(--ink); border-radius: 14px; background: var(--paper); }
+.lk-kopf { display: flex; align-items: center; gap: 10px; }
+.lk-kopf svg { width: 34px; height: 34px; flex: none; }
+.lk-kopf svg.sokrates { width: 54px; height: auto; }
+.lk-kopf h3 { margin: 0; font-size: 18px; line-height: 1.25; }
+.lk-abschnitt ul { margin: 6px 0 6px; padding-left: 20px; }
+.lk-abschnitt li { margin: 0 0 3px; }
+.lk-mini-karten { display: flex; gap: 6px; margin: 2px 0 6px 20px; }
+.lk-mini-karten svg { width: 26px; height: 26px; }
+.lk-kontakt { break-inside: avoid; }
+.lk-zeile { display: flex; gap: 10px; align-items: baseline; margin: 6px 0; }
+.lk-label { flex: none; width: 170px; font-weight: 700; }
+.lk-wert { flex: 1; min-height: 1.4em; }
+.lk-wert.leer { border-bottom: 1.5px solid var(--ink-soft); }
+.lk-fuss { margin-top: 10px; font-size: 12px; color: var(--ink-soft); }
+
+.erklaer-karten { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 16px; }
+.erklaerkarte { height: 100%; background: #fff; border: var(--line) solid var(--ink); border-radius: 22px; padding: 16px 18px; box-shadow: var(--paper-shadow); font-size: 17px; line-height: 1.45; }
+.erklaerkarte ul { margin: 8px 0 0; padding-left: 20px; }
+.erklaerkarte li { margin-bottom: 4px; }
+.erklaerkarte.vorstellung { background: var(--water); text-align: center; }
+.erklaerkarte.vorstellung svg { width: 150px; height: auto; margin: 0 auto; }
+.erklaerkarte.vorstellung h3 { font-size: 24px; margin: 6px 0; }
+.erklaerkarte.vorstellung p { margin: 0 0 4px; font-size: 19px; }
+
+/* ---------- Druck ---------- */
+#druck { display: none; }
+@media print {
+  @page { size: A4; margin: 10mm; }
+  html, body { background: #fff !important; }
+  body > *:not(#druck) { display: none !important; }
+  #druck { display: block !important; color: #2E3A2F; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #druck * { animation: none !important; transition: none !important; }
+
+  /* Karten: Spalten/Zeilen und Kartengröße setzt JS (T.druckeKarten); --s skaliert Schrift und Bilder */
+  .karten-druck .druckseite { display: grid; gap: 4mm; justify-content: center; align-content: start; break-after: page; }
+  .karten-druck .druckseite:last-child { break-after: auto; }
+  .karten-druck .druckseite > * { border: 0.6mm dashed #777; border-radius: calc(5mm * var(--s, 1)); overflow: hidden; break-inside: avoid; box-shadow: none; height: auto; }
+
+  .kind .druckkarte { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: calc(4mm * var(--s, 1)); font-weight: 700; line-height: 1.15; }
+  .kind .druckkarte p { margin: 0; }
+  .kind.pro-8 .druckkarte { font-size: calc(19pt * var(--s, 1)); } .kind.pro-8 .druckkarte svg { width: calc(31mm * var(--s, 1)); height: calc(31mm * var(--s, 1)); margin-bottom: calc(3mm * var(--s, 1)); } .kind.pro-8 .druckkarte svg.sokrates { width: calc(46mm * var(--s, 1)); height: auto; }
+  .kind.pro-4 .druckkarte { font-size: calc(30pt * var(--s, 1)); } .kind.pro-4 .druckkarte svg { width: calc(62mm * var(--s, 1)); height: calc(62mm * var(--s, 1)); margin-bottom: calc(6mm * var(--s, 1)); } .kind.pro-4 .druckkarte svg.sokrates { width: calc(80mm * var(--s, 1)); height: auto; }
+  .kind.pro-2 .druckkarte { font-size: calc(40pt * var(--s, 1)); } .kind.pro-2 .druckkarte svg { width: calc(72mm * var(--s, 1)); height: calc(72mm * var(--s, 1)); margin-bottom: calc(6mm * var(--s, 1)); } .kind.pro-2 .druckkarte svg.sokrates { width: calc(110mm * var(--s, 1)); height: auto; }
+  .kind.pro-1 .druckkarte { font-size: calc(56pt * var(--s, 1)); } .kind.pro-1 .druckkarte svg { width: calc(130mm * var(--s, 1)); height: calc(130mm * var(--s, 1)); margin-bottom: calc(10mm * var(--s, 1)); } .kind.pro-1 .druckkarte svg.sokrates { width: calc(165mm * var(--s, 1)); height: auto; }
+
+  .erwachsen .erklaerkarte { border-radius: 5mm; padding: calc(6mm * var(--s, 1)); font-size: calc(12.5pt * var(--s, 1)); line-height: 1.45; }
+  .erwachsen .erklaerkarte .lk-kopf svg { width: calc(11mm * var(--s, 1)); height: calc(11mm * var(--s, 1)); }
+  .erwachsen .erklaerkarte h3 { font-size: calc(16pt * var(--s, 1)); }
+  .erwachsen .erklaerkarte li { margin-bottom: calc(2mm * var(--s, 1)); }
+  .erwachsen .erklaerkarte.vorstellung svg { width: calc(48mm * var(--s, 1)); }
+  .erwachsen .erklaerkarte.vorstellung h3 { font-size: calc(19pt * var(--s, 1)); }
+  .erwachsen .erklaerkarte.vorstellung p { font-size: calc(14pt * var(--s, 1)); }
+  .erwachsen.pro-2 .erklaerkarte { font-size: calc(15pt * var(--s, 1)); padding: calc(8mm * var(--s, 1)) calc(10mm * var(--s, 1)); } .erwachsen.pro-2 .erklaerkarte h3 { font-size: calc(20pt * var(--s, 1)); }
+  .erwachsen.pro-2 .erklaerkarte.vorstellung p { font-size: calc(18pt * var(--s, 1)); }
+  .erwachsen.pro-1 .erklaerkarte { font-size: calc(20pt * var(--s, 1)); padding: calc(14mm * var(--s, 1)); } .erwachsen.pro-1 .erklaerkarte h3 { font-size: calc(28pt * var(--s, 1)); } .erwachsen.pro-1 .lk-kopf svg { width: calc(18mm * var(--s, 1)); height: calc(18mm * var(--s, 1)); }
+  .erwachsen.pro-1 .erklaerkarte.vorstellung svg { width: calc(100mm * var(--s, 1)); } .erwachsen.pro-1 .erklaerkarte.vorstellung p { font-size: calc(24pt * var(--s, 1)); }
+
+  /* Infoblatt: genau eine A4-Seite */
+  .blatt-druck .blatt { max-width: none; padding: 0; box-shadow: none; font-size: 9.2pt; line-height: 1.32; }
+  .blatt-druck .lk-titel { padding-bottom: 3mm; margin-bottom: 4mm; }
+  .blatt-druck .lk-titel svg { width: 30mm; }
+  .blatt-druck .lk-titel h2 { font-size: 18pt; }
+  .blatt-druck .lk-spalten { columns: 2; column-gap: 5mm; }
+  .blatt-druck .lk-abschnitt { padding: 2mm 3.5mm 0.8mm; margin-bottom: 2.6mm; border-width: 0.4mm; border-radius: 3mm; }
+  .blatt-druck .lk-kopf svg { width: 7mm; height: 7mm; }
+  .blatt-druck .lk-kopf svg.sokrates { width: 11mm; }
+  .blatt-druck .lk-kopf h3 { font-size: 11pt; }
+  .blatt-druck .lk-abschnitt ul { margin: 1mm 0; padding-left: 4.5mm; }
+  .blatt-druck .lk-abschnitt li { margin-bottom: 0.6mm; }
+  .blatt-druck .lk-mini-karten svg { width: 6mm; height: 6mm; }
+  .blatt-druck .lk-zeile { margin: 1.6mm 0; }
+  .blatt-druck .lk-label { width: 42mm; }
+  .blatt-druck .lk-fuss { font-size: 7.5pt; margin-top: 2mm; }
+}
+
+/* ---------- Schmale Bildschirme ---------- */
+@media (max-width: 900px) {
+  .orte { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  body { font-size: 20px; }
+  .mit-blase, .buchseite .mit-blase, .schatz-oben { grid-template-columns: 1fr; }
+  .blase::before { left: 48px; top: -16px; border-left: var(--line) solid var(--ink); border-top: var(--line) solid var(--ink); border-bottom: none; }
+  .orte { grid-template-columns: 1fr; }
+  .mit-blase.kompakt { grid-template-columns: 1fr; }
+  .kompakt .szene { max-width: 360px; width: 100%; }
+  .stufen { grid-template-columns: repeat(2, 1fr); }
+  .steine li:nth-child(even) { padding-left: 0; }
+  .steine .sitzt { display: none; }
+  .leiste .knopf { padding: 6px 14px; font-size: 18px; min-height: 52px; }
+}
+
+/* =====================================================================
+   Animationen – Motion-Contract siehe DESIGN.md (Abschnitt 3)
+   Leitidee Schildkröten-Tempo: ruhig, langsam, jede Bewegung hat einen Zweck.
+   ===================================================================== */
+
+/* Sokrates lebt (nur große, direkt eingezeichnete Figuren mit Klasse .lebendig) */
+.s-mund-offen { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.lebendig .s-shell { transform-box: fill-box; transform-origin: 50% 100%; animation: atmen 4.6s ease-in-out infinite; }
+@keyframes atmen { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.015, 1.05); } }
+.lebendig .s-head { animation: wippen 4.6s ease-in-out infinite; }
+@keyframes wippen { 0%, 100% { translate: 0 0; } 50% { translate: 0 4px; } }
+.lebendig .s-kopf { transform-box: fill-box; transform-origin: 0% 70%; animation: umschauen 12s ease-in-out infinite; }
+@keyframes umschauen {
+  0%, 30%   { transform: rotate(0); }
+  36%, 46%  { transform: rotate(-8deg); }   /* schaut nach oben – zur Libelle */
+  54%, 66%  { transform: rotate(0); }
+  72%, 80%  { transform: rotate(6deg); }    /* schaut neugierig nach unten */
+  88%, 100% { transform: rotate(0); }
+}
+.lebendig .s-pupille { animation: gucken 12s ease-in-out infinite; }
+@keyframes gucken {
+  0%, 12%   { transform: translate(0, 0); }
+  16%, 24%  { transform: translate(-3px, 0); }
+  30%, 46%  { transform: translate(1px, -3px); }
+  54%, 70%  { transform: translate(2px, 1px); }
+  76%, 100% { transform: translate(0, 0); }
+}
+.lebendig .s-tail { transform-box: fill-box; transform-origin: 100% 50%; animation: wedeln 7s ease-in-out infinite; }
+@keyframes wedeln { 0%, 84%, 100% { rotate: 0deg; } 88% { rotate: 14deg; } 92% { rotate: -10deg; } 96% { rotate: 8deg; } }
+.laeuft .s-leg { animation: laufen .45s ease-in-out infinite alternate; }
+.laeuft .s-leg:nth-child(2) { animation-delay: -.45s; }
+@keyframes laufen { from { translate: 0 0; } to { translate: 0 -8px; } }
+
+/* Sokrates spricht, während vorgelesen wird */
+body.spricht .lebendig .s-mund-offen { animation: sprechen .26s ease-in-out infinite alternate; }
+@keyframes sprechen { from { opacity: 1; transform: scaleY(.2); } to { opacity: 1; transform: scaleY(1); } }
+
+/* Sokrates nickt zur Begrüßung und freut sich, wenn man ihn antippt */
+.lebendig.nickt .s-kopf { animation: nicken .55s ease-in-out 2; }
+@keyframes nicken { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(9deg); } }
+.szene > svg.lebendig { cursor: pointer; }
+.szene > svg.freut { animation: freuen .9s ease-in-out; }
+@keyframes freuen { 0%, 100% { translate: 0 0; } 25% { translate: 0 -18px; } 50% { translate: 0 0; } 70% { translate: 0 -9px; } }
+.lebendig.freut .s-kopf { animation: nicken .45s ease-in-out 2; }
+
+/* Ankommen auf der Startseite und Spazieren (Geschichte S. 7) */
+.szene > svg.kommt-an { animation: ankommen 2.8s cubic-bezier(.25,.6,.35,1) both; }
+@keyframes ankommen { from { translate: -75% 0; } to { translate: 0 0; } }
+.szene > svg.spaziert { animation: spazieren 9s ease-in-out infinite alternate; }
+@keyframes spazieren { from { translate: -3% 0; } to { translate: 9% 0; } }
+
+/* Teich-Ambiente: Wasserringe, treibendes Seerosenblatt, Libelle */
+.szene .ring { position: absolute; width: 110px; height: 22px; margin: -11px 0 0 -55px; border: 2px solid rgba(47,111,126,.4); border-radius: 50%; opacity: 0; animation: ring 7s ease-out infinite; pointer-events: none; }
+.szene .ring.r1 { left: 86%; top: 46%; }
+.szene .ring.r2 { left: 30%; top: 30%; animation-delay: 3.5s; }
+@keyframes ring { 0% { transform: scale(.25); opacity: .9; } 100% { transform: scale(1.9); opacity: 0; } }
+.szene .treibt { position: absolute; left: 8%; top: 14%; width: 15%; max-width: 70px; animation: treiben 18s ease-in-out infinite alternate; }
+@keyframes treiben { from { transform: translateX(0) rotate(-6deg); } to { transform: translateX(120%) rotate(8deg); } }
+.szene .libelle { position: absolute; left: 0; top: 10%; width: 58px; animation: fliegen 22s ease-in-out infinite; pointer-events: none; }
+@keyframes fliegen {
+  0%   { transform: translate(-80px, 30px) rotate(10deg); opacity: 0; }
+  8%   { opacity: 1; }
+  30%  { transform: translate(180px, 0) rotate(-4deg); }
+  45%  { transform: translate(260px, 24px) rotate(6deg); }
+  70%  { transform: translate(430px, -6px) rotate(-6deg); opacity: 1; }
+  85%, 100% { transform: translate(720px, 10px) rotate(4deg); opacity: 0; }
+}
+.l-fluegel { transform-box: fill-box; transform-origin: center; animation: flattern .18s ease-in-out infinite alternate; }
+@keyframes flattern { from { opacity: 1; } to { opacity: .55; } }
+
+/* Alarmanlage: Schallwellen, solange sie „piept“ */
+.alarm .wellen-alarm { position: absolute; left: 50%; top: 2px; width: 92px; height: 46px; margin-left: -46px; opacity: 0; pointer-events: none; }
+.alarm.an .wellen-alarm { animation: piepen 2.6s ease-out infinite; }
+@keyframes piepen { 0% { opacity: 0; transform: scale(.85); } 30% { opacity: .9; } 100% { opacity: 0; transform: scale(1.15); } }
+
+/* Sprechblase erscheint mit einem kleinen „Plopp“ */
+.pop { animation: plopp .4s cubic-bezier(.3,1.5,.5,1); }
+@keyframes plopp { from { opacity: .3; transform: scale(.95); } to { opacity: 1; transform: none; } }
+
+/* Listen erscheinen nacheinander (--i wird per JS gesetzt) */
+.nacheinander > li { animation: hoch .45s cubic-bezier(.2,.7,.3,1) both; animation-delay: calc(var(--i, 0) * 45ms + .1s); }
+
+/* Orte: Bild hüpft beim Drüberfahren */
+.ort:hover .bild svg, .ort:focus-visible .bild svg { animation: hopsen .7s ease-in-out; }
+@keyframes hopsen { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-7px) rotate(-4deg); } 70% { transform: translateY(1px); } }
+.ort .bild { transition: background-color .3s; }
+.ort:hover .bild { background: #CBE6EC; }
+
+/* Geschichte: Seiten blättern */
+.blaettert-vor .text, .blaettert-vor #geschichte-bild { animation: von-rechts .45s cubic-bezier(.2,.7,.3,1) both; }
+.blaettert-zurueck .text, .blaettert-zurueck #geschichte-bild { animation: von-links .45s cubic-bezier(.2,.7,.3,1) both; }
+.blaettert-vor #geschichte-bild, .blaettert-zurueck #geschichte-bild { animation-delay: .05s; }
+@keyframes von-rechts { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: none; } }
+@keyframes von-links { from { opacity: 0; transform: translateX(-26px); } to { opacity: 1; transform: none; } }
+.punkte li { transition: background-color .3s, transform .3s; }
+.punkte li.jetzt { transform: scale(1.35); }
+
+/* Panzer-Meter: gewählte Stufe hüpft */
+.stufe[aria-pressed="true"] svg { animation: hopsen .6s ease-in-out; }
+
+/* Mut-Steine: Stern ploppt auf, Funken, Wasserring, Sokrates hüpft hinterher */
+.stein .form { position: relative; }
+.stein.neu .form svg { animation: stern-plopp .7s cubic-bezier(.3,1.6,.5,1) both; }
+@keyframes stern-plopp { from { transform: scale(0) rotate(-40deg); } to { transform: none; } }
+.stein.neu .form::after { content: ""; position: absolute; inset: -6px; border-radius: inherit; border: 3px solid rgba(47,111,126,.5); animation: wasserring 1s ease-out both; }
+@keyframes wasserring { from { transform: scale(.9); opacity: 1; } to { transform: scale(1.6, 1.8); opacity: 0; } }
+.funke { position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; margin: -7px; pointer-events: none; animation: funke .9s ease-out both; }
+.funke svg { width: 100%; height: 100%; }
+@keyframes funke { from { transform: rotate(var(--w)) translateY(0) scale(.4); opacity: 1; } to { transform: rotate(var(--w)) translateY(-58px) scale(1); opacity: 0; } }
+.steine .sitzt.hopst { animation: hopsen-gross .8s ease-in-out; }
+@keyframes hopsen-gross { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-16px); } }
+
+/* Mut-Schatz: neues Steinchen fällt ins Glas */
+.glas .faellt { animation: fallen 1s cubic-bezier(.45,0,.7,1) both; }
+@keyframes fallen { 0% { translate: 0 -240px; } 72% { translate: 0 5px; } 86% { translate: 0 -5px; } 100% { translate: 0 0; } }
+.glas.voll { animation: leuchten 3s ease-in-out infinite; }
+@keyframes leuchten { 0%, 100% { filter: drop-shadow(0 0 0 rgba(242,181,68,0)); } 50% { filter: drop-shadow(0 0 14px rgba(242,181,68,.7)); } }
+.schatz-lob { min-height: 1.6em; font-weight: 700; color: var(--moss); margin: 0; }
+
+/* Ruhe-Ecke: Sokrates schaukelt auf dem Wasser, Kreis zieht Ringe */
+.ruhe-teich .schwimmt { animation: schaukeln 5s ease-in-out infinite; }
+@keyframes schaukeln { 0%, 100% { translate: 0 0; rotate: -1.5deg; } 50% { translate: 0 -7px; rotate: 1.5deg; } }
+.kreis { position: relative; }
+.kreis.atmet::after { content: ""; position: absolute; inset: -8px; border-radius: 50%; border: 3px solid rgba(47,111,126,.35); animation: kreisring 5s ease-out infinite; }
+@keyframes kreisring { from { transform: scale(1); opacity: .9; } to { transform: scale(1.5); opacity: 0; } }
+
+/* Karten: leicht kippen beim Drüberfahren */
+.karte:hover { transform: translateY(-3px) rotate(-1.2deg); }
+.karte svg { transition: transform .3s; }
+.karte:hover svg { transform: scale(1.08); }
+
+/* Dialoge gleiten weich auf */
+dialog[open] { animation: dialog-auf .3s cubic-bezier(.2,.8,.3,1); }
+dialog[open]::backdrop { animation: abdunkeln .3s ease-out; }
+@keyframes dialog-auf { from { opacity: 0; transform: translateY(16px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes abdunkeln { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- Ruhig-Modus: Einstellung „Ruhig“ oder System „weniger Bewegung“ ---------- */
+body.ruhig *, body.ruhig *::before, body.ruhig *::after { animation: none !important; transition: none !important; }
+body.ruhig .ring, body.ruhig .libelle, body.ruhig .funke { display: none; }
+body.ruhig .kreis, body.ruhig .kreis.gross { transform: scale(.95); }
