@@ -3,14 +3,26 @@
 Stand: 2026-10-04 · Methode: KI-Regeln `deep-research` → `source-evaluation` / `claim-verification` → `research-synthesis`
 Plan: [`00-recherche-plan.md`](00-recherche-plan.md)
 
-> **Wichtige Einschränkung zur Evidenz:** In der Recherche-Umgebung war das direkte Öffnen der Quellseiten
-> durch die Netzwerk-Richtlinie blockiert. Alle Aussagen stützen sich auf Suchergebnis-Auszüge mehrerer,
-> möglichst unabhängiger Quellen. Nach den KI-Regeln (`claim-verification`) gilt deshalb: Kernaussagen, die
-> von mehreren unabhängigen Quellen gestützt werden, sind als **gestützt** markiert; Einzelbefunde und
-> Zahlen nur als **teilweise geprüft**. Die Originalquellen sind verlinkt und sollten bei Bedarf gegengelesen
-> werden.
+> **Wichtige Einschränkung zur Evidenz:** Die Erst-Recherche entstand teilweise aus Suchergebnis-Auszügen.
+> Für den Public-Release-Audit am 04.10.2026 wurden die **zentralen Claims direkt gegengeprüft**: Volltexte der
+> systematischen Übersichtsarbeit von 2023 und der Meta-Analyse von 2025, das ASHA Practice Portal, die
+> NHS-Fachinformation, das SMA Educator Toolkit sowie der aktuelle Schul-Leitfaden von Mutismus e.V.
+> Nicht jede ältere oder ergänzende Einzelquelle wurde im Volltext erneut geprüft. Aussagen bleiben deshalb
+> claim-spezifisch bewertet; Unsicherheiten werden nicht durch eine pauschale Freigabe verdeckt.
 
-Legende: ✅ gestützt (mehrere unabhängige Quellen) · 🟡 teilweise geprüft (eine Quelle / nur Auszug) · ⚠️ Konflikt / Spannung
+Legende: ✅ direkt bzw. durch hochwertige Fach-/Originalquellen gestützt · 🟡 begrenzte Evidenz, Einzelbefund,
+indirekte Übertragung oder nicht vollständig gegengeprüft · ⚠️ Konflikt / Spannung
+
+## Public-Release-Audit der Kernclaims (04.10.2026)
+
+| Kernclaim | Ergebnis der direkten Nachprüfung | Direkt geprüfte Quelle |
+|---|---|---|
+| Selektiver Mutismus ist angstbezogen und kann stark situationsabhängig sein; nonverbale Kommunikation kann in belastenden Situationen erhalten bleiben. | ✅ bestätigt | [ASHA Practice Portal](https://www.asha.org/practice-portal/clinical-topics/selective-mutism/), [SMA Educator Toolkit](https://www.selectivemutism.org/resources/archive/online-library/educator-toolkit-pdf/) |
+| Graduierte Exposition, Stimulus Fading und Shaping sind etablierte verhaltensorientierte Bausteine. | ✅ bestätigt | [ASHA Practice Portal](https://www.asha.org/practice-portal/clinical-topics/selective-mutism/), [NHS](https://www.nhs.uk/mental-health/conditions/selective-mutism/) |
+| Kombinierte systemische/verhaltensorientierte Interventionen zeigen bei Kindern vielversprechende Effekte; die Studienlage ist aber noch klein und heterogen. | ✅ bestätigt | [Hipolito et al. 2023 – Volltext](https://pmc.ncbi.nlm.nih.gov/articles/PMC10501694/) |
+| Meta-Analyse 2025: 12 Studien, 472 Teilnehmende; SMQ-Gesamtscore mit großem standardisiertem Effekt (Hedges g = 1,00). Web-basierte Behandlung zeigte in dieser Analyse weniger Verbesserung als Präsenzbehandlung. | ✅ bestätigt; Generalisierbarkeit weiterhin begrenzt | [Iimura et al. 2025 – Volltext](https://pmc.ncbi.nlm.nih.gov/articles/PMC11969985/) |
+| Etwa 5 Sekunden Wartezeit nach einer Frage ist eine konkrete Praxisempfehlung, kein biologischer oder universeller Grenzwert. | ✅ als Praxisregel bestätigt | [SMA Educator Toolkit, S. 14](https://www.selectivemutism.org/wp-content/uploads/2022/10/20221019_SMA_Educator_ToolKit_SinglePagesRevisedOct2022.pdf) |
+| Für Schule werden Druckreduktion, Teilhabe, Hilfsmittel und Zusammenarbeit mit Eltern/Fachpersonen empfohlen. | ✅ bestätigt | [Mutismus e.V.: Leitfaden Schule 2026](https://www.mutismus.de/leitfaden-schule) |
 
 ---
 
@@ -48,9 +60,9 @@ Legende: ✅ gestützt (mehrere unabhängige Quellen) · 🟡 teilweise geprüft
 
 | Erkenntnis | Status | Quellen |
 |---|---|---|
-| **Nicht-medikamentöse Behandlung ist erste Wahl.** Für Kinder von 3–9 Jahren sind **kombinierte verhaltenstherapeutische und systemische Ansätze** (Eltern, Schule einbezogen) vielversprechend für Remission und mehr Sprechen. | ✅ | [Hipolito et al. 2023, JCPP Advances](https://ora.ox.ac.uk/objects/uuid:94f28515-a1e9-44fb-9483-f56956720e20), [ASHA Evidence Map](https://apps.asha.org/EvidenceMaps/Articles/ArticleSummary/e188907f-df57-ee11-8147-005056834e2b) |
-| **Grenzen der Evidenz:** wenige ausreichend große Studien, uneinheitliche Messinstrumente, Lücken in der Berichterstattung → keine endgültige Antwort, „was genau wirkt“. | ✅ | [Hipolito et al. 2023](https://ora.ox.ac.uk/objects/uuid:94f28515-a1e9-44fb-9483-f56956720e20) |
-| Meta-Analyse 2025 zu Verhaltenstherapie: deutliche Verbesserung (großer Effekt, Hedges' g ≈ 1,0 auf dem SMQ-Fragebogen). **Web-basierte Behandlung brachte weniger Verbesserung als Präsenz-Behandlung.** | 🟡 | [Child Adolesc Psychiatry Ment Health 2025](https://link.springer.com/article/10.1186/s13034-025-00891-8) |
+| **Nicht-medikamentöse Behandlung ist erste Wahl.** Für Kinder von 3–9 Jahren sind **kombinierte verhaltenstherapeutische und systemische Ansätze** (Eltern, Schule einbezogen) vielversprechend für Remission und mehr Sprechen. | ✅ | [Hipolito et al. 2023 – Volltext](https://pmc.ncbi.nlm.nih.gov/articles/PMC10501694/), [ASHA Practice Portal](https://www.asha.org/practice-portal/clinical-topics/selective-mutism/) |
+| **Grenzen der Evidenz:** wenige ausreichend große Studien, uneinheitliche Messinstrumente, Lücken in der Berichterstattung → keine endgültige Antwort, „was genau wirkt“. | ✅ | [Hipolito et al. 2023 – Volltext](https://pmc.ncbi.nlm.nih.gov/articles/PMC10501694/) |
+| Meta-Analyse 2025 zu Verhaltenstherapie: deutliche Verbesserung (großer Effekt, Hedges' g ≈ 1,0 auf dem SMQ-Fragebogen). **Web-basierte Behandlung brachte in dieser Analyse weniger Verbesserung als Präsenz-Behandlung.** | ✅ | [Iimura et al. 2025 – Volltext](https://pmc.ncbi.nlm.nih.gov/articles/PMC11969985/) |
 | **Kerntechniken:** schrittweise Annäherung (Exposition in kleinen Schritten), *Stimulus Fading* / „Sliding-in“ (neue Person oder neuer Ort wird langsam dazugenommen), *Shaping* (Verstärken von Vorstufen: Geräusch → Flüstern → Wort), positive Verstärkung. | ✅ | [SMIRA: Sliding-in Handout](http://www.selectivemutism.org.uk/wp-content/uploads/2017/09/Handout-16-The-Sliding-in-Technique-and-Progress-Charts.pdf), [Johnson & Wintgens: SM Resource Manual](https://www.selectivemutism.org/resources/archive/books/the-selective-mutism-resource-manual-2nd-edition/), [Child Mind Institute](https://childmind.org/article/brave-talking-helps-kids-conquer-mutism/) |
 | **PCIT-SM** (Kurtz): erst spielerische Beziehungsphase **ohne** Sprechanforderung (CDI), danach gezielte Sprechförderung (VDI) mit Wahlfragen, Lob und kleinen Schritten. | ✅ | [Kurtz: PCIT for Anxiety](https://pcit.ucdavis.edu/wp-content/uploads/2012/08/2_PCIT-Adapted-for-Anxiety-Kurtz-v-UC-Davis-PCIT-pdf.pdf), [Boston Child Study Center](https://bostonchildstudycenter.com/child-services/pcit-mutism/), [Catchpole et al. 2019](https://www.kurtzpsychology.com/wp-content/uploads/2019/07/Catchpole-et-al-PCIT-J-Anx-Dis-2019.pdf) |
 | **Deutschsprachige Ansätze:** SYMUT (Systemische Mutismus-Therapie), KoMut (Kooperative Mutismustherapie), DortMuT. Gemeinsame Prinzipien: zu Beginn **Sprechdruck herausnehmen**, Ist-Zustand akzeptieren, langsam und systematisch aufbauen, Kind bestimmt die Schritte mit, „angemessene Anforderung ohne Überforderung“. | ✅ | [IMF-Leitlinien](https://www.mutismus-imf.de/imf-leitlinien.php), [Thieme: Behandlungsmethoden](https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0043-103489), [StillLeben e.V.: KoMut-Konzept](https://www.selektiver-mutismus.de/wp-content/uploads/2019/07/Konzept_Komut_2012.pdf) |
@@ -93,12 +105,13 @@ gefeiert. → Für die Webseite ist genau diese Schnittmenge die sichere Grundla
 |---|---|
 | Das Kind so annehmen, wie es gerade kommuniziert; nonverbale Antworten (Zeigen, Nicken, Mimik) zugewandt beantworten | Zum Sprechen auffordern, überreden, „Sag doch mal …“ – erhöht den Druck |
 | **Wahlfragen** statt offener Fragen („Apfel oder Banane?“) | Offene Fragen („Was hast du heute gemacht?“) in angespannten Situationen |
-| **Wartezeit** geben (mindestens ca. 5 Sekunden) | Für das Kind antworten („Retten“) – nimmt kurzfristig Angst, verhindert aber Fortschritt |
+| **Wartezeit** geben (etwa 5 Sekunden als konkrete Praxisregel; kein universeller Grenzwert) | Für das Kind antworten („Retten“) – kann kurzfristig entlasten, aber auch Vermeidung stabilisieren |
 | **Konkretes Lob** („Danke, dass du mir gezeigt hast, welches Eis du möchtest“) | Etiketten wie „schüchtern“ oder „sie spricht nicht“ – v. a. in Hörweite |
 | Hilfsmittel zur Kommunikation anbieten (Karten, Schreiben), Vereinbarungen treffen | Bei Erstarren weiter nachbohren – dann Fragen pausieren |
 
 Quellen: [Child Mind Institute: Parents' Guide](https://childmind.org/guide/parents-guide-how-to-help-a-child-with-selective-mutism/),
 [Selective Mutism Association: 7 Tips](https://www.selectivemutism.org/how-to-help-child-with-selective-mutism/),
+[SMA Educator Toolkit – 5-Sekunden-Regel](https://www.selectivemutism.org/wp-content/uploads/2022/10/20221019_SMA_Educator_ToolKit_SinglePagesRevisedOct2022.pdf),
 [Shropshire NHS](https://www.shropscommunityhealth.nhs.uk/chslt-selective-mutism),
 [swissmom](https://www.swissmom.ch/de/kind/sprachentwicklung/selektiver-mutismus-100574),
 [Mutismus Selbsthilfe Deutschland: Leitfaden für Pädagogen](https://www.mutismus.de/sites/default/files/2022-04/Leitfaden%20f%C3%BCr%20Paedagogen_web.pdf),
@@ -123,7 +136,7 @@ nonverbal), vom Kind selbst eingetragen, nie an „Sprechen“ allein gekoppelt.
 | **Therapeutische Spiele (KVT-basiert)** reduzierten Angst gegenüber keiner Intervention signifikant – bei **niedriger Evidenzqualität**. | 🟡 | [JMIR Serious Games 2022](https://games.jmir.org/2022/1/e29137) |
 | Digitale Spiele zur **Emotionsregulation** bei Kindern: kleiner Effekt, v. a. bei Kindern mit Angstrisiko. | 🟡 | [JMIR Serious Games 2022: Emotion Regulation](https://games.jmir.org/2022/3/e31456) |
 | SM-spezifisch: In einer Pilotstudie (n = 15) zeigten Kinder, die beim Shaping **Apps** nutzten, tendenziell weniger Angst. Spiele und Apps gelten als hilfreiche Begleitwerkzeuge **innerhalb** der Therapie. | 🟡 (kleine Pilotstudie) | [Behavior Therapy 2018: Mobile Apps](https://pubmed.ncbi.nlm.nih.gov/30316494/) |
-| Web-basierte SM-Behandlung schnitt schwächer ab als Präsenz-Behandlung (siehe T2). | 🟡 | [Meta-Analyse 2025](https://link.springer.com/article/10.1186/s13034-025-00891-8) |
+| Web-basierte SM-Behandlung schnitt in der Meta-Analyse 2025 schwächer ab als Präsenz-Behandlung (siehe T2); daraus folgt nicht, dass digitale Begleitmaterialien unwirksam sind. | ✅ für den Studienbefund | [Iimura et al. 2025 – Volltext](https://pmc.ncbi.nlm.nih.gov/articles/PMC11969985/) |
 | **UX für 6–8-Jährige** („Leseanfänger“): einfache, kurze Texte auf Lesestand des Kindes; Schrift mindestens ca. 14 pt; große Klickflächen (für junge Kinder ca. 2 × 2 cm empfohlen). | 🟡 | [NN/g: Children's UX](https://www.nngroup.com/articles/childrens-websites-usability-issues/), [NN/g: Physical Development](https://www.nngroup.com/articles/children-ux-physical-development/), [NN/g: Kids' Cognition](https://www.nngroup.com/articles/kids-cognition/) |
 
 ## T6 – Ruhe- und Atemübungen
@@ -185,30 +198,31 @@ sondern einladen („Das kann helfen, wenn dein Bauch kribbelt“).
 | Teilfrage | Coverage | Offene Punkte |
 |---|---|---|
 | T1 Was ist SM | gut | Zahlen variieren je nach Studie; Originale nicht geöffnet |
-| T2 Behandlung | gut | Volltexte der Meta-Analysen nicht gelesen; Effektgrößen nur aus Auszügen |
+| T2 Behandlung | gut | Systematic Review 2023 und Meta-Analyse 2025 im Volltext gegengeprüft; insgesamt weiterhin wenige große RCTs und heterogene Interventionen |
 | T3 Kindgerechte Erklärung | gut | Keine Studie, die eine bestimmte *Metapher* als überlegen zeigt (Praxiswissen) |
 | T4 Do's & Don'ts | gut | Konflikt zu Belohnungen eingeordnet |
 | T5 Digitales / UX | mittel | Keine Studie zu *Psychoedukations-Webseiten* speziell für SM gefunden |
 | T6 Atemübungen | mittel | Daten v. a. für ältere Kinder (9–13 J.) |
 
-**Nicht recherchiert (out of scope):** Medikamente, Diagnostik, Schulrecht/Nachteilsausgleich.
+**Nicht systematisch recherchiert (out of scope):** Medikamente und Diagnostik. Schulrecht wurde nicht bundeslandübergreifend rechtsvergleichend geprüft; Hinweise zum Nachteilsausgleich in T7 sind daher praktische Orientierung, keine Rechtsberatung.
 
 ---
 
 ## T7 – Nachtrag: Empfehlungen für Lehrkräfte (Stand 2026-10-04)
 
-Grundlage für das Infoblatt und die Erklär-Karten für Lehrkräfte. Gleiche Einschränkung wie oben: nur
-Suchergebnis-Auszüge, Originale nicht geöffnet.
+Grundlage für das Infoblatt und die Erklär-Karten für Lehrkräfte. Für den Public-Release-Audit wurden die
+zentralen schulischen Empfehlungen zusätzlich mit dem aktuellen Schul-Leitfaden von Mutismus e.V. (2026)
+und dem SMA Educator Toolkit direkt gegengeprüft.
 
 | Empfehlung | Status | Quellen |
 |---|---|---|
-| Druck herausnehmen – beim Kind **und** bei sich selbst („ich muss sie zum Sprechen bringen“); Kind so annehmen, wie es gerade kommuniziert. | ✅ | [SMIRA](https://www.selectivemutism.org.uk/information-for-parents/), [Child Mind: Teacher's Guide](https://childmind.org/guide/teachers-guide-to-selective-mutism/) |
+| Druck herausnehmen – beim Kind **und** bei sich selbst („ich muss sie zum Sprechen bringen“); Kind so annehmen, wie es gerade kommuniziert. | ✅ | [Mutismus e.V.: Leitfaden Schule 2026](https://www.mutismus.de/leitfaden-schule), [SMA Educator Toolkit](https://www.selectivemutism.org/resources/archive/online-library/educator-toolkit-pdf/) |
 | **Wenn das Kind spricht:** kein Aufhebens machen, ruhig und ganz normal auf den *Inhalt* antworten („Danke“, weitermachen). Lob eher leise und unter vier Augen. | ✅ | [SMIRA / Johnson](https://www.selectivemutism.org.uk/information-for-parents/), [Bucks NHS Pack](https://www.buckshealthcare.nhs.uk/cyp/wp-content/uploads/sites/6/2022/11/Situational-Mutism-Settings-and-Parents-Pack_V3.pdf), [Kidshealth: Factsheet for Schools](https://kidshealth.org/en/parents/mutism-factsheet.html) |
 | **Beim Erstarren:** nicht vor der Klasse auffordern („Sag doch nur ein Wort“), Aufmerksamkeit wegnehmen, Zeit geben, Ja/Nein- oder Zeige-Möglichkeit anbieten, freundlich weitermachen. Erstarren ist eine unwillkürliche Angstreaktion. | ✅ | [Child Mind: Teacher's Guide](https://childmind.org/guide/teachers-guide-to-selective-mutism/), [Kidshealth](https://kidshealth.org/en/parents/mutism-factsheet.html), [PMC: Physical Freezing](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12837469/) |
 | **Nonverbale Beteiligung** erlauben (Nicken, Zeigen, Schreiben, vereinbarte Zeichen/Karten). | ✅ | [SMA Educator Toolkit](https://www.selectivemutism.org/wp-content/uploads/2022/10/20221019_SMA_Educator_ToolKit_SinglePagesRevisedOct2022.pdf), [Mutismus Selbsthilfe: Pädagogen](https://www.mutismus.de/paedagogen) |
 | **Toilette:** vorher eine Regel vereinbaren (Zeichen, Karte oder „darf ohne Fragen gehen“). | 🟡 | [Child Mind: Back to School](https://childmind.org/article/tips-for-helping-kids-with-selective-mutism-go-back-to-school/) |
 | Kleingruppen und ein vertrautes Kind als **Partner**; 1:1-Kontakte statt Aufmerksamkeit vor der ganzen Klasse; Kind nicht herausstellen. | ✅ | [SMA Toolkit](https://www.selectivemutism.org/wp-content/uploads/2022/10/20221019_SMA_Educator_ToolKit_SinglePagesRevisedOct2022.pdf), [Child Mind](https://childmind.org/guide/teachers-guide-to-selective-mutism/) |
-| **Mündliche Leistungen:** in Deutschland ist ein **Nachteilsausgleich** möglich, z. B. schriftliche oder geflüsterte Antworten anerkennen, Prüfungen 1:1 oder in Kleingruppe, Audio-/Videoaufnahmen von zu Hause. Antrag schriftlich bei der Schulleitung, meist jährlich neu. Regeln je nach Bundesland. | 🟡 | [Lehrerfortbildung BW: Beispiel Nachteilsausgleich Mutismus](https://lehrerfortbildung-bw.de/st_inklusion/fb1/8-mat/04b_BspNTAMutismus.pdf), [mittendrin Köln](https://www.mittendrin-koeln.de/beratung/beratungsthemen/detail/nachteilsausgleiche) |
+| **Mündliche Leistungen:** Je nach Bundesland, Schule und Einzelfall können Nachteilsausgleich bzw. angepasste Leistungsformen in Betracht kommen, z. B. schriftliche, geflüsterte oder 1:1-Antworten. Das konkrete Verfahren ist landesrechtlich unterschiedlich und muss vor Ort geklärt werden. | 🟡 | [Mutismus e.V.: Leitfaden Schule 2026](https://www.mutismus.de/leitfaden-schule), [Lehrerfortbildung BW: Beispiel Nachteilsausgleich Mutismus](https://lehrerfortbildung-bw.de/st_inklusion/fb1/8-mat/04b_BspNTAMutismus.pdf) |
 | Schriftliche Leistungen sind in der Regel nicht betroffen. | 🟡 | [Lehrerfortbildung BW](https://lehrerfortbildung-bw.de/st_inklusion/fb1/8-mat/04b_BspNTAMutismus.pdf) |
 
 **Einordnung zum Lob:** Für Eltern empfiehlt die Verhaltenstherapie konkretes Lob (siehe T4). In der Klasse
