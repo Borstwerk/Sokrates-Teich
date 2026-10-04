@@ -52,6 +52,13 @@ Wenn das Kind keine Lust hat: aufhören. Sokrates wartet.
   üben, bis er leicht ist. Die ersten Steine sind bewusst **ohne Worte**.
 - **Mut-Schatz:** Jeden mutigen Moment eintragen – auch *genickt*, *gezeigt* oder *hingegangen*.
   Geschaffte Mut-Steine landen automatisch im Glas.
+- **Spiele:** kurz (3–5 Minuten), ohne Zeitdruck, ohne Verlieren, niemand muss sprechen. Das
+  *Seerosen-Boot* übt ruhiges Atmen, der *Alarmanlagen-Detektiv* zeigt, wo die Alarmanlage laut oder leise
+  ist (das Ergebnis der letzten Runde steht unter *Für Erwachsene*), *Ohne Worte* übt Antworten mit Daumen
+  und Zeigen.
+- **Dein Teich:** Nach jedem Spiel findet Sokrates etwas für den Teich. Für echten Mut gibt es besondere
+  Schätze (Glühwürmchen, Goldstein, Stern, Regenbogen). Das Kind legt die Schätze selbst in seinen Teich.
+  Wer das nicht möchte: *Für Erwachsene → Spiele und Teich-Schätze anzeigen* ausschalten.
 
 **Was hilft (aus der Fachliteratur):**
 

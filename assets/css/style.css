@@ -59,7 +59,6 @@ a { color: var(--water-deep); }
   font-weight: 700; font-size: 21px; line-height: 1.2; text-decoration: none; cursor: pointer;
   background: var(--weiss); color: var(--ink); transition: transform .15s;
 }
-.knopf:hover { transform: translateY(-2px); }
 .knopf:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(46,58,47,.18); }
 .knopf.haupt { background: var(--moss); color: var(--weiss); }
 .knopf.klein { min-height: 48px; padding: 6px 16px; font-size: 18px; }
@@ -129,7 +128,6 @@ a { color: var(--water-deep); }
   padding: 14px 16px; border-radius: 24px; border: var(--line) solid var(--ink); box-shadow: var(--paper-shadow);
   background: var(--weiss); color: var(--ink); text-decoration: none; transition: transform .15s;
 }
-.ort:hover { transform: translateY(-3px); }
 .ort .bild { flex: none; width: 82px; height: 82px; border-radius: 50%; background: var(--water); border: var(--line) solid var(--ink); display: grid; place-items: center; overflow: hidden; }
 .ort .bild svg { width: 60px; height: 60px; }
 .ort .bild svg.sokrates { width: 76px; height: auto; }
@@ -162,7 +160,6 @@ a { color: var(--water-deep); }
 .stufe svg { width: 100%; max-width: 110px; height: auto; }
 .stufe .nr { font-size: 15px; color: var(--ink-soft); }
 .stufe[aria-pressed="true"] { background: var(--star); }
-.stufe:hover { transform: translateY(-2px); }
 
 /* ---------- Mut-Steine ---------- */
 .weg-wahl { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 24px; }
@@ -178,7 +175,6 @@ a { color: var(--water-deep); }
   flex: 0 1 auto; display: flex; align-items: center; gap: 16px; text-align: left;
   background: transparent; border: none; padding: 4px; cursor: pointer; border-radius: 22px; font-size: 20px; line-height: 1.35;
 }
-.stein:hover .form { transform: translateY(-2px); }
 .stein .form {
   flex: none; width: 88px; height: 66px; display: grid; place-items: center;
   background: var(--stone); border: var(--line) solid var(--ink); box-shadow: var(--paper-shadow);
@@ -222,7 +218,6 @@ a { color: var(--water-deep); }
   padding: 18px 12px; background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 22px; box-shadow: var(--paper-shadow);
   font-weight: 700; font-size: 21px; line-height: 1.3; text-align: center; cursor: pointer; transition: transform .15s;
 }
-.karte:hover { transform: translateY(-2px); }
 .karte svg { width: 84px; height: 84px; }
 .karte svg.sokrates { width: 120px; height: auto; }
 .karte-gross { text-align: center; }
@@ -241,7 +236,6 @@ a { color: var(--water-deep); }
 .arten { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
 .art { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 6px; background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 18px; box-shadow: var(--paper-shadow); cursor: pointer; font-weight: 700; font-size: 18px; line-height: 1.25; }
 .art svg { width: 54px; height: 54px; }
-.art:hover { background: var(--water); }
 
 /* ---------- Dialog ---------- */
 dialog {
@@ -324,6 +318,12 @@ details summary { font-weight: 700; cursor: pointer; min-height: 40px; display: 
 .erklaerkarte.vorstellung svg { width: 150px; height: auto; margin: 0 auto; }
 .erklaerkarte.vorstellung h3 { font-size: 24px; margin: 6px 0; }
 .erklaerkarte.vorstellung p { margin: 0 0 4px; font-size: 19px; }
+
+/* ---------- Als App auf dem Home-Bildschirm (iPad/Tablet) ---------- */
+@media (display-mode: standalone) {
+  .leiste { padding-top: calc(16px + env(safe-area-inset-top)); padding-left: calc(16px + env(safe-area-inset-left)); padding-right: calc(16px + env(safe-area-inset-right)); }
+  main { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+}
 
 /* ---------- Druck ---------- */
 #druck { display: none; }
@@ -476,10 +476,8 @@ body.spricht .lebendig .s-mund-offen { animation: sprechen .26s ease-in-out infi
 .nacheinander > li { animation: hoch .45s cubic-bezier(.2,.7,.3,1) both; animation-delay: calc(var(--i, 0) * 45ms + .1s); }
 
 /* Orte: Bild hüpft beim Drüberfahren */
-.ort:hover .bild svg, .ort:focus-visible .bild svg { animation: hopsen .7s ease-in-out; }
 @keyframes hopsen { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-7px) rotate(-4deg); } 70% { transform: translateY(1px); } }
 .ort .bild { transition: background-color .3s; }
-.ort:hover .bild { background: #CBE6EC; }
 
 /* Geschichte: Seiten blättern */
 .blaettert-vor .text, .blaettert-vor #geschichte-bild { animation: von-rechts .45s cubic-bezier(.2,.7,.3,1) both; }
@@ -520,9 +518,7 @@ body.spricht .lebendig .s-mund-offen { animation: sprechen .26s ease-in-out infi
 @keyframes kreisring { from { transform: scale(1); opacity: .9; } to { transform: scale(1.5); opacity: 0; } }
 
 /* Karten: leicht kippen beim Drüberfahren */
-.karte:hover { transform: translateY(-3px) rotate(-1.2deg); }
 .karte svg { transition: transform .3s; }
-.karte:hover svg { transform: scale(1.08); }
 
 /* Dialoge gleiten weich auf */
 dialog[open] { animation: dialog-auf .3s cubic-bezier(.2,.8,.3,1); }
@@ -530,7 +526,178 @@ dialog[open]::backdrop { animation: abdunkeln .3s ease-out; }
 @keyframes dialog-auf { from { opacity: 0; transform: translateY(16px) scale(.97); } to { opacity: 1; transform: none; } }
 @keyframes abdunkeln { from { opacity: 0; } to { opacity: 1; } }
 
+/* Drüberfahr-Effekte nur mit Maus – auf Tablets bliebe der Zustand nach dem Antippen hängen */
+@media (hover: hover) and (pointer: fine) {
+  .knopf:hover { transform: translateY(-2px); }
+  .ort:hover { transform: translateY(-3px); }
+  .stufe:hover { transform: translateY(-2px); }
+  .stein:hover .form { transform: translateY(-2px); }
+  .karte:hover { transform: translateY(-2px); }
+  .art:hover { background: var(--water); }
+  .ort:hover .bild svg, .ort:focus-visible .bild svg { animation: hopsen .7s ease-in-out; }
+  .ort:hover .bild { background: #CBE6EC; }
+  .karte:hover { transform: translateY(-3px) rotate(-1.2deg); }
+  .karte:hover svg { transform: scale(1.08); }
+}
+.ort:focus-visible .bild svg { animation: hopsen .7s ease-in-out; }
+
+/* =====================================================================
+   Spiele und Teich-Schätze
+   ===================================================================== */
+.blase.ohne-pfeil { margin: 4px 0 18px; }
+.blase.ohne-pfeil::before { display: none; }
+.knopf:disabled { cursor: default; opacity: .55; }
+.knopf:disabled[aria-pressed="true"] { opacity: 1; }
+.mini-vorlesen { min-height: 44px; padding: 4px 10px; }
+.mini-vorlesen svg { width: 24px; height: 24px; }
+
+/* Fund-Hinweis „Sokrates hat … gefunden!“ */
+.fund { display: flex; align-items: center; gap: 12px; margin: 12px 0 0; padding: 8px 14px; background: #FCE9C2; border: 2px solid var(--ink); border-radius: 16px; font-size: 18px; line-height: 1.35; font-weight: 700; }
+.fund.mut { background: #FFF4C9; box-shadow: 0 0 0 4px rgba(242,181,68,.35); }
+.fund-bild { flex: none; width: 48px; height: 48px; }
+.fund-bild svg { width: 100%; height: 100%; }
+.fund a { font-weight: 700; white-space: nowrap; }
+
+/* Dein Teich */
+.mein-teich { position: relative; background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 10; min-height: 260px; margin: 6px 0 10px; }
+.mein-teich .ufer { position: absolute; left: 0; right: 0; bottom: 0; height: 18%; background: var(--sand); border-top: var(--line) solid var(--ink); }
+.mein-teich > svg.sokrates { position: absolute; left: 2%; bottom: 3%; width: 30%; height: auto; cursor: pointer; }
+.mein-teich .ring { position: absolute; width: 110px; height: 22px; margin: -11px 0 0 -55px; border: 2px solid rgba(47,111,126,.4); border-radius: 50%; opacity: 0; animation: ring 7s ease-out infinite; pointer-events: none; }
+.mein-teich .ring.r1 { left: 70%; top: 40%; }
+.mein-teich .ring.r2 { left: 40%; top: 24%; animation-delay: 3.5s; }
+.mt-ding { position: absolute; z-index: 2; width: clamp(48px, 9%, 96px); aspect-ratio: 1; padding: 0; border: 0; border-radius: 50%; background: transparent; transform: translate(-50%, -50%); cursor: grab; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.mt-ding svg { width: 100%; height: 100%; pointer-events: none; }
+.mt-ding.gewaehlt { outline: 3px dashed var(--ink); outline-offset: 4px; }
+.mt-ding.zieht { z-index: 3; cursor: grabbing; scale: 1.12; }
+.mt-ding.leuchtet svg { animation: gluehen 3s ease-in-out infinite; }
+.mt-ding.abgesetzt { animation: absetzen .45s cubic-bezier(.3,1.5,.5,1); }
+@keyframes absetzen { from { scale: 1.3; } to { scale: 1; } }
+@keyframes gluehen { 0%, 100% { filter: drop-shadow(0 0 2px rgba(242,181,68,.5)); } 50% { filter: drop-shadow(0 0 12px rgba(242,181,68,.95)); } }
+.mt-auswahl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; min-height: 52px; font-size: 18px; }
+.mt-auswahl p { margin: 0; flex: 1 1 260px; }
+.mt-kiste { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+.mt-kiste .leer { grid-column: 1 / -1; color: var(--ink-soft); font-size: 19px; }
+.art.mut { background: #FFF4C9; }
+
+/* Spiel-Ende */
+.spiel-ende { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; margin-top: 24px; padding: 20px 24px; background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 28px; box-shadow: var(--paper-shadow); }
+.spiel-ende-bild svg { width: 100%; height: auto; }
+.spiel-ende h2 { margin: 0 0 8px; }
+.spiel-ende h2:focus { outline: none; }
+
+/* Seerosen-Boot */
+.boot-teich { position: relative; background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 7; min-height: 240px; margin: 16px 0; }
+.boot-teich .wellen { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; overflow: hidden; }
+.boot-teich .welle { position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; animation: wellen 16s linear infinite; }
+.boot-teich .welle.hinten { animation-duration: 24s; animation-direction: reverse; bottom: 6px; }
+.gw-reihe { position: absolute; top: 4%; left: 0; right: 0; display: flex; justify-content: center; gap: 5%; }
+.gw { width: 9%; max-width: 64px; height: auto; opacity: .22; filter: grayscale(.7); transition: opacity .8s, filter .8s; }
+.gw.an { opacity: 1; filter: none; animation: gluehen 2.4s ease-in-out infinite; }
+.boot-ziel { position: absolute; right: 0; bottom: 0; width: 20%; height: 42%; display: flex; align-items: flex-end; justify-content: center; gap: 4%; padding-bottom: 4%; background: var(--sand); border-left: var(--line) solid var(--ink); border-top: var(--line) solid var(--ink); border-top-left-radius: 80px; }
+.boot-ziel svg { width: 36%; height: auto; }
+.boot { position: absolute; z-index: 2; left: 3%; bottom: 7%; width: 30%; transition: left 5s ease-in-out, translate .9s ease-in-out; }
+.boot svg.sokrates { position: relative; z-index: 1; width: 92%; height: auto; margin: 0 auto -15%; }
+.boot .seerosenblatt { display: block; }
+.boot .seerosenblatt svg { width: 100%; height: auto; }
+.boot.hebt { translate: 0 -8px; }
+.boot-steuer { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.atem-knopf {
+  --p: 0; flex: none; width: 170px; height: 170px; padding: 0; border-radius: 50%; border: var(--line) solid var(--ink); box-shadow: var(--paper-shadow);
+  background: conic-gradient(var(--water-deep) calc(var(--p) * 360deg), var(--weiss) 0); display: grid; place-items: center; cursor: pointer;
+  touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; font-weight: 700; font-size: 20px; line-height: 1.2;
+}
+.atem-knopf span { width: 76%; height: 76%; border-radius: 50%; background: var(--paper); border: 3px solid var(--ink); display: grid; place-items: center; text-align: center; padding: 6px; }
+.atem-knopf.gedrueckt span { background: #CBE6EC; }
+.atem-knopf[aria-disabled="true"] { cursor: default; }
+.boot-status { font-size: 24px; font-weight: 700; min-height: 1.5em; margin: 0; }
+.boot-steuer .atemzuege { text-align: left; margin: 0 0 8px; }
+
+/* Alarmanlagen-Detektiv und Ohne Worte: Karte + Antworten */
+.spiel-karte { position: relative; max-width: 560px; margin: 20px auto 0; padding: 14px 20px 18px; text-align: center; background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 24px; box-shadow: var(--paper-shadow); }
+.spiel-karte > svg { width: 110px; height: 110px; margin: 4px auto; }
+.spiel-karte .leise { margin: 0; }
+.spiel-karte-text { font-size: 26px; font-weight: 700; line-height: 1.3; margin: 6px 0 0; }
+.spiel-karte .mini-vorlesen { position: absolute; top: 10px; right: 10px; }
+.alarm-wahl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 720px; margin: 18px auto 0; }
+.alarm-knopf { flex-direction: column; min-height: 110px; font-size: 22px; }
+#alarm-spiel .knoepfe, #zeichen-spiel .knoepfe { justify-content: center; }
+.mini-lampe { position: relative; display: block; width: 44px; height: 44px; border-radius: 50% 50% 8px 8px; border: 3px solid var(--ink); background: #D9D4C7; }
+.mini-lampe::after { content: ""; position: absolute; inset: 3px; border-radius: inherit; background: var(--alarm); opacity: var(--glow, 0); }
+.mini-lampe.an { box-shadow: 0 0 0 6px rgba(228,111,79,.22); }
+.alarm-uebersicht { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+.alarm-spalte { background: var(--weiss); border: 2px solid var(--ink); border-radius: 18px; padding: 10px 14px; }
+.alarm-spalte h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-size: 22px; }
+.alarm-spalte .mini-lampe { width: 30px; height: 30px; }
+.alarm-spalte ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: 17px; line-height: 1.3; }
+.alarm-spalte li { display: flex; align-items: center; gap: 8px; }
+.alarm-spalte li svg { flex: none; width: 34px; height: 34px; }
+
+.frage-kopf { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; }
+.frage-kopf .leise { margin: 0; }
+.zeichen-wahl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 760px; margin: 12px auto 0; }
+.zeichen-wahl.zeigen { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+.zeichen-knopf { flex-direction: column; min-height: 120px; font-size: 21px; animation: hoch .45s cubic-bezier(.2,.7,.3,1) both; animation-delay: calc(var(--i, 0) * 60ms); }
+.zeichen-knopf svg { width: 58px; height: 58px; }
+.zeichen-knopf svg.runter { transform: rotate(180deg); }
+.farbe { display: block; width: 54px; height: 54px; border-radius: 50%; border: 3px solid var(--ink); }
+
+/* Wo ist Sokrates? */
+.suchen-bereich { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 8px 18px; align-items: start; margin-top: 8px; }
+.suchen-status { grid-column: 1 / -1; min-height: 1.6em; margin: 0; font-weight: 700; color: var(--moss); }
+svg.wimmel { width: 100%; height: auto; border: var(--line) solid var(--ink); border-radius: 22px; background: var(--water); touch-action: manipulation; }
+.wimmel .vorne { pointer-events: none; }
+.wimmel .ziel { cursor: pointer; }
+.wimmel .ziel:focus { outline: none; }
+.wimmel .markierung { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.wimmel .ziel.gefunden .markierung { opacity: 1; }
+.wimmel .ziel.tipp .markierung { opacity: 1; stroke-dasharray: 10 8; animation: tipp-puls 1.4s ease-in-out infinite; }
+.wimmel .ziel:focus-visible .markierung { opacity: 1; stroke: var(--focus); }
+@keyframes tipp-puls { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.14); } }
+.suchen-liste { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.suchen-liste li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: var(--weiss); border: 2px solid var(--ink); border-radius: 16px; font-size: 19px; font-weight: 700; line-height: 1.25; }
+.suchen-liste li.gefunden { background: #DDEBD5; }
+.suchen-icon { flex: none; width: 56px; display: grid; place-items: center; }
+.suchen-icon svg { width: 40px; height: 40px; }
+.suchen-icon svg.sokrates { width: 56px; height: auto; }
+.suchen-name { flex: 1; }
+.suchen-liste .haken { width: 34px; height: 34px; flex: none; }
+.suchen-liste .knopf { min-height: 44px; padding: 4px 12px; font-size: 17px; }
+
+/* Gefühle-Memory */
+.memory { list-style: none; padding: 0; margin: 20px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 720px; }
+.memory-karte { display: block; width: 100%; aspect-ratio: 3 / 4; padding: 0; border: 0; border-radius: 18px; background: none; cursor: pointer; perspective: 800px; }
+.memory-karte .innen { position: relative; display: block; width: 100%; height: 100%; transition: transform .5s ease-in-out; transform-style: preserve-3d; }
+.memory-karte.offen .innen, .memory-karte.paar .innen { transform: rotateY(180deg); }
+.memory-karte .vorne, .memory-karte .hinten {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  border: var(--line) solid var(--ink); border-radius: 18px; box-shadow: var(--paper-shadow); -webkit-backface-visibility: hidden; backface-visibility: hidden;
+}
+.memory-karte .hinten { background: var(--water); }
+.memory-karte .hinten svg { width: 55%; height: auto; }
+.memory-karte .vorne { background: var(--weiss); transform: rotateY(180deg); }
+.memory-karte .vorne svg { width: 74%; height: auto; }
+.memory-karte .wort { font-weight: 700; font-size: 18px; line-height: 1.2; }
+.memory-karte.paar .vorne { background: #DDEBD5; }
+
+@media (max-width: 760px) {
+  .spiel-ende { grid-template-columns: 1fr; }
+  .spiel-ende-bild { max-width: 200px; }
+  .alarm-uebersicht { grid-template-columns: 1fr; }
+  .suchen-bereich { grid-template-columns: 1fr; }
+  .suchen-liste { grid-template-columns: repeat(2, 1fr); }
+  .memory { gap: 8px; }
+  .memory-karte .wort { font-size: 15px; }
+  .atem-knopf { width: 140px; height: 140px; font-size: 18px; }
+  .alarm-knopf { min-height: 96px; font-size: 19px; padding: 8px; }
+  .zeichen-knopf { min-height: 104px; font-size: 18px; padding: 8px; }
+}
+@media (max-width: 420px) {
+  .suchen-liste { grid-template-columns: 1fr; }
+  .alarm-wahl, .zeichen-wahl { gap: 8px; }
+}
+
 /* ---------- Ruhig-Modus: Einstellung „Ruhig“ oder System „weniger Bewegung“ ---------- */
 body.ruhig *, body.ruhig *::before, body.ruhig *::after { animation: none !important; transition: none !important; }
 body.ruhig .ring, body.ruhig .libelle, body.ruhig .funke { display: none; }
+body.ruhig .mt-ding.zieht { scale: 1; }
 body.ruhig .kreis, body.ruhig .kreis.gross { transform: scale(.95); }

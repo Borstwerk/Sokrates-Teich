@@ -14,6 +14,7 @@
       arr.push({ zeit: Date.now(), bild: bild, text: text });
       return arr;
     });
+    return T.findeEtwas ? T.findeEtwas("mut") : null;
   };
 
   function imGlas() {
@@ -111,12 +112,15 @@
     I.arten.forEach(function (a) {
       raster.appendChild(T.el("li", {}, [T.el("button", {
         type: "button", class: "art", onclick: function () {
-          T.schatzDazu(a[0], "Ich habe " + a[1] + ".");
+          var fund = T.schatzDazu(a[0], "Ich habe " + a[1] + ".");
           T.schliesseDialog();
           male();
           var lob = $("schatz-lob");
           lob.textContent = I.lob;
           T.pop(lob);
+          var hinweis = $("schatz-fund");
+          hinweis.textContent = "";
+          if (fund) hinweis.appendChild(T.fundHinweis(fund));
           setTimeout(function () { $("schatz-neu").focus(); }, 30);
         }
       }, [T.bild(a[0]), a[1]])]));
@@ -131,6 +135,7 @@
     zeige: function () {
       zeigeAnzahl = 15;
       $("schatz-lob").textContent = "";
+      $("schatz-fund").textContent = "";
       T.absaetze($("schatz-intro"), I.intro);
       male();
     }

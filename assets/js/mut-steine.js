@@ -49,8 +49,9 @@
       alle[weg.id][stein.schluessel] = (alle[weg.id][stein.schluessel] || 0) + 1;
       return alle;
     });
-    if (T.schatzDazu) T.schatzDazu("i-stern", T.fuelle(T.inhalt.mutSchatz.stein, { text: stein.text }));
+    var fund = T.schatzDazu ? T.schatzDazu("i-stern", T.fuelle(T.inhalt.mutSchatz.stein, { text: stein.text })) : null;
     sprechblase([T.zufall(I.lob), I.oft]);
+    if (fund) $("steine-blase").appendChild(T.fundHinweis(fund));
     szene.stelle(1);
     T.nicken(szene.sokrates);
     maleWeg(nr);
