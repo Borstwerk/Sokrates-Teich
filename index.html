@@ -141,6 +141,12 @@
     <symbol id="i-truhe" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="2.5" stroke-linejoin="round"><rect x="5" y="21" width="38" height="21" rx="3" fill="#8C6230"/><path d="M5 22 V16 C5 9 12 6 24 6 C36 6 43 9 43 16 V22 Z" fill="#C9944A"/><path d="M13 7.5 V42 M35 7.5 V42" fill="none" stroke="#55624F" stroke-width="3"/><rect x="19" y="17" width="10" height="11" rx="2" fill="#F2B544"/></g><circle cx="24" cy="22" r="1.8" fill="#2E3A2F"/></symbol>
     <symbol id="i-stift" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="2.5" stroke-linejoin="round"><path d="M11 33 L31 13 L37 19 L17 39 Z" fill="#F2B544"/><path d="M11 33 L17 39 L6 43 Z" fill="#F3D9B5"/><path d="M31 13 L35 9 L41 15 L37 19 Z" fill="#E89A86"/></g><path d="M22 45 H44" stroke="#2F6F7E" stroke-width="2.5" stroke-linecap="round"/></symbol>
     <symbol id="i-lupe" viewBox="0 0 48 48"><path d="M30 30 L42 42" stroke="#2E3A2F" stroke-width="10" stroke-linecap="round"/><path d="M30 30 L42 42" stroke="#8C6230" stroke-width="5" stroke-linecap="round"/><circle cx="20" cy="20" r="14" fill="#DCEFF2" stroke="#2E3A2F" stroke-width="3"/><path d="M12 17 Q14 11 20 10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></symbol>
+
+    <!-- ---------- Körper ---------- -->
+    <symbol id="i-koerper" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 45 V31 C12 24 17 20 24 20 C31 20 36 24 36 31 V45" fill="#9CC27A"/><circle cx="24" cy="11" r="7.5" fill="#F3D9B5"/></g><path d="M24 37 C19 33 17 31 17 28.3 C17 26.2 18.6 25 20.2 25 C21.7 25 23 26 24 27.4 C25 26 26.3 25 27.8 25 C29.4 25 31 26.2 31 28.3 C31 31 29 33 24 37 Z" fill="#E89A86" stroke="#2E3A2F" stroke-width="2"/></symbol>
+    <symbol id="i-bauchweh" viewBox="0 0 48 48"><circle cx="24" cy="27" r="17" fill="#F3D9B5" stroke="#2E3A2F" stroke-width="3"/><path d="M23 27 a2 2 0 1 1 2 2 a5 5 0 1 1 -5 -5 a8 8 0 1 1 8 8" fill="none" stroke="#B5523A" stroke-width="2.5" stroke-linecap="round"/><path d="M4 6 L8 10 L5 12 L9 16 M44 6 L40 10 L43 12 L39 16" fill="none" stroke="#E46F4F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-kopfweh" viewBox="0 0 48 48"><circle cx="24" cy="28" r="16" fill="#F3D9B5" stroke="#2E3A2F" stroke-width="3"/><path d="M16.5 27 Q19 24.5 21.5 27 M26.5 27 Q29 24.5 31.5 27" fill="none" stroke="#2E3A2F" stroke-width="2.5" stroke-linecap="round"/><path d="M18 36 Q24 32 30 36" fill="none" stroke="#2E3A2F" stroke-width="2.5" stroke-linecap="round"/><path d="M8 3 L13 9 L9 10 L15 16 M40 3 L35 9 L39 10 L33 16 M24 1 V8" fill="none" stroke="#E46F4F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-uebel" viewBox="0 0 48 48"><circle cx="24" cy="25" r="19" fill="#CFE3B5" stroke="#2E3A2F" stroke-width="3"/><path d="M15 20 L20 22 M33 20 L28 22" stroke="#2E3A2F" stroke-width="2.5" stroke-linecap="round"/><path d="M14 33 Q17 30 20 33 Q23 36 26 33 Q29 30 32 33 Q33.5 34.5 35 33" fill="none" stroke="#2E3A2F" stroke-width="2.5" stroke-linecap="round"/><path d="M37 8 C34 13 34 15.5 37 15.5 C40 15.5 40 13 37 8 Z" fill="#5FA8C7" stroke="#2E3A2F" stroke-width="1.6"/></symbol>
   </defs>
 </svg>
 
@@ -202,6 +208,16 @@
     <ul class="stufen" id="stufen"></ul>
   </section>
 
+  <!-- ================= Mein Körper ================= -->
+  <section class="ansicht" id="ansicht-koerper" data-ansicht="koerper" hidden>
+    <h1 tabindex="-1" class="lesen">Mein Körper</h1>
+    <div class="koerper-bereich">
+      <div class="koerper-figur" id="koerper-figur"></div>
+      <div class="blase koerper-blase" aria-live="polite" id="koerper-blase"></div>
+    </div>
+    <div class="kasten koerper-hinweis"><p class="lesen" id="koerper-erwachsene" style="margin:0"></p></div>
+  </section>
+
   <!-- ================= Mut-Steine ================= -->
   <section class="ansicht" id="ansicht-mut-steine" data-ansicht="mut-steine" hidden>
     <h1 tabindex="-1" class="lesen">Die Mut-Steine</h1>
@@ -254,6 +270,16 @@
       <div>
         <div class="blase" aria-live="polite"><p class="lesen" id="pause-text"></p><div class="pause-zahl" id="pause-zahl" aria-hidden="true"></div></div>
         <div class="knoepfe"><button class="knopf haupt" type="button" id="pause-start">Panzer-Pause machen</button></div>
+      </div>
+    </div>
+
+    <h2 class="lesen" id="fl-titel"></h2>
+    <p class="lesen" id="fl-intro"></p>
+    <div class="mit-blase">
+      <div id="fl-szene"></div>
+      <div>
+        <div class="blase" aria-live="polite"><span class="titel" id="fl-teil"></span><p class="lesen" id="fl-text"></p><div class="pause-zahl" id="fl-zahl" aria-hidden="true"></div></div>
+        <div class="knoepfe"><button class="knopf haupt" type="button" id="fl-start"></button></div>
       </div>
     </div>
   </section>
@@ -518,121 +544,183 @@
     </div>
     <p id="speicher-warnung" class="hinweis-speicher" hidden>Achtung: Dieser Browser erlaubt gerade kein Speichern. Fortschritt geht beim Schließen verloren. Tipp: Seite in Chrome, Edge oder Firefox öffnen und nicht im privaten Fenster.</p>
 
-    <h2>Einstellungen</h2>
-    <form id="einstellungen" onsubmit="return false">
-      <div class="feld">
-        <label for="e-name">Name des Kindes</label>
-        <input type="text" id="e-name" autocomplete="off" maxlength="30">
-        <span class="leise">Sokrates begrüßt das Kind mit diesem Namen. Leer lassen für „Hallo!“.</span>
+    <nav class="e-navi" aria-label="Inhalt dieser Seite">
+      <p class="leise">Springen zu:</p>
+      <ul>
+        <li><button type="button" class="knopf klein" data-ziel="e-verstehen">Verstehen</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="e-koerper">Körper</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="e-alltag">Alltag</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="e-schule">Schule</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="e-zeigt">Aus den Spielen</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="e-hilfe">Hilfe finden</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="e-einstellungen">Einstellungen</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="e-daten">Daten</button></li>
+      </ul>
+    </nav>
+
+    <section class="e-abschnitt" id="e-verstehen" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-buch"/></svg>Was ist selektiver Mutismus?</h2>
+      <ul>
+        <li>Eine <strong>Angststörung</strong> (so eingeordnet in den Diagnose-Handbüchern DSM-5 und ICD-11), kein Trotz und keine Erziehungsfrage.</li>
+        <li>Das Kind <strong>will</strong> sprechen, <strong>kann</strong> es aber in bestimmten Situationen nicht. Die Angst lässt es erstarren. Zuhause spricht es oft ganz normal.</li>
+        <li>Betrifft etwa 1 von 100 Kindern; beginnt meist im Kindergartenalter und fällt oft erst in der Schule auf.</li>
+        <li>Schweigen senkt die Angst kurzfristig. Dadurch verfestigt es sich. Hilfe setzt mit <strong>kleinen, machbaren Schritten</strong> genau hier an.</li>
+        <li>Mit Unterstützung bessert sich der Mutismus bei den meisten Kindern deutlich. Frühe Hilfe ist wichtig.</li>
+      </ul>
+    </section>
+
+    <section class="e-abschnitt" id="e-koerper" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-koerper"/></svg>Wenn der Körper Alarm schlägt</h2>
+      <p>Angst zeigt sich bei Kindern oft zuerst im Körper: Bauchweh, Kopfschmerzen, Übelkeit, Herzklopfen, Zittern oder ein „Kloß im Hals“. Solche Beschwerden sind bei ängstlichen Kindern sehr häufig – in Studien berichtet die Mehrheit von ihnen davon, Bauchschmerzen gehören zu den häufigsten. Bei selektivem Mutismus kommen oft das <strong>Erstarren</strong> und Schwierigkeiten rund um die <strong>Toilette</strong> dazu, etwa weil das Kind nicht fragen kann oder in der Schule nicht trinkt.</p>
+      <ul>
+        <li>Die Beschwerden sind <strong>echt</strong> – keine Einbildung und kein Vorwand. Angst schaltet den Körper auf „Kampf, Flucht oder Erstarren“: Das Herz schlägt schneller, die Muskeln spannen sich an, die Verdauung wird gebremst. Bauch und Gehirn sind eng miteinander verbunden.</li>
+        <li>Ein häufiges Muster: Die Beschwerden kommen vor der Schule, am Sonntagabend oder vor neuen Situationen – und lassen zu Hause oder in den Ferien nach.</li>
+        <li>Viele Eltern berichten, dass ihr Kind nach einem Schultag sehr erschöpft ist. Anspannung und Schweigen kosten Kraft.</li>
+      </ul>
+      <h3>Was hilft</h3>
+      <ul>
+        <li><strong>Erst ärztlich abklären lassen</strong> (Kinderärztin oder Kinderarzt), besonders bei neuen oder häufigen Beschwerden. Danach dem Kind erklären: „Dein Körper reagiert auf die Alarmanlage. Das Weh ist echt und nicht gefährlich.“</li>
+        <li><strong>Ernst nehmen, kurz trösten, ruhig bleiben</strong> – aber Beschwerden möglichst nicht zum Anlass nehmen, zu Hause zu bleiben. Vermeidung macht die Angst auf Dauer größer. Besser: kleine Erleichterungen absprechen.</li>
+        <li><strong>Körperübungen üben, wenn es ruhig ist:</strong> Bauch-Atmung und „Fest und locker“ in der Ruhe-Ecke. Übungen helfen vielen Kindern, versprechen aber kein sofortiges Ende der Beschwerden.</li>
+        <li><strong>Mit der Schule absprechen:</strong> Toilette ohne Nachfragen (Karte oder Zeichen), Trinken erlauben, ein ruhiger Rückzugsort, eine feste Ansprechperson.</li>
+        <li><strong>Beschwerden-Tagebuch:</strong> Drei bis vier Wochen notieren, wann und wo es wehtut. Das hilft Kinderarzt und Therapie, Muster zu erkennen. Das Kind kann unter „Mein Körper“ selbst etwas merken – die Notizen erscheinen hier.</li>
+      </ul>
+      <div class="kasten warnung">
+        <p style="margin:0 0 6px"><strong>Bitte zügig ärztlich abklären lassen, wenn …</strong></p>
+        <ul style="margin:0">
+          <li>Schmerzen das Kind nachts aus dem Schlaf wecken,</li>
+          <li>Fieber, wiederholtes Erbrechen (besonders morgens zusammen mit Kopfschmerzen), Blut im Stuhl oder nächtlicher Durchfall auftreten,</li>
+          <li>das Kind ungewollt abnimmt oder nicht mehr richtig wächst,</li>
+          <li>der Bauchschmerz immer an derselben Stelle weit weg vom Bauchnabel sitzt,</li>
+          <li>Kopfschmerzen mit Verwirrtheit, Wesensänderung, Schwäche oder Gleichgewichtsproblemen einhergehen.</li>
+        </ul>
+        <p style="margin:8px 0 0"><strong>Notruf 112</strong>, wenn das Kind kaum wach zu bekommen ist oder Kopfschmerzen zusammen mit Fieber, Nackensteife oder Hautausschlag auftreten. Diese Liste ist nicht vollständig und ersetzt keine ärztliche Beratung.</p>
       </div>
-      <div class="feld">
-        <label class="check"><input type="checkbox" id="e-vorlesen"> Vorlese-Knopf anzeigen</label>
+      <h3>Körper-Notizen des Kindes</h3>
+      <div id="e-koerper-notizen" aria-live="polite"></div>
+    </section>
+
+    <section class="e-abschnitt" id="e-alltag" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-haus"/></svg>Im Alltag: So nutzt ihr die Seite</h2>
+      <ul>
+        <li><strong>Sokrates erzählt</strong> zuerst gemeinsam anschauen und darüber reden: „Kennst du das auch?“ Keine Antwort erzwingen.</li>
+        <li>Das <strong>Panzer-Meter</strong> kann das Kind nutzen, um ohne Worte zu zeigen, wie es ihm geht, zum Beispiel vor der Schule oder nach einem schwierigen Tag.</li>
+        <li>Die <strong>Mut-Steine</strong> gemeinsam aussuchen. Sie bestimmt das Tempo.</li>
+        <li>Jeden mutigen Moment im <strong>Mut-Schatz</strong> sammeln, auch Nicken, Zeigen oder einfach Hingehen.</li>
+        <li>Die <strong>Karten</strong> ausdrucken und mit der Lehrkraft absprechen, dass das Kind sie nutzen darf.</li>
+        <li>Die <strong>Spiele</strong> sind kurz, ohne Zeitdruck und ohne Verlieren. Niemand muss dabei sprechen. Für jedes Spiel findet Sokrates etwas für den Teich des Kindes. Für echten Mut (Mut-Steine, Mut-Schatz) gibt es besondere Schätze wie Glühwürmchen oder einen Regenbogen.</li>
+      </ul>
+
+      <h3>Was hilft – was eher nicht</h3>
+      <table class="tabelle">
+        <thead><tr><th scope="col">Hilfreich</th><th scope="col">Eher vermeiden</th></tr></thead>
+        <tbody>
+          <tr><td>Nonverbale Antworten (Zeigen, Nicken) freundlich annehmen</td><td>Zum Sprechen auffordern oder überreden („Sag doch mal …“)</td></tr>
+          <tr><td>Wahlfragen stellen („Apfel oder Banane?“)</td><td>Offene Fragen in angespannten Momenten</td></tr>
+          <tr><td>Nach einer Frage mindestens 5 Sekunden warten</td><td>Sofort für das Kind antworten</td></tr>
+          <tr><td>Konkret loben („Du hast gezeigt, welches Eis du willst. Toll!“)</td><td>Etiketten wie „schüchtern“ oder „sie spricht nicht“, vor allem in Hörweite</td></tr>
+          <tr><td>Ruhig und ohne Drama über den Mutismus sprechen</td><td>Belohnung vorher an Sprechen knüpfen („Wenn du sprichst, bekommst du …“)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="e-abschnitt" id="e-schule" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-tafel"/></svg>Schule, Hort und Verein</h2>
+      <p>Neue Lehrerin, Vertretung oder Trainer? Ein Infoblatt (eine Seite) und Erklär-Karten erklären selektiven Mutismus kurz und auf das Kind zugeschnitten – inklusive Absprachen zu Karten, Toilette und körperlichen Angstzeichen.</p>
+      <nav class="weiter" data-weiter="lehrkraefte" aria-label="Für Lehrkräfte"></nav>
+    </section>
+
+    <section class="e-abschnitt" id="e-zeigt" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-spiel"/></svg>Was das Kind in den Spielen zeigt</h2>
+      <p class="leise">Alles bleibt auf diesem Gerät. Es gibt keine richtigen oder falschen Antworten – die Ergebnisse sind Gesprächsanlässe, keine Messwerte.</p>
+      <h3>Alarmanlagen-Detektiv</h3>
+      <p>In diesem Spiel zeigt das Kind, wie laut seine Alarmanlage in verschiedenen Situationen ist. Das kann helfen, passende Mut-Steine auszusuchen. Es gibt keine richtigen oder falschen Antworten.</p>
+      <div id="e-alarm"></div>
+
+      <h3>Alarmzentrale</h3>
+      <p>In diesem Abenteuer sucht das Kind Hilfen aus, die eine Situation leichter machen (z. B. „Freundin dabei“, „Antworten darf ich zeigen“). Die Hilfen, die es am häufigsten wählt, können ein guter Gesprächsanlass sein – auch mit der Schule.</p>
+      <div id="e-zentrale"></div>
+    </section>
+
+    <section class="e-abschnitt" id="e-hilfe" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-hand"/></svg>Hilfe finden</h2>
+      <ul>
+        <li>Erster Weg: <strong>Kinderärztin oder Kinderarzt</strong> ansprechen.</li>
+        <li>Behandelt wird selektiver Mutismus vor allem von <strong>Kinder- und Jugendlichenpsychotherapeut:innen</strong> (meist Verhaltenstherapie) und von <strong>Logopäd:innen mit Mutismus-Schwerpunkt</strong>. Gut ist, wenn Eltern und Schule einbezogen werden.</li>
+        <li>Für einen ersten Termin in einer psychotherapeutischen Sprechstunde hilft die <strong>Terminservicestelle 116117</strong>.</li>
+        <li>Selbsthilfe und Therapeutenlisten: <strong>Mutismus Selbsthilfe Deutschland e.V.</strong> (mutismus.de) und <strong>StillLeben e.V.</strong> (selektiver-mutismus.de).</li>
+      </ul>
+
+      <h3>Buchtipps</h3>
+      <ul>
+        <li>„Selina Stummfisch“ (Psychiatrie Verlag)</li>
+        <li>„Eine Kugel Schoko bitte! Emmos Weg aus dem selektiven Mutismus“ (Edition Riedenburg)</li>
+        <li>„Mila spricht!“ · „Anna und Obur“ · „Der Junge in der Nussschale“</li>
+      </ul>
+    </section>
+
+    <section class="e-abschnitt" id="e-einstellungen" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-stift"/></svg>Einstellungen</h2>
+      <form id="einstellungen" onsubmit="return false">
+        <div class="feld">
+          <label for="e-name">Name des Kindes</label>
+          <input type="text" id="e-name" autocomplete="off" maxlength="30">
+          <span class="leise">Sokrates begrüßt das Kind mit diesem Namen. Leer lassen für „Hallo!“.</span>
+        </div>
+        <div class="feld">
+          <label class="check"><input type="checkbox" id="e-vorlesen"> Vorlese-Knopf anzeigen</label>
+        </div>
+        <div class="feld">
+          <label class="check"><input type="checkbox" id="e-spiele"> Spiele und Teich-Schätze anzeigen</label>
+          <span class="leise">Bei jedem Spiel und jedem mutigen Schritt findet Sokrates etwas für den Teich des Kindes.</span>
+        </div>
+        <div class="feld">
+          <label for="e-bewegung">Bewegung und Animationen</label>
+          <select id="e-bewegung">
+            <option value="auto">Automatisch (wie im System eingestellt)</option>
+            <option value="normal">Normal – mit Animationen</option>
+            <option value="ruhig">Ruhig – fast keine Bewegung</option>
+          </select>
+          <span class="leise">„Ruhig“ hilft, wenn Bewegung ablenkt oder aufregt.</span>
+        </div>
+        <div class="feld" id="e-stimme-feld">
+          <label for="e-stimme">Stimme</label>
+          <select id="e-stimme"></select>
+          <label for="e-tempo">Vorlese-Tempo</label>
+          <input type="range" id="e-tempo" min="0.6" max="1.2" step="0.05">
+          <div><button class="knopf klein" type="button" id="e-test">Stimme testen</button></div>
+          <span class="leise" id="e-stimme-hinweis"></span>
+        </div>
+        <div class="kasten" id="e-stimme-tipp">
+          <p style="margin:0"><strong>Tipp für eine natürliche Stimme:</strong> Seite in <strong>Microsoft Edge</strong> öffnen. Edge bringt sehr natürliche deutsche Stimmen mit (z. B. „Katja“, „Amala“ oder „Conrad Online (Natural)“), die Seite wählt automatisch die beste. Diese Stimmen brauchen Internet. Ohne Internet wird die eingebaute Windows-Stimme benutzt.</p>
+        </div>
+        <div class="feld">
+          <label for="e-ziel">Mut-Schatz: Wie viele Mut-Steinchen passen ins Glas?</label>
+          <input type="number" id="e-ziel" min="5" max="60" step="1" style="width:140px">
+        </div>
+        <div class="feld">
+          <label for="e-belohnung">Mut-Schatz: Wenn das Glas voll ist, dann … (optional)</label>
+          <input type="text" id="e-belohnung" maxlength="80" placeholder="z. B. Wir gehen zusammen Eis essen.">
+          <span class="leise">Am besten gemeinsam aussuchen. Belohnt wird jede Art von Mut, nicht nur Sprechen.</span>
+        </div>
+        <p class="leise" id="e-gespeichert" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="e-abschnitt" id="e-daten" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-kiste"/></svg>Daten und Datenschutz</h2>
+      <p>Fortschritt und Einstellungen bleiben auf diesem Gerät im Browser gespeichert. Die Anwendung selbst sendet keine Nutzungs- oder Fortschrittsdaten. Online-Vorlesestimmen können den vorgelesenen Text an den jeweiligen Browser-Anbieter übertragen; wer das nicht möchte, wählt eine lokale Stimme. Wenn der Browserverlauf gelöscht wird, kann der Fortschritt verloren gehen. Deshalb gibt es hier eine Sicherung.</p>
+      <div class="knoepfe">
+        <button class="knopf klein" type="button" id="e-export">Sicherung speichern</button>
+        <label class="knopf klein" for="e-import">Sicherung laden</label>
+        <input type="file" id="e-import" accept="application/json,.json" class="nur-vorleser">
+        <button class="knopf klein gefahr" type="button" id="e-reset">Alles zurücksetzen</button>
       </div>
-      <div class="feld">
-        <label class="check"><input type="checkbox" id="e-spiele"> Spiele und Teich-Schätze anzeigen</label>
-        <span class="leise">Bei jedem Spiel und jedem mutigen Schritt findet Sokrates etwas für den Teich des Kindes.</span>
-      </div>
-      <div class="feld">
-        <label for="e-bewegung">Bewegung und Animationen</label>
-        <select id="e-bewegung">
-          <option value="auto">Automatisch (wie im System eingestellt)</option>
-          <option value="normal">Normal – mit Animationen</option>
-          <option value="ruhig">Ruhig – fast keine Bewegung</option>
-        </select>
-        <span class="leise">„Ruhig“ hilft, wenn Bewegung ablenkt oder aufregt.</span>
-      </div>
-      <div class="feld" id="e-stimme-feld">
-        <label for="e-stimme">Stimme</label>
-        <select id="e-stimme"></select>
-        <label for="e-tempo">Vorlese-Tempo</label>
-        <input type="range" id="e-tempo" min="0.6" max="1.2" step="0.05">
-        <div><button class="knopf klein" type="button" id="e-test">Stimme testen</button></div>
-        <span class="leise" id="e-stimme-hinweis"></span>
-      </div>
-      <div class="kasten" id="e-stimme-tipp">
-        <p style="margin:0"><strong>Tipp für eine natürliche Stimme:</strong> Seite in <strong>Microsoft Edge</strong> öffnen. Edge bringt sehr natürliche deutsche Stimmen mit (z. B. „Katja“, „Amala“ oder „Conrad Online (Natural)“), die Seite wählt automatisch die beste. Diese Stimmen brauchen Internet. Ohne Internet wird die eingebaute Windows-Stimme benutzt.</p>
-      </div>
-      <div class="feld">
-        <label for="e-ziel">Mut-Schatz: Wie viele Mut-Steinchen passen ins Glas?</label>
-        <input type="number" id="e-ziel" min="5" max="60" step="1" style="width:140px">
-      </div>
-      <div class="feld">
-        <label for="e-belohnung">Mut-Schatz: Wenn das Glas voll ist, dann … (optional)</label>
-        <input type="text" id="e-belohnung" maxlength="80" placeholder="z. B. Wir gehen zusammen Eis essen.">
-        <span class="leise">Am besten gemeinsam aussuchen. Belohnt wird jede Art von Mut, nicht nur Sprechen.</span>
-      </div>
-      <p class="leise" id="e-gespeichert" aria-live="polite"></p>
-    </form>
 
-    <h2>Was ist selektiver Mutismus?</h2>
-    <ul>
-      <li>Eine <strong>Angststörung</strong> (so eingeordnet in den Diagnose-Handbüchern DSM-5 und ICD-11), kein Trotz und keine Erziehungsfrage.</li>
-      <li>Das Kind <strong>will</strong> sprechen, <strong>kann</strong> es aber in bestimmten Situationen nicht. Die Angst lässt es erstarren. Zuhause spricht es oft ganz normal.</li>
-      <li>Betrifft etwa 1 von 100 Kindern; beginnt meist im Kindergartenalter und fällt oft erst in der Schule auf.</li>
-      <li>Schweigen senkt die Angst kurzfristig. Dadurch verfestigt es sich. Hilfe setzt mit <strong>kleinen, machbaren Schritten</strong> genau hier an.</li>
-      <li>Mit Unterstützung bessert sich der Mutismus bei den meisten Kindern deutlich. Frühe Hilfe ist wichtig.</li>
-    </ul>
+      <h3>Quellen</h3>
+      <p>Die Inhalte beruhen auf einer Recherche mit Quellenangaben: <a href="docs/recherche/01-synthese.md">docs/recherche/01-synthese.md</a> und zu Körperzeichen: <a href="docs/recherche/02-koerper.md">docs/recherche/02-koerper.md</a> (u. a. Fachübersichten von 2023 und 2025, Leitlinien des Interdisziplinären Mutismus Forums, Child Mind Institute, SMIRA).</p>
+    </section>
 
-    <h2>So nutzt ihr die Seite zusammen</h2>
-    <ul>
-      <li><strong>Sokrates erzählt</strong> zuerst gemeinsam anschauen und darüber reden: „Kennst du das auch?“ Keine Antwort erzwingen.</li>
-      <li>Das <strong>Panzer-Meter</strong> kann das Kind nutzen, um ohne Worte zu zeigen, wie es ihm geht, zum Beispiel vor der Schule oder nach einem schwierigen Tag.</li>
-      <li>Die <strong>Mut-Steine</strong> gemeinsam aussuchen. Sie bestimmt das Tempo.</li>
-      <li>Jeden mutigen Moment im <strong>Mut-Schatz</strong> sammeln, auch Nicken, Zeigen oder einfach Hingehen.</li>
-      <li>Die <strong>Karten</strong> ausdrucken und mit der Lehrkraft absprechen, dass das Kind sie nutzen darf.</li>
-      <li>Die <strong>Spiele</strong> sind kurz, ohne Zeitdruck und ohne Verlieren. Niemand muss dabei sprechen. Für jedes Spiel findet Sokrates etwas für den Teich des Kindes. Für echten Mut (Mut-Steine, Mut-Schatz) gibt es besondere Schätze wie Glühwürmchen oder einen Regenbogen.</li>
-    </ul>
-
-    <h2>Aus dem Alarmanlagen-Detektiv</h2>
-    <p>In diesem Spiel zeigt das Kind, wie laut seine Alarmanlage in verschiedenen Situationen ist. Das kann helfen, passende Mut-Steine auszusuchen. Es gibt keine richtigen oder falschen Antworten.</p>
-    <div id="e-alarm"></div>
-
-    <h2>Aus der Alarmzentrale</h2>
-    <p>In diesem Abenteuer sucht das Kind Hilfen aus, die eine Situation leichter machen (z. B. „Freundin dabei“, „Antworten darf ich zeigen“). Die Hilfen, die es am häufigsten wählt, können ein guter Gesprächsanlass sein – auch mit der Schule.</p>
-    <div id="e-zentrale"></div>
-
-    <h2>Was hilft – was eher nicht</h2>
-    <table class="tabelle">
-      <thead><tr><th scope="col">Hilfreich</th><th scope="col">Eher vermeiden</th></tr></thead>
-      <tbody>
-        <tr><td>Nonverbale Antworten (Zeigen, Nicken) freundlich annehmen</td><td>Zum Sprechen auffordern oder überreden („Sag doch mal …“)</td></tr>
-        <tr><td>Wahlfragen stellen („Apfel oder Banane?“)</td><td>Offene Fragen in angespannten Momenten</td></tr>
-        <tr><td>Nach einer Frage mindestens 5 Sekunden warten</td><td>Sofort für das Kind antworten</td></tr>
-        <tr><td>Konkret loben („Du hast gezeigt, welches Eis du willst. Toll!“)</td><td>Etiketten wie „schüchtern“ oder „sie spricht nicht“, vor allem in Hörweite</td></tr>
-        <tr><td>Ruhig und ohne Drama über den Mutismus sprechen</td><td>Belohnung vorher an Sprechen knüpfen („Wenn du sprichst, bekommst du …“)</td></tr>
-      </tbody>
-    </table>
-
-    <div class="kasten">
-      <p style="margin:0"><strong>Neue Lehrerin oder neuer Lehrer?</strong> Unter <a href="#lehrkraefte">Für Lehrkräfte</a> gibt es ein Infoblatt und Erklär-Karten zum Ausdrucken – auf das Kind zugeschnitten.</p>
-    </div>
-
-    <h2>Hilfe finden</h2>
-    <ul>
-      <li>Erster Weg: <strong>Kinderärztin oder Kinderarzt</strong> ansprechen.</li>
-      <li>Behandelt wird selektiver Mutismus vor allem von <strong>Kinder- und Jugendlichenpsychotherapeut:innen</strong> (meist Verhaltenstherapie) und von <strong>Logopäd:innen mit Mutismus-Schwerpunkt</strong>. Gut ist, wenn Eltern und Schule einbezogen werden.</li>
-      <li>Für einen ersten Termin in einer psychotherapeutischen Sprechstunde hilft die <strong>Terminservicestelle 116117</strong>.</li>
-      <li>Selbsthilfe und Therapeutenlisten: <strong>Mutismus Selbsthilfe Deutschland e.V.</strong> (mutismus.de) und <strong>StillLeben e.V.</strong> (selektiver-mutismus.de).</li>
-    </ul>
-
-    <h2>Buchtipps</h2>
-    <ul>
-      <li>„Selina Stummfisch“ (Psychiatrie Verlag)</li>
-      <li>„Eine Kugel Schoko bitte! Emmos Weg aus dem selektiven Mutismus“ (Edition Riedenburg)</li>
-      <li>„Mila spricht!“ · „Anna und Obur“ · „Der Junge in der Nussschale“</li>
-    </ul>
-
-    <h2>Daten und Datenschutz</h2>
-    <p>Fortschritt und Einstellungen bleiben auf diesem Gerät im Browser gespeichert. Die Anwendung selbst sendet keine Nutzungs- oder Fortschrittsdaten. Online-Vorlesestimmen können den vorgelesenen Text an den jeweiligen Browser-Anbieter übertragen; wer das nicht möchte, wählt eine lokale Stimme. Wenn der Browserverlauf gelöscht wird, kann der Fortschritt verloren gehen. Deshalb gibt es hier eine Sicherung.</p>
-    <div class="knoepfe">
-      <button class="knopf klein" type="button" id="e-export">Sicherung speichern</button>
-      <label class="knopf klein" for="e-import">Sicherung laden</label>
-      <input type="file" id="e-import" accept="application/json,.json" class="nur-vorleser">
-      <button class="knopf klein gefahr" type="button" id="e-reset">Alles zurücksetzen</button>
-    </div>
-
-    <h2>Quellen</h2>
-    <p>Die Inhalte beruhen auf einer Recherche mit Quellenangaben: <a href="docs/recherche/01-synthese.md">docs/recherche/01-synthese.md</a> (u. a. Fachübersichten von 2023 und 2025, Leitlinien des Interdisziplinären Mutismus Forums, Child Mind Institute, SMIRA).</p>
   </section>
 
   <!-- ================= Für Lehrkräfte ================= -->
@@ -684,6 +772,7 @@
 <script src="assets/js/teich.js"></script>
 <script src="assets/js/geschichte.js"></script>
 <script src="assets/js/panzer-meter.js"></script>
+<script src="assets/js/koerper.js"></script>
 <script src="assets/js/mut-steine.js"></script>
 <script src="assets/js/ruhe-ecke.js"></script>
 <script src="assets/js/karten.js"></script>

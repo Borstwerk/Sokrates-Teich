@@ -39,6 +39,8 @@ Auf der Startseite ganz unten auf **„Für Erwachsene“** klicken:
 3. Danach ruhig fragen: *„Kennst du das auch?“* – **ohne** eine gesprochene Antwort zu erwarten.
    Nicken oder Zeigen ist eine vollwertige Antwort.
 4. Das **Panzer-Meter** ausprobieren: „Wie geht es dir gerade?“ – das Kind tippt auf den passenden Sokrates.
+   Bei Bauch- oder Kopfweh: Unter **Mein Körper** zeigt das Kind, wo es die Alarmanlage spürt. Was es dort
+   „für Mama oder Papa merkt“, steht unter *Für Erwachsene → Körper*.
 
 Wenn das Kind keine Lust hat: aufhören. Sokrates wartet.
 
