@@ -14,6 +14,8 @@
     var extra = $("meter-extra");
     extra.textContent = "";
     if (s.ruhe) extra.appendChild(T.el("a", { class: "knopf haupt", href: "#ruhe-ecke", text: I.zurRuhe }));
+    if (s.lampe >= 0.5) extra.appendChild(T.el("a", { class: "knopf", href: "#koerper" }, [T.bild("i-koerper"), I.zumKoerper]));
+    if (extra.children.length) extra.className = "knoepfe";
     $("stufen").querySelectorAll(".stufe").forEach(function (b, j) { b.setAttribute("aria-pressed", String(i === j)); });
     T.pop($("meter-titel").parentNode);
     if (i === 0) T.nicken(szene.sokrates);

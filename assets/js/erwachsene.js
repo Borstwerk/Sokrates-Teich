@@ -34,6 +34,7 @@
     $("e-spiele").checked = T.spieleAn();
     alarmErgebnis();
     zentraleErgebnis();
+    koerperNotizen();
     $("e-belohnung").value = T.speicher.get("belohnung") || "";
     $("e-stimme-feld").hidden = !T.vorlesen.verfuegbar();
     $("speicher-warnung").hidden = T.speicher.funktioniert();
@@ -59,6 +60,43 @@
   }
 
   // Häufig gewählte Hilfen in der Alarmzentrale
+  // Körper-Notizen: was das Kind unter „Mein Körper“ gemerkt hat
+  function koerperNotizen() {
+    var box = $("e-koerper-notizen");
+    box.textContent = "";
+    var notizen = (T.speicher.get("koerperNotizen") || []).slice().reverse();
+    if (!notizen.length) { box.appendChild(T.el("p", { class: "leise", text: "Noch keine Notizen. Unter „Mein Körper“ kann das Kind zeigen, wo es die Alarmanlage spürt, und es für euch merken." })); return; }
+    function name(id) { var s = T.koerperStelle && T.koerperStelle(id); return s ? s.name : id; }
+    function wann(zeit) {
+      try { return new Date(zeit).toLocaleString("de-DE", { weekday: "short", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit" }); } catch (e) { return ""; }
+    }
+    var tabelle = T.el("table", { class: "tabelle" }, [
+      T.el("thead", {}, [T.el("tr", {}, [T.el("th", { scope: "col", text: "Wann" }), T.el("th", { scope: "col", text: "Wo im Körper" })])]),
+      T.el("tbody", {}, notizen.slice(0, 30).map(function (n) { return T.el("tr", {}, [T.el("td", { text: wann(n.zeit) }), T.el("td", { text: name(n.stelle) })]); }))
+    ]);
+    box.appendChild(tabelle);
+    box.appendChild(T.el("div", { class: "knoepfe" }, [
+      T.el("button", { type: "button", class: "knopf klein", text: "Notizen drucken", onclick: function () {
+        T.drucke([T.el("div", { class: "notiz-blatt" }, [T.el("h1", { text: "Körper-Notizen" }), T.el("p", { text: "Notiert in „Sokrates' Teich“. Zum Mitnehmen zu Kinderarzt oder Therapie." }), tabelle.cloneNode(true)])], "notiz-druck");
+      } }),
+      T.el("button", { type: "button", class: "knopf klein gefahr", text: "Notizen löschen", onclick: function () {
+        T.dialog({ titel: "Alle Körper-Notizen löschen?", inhalt: [T.el("p", { text: "Die Notizen werden auf diesem Gerät gelöscht." })], knoepfe: [
+          { text: "Ja, löschen", gefahr: true, aktion: function () { T.speicher.set("koerperNotizen", []); koerperNotizen(); } },
+          { text: "Nein, behalten", haupt: true }
+        ] });
+      } })
+    ]));
+  }
+
+  // Sprungmarken oben auf der Seite
+  document.querySelectorAll(".e-navi [data-ziel]").forEach(function (k) {
+    k.addEventListener("click", function () {
+      var ziel = $(k.dataset.ziel);
+      ziel.scrollIntoView({ behavior: T.wenigBewegung() ? "auto" : "smooth", block: "start" });
+      ziel.focus({ preventScroll: true });
+    });
+  });
+
   function zentraleErgebnis() {
     var box = $("e-zentrale");
     box.textContent = "";

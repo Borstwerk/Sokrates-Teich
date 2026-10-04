@@ -1037,6 +1037,69 @@ span.code-taste { cursor: default; }
   .code-druck .code-taste svg { width: 10mm; height: 10mm; }
 }
 
+/* =====================================================================
+   Mein Körper, Fest und locker, Elternbereich in Abschnitten
+   ===================================================================== */
+.teich-gruppe.hilfen .orte { display: flex; flex-wrap: wrap; justify-content: center; }
+.teich-gruppe.hilfen .orte > li { flex: 0 1 calc((100% - 36px) / 3); min-width: 0; }
+
+.koerper-bereich { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 28px; align-items: start; }
+.koerper-figur { position: relative; width: 100%; max-width: 380px; margin: 0 auto; padding: 8px; background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; }
+.koerper-figur > svg { width: 100%; height: auto; }
+.koerper-figur .glow { fill: #F2B544; opacity: 0; transition: opacity .4s; }
+.koerper-figur .glow.an { opacity: .55; animation: koerper-puls 2.4s ease-in-out infinite; }
+@keyframes koerper-puls { 0%, 100% { opacity: .4; } 50% { opacity: .7; } }
+.stelle-knopf {
+  position: absolute; transform: translate(-50%, -50%); min-height: 44px; padding: 4px 14px;
+  background: rgba(255,255,255,.92); border: 2px solid var(--ink); border-radius: 99px; box-shadow: 0 2px 0 rgba(46,58,47,.25);
+  font-weight: 700; font-size: 17px; line-height: 1.1; cursor: pointer; white-space: nowrap; -webkit-tap-highlight-color: transparent;
+}
+.stelle-knopf[aria-pressed="true"] { background: var(--star); }
+.koerper-blase h2 { margin: 0 0 6px; font-size: 28px; }
+.koerper-blase h2:focus { outline: none; }
+.koerper-blase .unter { margin: 12px 0 4px; font-weight: 700; color: var(--water-deep); font-size: 18px; }
+.koerper-blase ul { margin: 0; padding-left: 22px; }
+.koerper-blase .hilft { list-style: none; padding: 0; display: grid; gap: 6px; }
+.koerper-blase .hilft li { display: flex; align-items: flex-start; gap: 8px; }
+.koerper-blase .hilft svg { flex: none; width: 24px; height: 24px; margin-top: 4px; }
+.koerper-blase .knoepfe .knopf svg { width: 30px; height: 30px; }
+.koerper-blase .knoepfe .knopf svg.sokrates { width: 44px; height: auto; }
+.gemerkt { min-height: 1.4em; margin: 8px 0 0; font-weight: 700; color: var(--moss); }
+.koerper-hinweis { margin-top: 24px; font-size: 19px; }
+#meter-extra.knoepfe { margin-top: 12px; }
+#meter-extra .knopf svg { width: 30px; height: 30px; }
+
+.erwachsene .e-navi { margin: 22px 0 8px; }
+.e-navi .leise { margin: 0 0 6px; }
+.e-navi ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.e-navi li { margin: 0; }
+.sprung-navi { margin: 0 0 8px; }
+.sprung-navi .knopf svg { width: 26px; height: 26px; }
+#ruhe-atmen, #ruhe-pause, #fl-titel { scroll-margin-top: 16px; }
+#ruhe-atmen:focus, #ruhe-pause:focus, #fl-titel:focus { outline: none; }
+.e-abschnitt { margin-top: 24px; padding: 6px 24px 18px; background: var(--weiss); border: 2px solid var(--ink); border-radius: 22px; scroll-margin-top: 16px; }
+.e-abschnitt:focus { outline: none; }
+.e-abschnitt > h2 { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.e-icon { flex: none; width: 40px; height: 40px; }
+.e-abschnitt h3 { font-size: 21px; margin: 22px 0 6px; }
+.e-abschnitt .weiter { margin: 18px 0 4px; max-width: none; }
+.kasten.warnung { background: #F6DCD3; border-left: 6px solid var(--alarm); }
+
+@media (max-width: 900px) {
+  .teich-gruppe.hilfen .orte > li { flex-basis: calc((100% - 18px) / 2); }
+}
+@media (max-width: 760px) {
+  .teich-gruppe.hilfen .orte > li { flex-basis: 100%; }
+  .koerper-bereich { grid-template-columns: 1fr; }
+  .stelle-knopf { font-size: 15px; padding: 4px 10px; min-height: 40px; }
+  .e-abschnitt { padding: 4px 16px 14px; }
+}
+
+@media print {
+  .notiz-druck .notiz-blatt h1 { font-size: 22pt; margin: 0 0 3mm; }
+  .notiz-druck .tabelle { font-size: 11pt; }
+}
+
 /* ---------- Ruhig-Modus: Einstellung „Ruhig“ oder System „weniger Bewegung“ ---------- */
 body.ruhig *, body.ruhig *::before, body.ruhig *::after { animation: none !important; transition: none !important; }
 body.ruhig .ring, body.ruhig .libelle, body.ruhig .funke { display: none; }

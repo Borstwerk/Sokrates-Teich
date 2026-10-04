@@ -4,7 +4,20 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 
 ## [Unreleased]
 
+### Neu: Körper
+- **Mein Körper:** Kinderfigur mit sieben Stellen (Kopf, Hals, Herz, Bauch, Hände, Beine, Ganz müde) –
+  wie es sich anfühlen kann, warum, was helfen kann; Karte zum Zeigen und „Für Mama oder Papa merken“.
+- **Fest und locker** in der Ruhe-Ecke (Muskeln anspannen und loslassen, im Bild von Sokrates' Panzer).
+- Neue Geschichte-Seite „Mein Körper merkt es auch“; neue Karten „Ich habe Bauchweh/Kopfweh“, „Mir ist übel“;
+  Panzer-Meter verweist ab Stufe 3 auf „Mein Körper“.
+- **Für Erwachsene:** „Wenn der Körper Alarm schlägt“ mit Erklärung, Umgang, Schulabsprachen, Warnzeichen
+  für eine zügige ärztliche Abklärung und den Körper-Notizen des Kindes (druckbar). Infoblatt für Lehrkräfte
+  um einen Hinweis zu Bauch- und Kopfweh ergänzt (weiterhin eine Seite).
+- Recherche mit Quellen und Evidenzstatus: `docs/recherche/02-koerper.md`.
+
 ### Verbessert
+- **Für Erwachsene** in Abschnitte gegliedert, mit Sprungmarken (Verstehen, Körper, Alltag, Schule, Aus den
+  Spielen, Hilfe finden, Einstellungen, Daten).
 - **Wer fühlt was?:** Beobachtung und Vermutung werden in einer kleinen Detektivfrage getrennt.
   Alle Gefühlsantworten bleiben offen; „Ich weiß es noch nicht“ führt ebenfalls zu den Hilfen.
 - **Teich-Rätselbuch:** Drei Rätsel zur freien Auswahl statt einer täglichen Fortschrittsanzeige

@@ -99,6 +99,53 @@
     }, t + 300);
   }
 
+  // ---------- Fest und locker (Muskeln anspannen und loslassen) ----------
+  var FL = T.inhalt.festLocker, flSzene;
+  function festLocker() {
+    alleStoppen();
+    $("pause-start").disabled = false;
+    var knopf = $("fl-start");
+    knopf.disabled = true;
+    var t = 0;
+    FL.teile.forEach(function (teil) {
+      spaeter(function () {
+        $("fl-teil").textContent = teil[0];
+        $("fl-text").textContent = teil[1];
+        flSzene.stelle(5);
+        ansagen(teil[1]);
+      }, t);
+      for (var i = 5; i >= 1; i--) {
+        (function (i, w) { spaeter(function () { $("fl-zahl").textContent = String(i); }, w); })(i, t + 600 + (5 - i) * 1000);
+      }
+      t += 5600;
+      spaeter(function () {
+        $("fl-zahl").textContent = "";
+        $("fl-text").textContent = teil[2];
+        flSzene.stelle(1);
+        ansagen(teil[2]);
+      }, t);
+      t += 6000;
+    });
+    spaeter(function () {
+      $("fl-teil").textContent = "";
+      $("fl-text").textContent = FL.ende;
+      ansagen(FL.ende);
+      T.nicken(flSzene.sokrates);
+      knopf.disabled = false;
+      knopf.textContent = FL.nochmal;
+    }, t);
+  }
+  $("fl-start").addEventListener("click", festLocker);
+
+  // Sprungmarken zu den drei Übungen
+  document.querySelectorAll(".sprung-navi [data-ziel]").forEach(function (k) {
+    k.addEventListener("click", function () {
+      var ziel = $(k.dataset.ziel);
+      ziel.scrollIntoView({ behavior: T.wenigBewegung() ? "auto" : "smooth", block: "start" });
+      ziel.focus({ preventScroll: true });
+    });
+  });
+
   $("atem-start").addEventListener("click", atmen);
   $("atem-stopp").addEventListener("click", function () { alleStoppen(); T.vorlesen.stopp(); atemZuruecksetzen(); });
   $("pause-start").addEventListener("click", pause);
@@ -115,6 +162,18 @@
         $("pause-szene").appendChild(pauseSzene);
       }
       pauseSzene.stelle(1);
+      if (!flSzene) {
+        flSzene = T.szene({ level: 1 });
+        $("fl-szene").appendChild(flSzene);
+      }
+      flSzene.stelle(1);
+      $("fl-titel").textContent = FL.titel;
+      $("fl-intro").textContent = FL.intro;
+      $("fl-teil").textContent = "";
+      $("fl-text").textContent = FL.intro;
+      $("fl-zahl").textContent = "";
+      $("fl-start").disabled = false;
+      $("fl-start").textContent = FL.start;
       $("pause-text").textContent = I.pauseText;
       $("pause-zahl").textContent = "";
       $("pause-start").disabled = false;

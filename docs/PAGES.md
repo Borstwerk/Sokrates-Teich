@@ -69,6 +69,19 @@ Der Rückweg führt aus Spielen zur Spieleübersicht, aus „Für Lehrkräfte“
 - **Optional:** „Wo bist du gerade in Gedanken?“ – Bilder: Zuhause · Schule · Viele Menschen · Neuer Ort.
 - **Nichts wird gespeichert**, außer das Kind will es im Mut-Schatz festhalten (später entscheiden).
 
+## 3b. Mein Körper – `#koerper` (seit Version 1.4)
+
+- **Zweck:** Körperliche Angstzeichen verstehen und zeigen können (Bauch-, Kopfweh, Kloß im Hals, Herzklopfen,
+  Zittern, Erstarren, Müdigkeit). Grundlage: [`recherche/02-koerper.md`](recherche/02-koerper.md).
+- **Primärinhalt:** Kinderfigur mit sieben beschrifteten Stellen (Kopf, Hals, Herz, Bauch, Hände, Beine,
+  Ganz müde). Antippen → Stelle leuchtet, Sprechblase: „So kann es sich anfühlen“, „Warum?“, „Das kann helfen“
+  (teils mit Link zur Ruhe-Ecke oder Karten-Kiste).
+- **Aktionen:** „Als Karte zeigen“ (große Karte, z. B. „Ich habe Bauchweh.“) und „Für Mama oder Papa merken“
+  (lokale Notiz mit Zeitpunkt; sichtbar und druckbar unter *Für Erwachsene*).
+- **Einstieg:** Startseite („Was hilft mir gerade?“) und Panzer-Meter ab Stufe 3 („Spürst du es im Körper?“).
+- **Sprache:** „Das Weh ist echt. Und es ist nicht gefährlich.“ Keine Diagnosebegriffe, keine Heilversprechen.
+  Hinweis für Erwachsene: bei häufigen oder starken Beschwerden ärztlich nachschauen lassen.
+
 ## 4. Mut-Steine – `#mut-steine` *(Signature)*
 
 - **Zweck:** Mut-Leiter / kleine Schritte sichtbar machen.
@@ -204,6 +217,9 @@ Die Spiele-Seite ist in drei Bereiche gegliedert: **Kleine Spiele**, **Knobeln**
   Rätselgenerierung, gespeicherten Lösungen und bisherigen Fundregeln bleiben erhalten.
 
 ## 10. Für Erwachsene – `#erwachsene`
+
+Seit Version 1.4 in Abschnitte gegliedert, mit Sprungmarken oben: Verstehen · Körper (Wenn der Körper Alarm
+schlägt, Warnzeichen, Körper-Notizen) · Alltag · Schule · Aus den Spielen · Hilfe finden · Einstellungen · Daten.
 
 - **Zweck:** Eltern informieren und Einstellungen.
 - **Inhalt:** Was ist selektiver Mutismus (kurz) · So nutzt ihr die Seite zusammen · Hilfreich / Vermeiden ·

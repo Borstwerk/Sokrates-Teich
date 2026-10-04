@@ -32,7 +32,8 @@
       spieleAn: true,
       funde: [],           // [{ id, art, x, y, zeit }] – x/y in Prozent, null = noch in der Schatzkiste
       alarmRunden: [],     // [{ zeit, antworten: [{ text, stufe }] }] – die letzten Runden
-      abenteuer: {}        // { truhe: {…}, zentrale: {…}, fall: {…} }
+      abenteuer: {},       // { truhe: {…}, zentrale: {…}, fall: {…} }
+      koerperNotizen: []   // [{ zeit, stelle }] – was das Kind unter „Mein Körper“ gemerkt hat
     };
   }
 

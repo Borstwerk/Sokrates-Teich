@@ -16,7 +16,7 @@ Teich.inhalt = {
     ],
     startHier: "Fang hier an!",
     gruppen: [
-      { id: "hilfen", titel: "Was hilft mir gerade?", orte: ["panzer-meter", "ruhe-ecke", "karten", "mut-steine"] },
+      { id: "hilfen", titel: "Was hilft mir gerade?", orte: ["panzer-meter", "koerper", "ruhe-ecke", "karten", "mut-steine"] },
       { id: "sammeln", titel: "Spielen und sammeln", ohneSpiele: "Mut sammeln", orte: ["spiele", "mein-teich", "mut-schatz"] }
     ]
   },
@@ -24,6 +24,7 @@ Teich.inhalt = {
   orte: [
     { id: "geschichte",   name: "Sokrates erzählt", unter: "Warum versteckt sich meine Stimme?", bild: "i-buch" },
     { id: "panzer-meter", name: "Panzer-Meter",     unter: "Wie geht es dir gerade?",           bild: "sokrates-3" },
+    { id: "koerper",      name: "Mein Körper",      unter: "Wo spürst du die Alarmanlage?",      bild: "i-koerper" },
     { id: "mut-steine",   name: "Mut-Steine",       unter: "Kleine mutige Schritte",             bild: "i-steine" },
     { id: "ruhe-ecke",    name: "Ruhe-Ecke",        unter: "Ganz ruhig atmen",                   bild: "i-seerose" },
     { id: "karten",       name: "Karten-Kiste",     unter: "Karten zum Zeigen",                  bild: "i-kiste" },
@@ -46,6 +47,9 @@ Teich.inhalt = {
     { titel: "Dann versteckt sich meine Stimme",
       text: ["Wenn die Alarmanlage piept, ziehe ich den Kopf ein.", "Dann bleibt meine Stimme im Panzer.", "Ich will etwas sagen. Aber die Wörter kommen nicht raus.", "Das fühlt sich doof an."],
       bild: { level: 4, lampe: 0.75 } },
+    { titel: "Mein Körper merkt es auch",
+      text: ["Wenn die Alarmanlage piept, merkt das auch mein Körper.", "Mein Bauch zwickt. Mein Kopf brummt. Mein Herz klopft schnell.", "Das Weh ist echt. Und es ist nicht gefährlich.", "Wenn die Alarmanlage leiser wird, wird es meistens auch im Körper besser."],
+      bild: { level: 3, lampe: 0.5, deko: [["i-kopfweh", "Kopf"], ["i-herz", "Herz"], ["i-bauchweh", "Bauch"]] } },
     { titel: "Das ist nicht meine Schuld",
       text: ["Ich bin nicht frech. Ich mache das nicht mit Absicht.", "Meine Alarmanlage ist nur zu laut eingestellt.", "Viele Kinder kennen das. Du bist nicht allein."],
       bild: { level: 2, deko: [["i-herz", ""]] } },
@@ -73,7 +77,8 @@ Teich.inhalt = {
       { name: "Nur die Augen gucken raus", text: "Das ist ganz schön viel gerade. Willst du mit mir atmen?", lampe: 0.75, ruhe: true },
       { name: "Ganz im Panzer",            text: "Im Panzer ist es sicher. Bleib so lange, wie du brauchst. Ich warte hier.", lampe: 0.95, ruhe: true }
     ],
-    zurRuhe: "Zur Ruhe-Ecke"
+    zurRuhe: "Zur Ruhe-Ecke",
+    zumKoerper: "Spürst du es im Körper?"
   },
 
   mutSteine: {
@@ -158,6 +163,9 @@ Teich.inhalt = {
       ["i-weissnicht", "Ich weiß es nicht."],
       ["i-durst", "Ich habe Durst."],
       ["i-nichtgut", "Mir geht es nicht gut."],
+      ["i-bauchweh", "Ich habe Bauchweh."],
+      ["i-kopfweh", "Ich habe Kopfweh."],
+      ["i-uebel", "Mir ist übel."],
       ["i-warten", "Bitte warte kurz."],
       ["i-mitmachen", "Ich möchte mitmachen."],
       ["sokrates-4", "Meine Stimme versteckt sich gerade. Ich höre dir aber zu."]
@@ -214,7 +222,7 @@ Teich.inhalt = {
         "Ein kurzes „Danke“ und weitermachen ist das beste Lob."
       ] },
       { titel: "Im Unterricht", bild: "i-buch", punkte: [
-        "Toilette: vorher eine Regel ausmachen (Karte zeigen oder ohne Fragen gehen dürfen).",
+        "Toilette: vorher eine Regel ausmachen (Karte oder ohne Fragen gehen). Bauch- oder Kopfweh kann Angst sein – bitte ernst nehmen.",
         "Mündliche Beteiligung auch schriftlich, nonverbal oder geflüstert ermöglichen.",
         "Mündliche Leistungen: Ein Nachteilsausgleich ist möglich (z. B. schriftlich, 1:1, Aufnahme von zu Hause). Bitte mit Eltern und Schulleitung absprechen.",
         "Schriftliche Leistungen sind in der Regel nicht betroffen."
@@ -894,5 +902,72 @@ Teich.inhalt = {
       endeFreund: { ende: "Ein neuer Freund", level: 1, deko: [["i-frosch", ""], ["i-herz", ""]], text: ["Der Frosch heißt Quaki. Er fragt, ob Sokrates morgen wieder an den Teich kommt.", "Sokrates nickt. Ein neuer Freund!"] },
       endeLampion: { ende: "Der leuchtende Lampion", level: 1, deko: [["i-laterne", ""], ["i-laterne", ""]], text: ["Auf dem Heimweg leuchtet Sokrates' Lampion.", "Er denkt: Heute war ich mutig. Ganz in meinem Tempo."] }
     }
+  },
+
+  /* ---------- Mein Körper: Wo spürst du die Alarmanlage? ---------- */
+  koerper: {
+    intro: [
+      "Wenn meine Alarmanlage piept, merkt das auch mein Körper.",
+      "Manchmal zwickt mein Bauch. Oder mein Kopf brummt.",
+      "Das Weh ist echt. Und es ist nicht gefährlich.",
+      "Wo spürst du es? Tipp auf die Stelle."
+    ],
+    frage: "Wo spürst du die Alarmanlage?",
+    soFuehlt: "So kann es sich anfühlen:",
+    warum: "Warum?",
+    hilft: "Das kann helfen:",
+    karteZeigen: "Als Karte zeigen",
+    merken: "Für Mama oder Papa merken",
+    gemerkt: "Gemerkt! Mama oder Papa sehen es unter „Für Erwachsene“.",
+    erwachsene: "Wenn es oft oder sehr weh tut, zeig es Mama oder Papa – mit Worten, einer Karte oder einem Zeichen. Dann kann auch eine Ärztin oder ein Arzt nachschauen. Das ist gut so.",
+    zurRuhe: "Zur Ruhe-Ecke",
+    // id, Name, Karte (Bild, Text), Gefühl, Warum, Hilfen [Text, Link]
+    stellen: [
+      { id: "kopf", name: "Im Kopf", karte: ["i-kopfweh", "Ich habe Kopfweh."],
+        fuehlt: ["Der Kopf tut weh oder brummt.", "Mir ist schwindelig.", "Ich kann nicht gut denken."],
+        warum: "Die Alarmanlage macht die Muskeln fest – auch im Nacken und am Kopf. Dann kann der Kopf wehtun.",
+        hilft: [["Schultern hoch zu den Ohren – und fallen lassen.", null], ["Einen Schluck Wasser trinken.", null], ["Langsam atmen in der Ruhe-Ecke.", "ruhe-ecke"]] },
+      { id: "hals", name: "Im Hals", karte: ["sokrates-4", "Meine Stimme versteckt sich gerade. Ich höre dir aber zu."],
+        fuehlt: ["Ein Kloß im Hals.", "Die Stimme steckt fest.", "Schlucken fühlt sich komisch an."],
+        warum: "Die Alarmanlage hält die Stimme fest. Das ist nicht deine Schuld.",
+        hilft: [["Eine Karte zeigen statt sprechen.", "karten"], ["Einen Schluck Wasser trinken.", null], ["Ganz langsam ausatmen.", "ruhe-ecke"]] },
+      { id: "herz", name: "Im Herz", karte: ["i-nichtgut", "Mir geht es nicht gut."],
+        fuehlt: ["Das Herz klopft ganz schnell.", "Ich atme schnell.", "Die Brust fühlt sich eng an."],
+        warum: "Die Alarmanlage macht den Körper bereit zum Wegrennen. Dafür klopft das Herz schneller. Das ist nicht gefährlich.",
+        hilft: [["Eine Hand auf den Bauch legen. Atmen, bis der Bauch rund wird wie ein Ballon.", "ruhe-ecke"], ["Langsam bis fünf zählen.", null]] },
+      { id: "bauch", name: "Im Bauch", karte: ["i-bauchweh", "Ich habe Bauchweh."],
+        fuehlt: ["Bauchweh oder Kribbeln im Bauch.", "Mir ist übel.", "Ich muss dringend aufs Klo.", "Ich habe keinen Hunger."],
+        warum: "Bauch und Kopf sind eng verbunden. Wenn die Alarmanlage piept, merkt das der Bauch sofort.",
+        hilft: [["Eine warme Hand oder eine Wärmflasche auf den Bauch.", null], ["Bauch-Ballon-Atmen.", "ruhe-ecke"], ["Die Klo-Karte zeigen.", "karten"]] },
+      { id: "haende", name: "In den Händen", karte: ["i-nichtgut", "Mir geht es nicht gut."],
+        fuehlt: ["Die Hände zittern.", "Die Hände schwitzen oder sind kalt."],
+        warum: "Die Alarmanlage schickt viel Kraft in Arme und Beine. Dann zittern die Hände manchmal.",
+        hilft: [["Fäuste fest machen – und wieder locker lassen.", "ruhe-ecke"], ["Die Hände aneinander warm reiben.", null]] },
+      { id: "beine", name: "In den Beinen", karte: ["i-warten", "Bitte warte kurz."],
+        fuehlt: ["Die Beine sind wackelig.", "Ich fühle mich wie festgeklebt.", "Ich kann mich nicht bewegen."],
+        warum: "Manchmal macht die Alarmanlage den Körper ganz starr – wie eine Schildkröte, die sich nicht rührt. Das heißt Erstarren. Es geht vorbei.",
+        hilft: [["Die Füße fest auf den Boden drücken.", null], ["Die Zehen bewegen.", null], ["Wenn es geht: kurz laufen oder hüpfen.", null]] },
+      { id: "muede", name: "Ganz müde", karte: ["i-warten", "Bitte warte kurz."],
+        fuehlt: ["Nach der Schule bin ich ganz müde.", "Ich kann schlecht einschlafen.", "Ich will nur noch meine Ruhe."],
+        warum: "Wenn die Alarmanlage lange an war, braucht der Körper danach viel Pause. Das ist ganz normal.",
+        hilft: [["Eine Panzer-Pause machen.", "ruhe-ecke"], ["Etwas Ruhiges machen: malen, kuscheln, lesen.", null], ["Früh ins Bett gehen.", null]] }
+    ]
+  },
+
+  /* ---------- Ruhe-Ecke: Fest und locker ---------- */
+  festLocker: {
+    titel: "Fest und locker",
+    intro: "Erst mache ich mich ganz fest, wie im Panzer. Dann lasse ich ganz locker. Danach fühlt sich der Körper oft warm und ruhig an.",
+    start: "Fest und locker machen",
+    nochmal: "Noch einmal",
+    fest: "Ganz fest …",
+    locker: "Und ganz locker.",
+    ende: "Gut gemacht! Wie fühlt sich dein Körper jetzt an?",
+    teile: [
+      ["Hände", "Mach Fäuste. Ganz fest!", "Lass die Hände locker hängen."],
+      ["Schultern", "Zieh die Schultern hoch bis zu den Ohren.", "Lass die Schultern fallen."],
+      ["Gesicht", "Kneif das Gesicht zusammen wie eine Schildkröte im Panzer.", "Mach das Gesicht ganz weich."],
+      ["Füße", "Kralle die Zehen fest ein.", "Lass die Zehen locker."]
+    ]
   }
 };

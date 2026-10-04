@@ -238,3 +238,15 @@ Alarmzentrale und ihre Hilfen sind dort als Daten beschrieben und lassen sich er
 > *Detektiv Sokrates:* „Wie fragt Sokrates? Es gibt viele Wege. Alle funktionieren.“ – „Sokrates zeigt
 > ein Bild von Funkel. Der Hausmeister versteht sofort: …“
 
+## Mein Körper und „Fest und locker“
+
+Texte in `assets/js/inhalt.js` (Abschnitte `koerper` und `festLocker`), neue Geschichte-Seite „Mein Körper
+merkt es auch“. Sprachregeln siehe [`recherche/02-koerper.md`](recherche/02-koerper.md).
+
+> „Wenn meine Alarmanlage piept, merkt das auch mein Körper. Manchmal zwickt mein Bauch. Oder mein Kopf
+> brummt. Das Weh ist echt. Und es ist nicht gefährlich.“
+
+> *Hals:* „Die Alarmanlage hält die Stimme fest. Das ist nicht deine Schuld.“
+
+> *Fest und locker:* „Mach Fäuste. Ganz fest!“ – „Lass die Hände locker hängen.“
+
