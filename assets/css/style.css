@@ -131,13 +131,22 @@ a { color: var(--water-deep); }
 .ort .bild { flex: none; width: 82px; height: 82px; border-radius: 50%; background: var(--water); border: var(--line) solid var(--ink); display: grid; place-items: center; overflow: hidden; }
 .ort .bild svg { width: 60px; height: 60px; }
 .ort .bild svg.sokrates { width: 76px; height: auto; }
-.ort b { display: block; font-size: 23px; line-height: 1.2; }
+.ort b { display: block; font-size: 23px; line-height: 1.2; color: var(--ink); }
 .ort span { display: block; font-size: 17px; line-height: 1.35; color: var(--ink-soft); }
 .ort .marke {
   position: absolute; top: -14px; right: 12px; background: var(--star); border: var(--line) solid var(--ink);
   border-radius: 99px; padding: 0 12px; font-size: 16px; font-weight: 700; color: var(--ink);
 }
 .erwachsene-link { margin-top: 48px; text-align: center; font-size: 18px; }
+
+.teich-start { margin-top: 18px; }
+.start-hinweis { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+.teich-start .knopf { max-width: 100%; }
+.teich-gruppe { margin-top: 32px; }
+.teich-gruppe h2 { margin: 0 0 14px; font-size: 26px; }
+.teich-gruppe .orte { margin-top: 0; }
+.teich-gruppe.hilfen .orte { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.teich-gruppe.sammeln .ort .bild { background: var(--sand); }
 
 /* ---------- Geschichte ---------- */
 .buchseite { background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 28px; padding: 24px; box-shadow: var(--paper-shadow); }
@@ -277,6 +286,9 @@ details summary { font-weight: 700; cursor: pointer; min-height: 40px; display: 
 .karten-werkzeug select { min-height: 48px; font-size: 18px; }
 .karten-werkzeug input[type="number"] { width: 96px; min-height: 48px; font-size: 18px; }
 .karten-werkzeug .info { flex-basis: 100%; color: var(--ink-soft); font-size: 16px; }
+.karten-druckoptionen > summary { display: list-item; min-height: 48px; line-height: 1.5; padding: 8px 0; }
+.karten-druckoptionen .karten-werkzeug { margin: 14px 0 0; padding: 0; border: 0; background: transparent; }
+.karten-druckoptionen .info:last-child { margin-bottom: 0; }
 .karten[data-groesse="klein"] { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 .karten[data-groesse="klein"] .karte { font-size: 17px; padding: 12px 8px; }
 .karten[data-groesse="klein"] .karte svg { width: 56px; height: 56px; }
@@ -385,6 +397,7 @@ details summary { font-weight: 700; cursor: pointer; min-height: 40px; display: 
   .mit-blase, .buchseite .mit-blase, .schatz-oben { grid-template-columns: 1fr; }
   .blase::before { left: 48px; top: -16px; border-left: var(--line) solid var(--ink); border-top: var(--line) solid var(--ink); border-bottom: none; }
   .orte { grid-template-columns: 1fr; }
+  .teich-gruppe.hilfen .orte { grid-template-columns: 1fr; }
   .mit-blase.kompakt { grid-template-columns: 1fr; }
   .kompakt .szene { max-width: 360px; width: 100%; }
   .stufen { grid-template-columns: repeat(2, 1fr); }
@@ -776,7 +789,7 @@ svg.wimmel { width: 100%; height: auto; border: var(--line) solid var(--ink); bo
 .faktoren li.leiser { background: #DDEBD5; }
 .faktoren li > svg { flex: none; width: 34px; height: 34px; }
 .faktor-name { flex: 1; }
-.punkte { display: flex; gap: 4px; }
+.faktor-punkte { display: flex; gap: 4px; flex: none; }
 .punkt { width: 16px; height: 16px; border-radius: 50%; background: var(--alarm); border: 2px solid var(--ink); transition: background-color .4s; }
 .punkt.weg { background: transparent; border-style: dashed; border-color: rgba(46,58,47,.4); }
 .hilfen-zaehler { margin: 0 0 8px; }
@@ -786,6 +799,14 @@ svg.wimmel { width: 100%; height: auto; border: var(--line) solid var(--ink); bo
 .werkzeug > svg.sokrates { width: 52px; height: auto; }
 .werkzeug[aria-pressed="true"] { background: var(--star); }
 .werkzeug:disabled { opacity: .5; cursor: default; }
+.hilfen-gruppen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.hilfen-gruppe { min-width: 0; }
+.hilfen-gruppe h4 { margin: 0 0 12px; font-size: 19px; line-height: 1.35; }
+.hilfen-gruppe .werkzeuge { grid-template-columns: 1fr; }
+.abenteuer-details { margin: 16px 0 0; padding: 8px 14px; background: var(--paper); box-shadow: none; }
+.abenteuer-details > summary { display: list-item; min-height: 48px; padding: 8px 0; line-height: 1.4; }
+.abenteuer-details > summary svg { display: inline-block; width: 28px; height: 28px; margin-right: 8px; vertical-align: middle; }
+.abenteuer-details[open] > summary { margin-bottom: 12px; }
 .zentrale-meldung { margin-top: 14px; }
 .geholfen { list-style: none; padding: 0; margin: 6px 0 10px; display: grid; gap: 6px; font-weight: 700; }
 .geholfen li { display: flex; align-items: center; gap: 10px; }
@@ -793,14 +814,16 @@ svg.wimmel { width: 100%; height: auto; border: var(--line) solid var(--ink); bo
 .geholfen li svg.sokrates { width: 46px; height: auto; }
 
 /* Detektiv Sokrates */
-.fall-oben { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; align-items: start; }
-.fall-karte h2, .fall-akte h2 { margin: 0 0 10px; font-size: 24px; display: flex; align-items: center; gap: 10px; }
-.fall-akte h2 svg { width: 32px; height: 32px; }
-.fall-karte ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 10px; }
-.ort-knopf { width: 100%; justify-content: flex-start; text-align: left; }
+.fall-oben { margin-top: 20px; }
+.fall-karte h2 { margin: 0 0 10px; font-size: 24px; }
+.fall-karte ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.fall-karte li:last-child { grid-column: 1 / -1; }
+.fall-karte li:last-child .ort-knopf { width: auto; }
+.fall-karte li { min-width: 0; }
+.ort-knopf { width: 100%; justify-content: flex-start; text-align: left; padding: 10px 14px; font-size: 19px; }
 .ort-knopf small { display: block; font-size: 14px; font-weight: 400; }
 .ort-knopf.huette { background: #FFF4C9; }
-.fall-akte { background: #FFF8E6; border: var(--line) solid var(--ink); border-radius: 20px; padding: 12px 16px; box-shadow: var(--paper-shadow); }
+.fall-akte { background: var(--sand); border-radius: var(--radius); }
 .fall-akte ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: 17px; line-height: 1.35; }
 .fall-akte li { display: flex; align-items: center; gap: 10px; padding: 4px 6px; border-radius: 10px; }
 .fall-akte li.neu { background: #FCE9C2; }
@@ -821,13 +844,20 @@ svg.wimmel { width: 100%; height: auto; border: var(--line) solid var(--ink); bo
 .antwort { font-size: 21px; font-weight: 700; background: #FFF4C9; border-radius: 14px; padding: 8px 12px; }
 .fall-wahl { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: 12px; margin-top: 12px; }
 
+@media (max-width: 900px) {
+  .fall-karte ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 760px) {
-  .zentrale-oben, .fall-oben, .fall-szene { grid-template-columns: 1fr; }
+  .zentrale-oben, .fall-szene, .hilfen-gruppen { grid-template-columns: 1fr; }
   .musterreihe li { width: 52px; height: 52px; }
   .musterreihe li svg { width: 40px; height: 40px; }
   .logik-stein { min-height: 104px; font-size: 15px; }
   .logik-stein svg, .logik-stein .frei { width: 48px; height: 48px; }
   .schiebe-vorlage { width: 100px; }
+}
+
+@media (max-width: 420px) {
+  .fall-karte ul { grid-template-columns: 1fr; }
 }
 
 /* =====================================================================

@@ -6,15 +6,18 @@ Texte im Detail: [`INHALT.md`](INHALT.md)
 ## Übersicht
 
 ```text
-                ┌─────────────────────────────┐
-                │      🐢  DER TEICH (Start)   │
-                └──────────────┬──────────────┘
-   ┌──────────┬──────────┬─────┴─────┬──────────┬──────────┐
-   ▼          ▼          ▼           ▼          ▼          ▼
-Sokrates   Panzer-    Mut-Steine  Ruhe-Ecke  Karten-   Mut-Schatz
-erzählt    Meter                             Kiste
-(Geschichte)                                                    
-                                              … und klein unten: „Für Erwachsene“
+Der Teich
+├─ Sokrates erzählt – Einstieg in der Begrüßung
+├─ Was hilft mir gerade?
+│  ├─ Panzer-Meter
+│  ├─ Ruhe-Ecke
+│  ├─ Karten-Kiste
+│  └─ Mut-Steine
+├─ Spielen und sammeln
+│  ├─ Spiele – Kleine Spiele / Knobeln / Abenteuer
+│  ├─ Dein Teich
+│  └─ Mut-Schatz
+└─ Für Erwachsene – eigene Weiter-Karte
 ```
 
 Reihenfolge-Empfehlung beim ersten Besuch: **Geschichte → Panzer-Meter → Ruhe-Ecke → Mut-Steine**.
@@ -24,7 +27,7 @@ Danach frei wählbar. Nichts ist gesperrt.
 
 ```text
 ┌──────────────────────────────────────────────────────────┐
-│ [← Zurück zum Teich]                        [🔊 Vorlesen] │
+│ [← Zurück]                                 [🔊 Vorlesen] │
 │                                                          │
 │                Titel des Ortes                           │
 │                                                          │
@@ -34,15 +37,19 @@ Danach frei wählbar. Nichts ist gesperrt.
 └──────────────────────────────────────────────────────────┘
 ```
 
+Der Rückweg führt aus Spielen zur Spieleübersicht, aus „Für Lehrkräfte“ zu „Für Erwachsene“ und sonst zum Teich.
+
 ---
 
 ## 1. Der Teich (Start) – `#teich`
 
 - **Zweck:** Ankommen, sich orientieren, einen Ort wählen.
 - **Primärinhalt:** Illustration eines Teichs; Sokrates sitzt am Ufer. Begrüßung in der Sprechblase.
-- **Hauptaktion:** Einen der sechs Orte anklicken (Ort-Kacheln mit Bild + Name).
-- **Sekundär:** kleiner Link „Für Erwachsene“ ganz unten.
-- **Besonderer Zustand:** Erster Besuch → Sokrates schlägt „Sokrates erzählt“ vor (leicht hervorgehoben).
+- **Einstieg:** „Sokrates erzählt“ direkt in der Begrüßung. Beim ersten Besuch als Hauptaktion mit „Fang hier an!“.
+- **Weitere Orte:** „Was hilft mir gerade?“ (Panzer-Meter, Ruhe-Ecke, Karten-Kiste, Mut-Steine) und
+  „Spielen und sammeln“ (Spiele, Dein Teich, Mut-Schatz). Alle acht Orte bleiben frei erreichbar.
+- **Spiele ausgeschaltet:** Spiele und Dein Teich verschwinden; der zweite Bereich heißt „Mut sammeln“.
+- **Sekundär:** Weiter-Karte „Für Erwachsene“ ganz unten.
 - **Mobil/schmal:** Orte als Liste untereinander statt Karte.
 
 ## 2. Sokrates erzählt – `#geschichte`
@@ -89,7 +96,9 @@ Danach frei wählbar. Nichts ist gesperrt.
 
 - **Zweck:** Nonverbale Kommunikation; Karten für Schule und unterwegs.
 - **Primärinhalt:** Raster aus großen Karten (Bild + kurzer Satz).
-- **Hauptaktionen:** Karte groß anzeigen (zum Zeigen am Bildschirm) · [🖨 Drucken].
+- **Hauptaktion:** Karte groß anzeigen (zum Zeigen am Bildschirm); das Kartenraster steht direkt nach der Einleitung.
+- **Anpassen:** Bildschirmgröße und eigene Karten unter dem Kartenraster.
+- **Drucken:** Format, Skalierung und Druckaktion im aufklappbaren Bereich „Für Erwachsene: Karten ausdrucken“.
 - **Eigene Karte:** Text eingeben (mit Erwachsenen), Symbol wählen.
 
 ## 7. Mut-Schatz – `#mut-schatz`
@@ -158,6 +167,10 @@ Die Spiele-Seite ist in drei Bereiche gegliedert: **Kleine Spiele**, **Knobeln**
 - Oben links führt der Zurück-Knopf je nach Bereich zum Teich, zu den Spielen oder zu „Für Erwachsene“.
 - Statt Textlinks am Seitenende gibt es **Weiter-Karten** (Bild, Titel, Untertitel, Pfeil), z. B.
   „Für Erwachsene“ auf der Startseite oder „Für Lehrkräfte“ in der Karten-Kiste.
+- In der **Alarmzentrale** sind die ausführlichen Faktoren aufklappbar. Alle elf Hilfen bleiben direkt
+  wählbar, gegliedert in „Zusammen“, „Vorbereiten und zeigen“ und „Zeit und Ruhe“.
+- Im **Detektivfall** zeigt die geschlossene Akte ihre Hinweiszahl. Öffnen ist jederzeit möglich; neue
+  Hinweise erhalten den Öffnungszustand. Die Orte stehen in einer eigenen Zeile vor der Suchszene.
 
 ## 9. Dein Teich – `#mein-teich` (seit Version 1.1)
 

@@ -162,7 +162,7 @@
       <div id="teich-szene"></div>
       <div class="blase" id="teich-blase"></div>
     </div>
-    <ul class="orte" id="orte"></ul>
+    <nav id="orte" aria-label="Orte am Teich"></nav>
     <nav class="weiter" data-weiter="erwachsene" aria-label="Für Erwachsene"></nav>
   </section>
 
@@ -262,32 +262,35 @@
   <section class="ansicht" id="ansicht-karten" data-ansicht="karten" hidden>
     <h1 tabindex="-1" class="lesen">Die Karten-Kiste</h1>
     <div class="lesen" id="karten-intro"></div>
-    <div class="knoepfe">
-      <button class="knopf" type="button" id="karte-neu">+ Eigene Karte machen</button>
-    </div>
+    <ul class="karten" id="karten"></ul>
     <div class="karten-werkzeug">
       <div class="gruppe" role="group" aria-labelledby="groesse-label">
-        <span id="groesse-label" class="werkzeug-titel">Größe</span>
+        <span id="groesse-label" class="werkzeug-titel">Größe am Bildschirm</span>
         <button class="knopf klein" type="button" data-groesse="klein" aria-pressed="false">Klein</button>
         <button class="knopf klein" type="button" data-groesse="mittel" aria-pressed="false">Mittel</button>
         <button class="knopf klein" type="button" data-groesse="gross" aria-pressed="false">Groß</button>
       </div>
-      <div class="gruppe">
-        <label for="karten-pro-seite" class="werkzeug-titel">Drucken</label>
-        <select id="karten-pro-seite">
-          <option value="8">8 Karten pro Seite (klein)</option>
-          <option value="4">4 Karten pro Seite (Postkarte)</option>
-          <option value="2">2 Karten pro Seite (groß)</option>
-          <option value="1">1 Karte pro Seite (riesig)</option>
-        </select>
-        <label for="karten-skalierung" class="werkzeug-titel">Skalierung</label>
-        <input type="number" id="karten-skalierung" min="30" max="150" step="5" inputmode="numeric"> %
-        <button class="knopf klein" type="button" id="karten-drucken">Alle Karten drucken</button>
-      </div>
-      <p class="info" id="karten-druck-info" aria-live="polite"></p>
-      <p class="info">Tipp: Im Druckfenster des Browsers bei „Skalierung“ <strong>100 % bzw. „Tatsächliche Größe“</strong> wählen – die Größe stellst du hier ein.</p>
+      <button class="knopf klein" type="button" id="karte-neu">+ Eigene Karte machen</button>
     </div>
-    <ul class="karten" id="karten"></ul>
+    <details class="karten-druckoptionen">
+      <summary>Für Erwachsene: Karten ausdrucken</summary>
+      <div class="karten-werkzeug">
+        <div class="gruppe">
+          <label for="karten-pro-seite" class="werkzeug-titel">Drucken</label>
+          <select id="karten-pro-seite">
+            <option value="8">8 Karten pro Seite (klein)</option>
+            <option value="4">4 Karten pro Seite (Postkarte)</option>
+            <option value="2">2 Karten pro Seite (groß)</option>
+            <option value="1">1 Karte pro Seite (riesig)</option>
+          </select>
+          <label for="karten-skalierung" class="werkzeug-titel">Skalierung</label>
+          <input type="number" id="karten-skalierung" min="30" max="150" step="5" inputmode="numeric"> %
+          <button class="knopf klein" type="button" id="karten-drucken">Alle Karten drucken</button>
+        </div>
+        <p class="info" id="karten-druck-info" aria-live="polite"></p>
+        <p class="info">Tipp: Im Druckfenster des Browsers bei „Skalierung“ <strong>100 % bzw. „Tatsächliche Größe“</strong> wählen – die Größe stellst du hier ein.</p>
+      </div>
+    </details>
     <nav class="weiter" data-weiter="lehrkraefte" aria-label="Für Lehrkräfte"></nav>
   </section>
 
@@ -473,7 +476,7 @@
     <div class="blase ohne-pfeil" aria-live="polite"><div class="lesen" id="fall-blase"></div></div>
     <div class="fall-oben">
       <nav class="fall-karte" id="fall-karte" aria-label="Orte"></nav>
-      <aside class="fall-akte" id="fall-akte" aria-live="polite"></aside>
+      <details class="abenteuer-details fall-akte" id="fall-akte"></details>
     </div>
     <div id="fall-ort"></div>
     <div id="fall-ende"></div>

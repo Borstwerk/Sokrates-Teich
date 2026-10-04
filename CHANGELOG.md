@@ -4,6 +4,15 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 
 ## [Unreleased]
 
+### Verbessert
+- **Karten-Kiste:** Kommunikationskarten stehen direkt unter der Einleitung. Bildschirmgröße und eigene
+  Karten folgen darunter; Druckformat und Skalierung liegen in einem aufklappbaren Erwachsenenbereich.
+- **Startseite:** Die Geschichte bekommt einen eigenen Einstieg in der Begrüßung. Die weiteren Orte sind
+  in „Was hilft mir gerade?“ und „Spielen und sammeln“ gegliedert.
+- **Abenteuer:** Alarmfaktoren und Detektiv-Akte sind aufklappbar. Die elf Hilfen der Alarmzentrale sind
+  nach Zweck gruppiert; beim Sammeln neuer Hinweise bleibt die geöffnete Akte erhalten.
+- Die Fortschrittspunkte der Geschichte und die Alarmfaktoren verwenden getrennte CSS-Klassen.
+
 ### Neu
 - **Knobeln:** Teich-Rätselbuch (täglich drei neue Rätsel), Geheime Zeichen (entschlüsseln und eigene
   Botschaften drucken), Über den großen Teich (Rucksack packen, Weg planen).

@@ -182,6 +182,25 @@ füllt sich weiter, weil er die Information trägt.
 
 ## 4. Technik
 
+### Optischer Feinschliff (Oktober 2026)
+
+- **Hierarchie durch Anordnung:** Geschichte als Einstieg in der Begrüßung, direkte Hilfen und
+  Spielen/Sammeln als zwei beschriftete Gruppen. Gruppen erhalten keine zusätzlichen Rahmen.
+- **Karten zuerst:** Die Kommunikationskarten sind der Hauptinhalt. Einstellungen folgen darunter;
+  technische Druckoptionen liegen in einem aufklappbaren Erwachsenenbereich.
+- **Zusatzwissen auf Wunsch:** Native `details`/`summary` für Alarmfaktoren, Fallakte und Druckoptionen.
+  Der Aufklappmarker bleibt sichtbar; Summary-Bedienelemente sind mindestens 48 px hoch und nutzen
+  den bestehenden Fokusrahmen. Der Hinweiszähler der Akte bleibt auch geschlossen sichtbar.
+- **Abenteuer:** Drei benannte Hilfengruppen statt einer unstrukturierten Werkzeugliste. Ausgewählte
+  Hilfen behalten Wort, Symbol und gedrückten Zustand. Spielmodell und Fortschrittsdaten bleiben gleich.
+- **Flächen:** Ergänzende Informationen nutzen Papier oder Sand mit dünner Kontur ohne Schatten.
+  Hauptaktionen und Illustrationen behalten ihre kräftigen Umrisse.
+- **Responsive:** Hilfen am Start in zwei Spalten, mobil untereinander; Abenteuer-Hilfen in drei
+  Spalten, mobil untereinander. Detektiv-Orte in vier, zwei oder einer Spalte je nach Breite.
+- **Bewegung:** Keine neuen Animationen; die bestehende Ruhig-Einstellung gilt auch für die neuen Gruppen.
+
+### Laufzeit
+
 - Reines HTML, CSS und JavaScript, **ohne Build-Schritt und ohne Internet**. Start per Doppelklick auf
   `index.html`.
 - Klassische `<script>`-Dateien (keine ES-Module, da diese unter `file://` blockiert werden).

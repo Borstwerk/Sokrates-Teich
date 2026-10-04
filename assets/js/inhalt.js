@@ -14,7 +14,11 @@ Teich.inhalt = {
       "Ich bin Sokrates. Ich wohne hier am Teich.",
       "Schau dich ruhig um. Du kannst nichts falsch machen."
     ],
-    startHier: "Fang hier an!"
+    startHier: "Fang hier an!",
+    gruppen: [
+      { id: "hilfen", titel: "Was hilft mir gerade?", orte: ["panzer-meter", "ruhe-ecke", "karten", "mut-steine"] },
+      { id: "sammeln", titel: "Spielen und sammeln", ohneSpiele: "Mut sammeln", orte: ["spiele", "mein-teich", "mut-schatz"] }
+    ]
   },
 
   orte: [
@@ -528,6 +532,13 @@ Teich.inhalt = {
     alle: "Alle Missionen",
     zurueck: "← Alle Missionen",
     alleGeschafft: "Du hast alle Missionen geschafft!",
+    faktorenTitel: "Was macht die Alarmanlage laut?",
+    hilfenTitel: "Deine Hilfen",
+    werkzeugGruppen: [
+      { titel: "Zusammen", hilfen: ["freund", "eltern", "kennenlernen", "gruppe"] },
+      { titel: "Vorbereiten und zeigen", hilfen: ["hingehen", "zeigen", "aufschreiben", "ueben"] },
+      { titel: "Zeit und Ruhe", hilfen: ["rand", "zeit", "atmen"] }
+    ],
     maxHilfen: 3,
     ziel: 3,
     faktoren: {

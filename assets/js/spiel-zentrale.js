@@ -66,7 +66,7 @@
     var wertText = T.el("p", { class: "alarm-wert", "aria-live": "polite" });
     var faktorListe = T.el("ul", { class: "faktoren" });
     var zaehler = T.el("p", { class: "leise hilfen-zaehler" });
-    var werkzeuge = T.el("ul", { class: "werkzeuge" });
+    var werkzeuge = T.el("div", { class: "hilfen-gruppen" });
     var meldung = T.el("div", { class: "zentrale-meldung", "aria-live": "polite" });
     var los = T.el("button", { type: "button", class: "knopf haupt", text: I.los, onclick: pruefe });
 
@@ -78,7 +78,7 @@
       wertText.textContent = T.fuelle(I.alarm, { wert: b.wert });
       faktorListe.textContent = "";
       Object.keys(m.faktoren).forEach(function (f) {
-        var info = I.faktoren[f], punkte = T.el("span", { class: "punkte", "aria-hidden": "true" });
+        var info = I.faktoren[f], punkte = T.el("span", { class: "faktor-punkte", "aria-hidden": "true" });
         for (var i = 0; i < m.faktoren[f]; i++) punkte.appendChild(T.el("span", { class: i < b.rest[f] ? "punkt" : "punkt weg" }));
         faktorListe.appendChild(T.el("li", { class: b.rest[f] < m.faktoren[f] ? "leiser" : "" }, [
           T.bild(info[0]), T.el("span", { class: "faktor-name", text: info[1] }), punkte,
@@ -93,14 +93,21 @@
       });
     }
 
-    I.werkzeuge.forEach(function (w) {
-      werkzeuge.appendChild(T.el("li", {}, [T.el("button", { type: "button", class: "werkzeug", "data-id": w.id, "aria-pressed": "false",
-        onclick: function () {
-          var i = gewaehlt.indexOf(w.id);
-          if (i >= 0) gewaehlt.splice(i, 1); else if (gewaehlt.length < I.maxHilfen) gewaehlt.push(w.id);
-          meldung.textContent = "";
-          aktualisiere();
-        } }, [T.bild(w.bild), w.name])]));
+    I.werkzeugGruppen.forEach(function (gruppe) {
+      var liste = T.el("ul", { class: "werkzeuge" });
+      gruppe.hilfen.forEach(function (id) {
+        var w = werkzeug(id);
+        liste.appendChild(T.el("li", {}, [T.el("button", { type: "button", class: "werkzeug", "data-id": w.id, "aria-pressed": "false",
+          onclick: function () {
+            var i = gewaehlt.indexOf(w.id);
+            if (i >= 0) gewaehlt.splice(i, 1); else if (gewaehlt.length < I.maxHilfen) gewaehlt.push(w.id);
+            meldung.textContent = "";
+            aktualisiere();
+          } }, [T.bild(w.bild), w.name])]));
+      });
+      werkzeuge.appendChild(T.el("section", { class: "hilfen-gruppe" }, [
+        T.el("h4", { class: "lesen", text: gruppe.titel }), liste
+      ]));
     });
 
     function pruefe() {
@@ -148,9 +155,11 @@
     var titel = T.el("h2", { class: "lesen", tabindex: "-1", text: m.titel });
     box.appendChild(T.el("div", { class: "zentrale-oben" }, [
       T.el("div", {}, [szene, anzeige, wertText]),
-      T.el("div", { class: "spiel-karte situation" }, [T.bild(m.bild), titel, faktorListe])
+      T.el("div", { class: "spiel-karte situation" }, [T.bild(m.bild), titel,
+        T.el("details", { class: "abenteuer-details" }, [T.el("summary", { text: I.faktorenTitel }), faktorListe])
+      ])
     ]));
-    box.appendChild(T.el("h3", { class: "lesen", text: "Deine Hilfen" }));
+    box.appendChild(T.el("h3", { class: "lesen", text: I.hilfenTitel }));
     box.appendChild(zaehler);
     box.appendChild(werkzeuge);
     box.appendChild(meldung);

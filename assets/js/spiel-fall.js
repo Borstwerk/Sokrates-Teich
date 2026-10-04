@@ -61,16 +61,20 @@
   function maleAkte(neuId) {
     var s = stand();
     var akte = $("fall-akte");
-    akte.textContent = "";
-    akte.appendChild(T.el("h2", {}, [T.bild("i-buch"), I.akte + " (" + s.hinweise.length + "/" + alleHinweise().length + ")"]));
-    var liste = T.el("ul");
+    // Summary behalten: Öffnungszustand und Tastaturfokus bleiben bei neuen Hinweisen erhalten.
+    if (!akte.querySelector("summary")) {
+      akte.appendChild(T.el("summary", {}, [T.bild("i-buch"), T.el("span", { class: "akte-titel", "aria-live": "polite" })]));
+      akte.appendChild(T.el("ul"));
+    }
+    akte.querySelector(".akte-titel").textContent = I.akte + " (" + s.hinweise.length + "/" + alleHinweise().length + ")";
+    var liste = akte.querySelector("ul");
+    liste.textContent = "";
     alleHinweise().forEach(function (h) {
       if (s.hinweise.indexOf(h.id) < 0) return;
       var li = T.el("li", { class: h.id === neuId ? "neu" : "" }, [personBild(h.bild), T.el("span", { text: h.text })]);
       liste.appendChild(li);
     });
     if (!liste.children.length) liste.appendChild(T.el("li", { class: "leer", text: I.akteLeer }));
-    akte.appendChild(liste);
   }
 
   function hinweisDazu(id) {
