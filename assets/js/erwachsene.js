@@ -134,7 +134,7 @@
   $("e-reset").addEventListener("click", function () {
     T.dialog({
       titel: "Wirklich alles zurücksetzen?",
-      inhalt: [T.el("p", { text: "Mut-Steine, Mut-Schatz, Teich-Schätze, eigene Karten und Einstellungen werden gelöscht. Tipp: Vorher eine Sicherung speichern." })],
+      inhalt: [T.el("p", { text: "Mut-Steine, Mut-Schatz, Teich-Schätze, Werkstücke, eigene Karten und Einstellungen werden gelöscht. Tipp: Vorher eine Sicherung speichern." })],
       knoepfe: [
         { text: "Ja, alles löschen", gefahr: true, aktion: function () { T.speicher.zuruecksetzen(); fuelleFormular(); T.aktualisiereLeiste(); T.setzeBewegung(); gespeichert(); } },
         { text: "Nein, behalten", haupt: true }

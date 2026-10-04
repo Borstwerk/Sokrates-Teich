@@ -322,6 +322,7 @@
     <h2 class="lesen">Deine Schatzkiste</h2>
     <ul class="mt-kiste" id="mt-kiste"></ul>
     <p class="leise" id="mt-zaehler"></p>
+    <nav class="weiter" data-weiter="spiel-werkstatt" aria-label="Werkstatt"></nav>
     <nav class="weiter" data-weiter="spiele" aria-label="Spiele"></nav>
   </section>
 
@@ -425,6 +426,27 @@
   </section>
 
   <!-- Kleines Spiel: Wer fühlt was? -->
+  <section class="ansicht" id="ansicht-spiel-werkstatt" data-ansicht="spiel-werkstatt" hidden>
+    <h1 tabindex="-1" class="lesen">Sokrates’ Werkstatt</h1>
+    <div class="blase ohne-pfeil"><div class="lesen" id="wk-blase"></div></div>
+    <div class="wk-platz" id="wk-platz">
+      <figure class="wk-entwurf">
+        <figcaption class="lesen" id="wk-vorschau-titel"></figcaption>
+        <div id="wk-vorschau"></div>
+        <p class="leise lesen" id="wk-beschreibung"></p>
+      </figure>
+      <div id="wk-formular"></div>
+    </div>
+    <div class="knoepfe wk-aktionen">
+      <button type="button" class="knopf haupt" id="wk-ablegen"></button>
+      <button type="button" class="knopf" id="wk-neu"></button>
+      <a class="knopf" href="#mein-teich" id="wk-zum-teich"></a>
+    </div>
+    <p class="lesen" id="wk-meldung" role="status" aria-live="polite"></p>
+    <h2 class="lesen" id="wk-eigene-titel"></h2>
+    <ul class="wk-sammlung" id="wk-sammlung"></ul>
+  </section>
+
   <section class="ansicht" id="ansicht-spiel-gefuehle" data-ansicht="spiel-gefuehle" hidden>
     <h1 tabindex="-1" class="lesen">Wer fühlt was?</h1>
     <div class="blase ohne-pfeil"><div class="lesen" id="gf-blase"></div></div>
@@ -681,6 +703,7 @@
 <script src="assets/js/spiel-weg.js"></script>
 <script src="assets/js/spiel-gefuehle.js"></script>
 <script src="assets/js/spiel-teichfest.js"></script>
+<script src="assets/js/spiel-werkstatt.js"></script>
 <script src="assets/js/erwachsene.js"></script>
 <script src="assets/js/lehrkraefte.js"></script>
 <script src="assets/js/app.js"></script>
