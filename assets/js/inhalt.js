@@ -623,5 +623,219 @@ Teich.inhalt = {
       "Danke, Detektivin oder Detektiv! Heute Abend leuchtet es am Teich wieder."
     ],
     nochmal: "Fall noch mal spielen"
+  },
+
+  /* ---------- Navigation: Rückweg je nach Bereich ---------- */
+  navi: {
+    teich: "← Zum Teich",
+    spiele: "← Zu den Spielen",
+    erwachsene: "← Für Erwachsene",
+    weiter: {
+      erwachsene: { bild: "i-buch", titel: "Für Erwachsene", unter: "Wissen, Einstellungen, Material für die Schule" },
+      lehrkraefte: { bild: "i-tafel", titel: "Für Lehrkräfte", unter: "Infoblatt und Erklär-Karten zum Ausdrucken" },
+      teich: { bild: "i-frosch", titel: "Dein Teich", unter: "Hier wohnen deine Schätze" },
+      spiele: { bild: "i-spiel", titel: "Spiele", unter: "Noch etwas spielen?" }
+    }
+  },
+
+  /* ---------- Bereiche auf der Spiele-Seite ---------- */
+  spielGruppen: [
+    { id: "klein", titel: "Kleine Spiele", unter: "Kurz, ruhig und ohne Verlieren" },
+    { id: "knobeln", titel: "Knobeln", unter: "Rätsel, Codes und Wege" },
+    { id: "abenteuer", titel: "Abenteuer", unter: "Größere Spiele zum Entdecken. Du kannst jederzeit aufhören und später weitermachen." }
+  ],
+  knobeln: [
+    { id: "spiel-raetselbuch", name: "Teich-Rätselbuch",   unter: "Jeden Tag drei neue Rätsel",      bild: "i-buch" },
+    { id: "spiel-code",        name: "Geheime Zeichen",     unter: "Botschaften entschlüsseln",       bild: "i-schluessel" },
+    { id: "spiel-weg",         name: "Über den großen Teich", unter: "Plane deinen Weg",             bild: "i-steine" }
+  ],
+  mehrKlein: [
+    { id: "spiel-gefuehle", name: "Wer fühlt was?", unter: "Gefühle an Hinweisen erkennen", bild: "i-nichtgut" }
+  ],
+  mehrAbenteuer: [
+    { id: "spiel-teichfest", name: "Das Teichfest", unter: "Du entscheidest, wie es weitergeht", bild: "i-laterne" }
+  ],
+
+  /* ---------- Geheime Zeichen ---------- */
+  code: {
+    intro: [
+      "Ich habe dir geheime Botschaften geschrieben!",
+      "Jedes Zeichen steht für einen Buchstaben. Im Schlüssel siehst du, welcher es ist.",
+      "Tipp im Schlüssel auf das passende Zeichen. Dann erscheint der Buchstabe."
+    ],
+    botschaft: "Botschaft {nr} von {von}",
+    schluessel: "Der Schlüssel",
+    falsch: "Schau genau: Form und Zeichen müssen gleich sein.",
+    geloest: "Entschlüsselt!",
+    weiter: "Nächste Botschaft →",
+    botschaften: [
+      ["MUT", "Genau! Mut hat viele Formen."],
+      ["HALLO", "Hallo zurück! Ganz ohne Worte."],
+      ["DU BIST TOLL", "Das meine ich ernst."],
+      ["ZEIGEN ZAEHLT AUCH", "Zeigen ist eine echte Antwort."],
+      ["LANGSAM IST AUCH MUTIG", "Schildkröten wissen das."],
+      ["SOKRATES MAG DICH", "Und das bleibt so."]
+    ],
+    endeTitel: "Alle Botschaften entschlüsselt!",
+    ende: ["Du bist jetzt eine echte Code-Knackerin oder ein echter Code-Knacker.", "Schreib doch selbst eine geheime Botschaft!"],
+    eigenTitel: "Deine eigene Geheimbotschaft",
+    eigenText: "Schreib eine Botschaft. Sie wird in geheime Zeichen verwandelt. Dann kannst du sie ausdrucken und jemandem geben, der sie mit dem Schlüssel entschlüsselt.",
+    eigenFeld: "Deine Botschaft",
+    eigenBeispiel: "z. B. Spielst du mit mir?",
+    drucken: "Botschaft mit Schlüssel drucken",
+    druckTitel: "Eine geheime Botschaft für dich",
+    druckHinweis: "Jedes Zeichen ist ein Buchstabe. Der Schlüssel unten verrät, welcher."
+  },
+
+  /* ---------- Teich-Rätselbuch ---------- */
+  raetselbuch: {
+    intro: ["Jeden Tag gibt es hier drei neue Rätsel.", "Lass dir Zeit. Du kannst so oft probieren, wie du willst."],
+    heute: "Die Rätsel von heute ({datum})",
+    extra: "Ein Extra-Rätsel",
+    extraKnopf: "Noch ein Rätsel, bitte!",
+    titel: { sudoku: "Teich-Sudoku", rechnen: "Tier-Rechnung", reihe: "Zahlen-Reihe" },
+    sudoku: "Jedes Tier darf in jeder Reihe, jeder Spalte und jedem Viererfeld nur einmal vorkommen. Tipp ein leeres Feld an, dann ein Tier.",
+    sudokuDoppelt: "Hier kommt ein Tier doppelt vor. Die Felder sind markiert.",
+    sudokuLeer: "Es sind noch Felder leer.",
+    rechnen: "Jedes Tier steht für eine Zahl. Welche Zahl ist es?",
+    reihe: "Welche Zahl kommt als Nächstes?",
+    pruefen: "Prüfen",
+    falsch: "Noch nicht. Probier es in Ruhe noch einmal.",
+    richtig: "Richtig!",
+    fertig: "Gelöst",
+    alleHeute: "Alle Rätsel von heute gelöst! Morgen gibt es neue.",
+    zaehler: "Gelöste Rätsel bisher: {anzahl}"
+  },
+
+  /* ---------- Über den großen Teich ---------- */
+  weg: {
+    intro: [
+      "Ich will über den großen Teich zur Insel mit der Seerose.",
+      "Manche Steine sind schwierig. Dafür brauche ich etwas aus meinem Rucksack.",
+      "Pack zuerst den Rucksack. Dann tippst du auf den Stein, zu dem ich gehen soll."
+    ],
+    levelText: "Weg {nr} von {von}",
+    packen: "Pack den Rucksack: {anzahl} von {von} Sachen",
+    los: "Los geht's!",
+    neu: "Rucksack neu packen",
+    rucksack: "Im Rucksack:",
+    leer: "leer",
+    braucht: "Hier bräuchte ich: {was}. Pack den Rucksack neu oder nimm einen anderen Weg.",
+    benutzt: "{was} hat geholfen!",
+    angekommen: "Angekommen! Gut geplant.",
+    weiter: "Nächster Weg →",
+    zuWeit: "Ich gehe immer nur einen Stein weiter: nach oben, unten, links oder rechts.",
+    endeTitel: "Alle Wege geschafft!",
+    ende: ["Vorher planen hilft. Dann sind auch schwierige Steine machbar.", "Was würdest du in deinen echten Rucksack packen?"],
+    // Feld: [Bild, Name, braucht Sache]
+    felder: {
+      w: ["i-herz", "Wackelstein", "freund"],
+      n: ["i-wolke", "Nebel", "karte"],
+      l: ["i-lautsprecher", "Lauter Stein", "pause"],
+      f: ["i-frage", "Frage-Stein", "antwort"]
+    },
+    sachen: {
+      freund: ["i-herz", "Freundin"],
+      karte: ["i-ort", "Wegkarte"],
+      pause: ["i-seerose", "Pause"],
+      antwort: ["i-karte", "Antwort-Karte"]
+    },
+    erklaerung: {
+      w: "Wackelsteine schaffe ich mit einer Freundin an meiner Seite.",
+      n: "Im Nebel hilft die Wegkarte.",
+      l: "Auf lauten Steinen hilft eine kleine Pause.",
+      f: "Auf Frage-Steinen fragt mich jemand etwas. Mit der Antwort-Karte kann ich antworten."
+    },
+    // S = Start, Z = Ziel, o = Stein, . = Wasser, w/n/l/f = besondere Steine
+    level: [
+      { platz: 1, karte: ["Soo...", "..o...", "..wooZ"] },
+      { platz: 2, karte: ["Sooo..", "...n..", ".ooooo", ".w...l", ".oooZo"] },
+      { platz: 2, karte: ["Soofo.", "o...o.", "n...l.", "wooooZ"] },
+      { platz: 2, karte: ["Sooo..", "f..w..", "o..oo.", "l...n.", "oooooZ"] },
+      { platz: 3, karte: ["So.ooo", "of.o.n", "lo.w.o", "oooo.o", ".....Z"] }
+    ]
+  },
+
+  /* ---------- Wer fühlt was? ---------- */
+  gefuehleSpiel: {
+    intro: ["Schau dir die Bilder genau an.", "Wie fühlt sich das Tier? Oft passen mehrere Gefühle."],
+    frage: "Wie fühlt sich {wer} wohl?",
+    hilfeFrage: "Was könnte {wem} helfen?",
+    gut: "Das kann gut sein!",
+    eherNicht: "Hmm, eher nicht. Schau noch mal: {hinweis}",
+    weiter: "Nächstes Bild →",
+    fertig: "Fertig! →",
+    proRunde: 5,
+    endeTitel: "Gut beobachtet!",
+    ende: ["Gefühle kann man oft an kleinen Zeichen erkennen.", "Und manchmal hilft es, einfach zu fragen – auch mit einer Karte."],
+    // wer, wem, bild, Text, passende Gefühle, Auswahl, Hinweis, Hilfen [Text, Antwort]
+    bilder: [
+      { wer: "die Ente", wem: "der Ente", bild: "i-ente", text: "Erster Tag in der neuen Gruppe. Die Ente steht am Rand. Sie schaut auf den Boden. Ihre Flügel zittern ein bisschen.",
+        passt: ["aufgeregt", "traurig"], auswahl: ["aufgeregt", "froh", "traurig", "stolz"], hinweis: "Sie steht am Rand und zittert.",
+        hilfen: [["Mich neben sie stellen und lächeln", "Die Ente lächelt vorsichtig zurück."], ["Ihr eine Karte zeigen: „Spielst du mit?“", "Die Ente nickt. Sie kommt mit."], ["Sie in Ruhe ankommen lassen", "Nach einer Weile schaut die Ente sich neugierig um."]] },
+      { wer: "der Frosch", wem: "dem Frosch", bild: "i-frosch", text: "Der Frosch ist beim Weitsprung am weitesten gesprungen. Er grinst und hüpft auf und ab.",
+        passt: ["froh", "stolz"], auswahl: ["muede", "froh", "stolz", "traurig"], hinweis: "Er grinst und hüpft.",
+        hilfen: [["Ihm einen Daumen hoch zeigen", "Der Frosch zeigt den Daumen zurück."], ["Mit ihm zusammen hüpfen", "Jetzt hüpfen beide. Was für ein Spaß!"], ["Ihm einen Stern malen", "Der Frosch hängt den Stern an seine Seerose."]] },
+      { wer: "der Fisch", wem: "dem Fisch", bild: "i-fisch", text: "Der Lieblingsstein des Fisches ist weg. Er schwimmt ganz langsam und schaut nach unten.",
+        passt: ["traurig"], auswahl: ["traurig", "ueberrascht", "froh", "mutig"], hinweis: "Er schwimmt langsam und schaut nach unten.",
+        hilfen: [["Beim Suchen helfen", "Zusammen finden sie den Stein unter einem Blatt!"], ["Neben ihm schwimmen", "Der Fisch fühlt sich nicht mehr so allein."], ["Ihm einen neuen Stein schenken", "Der Fisch freut sich. Jetzt hat er zwei Lieblingssteine."]] },
+      { wer: "die Schnecke", wem: "der Schnecke", bild: "i-schnecke", text: "Alle reden gleichzeitig ganz laut. Die Schnecke zieht sich in ihr Haus zurück.",
+        passt: ["aufgeregt", "muede"], auswahl: ["stolz", "aufgeregt", "froh", "muede"], hinweis: "Sie zieht sich bei dem Lärm zurück.",
+        hilfen: [["Mit ihr an einen ruhigen Platz gehen", "Dort kommt die Schnecke langsam wieder heraus."], ["Leiser sein und warten", "Die Schnecke streckt vorsichtig die Fühler raus."], ["Ihr die Ruhe-Ecke zeigen", "Die Schnecke atmet mit. Ein, aus."]] },
+      { wer: "Sokrates", wem: "Sokrates", bild: "sokrates-1", text: "Sokrates hat sich getraut: Beim Bäcker hat er auf das Brötchen gezeigt, das er möchte.",
+        passt: ["mutig", "stolz", "froh"], auswahl: ["mutig", "traurig", "stolz", "muede"], hinweis: "Er hat sich etwas getraut.",
+        hilfen: [["Ihm sagen: „Das war mutig!“", "Sokrates strahlt."], ["Ein Mut-Steinchen ins Glas legen", "Klack! Das Glas ist wieder ein bisschen voller."], ["Zusammen das Brötchen essen", "Mmh. Mut macht hungrig."]] },
+      { wer: "die Ente", wem: "der Ente", bild: "i-ente", text: "Die Ente öffnet die Tür. Alle Freunde sind da und rufen: „Überraschung! Alles Gute zum Geburtstag!“",
+        passt: ["ueberrascht", "froh", "aufgeregt"], auswahl: ["ueberrascht", "muede", "froh", "traurig"], hinweis: "Damit hat sie nicht gerechnet.",
+        hilfen: [["Ihr kurz Zeit zum Staunen lassen", "Die Ente atmet durch und lacht dann."], ["Ihr ein Geschenk geben", "Die Ente packt es sofort aus."], ["Ein Geburtstagslied singen oder summen", "Die Ente wippt im Takt."]] },
+      { wer: "der Frosch", wem: "dem Frosch", bild: "i-frosch", text: "Nach dem langen Ausflug gähnt der Frosch. Seine Augen fallen fast zu.",
+        passt: ["muede", "ruhig"], auswahl: ["muede", "aufgeregt", "ruhig", "stolz"], hinweis: "Er gähnt und die Augen fallen zu.",
+        hilfen: [["Ihm eine Decke bringen", "Der Frosch kuschelt sich ein."], ["Leise sein", "Der Frosch schläft lächelnd ein."], ["Gute Nacht winken", "Der Frosch winkt müde zurück."]] },
+      { wer: "der Fisch", wem: "dem Fisch", bild: "i-fisch", text: "Der Fisch liegt im warmen Wasser in der Sonne. Seine Augen sind halb zu. Er lächelt.",
+        passt: ["ruhig", "froh"], auswahl: ["ruhig", "aufgeregt", "froh", "ueberrascht"], hinweis: "Er liegt entspannt in der Sonne.",
+        hilfen: [["Dazulegen und mitentspannen", "Jetzt liegen beide in der Sonne. Herrlich."], ["Ihn in Ruhe lassen", "Der Fisch genießt die Ruhe."], ["Ihm später etwas erzählen", "Der Fisch freut sich schon darauf."]] }
+    ]
+  },
+
+  /* ---------- Das Teichfest (Entscheidungsgeschichte) ---------- */
+  teichfest: {
+    titel: "Das Teichfest",
+    intro: "Du entscheidest, was Sokrates macht. Jeder Weg ist ein guter Weg.",
+    enden: "Enden entdeckt: {anzahl} von {von}",
+    nochmal: "Noch einmal von vorn",
+    neuesEnde: "Ein neues Ende entdeckt!",
+    jederWeg: "Jeder Weg war ein guter Weg.",
+    // Bild: level = Sokrates-Pose, deko = Bilder in der Szene
+    seiten: {
+      start: { level: 2, deko: [["i-laterne", ""], ["i-broetchen", ""]], text: ["Heute ist Teichfest! Es gibt Lampions, Kuchen und Musik.", "Sokrates möchte hin. Aber es kribbelt ein bisschen im Bauch."],
+        wahl: [["Mit Freundin Ente hingehen", "mitEnte"], ["Mit Papa hingehen", "mitPapa"], ["Erst mal von weitem schauen", "weitem"]] },
+      mitEnte: { level: 1, deko: [["i-ente", "Ente"]], text: ["Die Ente holt Sokrates ab. Sie watschelt, er krabbelt.", "Zusammen ist der Weg gar nicht so lang."], wahl: [["Weiter zum Eingang", "eingang"]] },
+      mitPapa: { level: 1, deko: [["i-haus", "Papa"]], text: ["Papa geht neben Sokrates her. Ganz langsam, im Schildkröten-Tempo.", "Das fühlt sich gut an."], wahl: [["Weiter zum Eingang", "eingang"]] },
+      weitem: { level: 2, deko: [["i-laterne", ""], ["i-auge", ""]], text: ["Sokrates setzt sich auf einen Stein am Ufer und schaut zu.", "Die Lampions leuchten. Nach einer Weile kribbelt es weniger."],
+        wahl: [["Jetzt näher rangehen", "eingang"], ["Heute nur von hier schauen", "endeWeitem"]] },
+      eingang: { level: 3, lampe: 0.5, deko: [["i-gruppe", ""]], text: ["Am Eingang sind viele Tiere. Es ist laut.", "Sokrates' Alarmanlage piept ein bisschen."],
+        wahl: [["Einen ruhigen Platz am Rand suchen", "rand"], ["Kurz atmen wie in der Ruhe-Ecke", "atmen"], ["Gleich zur Kuchen-Bude", "kuchen"]] },
+      atmen: { level: 1, lampe: 0.1, deko: [["i-seerose", ""]], text: ["Ein … und aus. Ein … und aus.", "Der Panzer fühlt sich wieder gemütlich an. Die Alarmanlage wird leiser."],
+        wahl: [["Zur Kuchen-Bude", "kuchen"], ["Zum Lampion-Basteln", "basteln"]] },
+      rand: { level: 1, deko: [["i-blume", ""]], text: ["Am Rand ist es leiser. Von hier sieht Sokrates alles.", "Die Musik klingt von hier sogar schön."],
+        wahl: [["Zum Lampion-Basteln", "basteln"], ["Zur Kuchen-Bude", "kuchen"], ["Hier bleiben bis zum Feuerwerk", "endeFeuerwerk"]] },
+      kuchen: { level: 2, deko: [["i-broetchen", "Kuchen"]], text: ["An der Kuchen-Bude steht ein Igel. Er fragt freundlich: „Was möchtest du?“"],
+        wahl: [["Auf den Erdbeerkuchen zeigen", "kuchenZeigen"], ["Eine Karte zeigen", "kuchenKarte"], ["Leise „Erdbeer“ sagen", "kuchenSagen"]] },
+      kuchenZeigen: { level: 1, deko: [["i-zeigen", ""], ["i-broetchen", ""]], text: ["Sokrates zeigt auf den Erdbeerkuchen. Der Igel nickt und gibt ihm ein großes Stück.", "Zeigen hat geklappt!"],
+        wahl: [["Zum Lampion-Basteln", "basteln"], ["Mit dem Kuchen ans Ufer setzen", "endeUfer"]] },
+      kuchenKarte: { level: 1, deko: [["i-karte", ""], ["i-broetchen", ""]], text: ["Sokrates zeigt seine Karte. Der Igel liest und lächelt: „Kommt sofort!“", "Die Karte hat geklappt!"],
+        wahl: [["Zum Lampion-Basteln", "basteln"], ["Mit dem Kuchen ans Ufer setzen", "endeUfer"]] },
+      kuchenSagen: { level: 1, deko: [["i-fluestern", ""], ["i-broetchen", ""]], text: ["„Erdbeer“, sagt Sokrates ganz leise. Der Igel nickt und gibt ihm ein Stück.", "Das hat geklappt!"],
+        wahl: [["Zum Lampion-Basteln", "basteln"], ["Mit dem Kuchen ans Ufer setzen", "endeUfer"]] },
+      basteln: { level: 2, deko: [["i-laterne", ""], ["i-frosch", "?"]], text: ["Beim Lampion-Basteln sitzt ein Frosch, den Sokrates nicht kennt.", "Der Frosch sucht den Kleber. Er liegt direkt vor Sokrates."],
+        wahl: [["Den Kleber zum Frosch schieben", "frosch"], ["Weiterbasteln und kurz lächeln", "froschLaecheln"]] },
+      frosch: { level: 1, deko: [["i-frosch", ""], ["i-herz", ""]], text: ["Der Frosch strahlt. „Danke!“", "Ab jetzt reicht er Sokrates immer die Schere. Ohne viele Worte."], wahl: [["Weiter", "endeFreund"]] },
+      froschLaecheln: { level: 1, deko: [["i-frosch", ""], ["i-laecheln", ""]], text: ["Der Frosch lächelt zurück.", "Am Ende halten beide stolz ihre Lampions hoch."], wahl: [["Weiter", "endeLampion"]] },
+      endeWeitem: { ende: "Der stille Beobachter", level: 1, deko: [["i-laterne", ""], ["i-stern", ""]], text: ["Sokrates bleibt heute am Ufer. Von hier sieht er die Lampions über dem Wasser leuchten.", "Auch das ist ein schöner Abend. Vielleicht geht er nächstes Mal näher ran."] },
+      endeFeuerwerk: { ende: "Das Feuerwerk", level: 1, deko: [["i-stern", ""], ["i-stern", ""], ["i-sonne", ""]], text: ["Bumm! Bunte Sterne leuchten über dem Teich.", "Vom ruhigen Platz am Rand sieht Sokrates das schönste Feuerwerk."] },
+      endeUfer: { ende: "Kuchen am Ufer", level: 1, deko: [["i-broetchen", ""], ["i-seerose", ""]], text: ["Sokrates sitzt mit seinem Kuchen am Ufer. Die Musik klingt leise herüber.", "Was für ein leckerer Abend."] },
+      endeFreund: { ende: "Ein neuer Freund", level: 1, deko: [["i-frosch", ""], ["i-herz", ""]], text: ["Der Frosch heißt Quaki. Er fragt, ob Sokrates morgen wieder an den Teich kommt.", "Sokrates nickt. Ein neuer Freund!"] },
+      endeLampion: { ende: "Der leuchtende Lampion", level: 1, deko: [["i-laterne", ""], ["i-laterne", ""]], text: ["Auf dem Heimweg leuchtet Sokrates' Lampion.", "Er denkt: Heute war ich mutig. Ganz in meinem Tempo."] }
+    }
   }
 };

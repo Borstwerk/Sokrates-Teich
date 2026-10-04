@@ -5,6 +5,14 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 ## [Unreleased]
 
 ### Neu
+- **Knobeln:** Teich-Rätselbuch (täglich drei neue Rätsel), Geheime Zeichen (entschlüsseln und eigene
+  Botschaften drucken), Über den großen Teich (Rucksack packen, Weg planen).
+- **Wer fühlt was?** und **Das Teichfest** (Entscheidungsgeschichte mit fünf Enden).
+- Spiele-Seite in drei Bereiche gegliedert: Kleine Spiele, Knobeln, Abenteuer.
+- Navigation: Zurück-Knopf passt sich dem Bereich an; Weiter-Karten ersetzen die Textlinks am Seitenende.
+
+### Behoben (Navigation)
+- „Dein Teich“ und das Seerosen-Boot waren auf sehr schmalen Bildschirmen breiter als die Seite.
 - **Abenteuer** für Kinder ab etwa 8: *Die versunkene Truhe* (vier Rätsel), *Alarmzentrale*
   (Situationen mit Hilfen leichter machen) und *Detektiv Sokrates* (Fall mit Orten, Hinweisen und sechs
   gleichwertigen Wegen zu fragen). Fortschritt wird gespeichert, die Abenteuer greifen ineinander

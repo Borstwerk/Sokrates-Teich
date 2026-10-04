@@ -73,33 +73,41 @@
       T.absaetze($("spiele-blase"), I.intro);
       T.pop($("spiele-blase"));
       T.nicken(szene.sokrates);
-      var liste = $("spiele-liste");
-      liste.textContent = "";
-      I.liste.forEach(function (s) {
-        liste.appendChild(T.el("li", {}, [T.el("a", { class: "ort", href: "#" + s.id }, [
-          T.el("span", { class: "bild" }, [T.bild(s.bild)]),
-          T.el("span", {}, [T.el("b", { text: s.name }), T.el("span", { text: s.unter })])
-        ])]));
-      });
-      T.nacheinander(liste);
-
-      // Abenteuer mit Fortschritt
+      // Fortschritt für Knobeln und Abenteuer
       var A = T.inhalt.abenteuer, F = A.fortschritt;
       var truhe = T.abenteuer("truhe"), zentrale = T.abenteuer("zentrale"), fall = T.abenteuer("fall");
+      var code = T.abenteuer("code"), weg = T.abenteuer("weg"), fest = T.abenteuer("teichfest"), rb = T.abenteuer("raetselbuch");
+      var tag = new Date(), heute = tag.getFullYear() + "-" + String(tag.getMonth() + 1).padStart(2, "0") + "-" + String(tag.getDate()).padStart(2, "0");
+      var anzahlEnden = Object.keys(T.inhalt.teichfest.seiten).filter(function (id) { return T.inhalt.teichfest.seiten[id].ende; }).length;
       var stand = {
         "spiel-truhe": truhe.fertig ? F.truheFertig : T.fuelle(F.truhe, { anzahl: (truhe.offen || []).length }),
         "spiel-zentrale": T.fuelle(F.zentrale, { anzahl: (zentrale.geschafft || []).length, von: T.inhalt.zentrale.missionen.length }),
-        "spiel-fall": fall.geloest ? F.fallFertig : T.fuelle(F.fall, { anzahl: (fall.hinweise || []).length })
+        "spiel-fall": fall.geloest ? F.fallFertig : T.fuelle(F.fall, { anzahl: (fall.hinweise || []).length }),
+        "spiel-teichfest": (fest.enden || []).length + " von " + anzahlEnden + " Enden entdeckt",
+        "spiel-code": Math.min(code.stufe || 0, T.inhalt.code.botschaften.length) + " von " + T.inhalt.code.botschaften.length + " Botschaften",
+        "spiel-weg": Math.min(weg.level || 0, T.inhalt.weg.level.length) + " von " + T.inhalt.weg.level.length + " Wegen",
+        "spiel-raetselbuch": "Heute: " + (((rb.tage || {})[heute]) || []).length + " von 3 gelöst"
       };
-      var aliste = $("abenteuer-liste");
-      aliste.textContent = "";
-      A.liste.forEach(function (s) {
-        aliste.appendChild(T.el("li", {}, [T.el("a", { class: "ort abenteuer", href: "#" + s.id }, [
-          T.el("span", { class: "bild" }, [T.bild(s.bild)]),
-          T.el("span", {}, [T.el("b", { text: s.name }), T.el("span", { text: s.unter }), T.el("span", { class: "stand", text: stand[s.id] })])
-        ])]));
+      var gruppen = {
+        klein: I.liste.concat(T.inhalt.mehrKlein),
+        knobeln: T.inhalt.knobeln,
+        abenteuer: A.liste.concat(T.inhalt.mehrAbenteuer)
+      };
+      var box = $("spiele-gruppen");
+      box.textContent = "";
+      T.inhalt.spielGruppen.forEach(function (gr) {
+        var liste = T.el("ul", { class: "orte" });
+        gruppen[gr.id].forEach(function (s) {
+          liste.appendChild(T.el("li", {}, [T.el("a", { class: "ort" + (stand[s.id] ? " abenteuer" : ""), href: "#" + s.id }, [
+            T.el("span", { class: "bild" }, [T.bild(s.bild)]),
+            T.el("span", {}, [T.el("b", { text: s.name }), T.el("span", { text: s.unter }), stand[s.id] ? T.el("span", { class: "stand", text: stand[s.id] }) : null])
+          ])]));
+        });
+        box.appendChild(T.el("section", { class: "spiel-gruppe " + gr.id }, [
+          T.el("h2", { class: "lesen", text: gr.titel }), T.el("p", { class: "leise", text: gr.unter }), liste
+        ]));
+        T.nacheinander(liste);
       });
-      T.nacheinander(aliste);
     }
   };
 })(window.Teich);

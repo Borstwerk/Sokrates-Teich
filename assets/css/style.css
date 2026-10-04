@@ -559,7 +559,7 @@ dialog[open]::backdrop { animation: abdunkeln .3s ease-out; }
 .fund a { font-weight: 700; white-space: nowrap; }
 
 /* Dein Teich */
-.mein-teich { position: relative; background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 10; min-height: 260px; margin: 6px 0 10px; }
+.mein-teich { position: relative; background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 10; width: 100%; margin: 6px 0 10px; }
 .mein-teich .ufer { position: absolute; left: 0; right: 0; bottom: 0; height: 18%; background: var(--sand); border-top: var(--line) solid var(--ink); }
 .mein-teich > svg.sokrates { position: absolute; left: 2%; bottom: 3%; width: 30%; height: auto; cursor: pointer; }
 .mein-teich .ring { position: absolute; width: 110px; height: 22px; margin: -11px 0 0 -55px; border: 2px solid rgba(47,111,126,.4); border-radius: 50%; opacity: 0; animation: ring 7s ease-out infinite; pointer-events: none; }
@@ -586,7 +586,7 @@ dialog[open]::backdrop { animation: abdunkeln .3s ease-out; }
 .spiel-ende h2:focus { outline: none; }
 
 /* Seerosen-Boot */
-.boot-teich { position: relative; background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 7; min-height: 240px; margin: 16px 0; }
+.boot-teich { position: relative; background: var(--water); border: var(--line) solid var(--ink); border-radius: 28px; overflow: hidden; aspect-ratio: 16 / 7; width: 100%; margin: 16px 0; }
 .boot-teich .wellen { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; overflow: hidden; }
 .boot-teich .welle { position: absolute; bottom: 0; left: 0; width: 200%; height: 100%; animation: wellen 16s linear infinite; }
 .boot-teich .welle.hinten { animation-duration: 24s; animation-direction: reverse; bottom: 6px; }
@@ -828,6 +828,149 @@ svg.wimmel { width: 100%; height: auto; border: var(--line) solid var(--ink); bo
   .logik-stein { min-height: 104px; font-size: 15px; }
   .logik-stein svg, .logik-stein .frei { width: 48px; height: 48px; }
   .schiebe-vorlage { width: 100px; }
+}
+
+/* =====================================================================
+   Navigation: Weiter-Karten statt Textlinks, Gruppen auf der Spiele-Seite
+   ===================================================================== */
+.weiter { max-width: 620px; margin: 48px auto 0; }
+.weiter-karte {
+  display: flex; align-items: center; gap: 16px; padding: 12px 18px; border-radius: 24px;
+  background: var(--weiss); color: var(--ink); text-decoration: none;
+  border: var(--line) solid var(--ink); box-shadow: var(--paper-shadow); transition: transform .15s;
+}
+.weiter-karte .bild { flex: none; width: 60px; height: 60px; border-radius: 50%; background: var(--sand); border: var(--line) solid var(--ink); display: grid; place-items: center; }
+.weiter-karte .bild svg { width: 40px; height: 40px; }
+.weiter-karte .text { flex: 1; }
+.weiter-karte b { display: block; font-size: 21px; line-height: 1.25; }
+.weiter-karte .text span { display: block; font-size: 16px; line-height: 1.35; color: var(--ink-soft); }
+.weiter-karte .pfeil { flex: none; font-size: 28px; font-weight: 700; color: var(--water-deep); }
+.weiter-karte:focus-visible .pfeil { translate: 4px 0; }
+@media (hover: hover) and (pointer: fine) {
+  .weiter-karte:hover { transform: translateY(-2px); }
+  .weiter-karte:hover .pfeil { translate: 4px 0; }
+}
+.spiel-gruppe { margin-top: 34px; }
+.spiel-gruppe h2 { margin: 0 0 2px; }
+.spiel-gruppe > .leise { margin: 0; }
+.spiel-gruppe .orte { margin-top: 14px; }
+.spiel-gruppe.knobeln .ort .bild { background: #FCE9C2; }
+.spiel-gruppe.abenteuer .ort .bild { background: #F6DCD3; }
+
+/* Geheime Zeichen */
+.code-botschaft { display: flex; flex-wrap: wrap; gap: 10px 26px; padding: 16px; margin: 8px 0; background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 22px; box-shadow: var(--paper-shadow); }
+.code-wort { display: flex; flex-wrap: wrap; gap: 6px; }
+.code-zelle { display: flex; flex-direction: column; align-items: center; gap: 2px; width: 50px; padding: 4px 2px; border-radius: 12px; }
+.code-zelle svg { width: 42px; height: 42px; }
+.code-zelle .buchstabe { min-height: 1.3em; width: 34px; border-bottom: 3px solid var(--ink-soft); text-align: center; font-size: 24px; font-weight: 700; line-height: 1.3; }
+.code-zelle.jetzt { background: #FFF4C9; outline: 3px solid var(--star); }
+.code-zelle.fertig .buchstabe { border-color: var(--moss); color: var(--moss); }
+.code-zelle.satzzeichen { justify-content: flex-end; font-size: 28px; font-weight: 700; width: auto; }
+.code-schluessel { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 8px; }
+.code-taste { width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 6px; background: var(--weiss); border: 2px solid var(--ink); border-radius: 14px; box-shadow: var(--paper-shadow); font-size: 22px; cursor: pointer; }
+span.code-taste { cursor: default; }
+.code-taste .code-symbol svg { width: 36px; height: 36px; }
+.code-taste:disabled { opacity: .6; cursor: default; }
+.code-eigen { margin-top: 40px; padding: 16px 20px; background: var(--sand); border-radius: var(--radius); }
+.code-eigen h2 { margin-top: 0; }
+.code-eigen input { width: 100%; max-width: 560px; display: block; margin: 6px 0 10px; }
+.code-vorschau .code-botschaft { background: var(--paper); }
+
+/* Teich-Rätselbuch */
+.raetsel-satz { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 16px; }
+.raetsel-karte { margin: 0; max-width: none; text-align: left; }
+.raetsel-karte h3 { margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+.raetsel-karte h3 .haken { width: 30px; height: 30px; }
+.raetsel-karte.geloest { background: #F1F7EC; }
+.raetsel-karte > .lesen { font-size: 18px; }
+.geloest-text { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--moss); }
+.geloest-text svg { width: 34px; height: 34px; }
+.sudoku { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; width: min(300px, 100%); margin: 8px 0; border: 4px solid var(--ink); border-radius: 12px; overflow: hidden; }
+.sudoku-feld { aspect-ratio: 1; display: grid; place-items: center; padding: 4px; background: var(--weiss); border: 1px solid #B9B2A2; cursor: pointer; }
+.sudoku-feld:nth-child(4n+2) { border-right: 3px solid var(--ink); }
+.sudoku-feld:nth-child(n+5):nth-child(-n+8) { border-bottom: 3px solid var(--ink); }
+.sudoku-feld svg { width: 80%; height: 80%; }
+.sudoku-feld.fest { background: var(--sand); cursor: default; }
+.sudoku-feld.gewaehlt { background: #FFF4C9; outline: 4px solid var(--star); outline-offset: -4px; }
+.sudoku-feld.doppelt { background: #F6DCD3; }
+.sudoku-palette { display: flex; flex-wrap: wrap; gap: 8px; }
+.sudoku-palette .knopf svg { width: 40px; height: 40px; }
+.rechnung { margin: 6px 0; }
+.rechen-zeile { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: 30px; font-weight: 700; }
+.rechen-zeile svg { width: 46px; height: 46px; }
+.rechen-zeile.frage { color: var(--water-deep); }
+.zahlen-wahl { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.zahlen-wahl .knopf { min-width: 60px; font-size: 24px; padding: 6px 12px; }
+.zahlenreihe { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0; }
+.zahlenreihe span { min-width: 64px; padding: 8px 10px; text-align: center; font-size: 30px; font-weight: 700; background: var(--weiss); border: 2px solid var(--ink); border-radius: 14px; }
+.zahlenreihe .frage { background: #FFF4C9; border-style: dashed; }
+
+/* Über den großen Teich */
+.weg-legende { list-style: none; padding: 0; margin: 6px 0 12px; display: grid; gap: 6px; font-size: 18px; }
+.weg-legende li { display: flex; align-items: center; gap: 10px; }
+.weg-sachen { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 10px; }
+.weg-rucksack { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 19px; }
+.weg-rucksack .sache { display: inline-flex; align-items: center; gap: 6px; margin-right: 10px; padding: 2px 10px; background: var(--weiss); border: 2px solid var(--ink); border-radius: 99px; }
+.weg-rucksack svg { width: 28px; height: 28px; }
+.weg-karte { display: grid; gap: 6px; max-width: 620px; margin: 14px 0; padding: 12px; background: #A9D3DC; border: var(--line) solid var(--ink); border-radius: 24px; }
+.weg-karte.vorschau .weg-feld { cursor: default; }
+.weg-wasser { aspect-ratio: 1; }
+.weg-feld { aspect-ratio: 1; display: grid; place-items: center; padding: 4px; background: var(--stone); border: var(--line) solid var(--ink); border-radius: 46% 54% 42% 58% / 55% 45% 55% 45%; box-shadow: 0 3px 0 rgba(46,58,47,.25); cursor: pointer; }
+.weg-feld svg { width: 72%; height: 72%; }
+.weg-feld svg.sokrates { width: 96%; height: auto; }
+.weg-feld.klein { width: 46px; flex: none; }
+.weg-feld.S { background: #EBD9B4; }
+.weg-feld.Z { background: #FCE3A6; }
+.weg-feld.w { background: #F6DCD3; }
+.weg-feld.n { background: #E9EEF0; }
+.weg-feld.l { background: #F9E1B8; }
+.weg-feld.f { background: #E2EED9; }
+.weg-feld.besucht { box-shadow: inset 0 0 0 4px rgba(242,181,68,.6), 0 3px 0 rgba(46,58,47,.25); }
+.weg-feld.nah { outline: 4px dashed var(--water-deep); outline-offset: 2px; }
+.weg-feld.hier { background: var(--star); }
+.weg-feld:disabled { cursor: default; color: inherit; }
+
+/* Wer fühlt was? */
+.gf-frage, .code-titel { font-size: 24px; margin: 22px 0 10px; }
+.gf-karte > svg { width: 100px; height: 100px; }
+.gf-karte > svg.sokrates { width: 160px; height: auto; }
+.gf-wahl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 720px; }
+.gf-knopf { flex-direction: column; padding: 8px; font-size: 18px; }
+.gf-gesicht svg { width: 64px; height: 64px; }
+.gf-knopf.eher-nicht { opacity: .5; }
+.gf-hilfen { display: grid; gap: 8px; max-width: 620px; }
+.gf-hilfen .knopf { justify-content: flex-start; text-align: left; font-size: 19px; }
+
+/* Das Teichfest */
+#tf-buch:focus { outline: none; }
+.tf-wahl { flex-direction: column; align-items: stretch; max-width: 560px; margin-left: auto; }
+.tf-knopf { justify-content: space-between; text-align: left; }
+.tf-enden { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tf-enden li { display: flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 99px; border: 2px dashed rgba(46,58,47,.4); color: var(--ink-soft); font-size: 16px; }
+.tf-enden li.da { border-style: solid; border-color: var(--ink); background: #FFF4C9; color: var(--ink); font-weight: 700; }
+.tf-enden svg { width: 22px; height: 22px; }
+.tf-enden .fragezeichen { font-weight: 700; }
+
+@media (max-width: 760px) {
+  .gf-wahl { grid-template-columns: repeat(2, 1fr); }
+  .tf-wahl { margin-left: 0; }
+  .code-zelle { width: 40px; }
+  .code-zelle svg { width: 34px; height: 34px; }
+  .rechen-zeile { font-size: 24px; }
+  .rechen-zeile svg { width: 38px; height: 38px; }
+}
+
+/* Geheimbotschaft drucken */
+@media print {
+  .code-druck .code-blatt h1 { font-size: 26pt; margin: 0 0 4mm; }
+  .code-druck .code-blatt h2 { font-size: 16pt; margin: 8mm 0 3mm; }
+  .code-druck .code-botschaft { box-shadow: none; gap: 4mm 8mm; }
+  .code-druck .code-zelle { width: 16mm; }
+  .code-druck .code-zelle svg { width: 13mm; height: 13mm; }
+  .code-druck .code-zelle .buchstabe { width: 11mm; min-height: 9mm; }
+  .code-druck .code-schluessel { grid-template-columns: repeat(7, 1fr); gap: 2mm; }
+  .code-druck .code-taste { box-shadow: none; font-size: 16pt; }
+  .code-druck .code-taste svg { width: 10mm; height: 10mm; }
 }
 
 /* ---------- Ruhig-Modus: Einstellung „Ruhig“ oder System „weniger Bewegung“ ---------- */

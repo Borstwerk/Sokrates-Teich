@@ -163,7 +163,7 @@
       <div class="blase" id="teich-blase"></div>
     </div>
     <ul class="orte" id="orte"></ul>
-    <p class="erwachsene-link"><a href="#erwachsene">Für Erwachsene</a></p>
+    <nav class="weiter" data-weiter="erwachsene" aria-label="Für Erwachsene"></nav>
   </section>
 
   <!-- ================= Sokrates erzählt ================= -->
@@ -288,7 +288,7 @@
       <p class="info">Tipp: Im Druckfenster des Browsers bei „Skalierung“ <strong>100 % bzw. „Tatsächliche Größe“</strong> wählen – die Größe stellst du hier ein.</p>
     </div>
     <ul class="karten" id="karten"></ul>
-    <p class="erwachsene-link"><a href="#lehrkraefte">Für Erwachsene: Infoblatt und Erklär-Karten für Lehrkräfte</a></p>
+    <nav class="weiter" data-weiter="lehrkraefte" aria-label="Für Lehrkräfte"></nav>
   </section>
 
   <!-- ================= Mut-Schatz ================= -->
@@ -319,7 +319,7 @@
     <h2 class="lesen">Deine Schatzkiste</h2>
     <ul class="mt-kiste" id="mt-kiste"></ul>
     <p class="leise" id="mt-zaehler"></p>
-    <p class="leise"><a href="#spiele">Zu den Spielen</a></p>
+    <nav class="weiter" data-weiter="spiele" aria-label="Spiele"></nav>
   </section>
 
   <!-- ================= Spiele ================= -->
@@ -329,11 +329,8 @@
       <div id="spiele-szene"></div>
       <div class="blase lesen" id="spiele-blase"></div>
     </div>
-    <ul class="orte" id="spiele-liste"></ul>
-    <h2 class="lesen">Abenteuer</h2>
-    <p class="leise">Größere Spiele zum Knobeln und Entdecken. Du kannst jederzeit aufhören und später weitermachen.</p>
-    <ul class="orte" id="abenteuer-liste"></ul>
-    <p class="erwachsene-link"><a href="#mein-teich">Zu deinem Teich</a></p>
+    <div id="spiele-gruppen"></div>
+    <nav class="weiter" data-weiter="teich" aria-label="Dein Teich"></nav>
   </section>
 
   <!-- Spiel: Seerosen-Boot -->
@@ -350,7 +347,6 @@
       </div>
     </div>
     <div id="boot-ende"></div>
-    <p class="leise"><a href="#spiele">← Zu den Spielen</a></p>
   </section>
 
   <!-- Spiel: Alarmanlagen-Detektiv -->
@@ -362,7 +358,6 @@
     </div>
     <div id="alarm-spiel"></div>
     <div id="alarm-ende"></div>
-    <p class="leise"><a href="#spiele">← Zu den Spielen</a></p>
   </section>
 
   <!-- Spiel: Ohne Worte -->
@@ -374,7 +369,6 @@
     </div>
     <div id="zeichen-spiel"></div>
     <div id="zeichen-ende"></div>
-    <p class="leise"><a href="#spiele">← Zu den Spielen</a></p>
   </section>
 
   <!-- Spiel: Wo ist Sokrates? -->
@@ -387,7 +381,6 @@
       <ul class="suchen-liste" id="suchen-liste" aria-live="polite"></ul>
     </div>
     <div id="suchen-ende"></div>
-    <p class="leise"><a href="#spiele">← Zu den Spielen</a></p>
   </section>
 
   <!-- Spiel: Gefühle-Memory -->
@@ -397,7 +390,58 @@
     <div class="weg-wahl" id="memory-wahl"></div>
     <ul class="memory" id="memory"></ul>
     <div id="memory-ende"></div>
-    <p class="leise"><a href="#spiele">← Zu den Spielen</a></p>
+  </section>
+
+  <!-- Knobeln: Geheime Zeichen -->
+  <section class="ansicht" id="ansicht-spiel-code" data-ansicht="spiel-code" hidden>
+    <h1 tabindex="-1" class="lesen">Geheime Zeichen</h1>
+    <div class="blase ohne-pfeil" aria-live="polite"><div class="lesen" id="code-blase"></div></div>
+    <div id="code-spiel"></div>
+    <div id="code-ende"></div>
+    <section class="code-eigen" id="code-eigen"></section>
+  </section>
+
+  <!-- Knobeln: Teich-Rätselbuch -->
+  <section class="ansicht" id="ansicht-spiel-raetselbuch" data-ansicht="spiel-raetselbuch" hidden>
+    <h1 tabindex="-1" class="lesen">Teich-Rätselbuch</h1>
+    <div class="blase ohne-pfeil"><div class="lesen" id="rb-blase"></div></div>
+    <h2 class="lesen" id="rb-heute-titel"></h2>
+    <div class="raetsel-satz" id="rb-heute"></div>
+    <div id="rb-heute-fertig" aria-live="polite"></div>
+    <p class="leise" id="rb-zaehler"></p>
+    <div class="knoepfe"><button class="knopf" type="button" id="rb-extra-knopf"></button></div>
+    <div id="rb-extra"></div>
+  </section>
+
+  <!-- Knobeln: Über den großen Teich -->
+  <section class="ansicht" id="ansicht-spiel-weg" data-ansicht="spiel-weg" hidden>
+    <h1 tabindex="-1" class="lesen">Über den großen Teich</h1>
+    <div class="blase ohne-pfeil" aria-live="polite"><div class="lesen" id="weg-blase"></div></div>
+    <div id="weg-spiel"></div>
+    <div id="weg-ende"></div>
+  </section>
+
+  <!-- Kleines Spiel: Wer fühlt was? -->
+  <section class="ansicht" id="ansicht-spiel-gefuehle" data-ansicht="spiel-gefuehle" hidden>
+    <h1 tabindex="-1" class="lesen">Wer fühlt was?</h1>
+    <div class="blase ohne-pfeil"><div class="lesen" id="gf-blase"></div></div>
+    <div id="gf-spiel"></div>
+    <div id="gf-ende"></div>
+  </section>
+
+  <!-- Abenteuer: Das Teichfest -->
+  <section class="ansicht" id="ansicht-spiel-teichfest" data-ansicht="spiel-teichfest" hidden>
+    <h1 tabindex="-1" class="lesen">Das Teichfest</h1>
+    <p class="leise" id="tf-intro"></p>
+    <div class="buchseite" id="tf-buch" tabindex="-1">
+      <div class="mit-blase">
+        <div id="tf-bild"></div>
+        <div class="blase" aria-live="polite"><div id="tf-text"></div></div>
+      </div>
+      <div class="knoepfe tf-wahl" id="tf-wahl"></div>
+    </div>
+    <div id="tf-ende"></div>
+    <div id="tf-enden"></div>
   </section>
 
   <!-- Abenteuer: Die versunkene Truhe -->
@@ -410,7 +454,6 @@
     <div class="weg-wahl" id="truhe-schloesser"></div>
     <div id="truhe-raetsel" class="raetsel"></div>
     <div id="truhe-ende"></div>
-    <p class="leise"><a href="#spiele">← Zu den Spielen</a></p>
   </section>
 
   <!-- Abenteuer: Alarmzentrale -->
@@ -422,7 +465,6 @@
       <ul class="zentrale-liste" id="zentrale-liste"></ul>
     </div>
     <div id="zentrale-mission" hidden></div>
-    <p class="leise"><a href="#spiele">← Zu den Spielen</a></p>
   </section>
 
   <!-- Abenteuer: Detektiv Sokrates -->
@@ -435,7 +477,6 @@
     </div>
     <div id="fall-ort"></div>
     <div id="fall-ende"></div>
-    <p class="leise"><a href="#spiele">← Zu den Spielen</a></p>
   </section>
 
   <!-- ================= Für Erwachsene ================= -->
@@ -573,7 +614,6 @@
   <section class="ansicht erwachsene" id="ansicht-lehrkraefte" data-ansicht="lehrkraefte" hidden>
     <h1 tabindex="-1">Für Lehrkräfte</h1>
     <p id="lk-intro"></p>
-    <p class="leise"><a href="#erwachsene">← Zurück zu „Für Erwachsene“</a></p>
 
     <h2>Angaben für das Infoblatt</h2>
     <p class="leise">Alles freiwillig. Leere Felder werden auf dem Ausdruck zu Linien zum Ausfüllen.</p>
@@ -633,6 +673,11 @@
 <script src="assets/js/spiel-truhe.js"></script>
 <script src="assets/js/spiel-zentrale.js"></script>
 <script src="assets/js/spiel-fall.js"></script>
+<script src="assets/js/spiel-code.js"></script>
+<script src="assets/js/spiel-raetselbuch.js"></script>
+<script src="assets/js/spiel-weg.js"></script>
+<script src="assets/js/spiel-gefuehle.js"></script>
+<script src="assets/js/spiel-teichfest.js"></script>
 <script src="assets/js/erwachsene.js"></script>
 <script src="assets/js/lehrkraefte.js"></script>
 <script src="assets/js/app.js"></script>
