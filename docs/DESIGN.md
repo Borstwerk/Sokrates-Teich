@@ -212,6 +212,22 @@ Handy 375/390 px, Ruhig-Modus, axe-core):
   als beschriftete Knöpfe (min. 40–44 px), Leuchten nur als Zusatz zum gedrückten Zustand (Farbe nie einziges Signal).
 - **Offen:** Die Startseite hat inzwischen viele Orte; bei weiteren Inhalten eher bündeln als neue Kacheln.
 
+### Spielformen-Update (Oktober 2026)
+
+- **Novelty Budget:** Neue Spiele nur mit neuer Interaktionsform (Kooperation mit geteiltem Wissen,
+  Deduktion im Gitter, Konstruktion mit Probefahrt, Licht-Muster, Comic-Erzählen). Keine weiteren Memorys,
+  Gefühls-Quiz, Alarm- oder Atemspiele.
+- **Gleiche Bildsprache:** Papierflächen, Tinten-Konturen, Naturfarben; die Nachtszene (Lichtzeichen) ist die
+  einzige dunkle Fläche und bleibt eingerahmt. Briefhälften haben eine gerissene Kante, Comic-Blasen
+  skalieren mit dem Bild (Container-Einheiten).
+- **Kein Zeitdruck, kein Verlieren:** Fehler führen zu einem erklärenden Satz, nie zu Punktabzug.
+- **Lichtblinken:** höchstens etwa ein Lichtwechsel pro Sekunde, weicher Übergang, keine Vollflächen-Blitze;
+  im Ruhig-Modus ohne Übergänge, aber weiter sichtbar (das Blinken ist Inhalt, keine Deko).
+- **Behoben:** Beim Drüberfahren mit der Maus hob sich ein Knopf um 2 px; stand die Maus am unteren Rand,
+  flackerte er. Die Trefferfläche wird beim Anheben jetzt nach unten verlängert.
+- **Handy:** Gitter und Brücken-Szene passen auf 375 px; die Brücken-Szene darf seitlich wischen
+  (mit Hinweis), damit die Bau-Punkte groß genug zum Antippen bleiben.
+
 ### Laufzeit
 
 - **Freies Gestalten:** Die Werkstatt stellt den eigenen Entwurf vor die Sammlung. Farben tragen

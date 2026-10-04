@@ -4,6 +4,21 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 
 ## [Unreleased]
 
+### Neu: Spielformen
+- **Funkelpost** (neuer Bereich „Zu zweit“): ein Brief in zwei geheimen Hälften, nur zusammen lösbar.
+  Gerät weitergeben oder als Bastelbogen ausdrucken. Sechs Briefe.
+- **Wer war wo?** – Logik-Gitter von 3×3 bis 5×5 mit automatischen Kreuzen, Prüfen und Tipps.
+  Sieben Rätsel, jedes mit genau einer Lösung.
+- **Teich-Ingenieur** – Brücken aus begrenzten Bauteilen bauen und mit einer Probefahrt testen;
+  Schnecke und Quaki haben eigene Regeln, Profi-Stern für die sparsamste Brücke. Sechs Baustellen.
+- **Lichtzeichen im Schilf** – Funkels Lichtsprache aus kurz und lang: nachblinken, lesen, schreiben,
+  frei funken; Lichter-Lexikon zum Ausdrucken für Taschenlampen-Funk.
+- **Comic-Werkstatt** – drei Bilder mit Orten, Figuren und Blasen (sagen, denken, flüstern, Karte, zeigen),
+  Vorlagen, Comic-Heft und Druck.
+
+### Behoben
+- Knöpfe flackerten am Computer, wenn die Maus genau am unteren Rand stand.
+
 ### Neu: Körper
 - **Mein Körper:** Kinderfigur mit sieben Stellen (Kopf, Hals, Herz, Bauch, Hände, Beine, Ganz müde) –
   wie es sich anfühlen kann, warum, was helfen kann; Karte zum Zeigen und „Für Mama oder Papa merken“.

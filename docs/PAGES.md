@@ -175,6 +175,43 @@ Die Spiele-Seite ist in drei Bereiche gegliedert: **Kleine Spiele**, **Knobeln**
 - **Das Teichfest** `#spiel-teichfest`: Entscheidungsgeschichte mit fünf Enden, alle positiv; gefundene
   Enden werden gesammelt.
 
+## 8d. Neue Spielformen (seit Version 1.7)
+
+Leitfrage: Jede Ergänzung soll eine **neue Art zu spielen** bringen, nicht nur ein neues Thema
+(„Novelty Budget“ aus `frontend-design`). Keins der Spiele ist ein Mutismus-Spiel im engeren Sinn.
+
+- **Funkelpost** `#spiel-funkelpost` (neuer Bereich **Zu zweit**): Ein Brief in zwei geheimen Hälften
+  (Blau, Gelb). Das Gerät wird weitergegeben, jede Person schaut allein. Nur zusammen ist die Lösung
+  eindeutig. Wie man sich Hinweise verrät (zeigen, malen, schreiben, sagen), ist freigestellt. Falsche
+  Antworten werden durchgestrichen, mit Hinweis, ob eine Hälfte oder beide nötig sind. Jeder Brief lässt
+  sich als Bastelbogen ausdrucken (eine A4-Seite). Sechs Briefe; in den Daten steht pro Hinweis, was er
+  allein ausschließt – so ist geprüft, dass keine Hälfte allein genügt.
+- **Wer war wo?** `#spiel-werwarwo`: Logik-Gitter (3×3 bis 5×5), Feld antippen: ✗ → ✓ → leer.
+  Optional automatische Kreuze, Hinweise abhaken, „Stimmt alles bis jetzt?“ (rahmt falsche Felder ein),
+  „Tipp, bitte“ (verrät ein ✓). Stand wird gespeichert. Sieben Rätsel, jedes per Rechner geprüft:
+  genau eine Lösung, jeder Hinweis nötig. Zwei Rätsel nutzen die Reihenfolge am Weg („direkt neben“).
+- **Teich-Ingenieur** `#spiel-bruecke`: Brücken aus begrenzten Bauteilen (kurzes/langes Brett, Seil,
+  Stein) über flaches/tiefes Wasser und Inseln. Regeln: Bretter brauchen an beiden Enden eine Stütze;
+  Steine nur im flachen Wasser; Seile nur zwischen Ufer/Insel; die Schnecke traut sich nicht aufs Seil;
+  Quaki hüpft einen Schritt auf eine Stütze. Probefahrt zeigt, wo es hakt („Platsch!“). Profi-Stern,
+  wenn die kleinstmögliche Teilezahl erreicht ist (berechnet). Sechs Baustellen, alle per Rechner lösbar.
+- **Lichtzeichen im Schilf** `#spiel-licht`: Funkels Lichtsprache aus kurz/lang. Zwölf Aufgaben:
+  nachblinken (mit, dann ohne Zeichen), lesen (Bedeutung wählen), schreiben. Danach „Frei funken“:
+  Funkel antwortet auf jedes Lexikon-Zeichen. Lexikon zum Ausdrucken (Taschenlampen-Funk zu Hause).
+  Blinken langsam und weich (höchstens etwa ein Lichtwechsel pro Sekunde), beliebig oft wiederholbar,
+  Folge auch als Zeichen und für Vorleseprogramme als Text.
+- **Comic-Werkstatt** `#spiel-comic` (bei **Selber gestalten**): drei Bilder mit Ort, zwei Figuren
+  (Sokrates fröhlich/unsicher/im Panzer) und Blasen: sagt, denkt, flüstert, zeigt eine Karte, zeigt etwas.
+  Vorlagen, Comic-Heft (bis 20 Comics, lokal), Drucken. Texte bleiben reiner Text.
+
+### Ausblick: „Das Geheimnis unter dem Schilf“ (noch nicht gebaut)
+
+Ein Inventar-Abenteuer, das die Einzelspiele zu einer Spielwelt verbindet: Gegenstände aus anderen
+Spielen (Lampion aus der Werkstatt, Zeichen-Wissen aus Geheime Zeichen und Lichtzeichen, Karte aus dem
+Detektivfall, Schlüssel aus der Truhe, Seil/Brett aus dem Teich-Ingenieur) werden im Rucksack gesammelt
+und an Orten kombiniert (dunkle Höhle → Lampion, Zeichen an der Wand → Code, kaputter Steg → Seil + Brett).
+Vor dem Bau: Orte und Rätselkette als Story-Bible festlegen (`worldbuilding`, `story-bible`).
+
 ## Navigation
 
 - Oben links führt der Zurück-Knopf je nach Bereich zum Teich, zu den Spielen oder zu „Für Erwachsene“.
