@@ -2,7 +2,7 @@
 name: Fachliche Rückmeldung
 about: Eine Aussage ist ungenau, veraltet oder missverständlich – oder es fehlt etwas Wichtiges.
 title: "[Fachlich] "
-labels: fachlich
+labels: documentation
 ---
 
 > Bitte **keine persönlichen Daten von Kindern** (Namen, Diagnosen, Schulen, Fotos).

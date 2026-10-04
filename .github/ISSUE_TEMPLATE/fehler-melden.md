@@ -2,7 +2,7 @@
 name: Fehler melden
 about: Etwas funktioniert nicht oder sieht falsch aus.
 title: "[Fehler] "
-labels: fehler
+labels: bug
 ---
 
 > Sicherheitslücken bitte **nicht** hier, sondern vertraulich melden (siehe SECURITY.md).

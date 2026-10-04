@@ -2,7 +2,7 @@
 name: Idee oder Wunsch
 about: Ein Vorschlag für eine neue Funktion, Karte, Geschichte oder Verbesserung.
 title: "[Idee] "
-labels: idee
+labels: enhancement
 ---
 
 > Bitte **keine persönlichen Daten von Kindern**.
