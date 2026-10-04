@@ -967,9 +967,41 @@ span.code-taste { cursor: default; }
 .gf-wahl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 720px; }
 .gf-knopf { flex-direction: column; padding: 8px; font-size: 18px; }
 .gf-gesicht svg { width: 64px; height: 64px; }
-.gf-knopf.eher-nicht { opacity: .5; }
+.gf-unsicher { margin-top: 12px; }
+.gf-beobachtung .antwort:empty { display: none; }
+.gf-spuren { max-width: 720px; margin: 12px 0; padding: 16px 20px; background: var(--sand); border-radius: 18px; }
+.gf-spuren dl { margin: 0; }
+.gf-spuren dt { font-weight: 700; }
+.gf-spuren dd { margin: 0 0 12px; }
+.gf-spuren p { margin: 8px 0 0; }
 .gf-hilfen { display: grid; gap: 8px; max-width: 620px; }
 .gf-hilfen .knopf { justify-content: flex-start; text-align: left; font-size: 19px; }
+
+/* Werkstatt: ein Entwurf, freie Auswahl, keine Fortschrittsanzeige. */
+.wk-platz { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.4fr); gap: 28px; align-items: start; margin-top: 24px; }
+.wk-entwurf { margin: 0; padding: 20px; border-radius: 28px; background: var(--sand); text-align: center; min-width: 0; }
+.wk-entwurf figcaption { font-size: 24px; font-weight: 700; }
+.wk-entwurf .werkstueck { display: block; width: 100%; max-width: 280px; height: auto; margin: 12px auto; }
+.wk-entwurf p { font-size: 17px; overflow-wrap: anywhere; }
+.wk-gruppe { min-width: 0; padding: 0; margin: 0 0 18px; border: 0; }
+.wk-gruppe legend { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.wk-wahl { display: flex; flex-wrap: wrap; gap: 8px; }
+.wk-wahl .knopf { flex: 1 1 130px; min-width: 0; font-size: 18px; padding: 8px 12px; }
+.wk-wahl .wk-form-knopf { flex-direction: column; }
+.wk-wahl .knopf[data-feld="farbe"] { flex-direction: column; }
+.wk-wahl .werkstueck { width: 70px; height: 70px; }
+.wk-farbe { display: inline-block; width: 24px; height: 24px; flex: none; border: 2px solid var(--ink); border-radius: 50%; }
+#wk-text-feld label { display: block; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+#wk-text { width: 100%; min-width: 0; }
+.wk-aktionen { margin-top: 24px; }
+.wk-aktionen .knopf { min-width: 0; }
+.wk-sammlung { list-style: none; margin: 12px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.wk-sammlung .leer { grid-column: 1 / -1; }
+.wk-sammlung .art, .mt-kiste .art { overflow-wrap: anywhere; }
+.mt-auswahl p { min-width: 0; overflow-wrap: anywhere; }
+.wk-sammlung .werkstueck, .mt-kiste .werkstueck { width: 88px; height: 88px; }
+.mt-ding.werkstatt-ding { width: clamp(64px, 15%, 140px); }
+.spiel-gruppe.gestalten .ort .bild { background: var(--sand); }
 
 /* Das Teichfest */
 #tf-buch:focus { outline: none; }
@@ -983,6 +1015,8 @@ span.code-taste { cursor: default; }
 
 @media (max-width: 760px) {
   .gf-wahl { grid-template-columns: repeat(2, 1fr); }
+  .wk-platz { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .wk-entwurf .werkstueck { max-width: 220px; }
   .tf-wahl { margin-left: 0; }
   .code-zelle { width: 40px; }
   .code-zelle svg { width: 34px; height: 34px; }

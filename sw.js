@@ -4,7 +4,7 @@
  *
  * Nach Änderungen an Dateien: VERSION erhöhen, damit Geräte die neue Fassung laden.
  */
-var VERSION = "sokrates-teich-1.4.1";
+var VERSION = "sokrates-teich-1.5.0";
 
 var DATEIEN = [
   "./",
@@ -35,6 +35,7 @@ var DATEIEN = [
   "assets/js/spiel-teichfest.js",
   "assets/js/spiel-truhe.js",
   "assets/js/spiel-weg.js",
+  "assets/js/spiel-werkstatt.js",
   "assets/js/spiel-zeichen.js",
   "assets/js/spiel-zentrale.js",
   "assets/js/spiele.js",

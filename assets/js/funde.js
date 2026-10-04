@@ -11,6 +11,13 @@
   });
   T.fundArt = function (id) { return KATALOG[id] || KATALOG.seerose; };
 
+  function artVonFund(f) {
+    return f.art === "werkstatt" ? { name: T.werkstattName(f.gestaltung), mut: false } : T.fundArt(f.art);
+  }
+  function bildVonFund(f) {
+    return f.art === "werkstatt" ? T.werkstattBild(f.gestaltung) : T.bild(T.fundArt(f.art).bild);
+  }
+
   T.spieleAn = function () { return T.speicher.get("spieleAn") !== false; };
 
   // Sokrates findet etwas. quelle: "spiel" | "mut" | "abenteuer"; artId wählt einen bestimmten Schatz.
@@ -81,13 +88,17 @@
     box.textContent = "";
     var f = funde().find(function (x) { return x.id === gewaehlt && x.x !== null; });
     if (!f) { gewaehlt = null; return; }
-    var art = T.fundArt(f.art);
+    var art = artVonFund(f);
     box.appendChild(T.el("p", {}, [T.el("strong", { text: T.fuelle(I.ausgewaehlt, { name: art.name }) }), " ", I.ziehTipp]));
     box.appendChild(T.el("button", { type: "button", class: "knopf klein", text: I.zurKiste, onclick: function () {
       aendereFund(f.id, function (x) { x.x = null; x.y = null; return x; });
       gewaehlt = null;
       male();
     } }));
+    if (f.art === "werkstatt") box.appendChild(T.el("a", {
+      class: "knopf klein", href: "#spiel-werkstatt", text: T.inhalt.werkstatt.imTeichBearbeiten,
+      onclick: function () { T.werkstattBearbeite(f.id); }
+    }));
   }
 
   function setzePosition(knopf, x, y) {
@@ -104,11 +115,11 @@
   }
 
   function dingKnopf(f) {
-    var art = T.fundArt(f.art);
+    var art = artVonFund(f);
     var knopf = T.el("button", {
-      type: "button", class: "mt-ding" + (art.mut ? " leuchtet" : ""), "data-id": f.id,
+      type: "button", class: "mt-ding" + (art.mut ? " leuchtet" : "") + (f.art === "werkstatt" ? " werkstatt-ding" : ""), "data-id": f.id,
       "aria-label": art.name, "aria-pressed": "false"
-    }, [T.bild(art.bild)]);
+    }, [bildVonFund(f)]);
     setzePosition(knopf, f.x, f.y);
 
     // Ziehen mit Finger oder Maus
@@ -171,7 +182,7 @@
     if (!alle.length) kiste.appendChild(T.el("li", { class: "leer lesen", text: I.nochNichts }));
     else if (!inKiste.length) kiste.appendChild(T.el("li", { class: "leer", text: I.kisteLeer }));
     inKiste.forEach(function (f) {
-      var art = T.fundArt(f.art);
+      var art = artVonFund(f);
       kiste.appendChild(T.el("li", {}, [T.el("button", {
         type: "button", class: "art" + (art.mut ? " mut" : ""),
         onclick: function () {
@@ -182,7 +193,7 @@
           var neu = teich.querySelector('[data-id="' + f.id + '"]');
           if (neu) T.pop(neu, "abgesetzt");
         }
-      }, [T.bild(art.bild), art.name])]));
+      }, [bildVonFund(f), art.name])]));
     });
     $("mt-zaehler").textContent = alle.length ? T.fuelle(I.zaehler, { anzahl: alle.length }) : "";
     if (gewaehlt) waehle(gewaehlt); else zeigeAuswahl();

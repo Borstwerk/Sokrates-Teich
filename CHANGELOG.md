@@ -5,6 +5,10 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 ## [Unreleased]
 
 ### Verbessert
+- **Wer fühlt was?:** Beobachtung und Vermutung werden in einer kleinen Detektivfrage getrennt.
+  Alle Gefühlsantworten bleiben offen; „Ich weiß es noch nicht“ führt ebenfalls zu den Hilfen.
+- **Teich-Rätselbuch:** Drei Rätsel zur freien Auswahl statt einer täglichen Fortschrittsanzeige
+  in der Spieleübersicht. Die Einleitung erlaubt ausdrücklich ein einzelnes Rätsel und jederzeitiges Aufhören.
 - **Karten-Kiste:** Kommunikationskarten stehen direkt unter der Einleitung. Bildschirmgröße und eigene
   Karten folgen darunter; Druckformat und Skalierung liegen in einem aufklappbaren Erwachsenenbereich.
 - **Startseite:** Die Geschichte bekommt einen eigenen Einstieg in der Begrüßung. Die weiteren Orte sind
@@ -14,10 +18,14 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 - Die Fortschrittspunkte der Geschichte und die Alarmfaktoren verwenden getrennte CSS-Klassen.
 
 ### Neu
+- **Sokrates’ Werkstatt:** Lampions, Boote und Schilder frei gestalten – mit vier Farben, drei Mustern,
+  fünf Zeichen und optionaler Schild-Aufschrift. Entwurf, Werkstücke und Teich-Positionen bleiben lokal
+  und sind in der bestehenden Sicherung enthalten. Werkstücke lassen sich später weitergestalten.
+- Neuer Bereich „Selber gestalten“ auf der Spiele-Seite und Werkstatt-Karte bei „Dein Teich“.
 - **Knobeln:** Teich-Rätselbuch (täglich drei neue Rätsel), Geheime Zeichen (entschlüsseln und eigene
   Botschaften drucken), Über den großen Teich (Rucksack packen, Weg planen).
 - **Wer fühlt was?** und **Das Teichfest** (Entscheidungsgeschichte mit fünf Enden).
-- Spiele-Seite in drei Bereiche gegliedert: Kleine Spiele, Knobeln, Abenteuer.
+- Spiele-Seite in Kleine Spiele, Knobeln, Abenteuer und Selber gestalten gegliedert.
 - Navigation: Zurück-Knopf passt sich dem Bereich an; Weiter-Karten ersetzen die Textlinks am Seitenende.
 
 ### Behoben (Navigation)
@@ -44,6 +52,7 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
   diese Effekte gibt es jetzt nur noch mit Maus.
 
 ### Dokumentation und Evidenz
+- Spielezahlen im README korrigiert: sechs kleine Spiele, drei Knobelspiele und vier Abenteuer; Werkstatt separat beschrieben.
 - Public-Release-Audit der zentralen fachlichen Aussagen gegen direkt zugängliche Volltexte und Fachquellen (2023/2025 Reviews, ASHA, NHS, SMA, Mutismus e.V.).
 - Formulierung zur medizinischen Zweckbestimmung präzisiert: nicht zur Diagnose oder Behandlung bestimmt; nicht als Medizinprodukt entwickelt.
 - Datenschutztexte zu Online-Vorlesestimmen und lokaler Speicherung konsistent formuliert.

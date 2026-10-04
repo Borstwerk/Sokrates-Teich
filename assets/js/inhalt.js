@@ -645,7 +645,8 @@ Teich.inhalt = {
       erwachsene: { bild: "i-buch", titel: "Für Erwachsene", unter: "Wissen, Einstellungen, Material für die Schule" },
       lehrkraefte: { bild: "i-tafel", titel: "Für Lehrkräfte", unter: "Infoblatt und Erklär-Karten zum Ausdrucken" },
       teich: { bild: "i-frosch", titel: "Dein Teich", unter: "Hier wohnen deine Schätze" },
-      spiele: { bild: "i-spiel", titel: "Spiele", unter: "Noch etwas spielen?" }
+      spiele: { bild: "i-spiel", titel: "Spiele", unter: "Noch etwas spielen?" },
+      "spiel-werkstatt": { bild: "i-stern", titel: "In die Werkstatt", unter: "Gestalte etwas Eigenes für deinen Teich" }
     }
   },
 
@@ -653,7 +654,8 @@ Teich.inhalt = {
   spielGruppen: [
     { id: "klein", titel: "Kleine Spiele", unter: "Kurz, ruhig und ohne Verlieren" },
     { id: "knobeln", titel: "Knobeln", unter: "Rätsel, Codes und Wege" },
-    { id: "abenteuer", titel: "Abenteuer", unter: "Größere Spiele zum Entdecken. Du kannst jederzeit aufhören und später weitermachen." }
+    { id: "abenteuer", titel: "Abenteuer", unter: "Größere Spiele zum Entdecken. Du kannst jederzeit aufhören und später weitermachen." },
+    { id: "gestalten", titel: "Selber gestalten", unter: "Deine Ideen haben hier Platz. Es gibt keine Aufgabe." }
   ],
   knobeln: [
     { id: "spiel-raetselbuch", name: "Teich-Rätselbuch",   unter: "Jeden Tag drei neue Rätsel",      bild: "i-buch" },
@@ -661,10 +663,13 @@ Teich.inhalt = {
     { id: "spiel-weg",         name: "Über den großen Teich", unter: "Plane deinen Weg",             bild: "i-steine" }
   ],
   mehrKlein: [
-    { id: "spiel-gefuehle", name: "Wer fühlt was?", unter: "Gefühle an Hinweisen erkennen", bild: "i-nichtgut" }
+    { id: "spiel-gefuehle", name: "Wer fühlt was?", unter: "Beobachten und Möglichkeiten entdecken", bild: "i-nichtgut" }
   ],
   mehrAbenteuer: [
     { id: "spiel-teichfest", name: "Das Teichfest", unter: "Du entscheidest, wie es weitergeht", bild: "i-laterne" }
+  ],
+  gestalten: [
+    { id: "spiel-werkstatt", name: "Sokrates’ Werkstatt", unter: "Eigene Dinge für deinen Teich gestalten", bild: "i-stern" }
   ],
 
   /* ---------- Geheime Zeichen ---------- */
@@ -700,8 +705,9 @@ Teich.inhalt = {
 
   /* ---------- Teich-Rätselbuch ---------- */
   raetselbuch: {
-    intro: ["Jeden Tag gibt es hier drei neue Rätsel.", "Lass dir Zeit. Du kannst so oft probieren, wie du willst."],
-    heute: "Die Rätsel von heute ({datum})",
+    intro: ["Such dir ein Rätsel aus.", "Auch ein Rätsel ist genug. Du kannst jederzeit aufhören.", "Jeden Tag gibt es neue. Probier in deinem Tempo."],
+    heute: "Drei Rätsel zum Aussuchen ({datum})",
+    auswahl: "Drei Rätsel zum Aussuchen",
     extra: "Ein Extra-Rätsel",
     extraKnopf: "Noch ein Rätsel, bitte!",
     titel: { sudoku: "Teich-Sudoku", rechnen: "Tier-Rechnung", reihe: "Zahlen-Reihe" },
@@ -769,43 +775,83 @@ Teich.inhalt = {
 
   /* ---------- Wer fühlt was? ---------- */
   gefuehleSpiel: {
-    intro: ["Schau dir die Bilder genau an.", "Wie fühlt sich das Tier? Oft passen mehrere Gefühle."],
-    frage: "Wie fühlt sich {wer} wohl?",
+    intro: ["Was sehen wir? Was vermuten wir?", "Gefühle können wir nicht sicher von außen erkennen.", "Oft gibt es mehrere Möglichkeiten."],
+    bildZaehler: "Szene {nr} von {von}",
+    beobachtungFrage: "Was sehen wir wirklich?",
+    beobachtet: "Das sehen wir in der Szene.",
+    vermutet: "Das ist eine Vermutung. Es könnte so sein.",
+    frage: "Was könnte {wer} fühlen?",
     hilfeFrage: "Was könnte {wem} helfen?",
-    gut: "Das kann gut sein!",
-    eherNicht: "Hmm, eher nicht. Schau noch mal: {hinweis}",
+    vielleicht: "Vielleicht ist {wer} {gefuehl}.",
+    unsicher: "Ich weiß es noch nicht",
+    unsicherAntwort: "Das ist okay. Wir wissen noch nicht, wie es dem Tier geht.",
+    gesehenTitel: "Das sehen wir",
+    vermutungTitel: "Das vermuten wir",
+    offenTitel: "Das wissen wir noch nicht",
+    keineVermutung: "Noch keine Vermutung.",
+    offen: "Wie sich {wer} wirklich fühlt, wissen wir noch nicht.",
+    fragen: "Wir können freundlich fragen – auch mit einer Karte.",
     weiter: "Nächstes Bild →",
     fertig: "Fertig! →",
     proRunde: 5,
     endeTitel: "Gut beobachtet!",
-    ende: ["Gefühle kann man oft an kleinen Zeichen erkennen.", "Und manchmal hilft es, einfach zu fragen – auch mit einer Karte."],
-    // wer, wem, bild, Text, passende Gefühle, Auswahl, Hinweis, Hilfen [Text, Antwort]
+    ende: ["Beobachten und Vermuten sind zwei verschiedene Dinge.", "Ein Zeichen kann zu mehreren Gefühlen passen.", "Freundlich fragen geht auch mit einer Karte."],
+    // wer, wem, bild, Text, Auswahl möglicher Gefühle, Beobachtung, Vermutung, Hilfen [Text, Antwort]
     bilder: [
       { wer: "die Ente", wem: "der Ente", bild: "i-ente", text: "Erster Tag in der neuen Gruppe. Die Ente steht am Rand. Sie schaut auf den Boden. Ihre Flügel zittern ein bisschen.",
-        passt: ["aufgeregt", "traurig"], auswahl: ["aufgeregt", "froh", "traurig", "stolz"], hinweis: "Sie steht am Rand und zittert.",
+        auswahl: ["aufgeregt", "froh", "traurig", "stolz"], hinweis: "Die Ente steht am Rand. Ihre Flügel zittern.", vermutung: "Die Ente ist traurig.",
         hilfen: [["Mich neben sie stellen und lächeln", "Die Ente lächelt vorsichtig zurück."], ["Ihr eine Karte zeigen: „Spielst du mit?“", "Die Ente nickt. Sie kommt mit."], ["Sie in Ruhe ankommen lassen", "Nach einer Weile schaut die Ente sich neugierig um."]] },
       { wer: "der Frosch", wem: "dem Frosch", bild: "i-frosch", text: "Der Frosch ist beim Weitsprung am weitesten gesprungen. Er grinst und hüpft auf und ab.",
-        passt: ["froh", "stolz"], auswahl: ["muede", "froh", "stolz", "traurig"], hinweis: "Er grinst und hüpft.",
+        auswahl: ["muede", "froh", "stolz", "traurig"], hinweis: "Der Frosch grinst und hüpft.", vermutung: "Der Frosch ist stolz.",
         hilfen: [["Ihm einen Daumen hoch zeigen", "Der Frosch zeigt den Daumen zurück."], ["Mit ihm zusammen hüpfen", "Jetzt hüpfen beide. Was für ein Spaß!"], ["Ihm einen Stern malen", "Der Frosch hängt den Stern an seine Seerose."]] },
       { wer: "der Fisch", wem: "dem Fisch", bild: "i-fisch", text: "Der Lieblingsstein des Fisches ist weg. Er schwimmt ganz langsam und schaut nach unten.",
-        passt: ["traurig"], auswahl: ["traurig", "ueberrascht", "froh", "mutig"], hinweis: "Er schwimmt langsam und schaut nach unten.",
+        auswahl: ["traurig", "ueberrascht", "froh", "mutig"], hinweis: "Der Fisch schwimmt langsam und schaut nach unten.", vermutung: "Der Fisch ist traurig.",
         hilfen: [["Beim Suchen helfen", "Zusammen finden sie den Stein unter einem Blatt!"], ["Neben ihm schwimmen", "Der Fisch fühlt sich nicht mehr so allein."], ["Ihm einen neuen Stein schenken", "Der Fisch freut sich. Jetzt hat er zwei Lieblingssteine."]] },
       { wer: "die Schnecke", wem: "der Schnecke", bild: "i-schnecke", text: "Alle reden gleichzeitig ganz laut. Die Schnecke zieht sich in ihr Haus zurück.",
-        passt: ["aufgeregt", "muede"], auswahl: ["stolz", "aufgeregt", "froh", "muede"], hinweis: "Sie zieht sich bei dem Lärm zurück.",
+        auswahl: ["stolz", "aufgeregt", "froh", "muede"], hinweis: "Bei dem Lärm zieht sich die Schnecke zurück.", vermutung: "Die Schnecke ist müde.",
         hilfen: [["Mit ihr an einen ruhigen Platz gehen", "Dort kommt die Schnecke langsam wieder heraus."], ["Leiser sein und warten", "Die Schnecke streckt vorsichtig die Fühler raus."], ["Ihr die Ruhe-Ecke zeigen", "Die Schnecke atmet mit. Ein, aus."]] },
       { wer: "Sokrates", wem: "Sokrates", bild: "sokrates-1", text: "Sokrates hat sich getraut: Beim Bäcker hat er auf das Brötchen gezeigt, das er möchte.",
-        passt: ["mutig", "stolz", "froh"], auswahl: ["mutig", "traurig", "stolz", "muede"], hinweis: "Er hat sich etwas getraut.",
+        auswahl: ["mutig", "traurig", "stolz", "muede"], hinweis: "Sokrates hat auf ein Brötchen gezeigt.", vermutung: "Sokrates ist stolz.",
         hilfen: [["Ihm sagen: „Das war mutig!“", "Sokrates strahlt."], ["Ein Mut-Steinchen ins Glas legen", "Klack! Das Glas ist wieder ein bisschen voller."], ["Zusammen das Brötchen essen", "Mmh. Mut macht hungrig."]] },
       { wer: "die Ente", wem: "der Ente", bild: "i-ente", text: "Die Ente öffnet die Tür. Alle Freunde sind da und rufen: „Überraschung! Alles Gute zum Geburtstag!“",
-        passt: ["ueberrascht", "froh", "aufgeregt"], auswahl: ["ueberrascht", "muede", "froh", "traurig"], hinweis: "Damit hat sie nicht gerechnet.",
+        auswahl: ["ueberrascht", "muede", "froh", "traurig"], hinweis: "Die Freunde rufen: „Überraschung!“", vermutung: "Die Ente ist froh.",
         hilfen: [["Ihr kurz Zeit zum Staunen lassen", "Die Ente atmet durch und lacht dann."], ["Ihr ein Geschenk geben", "Die Ente packt es sofort aus."], ["Ein Geburtstagslied singen oder summen", "Die Ente wippt im Takt."]] },
       { wer: "der Frosch", wem: "dem Frosch", bild: "i-frosch", text: "Nach dem langen Ausflug gähnt der Frosch. Seine Augen fallen fast zu.",
-        passt: ["muede", "ruhig"], auswahl: ["muede", "aufgeregt", "ruhig", "stolz"], hinweis: "Er gähnt und die Augen fallen zu.",
+        auswahl: ["muede", "aufgeregt", "ruhig", "stolz"], hinweis: "Der Frosch gähnt. Seine Augen fallen fast zu.", vermutung: "Der Frosch ist müde.",
         hilfen: [["Ihm eine Decke bringen", "Der Frosch kuschelt sich ein."], ["Leise sein", "Der Frosch schläft lächelnd ein."], ["Gute Nacht winken", "Der Frosch winkt müde zurück."]] },
       { wer: "der Fisch", wem: "dem Fisch", bild: "i-fisch", text: "Der Fisch liegt im warmen Wasser in der Sonne. Seine Augen sind halb zu. Er lächelt.",
-        passt: ["ruhig", "froh"], auswahl: ["ruhig", "aufgeregt", "froh", "ueberrascht"], hinweis: "Er liegt entspannt in der Sonne.",
+        auswahl: ["ruhig", "aufgeregt", "froh", "ueberrascht"], hinweis: "Der Fisch lächelt. Seine Augen sind halb zu.", vermutung: "Der Fisch ist ruhig.",
         hilfen: [["Dazulegen und mitentspannen", "Jetzt liegen beide in der Sonne. Herrlich."], ["Ihn in Ruhe lassen", "Der Fisch genießt die Ruhe."], ["Ihm später etwas erzählen", "Der Fisch freut sich schon darauf."]] }
     ]
+  },
+
+  /* ---------- Sokrates’ Werkstatt ---------- */
+  werkstatt: {
+    intro: ["Hier ist Platz für deine Ideen.", "Gestalte einen Lampion, ein Boot oder ein Schild.", "Es gibt keine Aufgabe und keine richtige Lösung."],
+    formTitel: "Was möchtest du gestalten?",
+    farbeTitel: "Welche Farbe?",
+    musterTitel: "Welches Muster?",
+    symbolTitel: "Welches Zeichen?",
+    textTitel: "Worte auf deinem Schild (freiwillig)",
+    textTipp: "Bis zu 24 Zeichen. Ein Schild ohne Worte geht auch.",
+    vorschau: "Dein Entwurf",
+    beschreibung: "{form}, {farbe}, {muster}, {symbol}",
+    beschriftung: "Aufschrift: {text}",
+    neu: "Etwas Neues gestalten",
+    ablegen: "In die Schatzkiste legen",
+    aendern: "Änderungen behalten",
+    abgelegt: "Dein Werkstück liegt in der Schatzkiste.",
+    geaendert: "Deine Änderungen sind gespeichert.",
+    nurHier: "Im Moment klappt das Speichern nicht. Lass die Seite offen.",
+    zumTeich: "In deinen Teich",
+    eigene: "Deine Werkstücke",
+    leer: "Hier ist Platz für deine Werkstücke.",
+    bearbeiten: "Weitergestalten: {name}",
+    imTeichBearbeiten: "In der Werkstatt ändern",
+    formen: [{ id: "lampion", name: "Lampion" }, { id: "boot", name: "Boot" }, { id: "schild", name: "Schild" }],
+    farben: [{ id: "moos", name: "Moosgrün", wert: "#A4C675" }, { id: "sonne", name: "Sonnengelb", wert: "#F2B544" }, { id: "wasser", name: "Wasserblau", wert: "#90C4CE" }, { id: "koralle", name: "Korallenrosa", wert: "#E6A28C" }],
+    muster: [{ id: "ohne", name: "Ohne Muster" }, { id: "punkte", name: "Punkte" }, { id: "streifen", name: "Streifen" }],
+    symbole: [{ id: "ohne", name: "Ohne Zeichen" }, { id: "stern", name: "Stern", bild: "i-stern" }, { id: "seerose", name: "Seerose", bild: "i-seerose" }, { id: "herz", name: "Herz", bild: "i-herz" }, { id: "frosch", name: "Frosch", bild: "i-frosch" }]
   },
 
   /* ---------- Das Teichfest (Entscheidungsgeschichte) ---------- */

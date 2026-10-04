@@ -76,8 +76,7 @@
       // Fortschritt für Knobeln und Abenteuer
       var A = T.inhalt.abenteuer, F = A.fortschritt;
       var truhe = T.abenteuer("truhe"), zentrale = T.abenteuer("zentrale"), fall = T.abenteuer("fall");
-      var code = T.abenteuer("code"), weg = T.abenteuer("weg"), fest = T.abenteuer("teichfest"), rb = T.abenteuer("raetselbuch");
-      var tag = new Date(), heute = tag.getFullYear() + "-" + String(tag.getMonth() + 1).padStart(2, "0") + "-" + String(tag.getDate()).padStart(2, "0");
+      var code = T.abenteuer("code"), weg = T.abenteuer("weg"), fest = T.abenteuer("teichfest");
       var anzahlEnden = Object.keys(T.inhalt.teichfest.seiten).filter(function (id) { return T.inhalt.teichfest.seiten[id].ende; }).length;
       var stand = {
         "spiel-truhe": truhe.fertig ? F.truheFertig : T.fuelle(F.truhe, { anzahl: (truhe.offen || []).length }),
@@ -86,12 +85,13 @@
         "spiel-teichfest": (fest.enden || []).length + " von " + anzahlEnden + " Enden entdeckt",
         "spiel-code": Math.min(code.stufe || 0, T.inhalt.code.botschaften.length) + " von " + T.inhalt.code.botschaften.length + " Botschaften",
         "spiel-weg": Math.min(weg.level || 0, T.inhalt.weg.level.length) + " von " + T.inhalt.weg.level.length + " Wegen",
-        "spiel-raetselbuch": "Heute: " + (((rb.tage || {})[heute]) || []).length + " von 3 gelöst"
+        "spiel-raetselbuch": T.inhalt.raetselbuch.auswahl
       };
       var gruppen = {
         klein: I.liste.concat(T.inhalt.mehrKlein),
         knobeln: T.inhalt.knobeln,
-        abenteuer: A.liste.concat(T.inhalt.mehrAbenteuer)
+        abenteuer: A.liste.concat(T.inhalt.mehrAbenteuer),
+        gestalten: T.inhalt.gestalten
       };
       var box = $("spiele-gruppen");
       box.textContent = "";

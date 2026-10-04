@@ -201,6 +201,14 @@ füllt sich weiter, weil er die Information trägt.
 
 ### Laufzeit
 
+- **Freies Gestalten:** Die Werkstatt stellt den eigenen Entwurf vor die Sammlung. Farben tragen
+  Namen und Farbfelder; Form, Muster und Zeichen sind beschriftet und zeigen den gedrückten Zustand.
+  Mobile Ansichten verwenden eine Spalte. Eigene SVG-Werkstücke folgen den bestehenden Konturen und
+  Naturfarben; es gibt keine neuen Animationen oder Abschlussziele.
+- **Gefühle erkunden:** Beobachtung und Vermutung erhalten eigene Beschriftungen. Ausgewählte Gefühle
+  bleiben Vermutungen; keine Antwort wird ausgegraut oder gesperrt. „Ich weiß es noch nicht“ ist eine
+  gleichwertige Antwort.
+
 - Reines HTML, CSS und JavaScript, **ohne Build-Schritt und ohne Internet**. Start per Doppelklick auf
   `index.html`.
 - Klassische `<script>`-Dateien (keine ES-Module, da diese unter `file://` blockiert werden).

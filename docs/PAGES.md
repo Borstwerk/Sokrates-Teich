@@ -14,7 +14,7 @@ Der Teich
 │  ├─ Karten-Kiste
 │  └─ Mut-Steine
 ├─ Spielen und sammeln
-│  ├─ Spiele – Kleine Spiele / Knobeln / Abenteuer
+│  ├─ Spiele – Kleine Spiele / Knobeln / Abenteuer / Selber gestalten
 │  ├─ Dein Teich
 │  └─ Mut-Schatz
 └─ Für Erwachsene – eigene Weiter-Karte
@@ -179,6 +179,29 @@ Die Spiele-Seite ist in drei Bereiche gegliedert: **Kleine Spiele**, **Knobeln**
 - **Bedienung:** Schatz in der Schatzkiste antippen → er landet im Teich; mit dem Finger verschieben oder
   auf eine Stelle im Wasser tippen; „Zurück in die Kiste“. Tastatur: Pfeiltasten, Entf.
 - Auf der Startseite zeigt „Neu!“ an, wenn etwas in der Schatzkiste wartet.
+- Eigene Werkstücke aus der Werkstatt verwenden dieselbe Schatzkiste und dieselbe Bedienung.
+  „In der Werkstatt ändern“ öffnet das gewählte Stück; Änderungen behalten dessen Teich-Position.
+
+## 9a. Sokrates’ Werkstatt – `#spiel-werkstatt`
+
+- Frei gestaltbare Lampions, Boote und Schilder; keine Aufgabe und keine Punkte.
+- Form, Farbe, Muster und Zeichen über beschriftete Knöpfe auswählen. Schilder können bis zu
+  24 Zeichen tragen; Worte sind freiwillig. Die Vorschau zeigt den aktuellen Entwurf.
+- Der Entwurf wird lokal behalten. „In die Schatzkiste legen“ speichert ein neues Stück;
+  anschließendes Speichern ändert dasselbe Stück. „Etwas Neues gestalten“ beginnt einen neuen Entwurf.
+- Eigene Stücke sind auch direkt in der Werkstatt zum Weitergestalten erreichbar. Entwürfe liegen
+  unter `abenteuer.werkstatt`, fertige Stücke mit ihrer Gestaltung unter `funde` und sind damit Teil
+  von Sicherung, Import und Zurücksetzen. Bestehende Sicherungen brauchen keine Migration.
+- Die Spieleübersicht hat zusätzlich zu den 13 Spielen den Bereich „Selber gestalten“.
+
+### Beobachtungen und Möglichkeiten
+
+- „Wer fühlt was?“ beginnt je Szene mit einer beobachtbaren Aussage und einer Gefühlsvermutung.
+  Beide Antworten erklären den Unterschied und öffnen die möglichen Gefühle. Keine Antwort wird gesperrt.
+- Jede Gefühlswahl und „Ich weiß es noch nicht“ öffnet dieselben Hilfen. Beobachtung und Vermutung
+  bleiben sichtbar getrennt; das tatsächliche Gefühl bleibt ausdrücklich offen.
+- Im Rätselbuch zeigt die Übersicht eine freie Auswahl statt „Heute: 0 von 3 gelöst“. Die
+  Rätselgenerierung, gespeicherten Lösungen und bisherigen Fundregeln bleiben erhalten.
 
 ## 10. Für Erwachsene – `#erwachsene`
 
