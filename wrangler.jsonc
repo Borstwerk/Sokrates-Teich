@@ -1,0 +1,9 @@
+// Cloudflare-Konfiguration für die Web-App (siehe docs/IPAD.md).
+// "name" muss genau dem Projektnamen in Cloudflare entsprechen.
+{
+  "name": "sokrates-teich",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./"
+  }
+}

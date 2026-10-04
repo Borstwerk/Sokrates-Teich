@@ -29,12 +29,15 @@
       var orte = document.getElementById("orte");
       orte.textContent = "";
       var neu = !T.speicher.get("geschichteGelesen");
+      var inKiste = T.speicher.get("funde").some(function (f) { return f.x === null; });
       T.inhalt.orte.forEach(function (ort) {
+        if (ort.spiel && !T.spieleAn()) return;
         var link = T.el("a", { class: "ort", href: "#" + ort.id }, [
           T.el("span", { class: "bild" }, [T.bild(ort.bild)]),
           T.el("span", {}, [T.el("b", { text: ort.name }), T.el("span", { text: ort.unter })])
         ]);
         if (neu && ort.id === "geschichte") link.appendChild(T.el("span", { class: "marke", text: I.startHier }));
+        if (inKiste && ort.id === "mein-teich") link.appendChild(T.el("span", { class: "marke", text: T.inhalt.funde.neu }));
         orte.appendChild(T.el("li", {}, [link]));
       });
       T.nacheinander(orte);

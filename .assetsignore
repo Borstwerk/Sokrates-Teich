@@ -1,0 +1,12 @@
+# Nicht mit hochladen – nur die Web-App selbst wird ausgeliefert
+.git
+.github
+.gitattributes
+.gitignore
+.assetsignore
+.wrangler
+node_modules
+wrangler.jsonc
+docs
+*.md
+LICENSE

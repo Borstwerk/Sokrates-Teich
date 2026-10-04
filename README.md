@@ -29,6 +29,10 @@ was in ihnen passiert, Gefühle **ohne Worte** zeigen und kleine Mut-Schritte sa
 Empfohlen: **Microsoft Edge** (natürlichste Vorlesestimmen) oder Chrome/Firefox, auf PC oder Tablet.
 Eine ausführliche Schritt-für-Schritt-Anleitung für Eltern steht in **[ANLEITUNG.md](ANLEITUNG.md)**.
 
+**Auf dem iPad oder Tablet:** Dort lässt sich `index.html` nicht per Doppelklick starten. Sokrates' Teich ist
+deshalb auch eine Web-App, die man aufs Home-Bildschirm legt und die danach offline läuft. Wie man sie
+kostenlos und nur für die eigene Familie bereitstellt: **[docs/IPAD.md](docs/IPAD.md)**.
+
 ---
 
 ## Was es gibt
@@ -41,6 +45,8 @@ Eine ausführliche Schritt-für-Schritt-Anleitung für Eltern steht in **[ANLEIT
 | **Ruhe-Ecke** | Atmen mit Sokrates und eine „Panzer-Pause“. |
 | **Karten-Kiste** | Karten zum Zeigen („Ja“, „Nein“, „Ich muss aufs Klo“, „Ich brauche Hilfe“ …), groß auf dem Bildschirm, vorlesbar und druckbar in jeder Größe. Eigene Karten möglich. |
 | **Mut-Schatz** | Jeder mutige Moment – auch Nicken, Zeigen oder Hingehen – wird ein Steinchen im Glas. |
+| **Spiele** | Fünf kurze Spiele ohne Zeitdruck, ohne Verlieren und ohne Sprechen: *Seerosen-Boot* (Atmen), *Alarmanlagen-Detektiv* (wie laut ist die Alarmanlage wo?), *Ohne Worte* (antworten mit Daumen und Zeigen), *Wo ist Sokrates?* (Suchbilder) und *Gefühle-Memory*. |
+| **Dein Teich** | Nach jedem Spiel findet Sokrates etwas für den Teich – Frosch, Seerose, Papierboot … Für echten Mut (Mut-Steine, Mut-Schatz) gibt es besondere Schätze wie Glühwürmchen oder einen Regenbogen. Das Kind legt alles selbst in seinen Teich. |
 | **Für Erwachsene** | Hintergrundwissen, „Was hilft – was eher nicht“, Hilfe finden, Einstellungen, Sicherung. |
 | **Für Lehrkräfte** | Ein **Infoblatt (1 Seite A4)** und **8 Erklär-Karten** für Schule, Hort und Vereine – auf das Kind zugeschnitten. |
 
@@ -52,6 +58,10 @@ Eine ausführliche Schritt-für-Schritt-Anleitung für Eltern steht in **[ANLEIT
 <tr>
 <td><img src="docs/bilder/mut-steine.png" alt="Die Mut-Steine"></td>
 <td><img src="docs/bilder/karten.png" alt="Die Karten-Kiste"></td>
+</tr>
+<tr>
+<td><img src="docs/bilder/suchbild.png" alt="Das Suchbild „Wo ist Sokrates?“"></td>
+<td><img src="docs/bilder/mein-teich.png" alt="Der eigene Teich mit gefundenen Schätzen"></td>
 </tr>
 </table>
 

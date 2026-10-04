@@ -23,7 +23,9 @@ Teich.inhalt = {
     { id: "mut-steine",   name: "Mut-Steine",       unter: "Kleine mutige Schritte",             bild: "i-steine" },
     { id: "ruhe-ecke",    name: "Ruhe-Ecke",        unter: "Ganz ruhig atmen",                   bild: "i-seerose" },
     { id: "karten",       name: "Karten-Kiste",     unter: "Karten zum Zeigen",                  bild: "i-kiste" },
-    { id: "mut-schatz",   name: "Mut-Schatz",       unter: "Hier sammelst du deinen Mut",        bild: "i-glas" }
+    { id: "mut-schatz",   name: "Mut-Schatz",       unter: "Hier sammelst du deinen Mut",        bild: "i-glas" },
+    { id: "spiele",       name: "Spiele",           unter: "Spiel mit Sokrates",                 bild: "i-spiel", spiel: true },
+    { id: "mein-teich",   name: "Dein Teich",       unter: "Hier wohnen deine Schätze",          bild: "i-frosch", spiel: true }
   ],
 
   // Bild: level = Sokrates-Pose 1–5, lampe = Alarmanlage (null = nicht zeigen, 0–1 = Leuchtstärke)
@@ -250,5 +252,191 @@ Teich.inhalt = {
       ["i-stern", "etwas anderes"]
     ],
     stein: "Mut-Stein: {text}"
+  },
+
+  /*
+   * Teich-Schätze: Sokrates findet sie bei Spielen (spiel) und für echten Mut (mut).
+   * [id, Bild, Name, „Sokrates hat … gefunden“]
+   */
+  funde: {
+    spiel: [
+      ["seerose", "i-seerose", "Seerose", "eine Seerose"],
+      ["frosch", "i-frosch", "Frosch", "einen Frosch"],
+      ["fisch", "i-fisch", "Fisch", "einen Fisch"],
+      ["ente", "i-ente", "Ente", "eine Ente"],
+      ["schnecke", "i-schnecke", "Schnecke", "eine Schnecke"],
+      ["schmetterling", "i-schmetterling", "Schmetterling", "einen Schmetterling"],
+      ["blume", "i-blume", "Blume", "eine Blume"],
+      ["schilf", "i-schilf", "Schilf", "Schilf"],
+      ["pilz", "i-pilz", "Pilz", "einen Pilz"],
+      ["muschel", "i-muschel", "Muschel", "eine Muschel"],
+      ["boot", "i-boot", "Papierboot", "ein Papierboot"],
+      ["sonne", "i-sonne", "Sonne", "eine Sonne"],
+      ["wolke", "i-wolke", "Wolke", "eine Wolke"]
+    ],
+    mut: [
+      ["gluehwurm", "i-gluehwurm", "Glühwürmchen", "ein Glühwürmchen"],
+      ["goldstein", "i-goldstein", "Goldstein", "einen Goldstein"],
+      ["stern", "i-stern", "Stern", "einen Stern"],
+      ["regenbogen", "i-regenbogen", "Regenbogen", "einen Regenbogen"]
+    ],
+    gefundenSpiel: "Sokrates hat {was} für deinen Teich gefunden!",
+    gefundenMut: "Für deinen Mut hat Sokrates {was} gefunden!",
+    ansehen: "Zu deinem Teich",
+    teichText: [
+      "Das ist dein Teich. Alles, was wir finden, darf hier wohnen.",
+      "Tipp auf etwas in der Schatzkiste. Dann zieh es mit dem Finger dahin, wo es wohnen soll."
+    ],
+    kisteLeer: "Die Schatzkiste ist gerade leer.",
+    nochNichts: "Noch ist nichts gefunden. Spiel ein Spiel oder sei mutig. Dann findet Sokrates etwas für dich.",
+    zaehler: "{anzahl} Schätze gefunden",
+    ausgewaehlt: "Du hast {name} ausgewählt.",
+    ziehTipp: "Zieh es mit dem Finger. Oder tipp auf eine Stelle im Teich.",
+    zurKiste: "Zurück in die Kiste",
+    neu: "Neu!"
+  },
+
+  spiele: {
+    intro: [
+      "Hier können wir zusammen spielen.",
+      "Niemand muss sprechen. Und verlieren kann man auch nicht.",
+      "Nach jedem Spiel finde ich etwas für deinen Teich."
+    ],
+    liste: [
+      { id: "spiel-boot",    name: "Seerosen-Boot",          unter: "Mit deinem Atem über den Teich", bild: "i-boot" },
+      { id: "spiel-alarm",   name: "Alarmanlagen-Detektiv",  unter: "Wie laut ist deine Alarmanlage?", bild: "i-lampe" },
+      { id: "spiel-zeichen", name: "Ohne Worte",             unter: "Antworten mit Daumen und Zeigen", bild: "i-mitmachen" },
+      { id: "spiel-suchen",  name: "Wo ist Sokrates?",       unter: "Such mich im Bild",               bild: "i-auge" },
+      { id: "spiel-memory",  name: "Gefühle-Memory",         unter: "Finde die Paare",                 bild: "i-laecheln" }
+    ],
+    nochmal: "Noch mal spielen",
+    andere: "Andere Spiele",
+    zumTeich: "Zu deinem Teich"
+  },
+
+  boot: {
+    intro: [
+      "Ich fahre mit meinem Seerosen-Boot über den Teich. Dein Atem ist der Wind.",
+      "Halte den Knopf gedrückt und atme dabei langsam ein.",
+      "Lass los und atme langsam aus. Dann fährt das Boot weiter."
+    ],
+    halten: "Gedrückt halten",
+    ein: "Einatmen …",
+    loslassen: "Jetzt loslassen und ausatmen",
+    aus: "Ausatmen … ganz langsam",
+    kurz: "Halte den Knopf ein bisschen länger. Ganz in Ruhe.",
+    bereit: "Bereit für den nächsten Atemzug?",
+    zaehler: "Atemzug {nr} von {von}",
+    atemzuege: 5,
+    einSekunden: 4,
+    ausSekunden: 5,
+    endeTitel: "Wir sind angekommen!",
+    ende: ["Fünf Glühwürmchen leuchten für dich.", "Wie fühlt sich dein Bauch jetzt an?"]
+  },
+
+  alarm: {
+    intro: [
+      "Du bist jetzt Detektivin oder Detektiv!",
+      "Ich zeige dir Karten. Wie laut ist deine Alarmanlage da?",
+      "Es gibt kein Richtig und kein Falsch. Es ist ja deine Alarmanlage."
+    ],
+    start: "Los geht's",
+    frage: "Wie laut ist deine Alarmanlage hier?",
+    karte: "Karte {nr} von {von}",
+    weiter: "Nächste Karte →",
+    fertig: "Fertig! →",
+    proRunde: 6,
+    stufen: [
+      { id: "leise",  name: "Leise",  level: 1, lampe: 0,    antwort: "Schön. Da ist es ruhig in dir." },
+      { id: "mittel", name: "Mittel", level: 3, lampe: 0.5,  antwort: "Ein bisschen Kribbeln. Das kenne ich gut." },
+      { id: "laut",   name: "Laut",   level: 5, lampe: 0.95, antwort: "Da piept sie laut. Danke, dass du es mir zeigst." }
+    ],
+    weissNicht: "Weiß nicht",
+    weissNichtAntwort: "Das ist auch okay. Manchmal weiß man es nicht.",
+    situationen: [
+      ["i-haus", "Zuhause mit Mama oder Papa spielen"],
+      ["i-person", "Eine neue Lehrerin kommt in die Klasse"],
+      ["i-gruppe", "Ein Geburtstag mit vielen Kindern"],
+      ["i-broetchen", "Beim Bäcker ein Brötchen kaufen"],
+      ["i-ball", "Auf einen neuen Spielplatz gehen"],
+      ["i-herz", "Mit der besten Freundin oder dem besten Freund spielen"],
+      ["i-arzt", "Zum Arzt gehen"],
+      ["i-telefon", "Mit Oma oder Opa telefonieren"],
+      ["i-tafel", "Vor der Klasse etwas vorlesen"],
+      ["i-seerose", "In der Ruhe-Ecke mit Sokrates atmen"],
+      ["i-frage", "Ein Kind aus der Klasse fragt mich etwas"],
+      ["i-ort", "In einen Laden gehen, den ich nicht kenne"]
+    ],
+    endeTitel: "Super Detektiv-Arbeit!",
+    endeLeise: "Schau mal: An {anzahl} Orten ist deine Alarmanlage leise. Das ist toll!",
+    endeLaut: "Für die lauten Orte gibt es die Mut-Steine. Ganz langsam, Schritt für Schritt.",
+    endeAlle: "Danke, dass du mir das gezeigt hast."
+  },
+
+  zeichen: {
+    intro: [
+      "Ich stelle dir Fragen.",
+      "Du antwortest ohne Worte: mit dem Daumen oder indem du auf etwas zeigst."
+    ],
+    start: "Los geht's",
+    weiter: "Nächste Frage →",
+    fertig: "Fertig! →",
+    frage: "Frage {nr} von {von}",
+    proRunde: 6,
+    ja: "Ja", nein: "Nein", weissNicht: "Weiß nicht",
+    verstanden: ["Ich habe dich verstanden!", "Alles klar!", "Danke für deine Antwort!"],
+    weissNichtAntwort: "Das ist okay. Man muss nicht alles wissen.",
+    gezeigt: "Du hast auf {was} gezeigt. Ich habe dich verstanden!",
+    // Ja/Nein-Fragen: [Frage, Antwort bei Ja, Antwort bei Nein]
+    jaNein: [
+      ["Magst du Eis?", "Ich auch! Am liebsten Erdbeer-Eis.", "Okay! Dann essen wir lieber etwas anderes."],
+      ["Kann eine Schildkröte fliegen?", "Hihi! Ich probiere es mal … Nein, klappt nicht.", "Genau! Ich bleibe lieber auf dem Boden."],
+      ["Hast du heute schon gelacht?", "Wie schön!", "Vielleicht ja gleich. Ich mache mal ein lustiges Gesicht."],
+      ["Ist ein Elefant klein?", "Hihi, ein ganz kleiner Elefant? Lustig!", "Stimmt! Ein Elefant ist riesig."],
+      ["Magst du Regen?", "Dann springen wir zusammen in Pfützen!", "Okay! Dann bleiben wir bei Regen drinnen."],
+      ["Schlafen Schildkröten im Winter?", "Richtig! Viele Schildkröten machen einen Winterschlaf.", "Doch, viele schon! Sie machen einen Winterschlaf."],
+      ["Möchtest du mit mir spielen?", "Juhu! Das machen wir gerade.", "Okay. Wir können auch einfach zusammen am Teich sitzen."]
+    ],
+    // Zeige-Fragen: [Frage, [[Bild oder Farbe, Name], …]]
+    zeigen: [
+      ["Welche Farbe magst du am liebsten?", [["#E46F4F", "Rot"], ["#5FA8C7", "Blau"], ["#8CC063", "Grün"], ["#F2B544", "Gelb"], ["#A98BC9", "Lila"]]],
+      ["Welches Wetter magst du am liebsten?", [["i-sonne", "Sonne"], ["i-regen", "Regen"], ["i-schnee", "Schnee"]]],
+      ["Wer soll mich am Teich besuchen?", [["i-frosch", "Frosch"], ["i-ente", "Ente"], ["i-fisch", "Fisch"], ["i-schnecke", "Schnecke"]]],
+      ["Wo bist du am liebsten?", [["i-haus", "Zuhause"], ["i-ball", "Spielplatz"], ["i-seerose", "Am Teich"]]],
+      ["Was soll in meinen Teich?", [["i-blume", "Blume"], ["i-boot", "Papierboot"], ["i-muschel", "Muschel"]]],
+      ["Was isst du lieber?", [["i-broetchen", "Brötchen"], ["i-pilz", "Pilze"]]]
+    ],
+    endeTitel: "Ich habe alles verstanden!",
+    ende: ["Du hast mir {anzahl} Antworten gegeben. Ganz ohne Worte.", "Daumen, Nicken und Zeigen sind echte Antworten."]
+  },
+
+  suchen: {
+    intro: ["Ich habe mich versteckt! Findest du mich?", "Such auch die anderen Dinge. Lass dir Zeit."],
+    sokrates: "Sokrates",
+    tipp: "Tipp",
+    tippDa: "Da ist es!",
+    gefunden: "gefunden",
+    super: ["Gefunden! Super!", "Du hast gute Augen!", "Da war es!"],
+    endeTitel: "Alles gefunden!",
+    ende: ["Du hast mich gefunden. Und alles andere auch!", "Willst du ein anderes Bild ansehen?"]
+  },
+
+  memory: {
+    intro: ["Finde immer zwei gleiche Karten.", "Tipp eine Karte an. Dann noch eine."],
+    leicht: "4 Paare",
+    schwer: "6 Paare",
+    // [id, Name, Satz von Sokrates]
+    gefuehle: [
+      ["froh", "Froh", "Froh: Mir ist warm im Bauch, und ich lache."],
+      ["mutig", "Mutig", "Mutig: Ich habe ein bisschen Angst und mache es trotzdem."],
+      ["aufgeregt", "Aufgeregt", "Aufgeregt: Es kribbelt im Bauch. Das kennen alle."],
+      ["muede", "Müde", "Müde: Ich brauche eine Pause. Das ist okay."],
+      ["stolz", "Stolz", "Stolz: Ich habe etwas geschafft!"],
+      ["ruhig", "Ruhig", "Ruhig: Alles ist leise in mir."],
+      ["traurig", "Traurig", "Traurig: Dann tut eine Umarmung gut."],
+      ["ueberrascht", "Überrascht", "Überrascht: Oh! Damit habe ich nicht gerechnet."]
+    ],
+    endeTitel: "Alle Paare gefunden!",
+    ende: ["Alle Gefühle sind okay. Auch die schwierigen.", "Welches Gefühl kennst du gut?"]
   }
 };

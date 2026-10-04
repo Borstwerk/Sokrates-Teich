@@ -100,13 +100,37 @@ Danach frei wählbar. Nichts ist gesperrt.
   gelächelt · hingegangen · eine Karte gezeigt · geflüstert · gesprochen · etwas anderes) → Steinchen ins Glas.
 - **Optional (mit Eltern):** „Wenn das Glas voll ist, dann …“ – eine selbst gewählte Belohnung eintragen.
 
-## 8. Für Erwachsene – `#erwachsene`
+## 8. Spiele – `#spiele` (seit Version 1.1)
+
+- **Zweck:** Einen Grund geben, wiederzukommen – und dabei üben, ohne Druck.
+- **Leitplanken:** kein Mikrofon, keine Aufforderung zu sprechen, kein Zeitdruck, kein Verlieren, keine
+  Punkte; Sokrates ist nie traurig, wenn das Kind länger nicht da war; jedes Spiel endet ruhig;
+  abschaltbar unter *Für Erwachsene*.
+- **Seerosen-Boot** `#spiel-boot`: Knopf gedrückt halten = einatmen (4 s), loslassen = ausatmen (5 s);
+  das Boot fährt, ein Glühwürmchen leuchtet. 5 Atemzüge.
+- **Alarmanlagen-Detektiv** `#spiel-alarm`: 6 Situationskarten → Leise / Mittel / Laut / Weiß nicht;
+  Übersicht am Ende. Die letzte Runde sehen Eltern unter *Für Erwachsene* (nur auf diesem Gerät).
+- **Ohne Worte** `#spiel-zeichen`: 6 Fragen, Antworten mit Daumen hoch/runter, „Weiß nicht“ oder Zeigen
+  auf Bilder und Farben. Jede Antwort wird „verstanden“.
+- **Wo ist Sokrates?** `#spiel-suchen`: drei Suchbilder (Spielplatz, Schulhof, Markt), Verstecke zufällig;
+  „Tipp“ zeigt die Stelle, ein zweites Antippen zählt als gefunden (auch für Tastatur).
+- **Gefühle-Memory** `#spiel-memory`: 4 oder 6 Paare mit Sokrates-Gesichtern; zu jedem Paar ein Satz.
+
+## 9. Dein Teich – `#mein-teich` (seit Version 1.1)
+
+- **Zweck:** Belohnung sichtbar machen. Spiele bringen Tiere und Pflanzen, echter Mut (Mut-Steine,
+  Mut-Schatz) bringt besondere, leuchtende Schätze.
+- **Bedienung:** Schatz in der Schatzkiste antippen → er landet im Teich; mit dem Finger verschieben oder
+  auf eine Stelle im Wasser tippen; „Zurück in die Kiste“. Tastatur: Pfeiltasten, Entf.
+- Auf der Startseite zeigt „Neu!“ an, wenn etwas in der Schatzkiste wartet.
+
+## 10. Für Erwachsene – `#erwachsene`
 
 - **Zweck:** Eltern informieren und Einstellungen.
 - **Inhalt:** Was ist selektiver Mutismus (kurz) · So nutzt ihr die Seite zusammen · Hilfreich / Vermeiden ·
   Therapieplatz finden · Buchtipps · Quellen (Verweis auf Recherche).
-- **Einstellungen:** Name des Kindes · Vorlesen an/aus und Tempo · Fortschritt zurücksetzen (mit
-  Sicherheitsabfrage).
+- **Einstellungen:** Name des Kindes · Vorlesen an/aus und Tempo · Spiele und Teich-Schätze an/aus ·
+  Fortschritt zurücksetzen (mit Sicherheitsabfrage).
 
 ---
 

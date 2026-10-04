@@ -18,7 +18,7 @@
     if (/natural/i.test(n)) r += 100;
     if (/online/i.test(n)) r += 60;
     if (/google/i.test(n)) r += 45;
-    if (/neural|premium|enhanced|siri/i.test(n)) r += 40;
+    if (/neural|premium|enhanced|erweitert|siri/i.test(n)) r += 40;   // iPad: „Anna (Erweitert)“ usw.
     if (/desktop/i.test(n)) r -= 10;
     if (/de-DE/i.test(v.lang)) r += 10;
     if (v.localService === false) r += 5;

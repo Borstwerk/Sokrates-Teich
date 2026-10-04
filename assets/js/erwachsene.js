@@ -31,12 +31,33 @@
     $("e-tempo").value = T.speicher.get("tempo");
     $("e-ziel").value = T.speicher.get("ziel");
     $("e-bewegung").value = T.speicher.get("bewegung") || "auto";
+    $("e-spiele").checked = T.spieleAn();
+    alarmErgebnis();
     $("e-belohnung").value = T.speicher.get("belohnung") || "";
     $("e-stimme-feld").hidden = !T.vorlesen.verfuegbar();
     $("speicher-warnung").hidden = T.speicher.funktioniert();
     stimmenListe();
   }
 
+  // Letzte Runde im Alarmanlagen-Detektiv (nur auf diesem Gerät)
+  function alarmErgebnis() {
+    var box = $("e-alarm");
+    box.textContent = "";
+    var runden = T.speicher.get("alarmRunden") || [];
+    var letzte = runden[runden.length - 1];
+    if (!letzte) { box.appendChild(T.el("p", { class: "leise", text: "Noch nicht gespielt." })); return; }
+    var namen = { leise: "Leise", mittel: "Mittel", laut: "Laut", weiss: "Weiß nicht" };
+    var datum = "";
+    try { datum = new Date(letzte.zeit).toLocaleDateString("de-DE", { day: "numeric", month: "numeric", year: "numeric" }); } catch (e) { /* egal */ }
+    var zeilen = letzte.antworten.map(function (a) { return T.el("tr", {}, [T.el("td", { text: a.text }), T.el("td", { text: namen[a.stufe] || a.stufe })]); });
+    box.appendChild(T.el("p", { class: "leise", text: "Letzte Runde" + (datum ? " vom " + datum : "") + ":" }));
+    box.appendChild(T.el("table", { class: "tabelle" }, [
+      T.el("thead", {}, [T.el("tr", {}, [T.el("th", { scope: "col", text: "Situation" }), T.el("th", { scope: "col", text: "Alarmanlage" })])]),
+      T.el("tbody", {}, zeilen)
+    ]));
+  }
+
+  $("e-spiele").addEventListener("change", function (e) { T.speicher.set("spieleAn", e.target.checked); gespeichert(); });
   $("e-name").addEventListener("input", function (e) { T.speicher.set("name", e.target.value.trim()); gespeichert(); });
   $("e-vorlesen").addEventListener("change", function (e) { T.speicher.set("vorlesen", e.target.checked); T.aktualisiereLeiste(); gespeichert(); });
   $("e-bewegung").addEventListener("change", function (e) { T.speicher.set("bewegung", e.target.value); T.setzeBewegung(); gespeichert(); });
@@ -98,7 +119,7 @@
   $("e-reset").addEventListener("click", function () {
     T.dialog({
       titel: "Wirklich alles zurücksetzen?",
-      inhalt: [T.el("p", { text: "Mut-Steine, Mut-Schatz, eigene Karten und Einstellungen werden gelöscht. Tipp: Vorher eine Sicherung speichern." })],
+      inhalt: [T.el("p", { text: "Mut-Steine, Mut-Schatz, Teich-Schätze, eigene Karten und Einstellungen werden gelöscht. Tipp: Vorher eine Sicherung speichern." })],
       knoepfe: [
         { text: "Ja, alles löschen", gefahr: true, aktion: function () { T.speicher.zuruecksetzen(); fuelleFormular(); T.aktualisiereLeiste(); T.setzeBewegung(); gespeichert(); } },
         { text: "Nein, behalten", haupt: true }

@@ -201,3 +201,26 @@ geguckt · hingegangen · gelächelt · gewinkt · genickt · gezeigt · eine Ka
 gesprochen · etwas anderes
 
 Rückmeldung: *„Ein neuer Mut-Stein für dein Glas! Ich bin stolz auf dich.“*
+
+## Spiele und Teich-Schätze
+
+Alle Texte der Spiele stehen in `assets/js/inhalt.js` (Abschnitte `funde`, `spiele`, `boot`, `alarm`,
+`zeichen`, `suchen`, `memory`) und können dort angepasst werden. Schreibregeln wie oben: kurze Sätze,
+bekannte Wörter, nie „du musst“.
+
+Beispiele:
+
+> *Seerosen-Boot:* „Ich fahre mit meinem Seerosen-Boot über den Teich. Dein Atem ist der Wind.“
+
+> *Alarmanlagen-Detektiv:* „Wie laut ist deine Alarmanlage hier?“ – Leise: „Schön. Da ist es ruhig in
+> dir.“ · Laut: „Da piept sie laut. Danke, dass du es mir zeigst.“ · „Es gibt kein Richtig und kein Falsch.“
+
+> *Ohne Worte:* „Kann eine Schildkröte fliegen?“ – Nein: „Genau! Ich bleibe lieber auf dem Boden.“ –
+> Am Ende: „Daumen, Nicken und Zeigen sind echte Antworten.“
+
+> *Gefühle-Memory:* „Mutig: Ich habe ein bisschen Angst und mache es trotzdem.“ – „Alle Gefühle sind okay.
+> Auch die schwierigen.“
+
+> *Fund:* „Sokrates hat einen Frosch für deinen Teich gefunden!“ · für echten Mut: „Für deinen Mut hat
+> Sokrates ein Glühwürmchen gefunden!“
+

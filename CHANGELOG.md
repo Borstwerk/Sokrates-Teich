@@ -2,8 +2,24 @@
 
 Alle nennenswerten Änderungen an Sokrates' Teich.
 
-
 ## [Unreleased]
+
+### Neu
+- **Spiele** (ohne Zeitdruck, ohne Verlieren, ohne Sprechen): Seerosen-Boot (Atmen), Alarmanlagen-Detektiv,
+  Ohne Worte (Daumen und Zeigen), Wo ist Sokrates? (drei Suchbilder) und Gefühle-Memory.
+- **Dein Teich:** Nach jedem Spiel findet Sokrates einen Schatz; echter Mut (Mut-Steine, Mut-Schatz)
+  bringt besondere, leuchtende Schätze. Das Kind gestaltet damit seinen eigenen Teich.
+- *Für Erwachsene:* Schalter „Spiele und Teich-Schätze anzeigen“ und die letzte Runde des
+  Alarmanlagen-Detektivs.
+- **Web-App (PWA)** für iPad und Tablets: Manifest, App-Symbole, Offline-Speicher (`sw.js`).
+  Nur aktiv bei Aufruf über http(s); per Doppelklick (`file://`) bleibt alles wie bisher.
+- Anleitung [docs/IPAD.md](docs/IPAD.md): Bereitstellung nur für die Familie (Cloudflare Workers + Access).
+- `wrangler.jsonc` und `.assetsignore`: Cloudflare liefert nur die App-Dateien aus (keine Doku, kein `.git`).
+- Vorlesen: erweiterte iPad-Stimmen („Erweitert“/„Premium“) werden bevorzugt.
+
+### Behoben
+- Auf Touch-Geräten blieben Drüberfahr-Effekte nach dem Antippen hängen (z. B. schief stehende Karte);
+  diese Effekte gibt es jetzt nur noch mit Maus.
 
 ### Dokumentation und Evidenz
 - Public-Release-Audit der zentralen fachlichen Aussagen gegen direkt zugängliche Volltexte und Fachquellen (2023/2025 Reviews, ASHA, NHS, SMA, Mutismus e.V.).
