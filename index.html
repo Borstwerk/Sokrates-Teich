@@ -244,8 +244,15 @@
   <!-- ================= Ruhe-Ecke ================= -->
   <section class="ansicht" id="ansicht-ruhe-ecke" data-ansicht="ruhe-ecke" hidden>
     <h1 tabindex="-1" class="lesen">Die Ruhe-Ecke</h1>
+    <nav class="e-navi sprung-navi" aria-label="Übungen in der Ruhe-Ecke">
+      <ul>
+        <li><button type="button" class="knopf klein" data-ziel="ruhe-atmen"><svg aria-hidden="true"><use href="#i-seerose"/></svg>Atmen</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="ruhe-pause"><svg aria-hidden="true"><use href="#i-steine"/></svg>Panzer-Pause</button></li>
+        <li><button type="button" class="knopf klein" data-ziel="fl-titel"><svg aria-hidden="true"><use href="#i-hand"/></svg>Fest und locker</button></li>
+      </ul>
+    </nav>
 
-    <h2 class="lesen">Atmen mit Sokrates</h2>
+    <h2 class="lesen" id="ruhe-atmen" tabindex="-1">Atmen mit Sokrates</h2>
     <div id="atem-intro" class="lesen"></div>
     <div class="ruhe-teich">
       <div class="kreis" id="atem-kreis" aria-live="polite">Bereit?</div>
@@ -264,7 +271,7 @@
     </div>
     <div id="atem-ende" class="knoepfe" hidden></div>
 
-    <h2 class="lesen">Panzer-Pause</h2>
+    <h2 class="lesen" id="ruhe-pause" tabindex="-1">Panzer-Pause</h2>
     <div class="mit-blase">
       <div id="pause-szene"></div>
       <div>
@@ -273,7 +280,7 @@
       </div>
     </div>
 
-    <h2 class="lesen" id="fl-titel"></h2>
+    <h2 class="lesen" id="fl-titel" tabindex="-1"></h2>
     <p class="lesen" id="fl-intro"></p>
     <div class="mit-blase">
       <div id="fl-szene"></div>

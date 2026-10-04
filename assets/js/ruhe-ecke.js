@@ -137,6 +137,15 @@
   }
   $("fl-start").addEventListener("click", festLocker);
 
+  // Sprungmarken zu den drei Übungen
+  document.querySelectorAll(".sprung-navi [data-ziel]").forEach(function (k) {
+    k.addEventListener("click", function () {
+      var ziel = $(k.dataset.ziel);
+      ziel.scrollIntoView({ behavior: T.wenigBewegung() ? "auto" : "smooth", block: "start" });
+      ziel.focus({ preventScroll: true });
+    });
+  });
+
   $("atem-start").addEventListener("click", atmen);
   $("atem-stopp").addEventListener("click", function () { alleStoppen(); T.vorlesen.stopp(); atemZuruecksetzen(); });
   $("pause-start").addEventListener("click", pause);

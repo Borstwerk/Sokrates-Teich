@@ -199,6 +199,19 @@ füllt sich weiter, weil er die Information trägt.
   Spalten, mobil untereinander. Detektiv-Orte in vier, zwei oder einer Spalte je nach Breite.
 - **Bewegung:** Keine neuen Animationen; die bestehende Ruhig-Einstellung gilt auch für die neuen Gruppen.
 
+### Körper-Update (Oktober 2026) – Review nach KI-Regeln
+
+Geprüft mit `web-design-review`, `visual-verification` und `accessibility-review` (Desktop 1280 px, iPad,
+Handy 375/390 px, Ruhig-Modus, axe-core):
+
+- **Erhalten:** Papier-Hintergrund, kräftige Tinten-Konturen, Andika, Sokrates als durchgehende Figur,
+  ruhige Bewegung. Die Orts-Karten tragen Navigation und sind deshalb keine Deko-Kacheln.
+- **Behoben:** „Für Erwachsene“ war eine lange, ungegliederte Textseite → Abschnitte mit Symbol-Überschrift
+  und Sprungmarken. Die Ruhe-Ecke hat jetzt drei Übungen → Sprungmarken oben.
+- **Neu, im bestehenden Stil:** „Mein Körper“ nutzt dieselbe Figurensprache (Konturen, Naturfarben), Stellen
+  als beschriftete Knöpfe (min. 40–44 px), Leuchten nur als Zusatz zum gedrückten Zustand (Farbe nie einziges Signal).
+- **Offen:** Die Startseite hat inzwischen viele Orte; bei weiteren Inhalten eher bündeln als neue Kacheln.
+
 ### Laufzeit
 
 - **Freies Gestalten:** Die Werkstatt stellt den eigenen Entwurf vor die Sammlung. Farben tragen

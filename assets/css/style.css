@@ -1052,7 +1052,7 @@ span.code-taste { cursor: default; }
 .stelle-knopf {
   position: absolute; transform: translate(-50%, -50%); min-height: 44px; padding: 4px 14px;
   background: rgba(255,255,255,.92); border: 2px solid var(--ink); border-radius: 99px; box-shadow: 0 2px 0 rgba(46,58,47,.25);
-  font-weight: 700; font-size: 17px; line-height: 1.1; cursor: pointer; white-space: nowrap;
+  font-weight: 700; font-size: 17px; line-height: 1.1; cursor: pointer; white-space: nowrap; -webkit-tap-highlight-color: transparent;
 }
 .stelle-knopf[aria-pressed="true"] { background: var(--star); }
 .koerper-blase h2 { margin: 0 0 6px; font-size: 28px; }
@@ -1073,6 +1073,10 @@ span.code-taste { cursor: default; }
 .e-navi .leise { margin: 0 0 6px; }
 .e-navi ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .e-navi li { margin: 0; }
+.sprung-navi { margin: 0 0 8px; }
+.sprung-navi .knopf svg { width: 26px; height: 26px; }
+#ruhe-atmen, #ruhe-pause, #fl-titel { scroll-margin-top: 16px; }
+#ruhe-atmen:focus, #ruhe-pause:focus, #fl-titel:focus { outline: none; }
 .e-abschnitt { margin-top: 24px; padding: 6px 24px 18px; background: var(--weiss); border: 2px solid var(--ink); border-radius: 22px; scroll-margin-top: 16px; }
 .e-abschnitt:focus { outline: none; }
 .e-abschnitt > h2 { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
