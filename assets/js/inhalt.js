@@ -198,7 +198,7 @@ Teich.inhalt = {
       ] },
       { titel: "Wenn {kind} erstarrt", bild: "i-warten", punkte: [
         "Das ist eine Angstreaktion, kein Ungehorsam.",
-        "Aufmerksamkeit von {kind} wegnehmen, ruhig weitermachen.",
+        "Aufmerksamkeit nicht auf {kind} lenken, ruhig weitermachen.",
         "Eine Möglichkeit ohne Worte anbieten: nicken, zeigen, Karte.",
         "Später unter vier Augen freundlich nachfragen – mit Ja/Nein-Fragen."
       ] },

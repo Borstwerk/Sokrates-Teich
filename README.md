@@ -151,10 +151,11 @@ Barrierefreiheits-Prüfung nach WCAG 2 AA (axe-core) ohne Befund. Nicht geprüft
 ## Mitmachen
 
 Rückmeldungen, Verbesserungen und Übersetzungen sind willkommen – besonders von Betroffenen, Eltern,
-Lehrkräften und Fachleuten. Bitte über **Issues** oder **Pull Requests**.
+Lehrkräften und Fachleuten. Bitte über **Issues** oder **Pull Requests**; wie es geht und welche
+Grundsätze gelten, steht in [CONTRIBUTING.md](CONTRIBUTING.md). Änderungen: [CHANGELOG.md](CHANGELOG.md).
 
-Bei Textänderungen bitte die Schreibregeln in [`docs/INHALT.md`](docs/INHALT.md) beachten
-(kurze Sätze, bekannte Wörter, nie „du musst“, kein Sprechdruck).
+Sicherheitslücken bitte vertraulich melden: [SECURITY.md](SECURITY.md).
+Bitte nirgends persönliche Daten von Kindern posten.
 
 ## Wie das entstanden ist
 
