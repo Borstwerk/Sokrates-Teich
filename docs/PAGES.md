@@ -136,6 +136,29 @@ einfach Spaß hat – nicht jeder Klick ist eine Übung. Fortschritt wird gespei
   nicht zum besseren Weg wird. Ab 6 Hinweisen: „Wo ist Funkel?“ → alte Bootshütte; die Tür öffnet der
   Schlüssel aus der Truhe. Belohnung: Laterne.
 
+## 8c. Knobeln und weitere Spiele (seit Version 1.3)
+
+Die Spiele-Seite ist in drei Bereiche gegliedert: **Kleine Spiele**, **Knobeln**, **Abenteuer**.
+
+- **Teich-Rätselbuch** `#spiel-raetselbuch`: jeden Tag (Datum als Startwert) drei Rätsel – Tier-Sudoku 4×4
+  (eindeutig lösbar erzeugt), Tier-Rechnung, Zahlen-Reihe. „Noch ein Rätsel, bitte!“ erzeugt Extra-Rätsel.
+  Ein Schatz pro Tag, wenn alle drei gelöst sind. Kein Serien-Zähler (kein Druck, täglich zu spielen).
+- **Geheime Zeichen** `#spiel-code`: Zeichenschrift aus 5 Formen × 6 Markierungen. Sechs Botschaften
+  entschlüsseln; eigene Botschaft schreiben und mit Schlüssel ausdrucken.
+- **Über den großen Teich** `#spiel-weg`: Rucksack mit begrenztem Platz packen (Freundin, Wegkarte, Pause,
+  Antwort-Karte), dann Stein für Stein gehen. Besondere Steine brauchen die passende Hilfe. Fünf Wege,
+  ab Weg 2 mit mehreren richtigen Packungen. Kein Scheitern: „Rucksack neu packen“.
+- **Wer fühlt was?** `#spiel-gefuehle`: Szenen mit Tieren; passende Gefühle erkennen (mehrere richtig),
+  dann eine Hilfe auswählen.
+- **Das Teichfest** `#spiel-teichfest`: Entscheidungsgeschichte mit fünf Enden, alle positiv; gefundene
+  Enden werden gesammelt.
+
+## Navigation
+
+- Oben links führt der Zurück-Knopf je nach Bereich zum Teich, zu den Spielen oder zu „Für Erwachsene“.
+- Statt Textlinks am Seitenende gibt es **Weiter-Karten** (Bild, Titel, Untertitel, Pfeil), z. B.
+  „Für Erwachsene“ auf der Startseite oder „Für Lehrkräfte“ in der Karten-Kiste.
+
 ## 9. Dein Teich – `#mein-teich` (seit Version 1.1)
 
 - **Zweck:** Belohnung sichtbar machen. Spiele bringen Tiere und Pflanzen, echter Mut (Mut-Steine,

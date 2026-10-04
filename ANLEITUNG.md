@@ -61,6 +61,11 @@ Wenn das Kind keine Lust hat: aufhören. Sokrates wartet.
   leichter machen; was es oft wählt, steht unter *Für Erwachsene* und ist ein guter Gesprächsanlass.
   In *Detektiv Sokrates* sind alle sechs Wege zu fragen gleich viel wert – auch Karte, Zeigen oder
   Aufschreiben bringen denselben Hinweis.
+- **Knobeln:** Das *Teich-Rätselbuch* hat jeden Tag drei neue Rätsel. Mit *Geheime Zeichen* kann das Kind
+  eine eigene Geheimbotschaft schreiben und ausdrucken – eine schöne Art, ohne Worte etwas mitzuteilen, z. B.
+  an eine Freundin. *Über den großen Teich* übt Vorausplanen: Welche Hilfe brauche ich für welchen Stein?
+- **Das Teichfest:** Eine Geschichte zum Entscheiden. Jeder Weg ist ein guter Weg – auch „heute nur von
+  weitem schauen“.
 - **Dein Teich:** Nach jedem Spiel findet Sokrates etwas für den Teich. Für echten Mut gibt es besondere
   Schätze (Glühwürmchen, Goldstein, Stern, Regenbogen). Das Kind legt die Schätze selbst in seinen Teich.
   Wer das nicht möchte: *Für Erwachsene → Spiele und Teich-Schätze anzeigen* ausschalten.

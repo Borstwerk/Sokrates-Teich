@@ -2,6 +2,17 @@
 (function (T) {
   var aktuelle = null;
   var knopf = document.getElementById("vorlesen-knopf");
+  var zurueck = document.querySelector(".leiste .zurueck");
+
+  // Weiter-Karten (z. B. „Für Erwachsene“ unten auf der Startseite)
+  document.querySelectorAll("[data-weiter]").forEach(function (nav) {
+    var w = T.inhalt.navi.weiter[nav.dataset.weiter];
+    nav.appendChild(T.el("a", { class: "weiter-karte", href: "#" + (nav.dataset.weiter === "teich" ? "mein-teich" : nav.dataset.weiter) }, [
+      T.el("span", { class: "bild" }, [T.bild(w.bild)]),
+      T.el("span", { class: "text" }, [T.el("b", { text: w.titel }), T.el("span", { text: w.unter })]),
+      T.el("span", { class: "pfeil", "aria-hidden": "true", text: "→" })
+    ]));
+  });
 
   // Abschnitte zum Vorlesen: jeder Absatz einzeln, mit kurzer Pause dazwischen
   function vorlesbareAbschnitte() {
@@ -41,6 +52,10 @@
     if (document.getElementById("dialog").open) T.schliesseDialog();
 
     document.querySelectorAll(".ansicht").forEach(function (s) { s.hidden = s.dataset.ansicht !== id; });
+    // Zurück-Knopf oben: aus Spielen zur Spiele-Übersicht, von den Lehrkräften zu „Für Erwachsene“
+    var N = T.inhalt.navi, ziel = /^spiel-/.test(id) ? "spiele" : id === "lehrkraefte" ? "erwachsene" : "teich";
+    zurueck.setAttribute("href", "#" + ziel);
+    zurueck.textContent = N[ziel];
     document.body.dataset.ansicht = id;
     var ansicht = document.getElementById("ansicht-" + id);
     if (T.ansichten[id].zeige) T.ansichten[id].zeige();
