@@ -9,7 +9,7 @@ was in ihnen passiert, Gefühle **ohne Worte** zeigen und kleine Mut-Schritte sa
 ![Startseite mit Sokrates am Teich](docs/bilder/startseite.png)
 
 - läuft **offline** – einfach `index.html` im Browser öffnen, nichts installieren
-- **keine Daten verlassen den Computer**, kein Konto, kein Tracking
+- **kein Konto, kein Tracking**; Fortschritt und Einstellungen bleiben lokal (Ausnahme: ggf. Online-Vorlesestimmen, siehe Datenschutz)
 - fordert das Kind **nie** zum Sprechen auf, nutzt **kein Mikrofon**
 - für Leseanfänger (etwa 7–10 Jahre), mit Vorlesefunktion
 - mit Material für **Eltern und Lehrkräfte** zum Ausdrucken
@@ -73,7 +73,7 @@ Bitte lesen, bevor ihr die Seite nutzt oder weitergebt.
   behandelt wird selektiver Mutismus vor allem von Kinder- und Jugendlichenpsychotherapeut:innen und
   Logopäd:innen mit Mutismus-Schwerpunkt.
 - **Kein Diagnose-Werkzeug.** Die Seite stellt nicht fest, ob ein Kind selektiven Mutismus hat.
-- **Kein Medizinprodukt.** Sie misst, bewertet und überträgt keine Gesundheitsdaten.
+- **Nicht zur Diagnose oder Behandlung bestimmt.** Sokrates' Teich wurde nicht als Medizinprodukt entwickelt.
 - **Nicht fachlich begutachtet.** Die Inhalte wurden von Eltern mit Unterstützung einer KI aus Fachquellen
   zusammengestellt (siehe [Quellen](#inhalte-und-quellen)). Sie wurden **nicht** von Therapeut:innen geprüft.
   Rückmeldungen von Fachleuten sind ausdrücklich willkommen.
@@ -105,8 +105,9 @@ Die Gestaltung folgt dem, was in der Fachliteratur übereinstimmend empfohlen wi
 
 ## Datenschutz
 
-Alles bleibt auf dem Gerät. Fortschritt und Einstellungen (z. B. der Name des Kindes) liegen nur im
-Speicher des Browsers (`localStorage`). Die Seite lädt nichts aus dem Internet und sendet nichts.
+Fortschritt und Einstellungen (z. B. der Name des Kindes) liegen nur im Speicher des Browsers
+(`localStorage`). Die Anwendung selbst lädt keine externen Ressourcen nach und sendet keine Nutzungs- oder
+Fortschrittsdaten.
 
 Ausnahme beim Vorlesen: Online-Stimmen (z. B. die „Natural“-Stimmen in Edge oder „Google Deutsch“ in Chrome)
 werden vom Browser-Hersteller erzeugt; dabei wird der vorgelesene Text an dessen Dienst übertragen. Wer das
@@ -127,8 +128,11 @@ systematische Übersichtsarbeiten (2023, 2025), die Leitlinien des Interdiszipli
 die Selective Mutism Information & Research Association (SMIRA), das Child Mind Institute und die
 Selective Mutism Association.
 
-Die Originalquellen konnten bei der Recherche nur über Suchergebnisse geprüft werden; diese Einschränkung
-ist dort offen benannt.
+Für einen Public-Release-Audit wurden die zentralen Aussagen zusätzlich gegen direkt zugängliche Original-
+und Fachquellen geprüft, darunter die Volltexte der systematischen Übersichtsarbeit von 2023 und der
+Meta-Analyse von 2025 sowie ASHA, NHS, das SMA Educator Toolkit und der aktuelle Schul-Leitfaden von
+Mutismus e.V. Verbleibende Unsicherheiten und nicht vollständig geprüfte Einzelquellen sind in der
+Recherche-Synthese ausdrücklich markiert.
 
 ## Technik
 
@@ -177,5 +181,5 @@ Ausnahme: die Schrift Andika (SIL Open Font License 1.1), siehe [THIRD-PARTY-NOT
 **selective mutism** and the adults around them. A turtle named Sokrates explains the "alarm system" in
 the head, lets children show feelings without words, practise small brave steps and collect courage.
 It never asks the child to speak, uses no microphone and stores everything locally. It includes printable
-communication cards and an information sheet for teachers. **It is not therapy and not a medical device.**
+communication cards and an information sheet for teachers. **It is not therapy, is not intended for diagnosis or treatment, and was not developed as a medical device.**
 MIT licensed.
