@@ -46,6 +46,7 @@ kostenlos und nur für die eigene Familie bereitstellt: **[docs/IPAD.md](docs/IP
 | **Karten-Kiste** | Karten zum Zeigen („Ja“, „Nein“, „Ich muss aufs Klo“, „Ich brauche Hilfe“ …), groß auf dem Bildschirm, vorlesbar und druckbar in jeder Größe. Eigene Karten möglich. |
 | **Mut-Schatz** | Jeder mutige Moment – auch Nicken, Zeigen oder Hingehen – wird ein Steinchen im Glas. |
 | **Spiele** | Fünf kurze Spiele ohne Zeitdruck, ohne Verlieren und ohne Sprechen: *Seerosen-Boot* (Atmen), *Alarmanlagen-Detektiv* (wie laut ist die Alarmanlage wo?), *Ohne Worte* (antworten mit Daumen und Zeigen), *Wo ist Sokrates?* (Suchbilder) und *Gefühle-Memory*. |
+| **Abenteuer** | Drei größere Spiele für Kinder ab etwa 8: *Die versunkene Truhe* (vier Rätsel – Zählen, Muster, Logik, Schiebebild), *Alarmzentrale* (Situationen mit Hilfen so verändern, dass die Alarmanlage leiser wird) und *Detektiv Sokrates* (ein Fall mit Orten, Hinweisen und sechs gleichwertigen Wegen zu fragen). Der Fortschritt bleibt gespeichert; die Abenteuer greifen ineinander. |
 | **Dein Teich** | Nach jedem Spiel findet Sokrates etwas für den Teich – Frosch, Seerose, Papierboot … Für echten Mut (Mut-Steine, Mut-Schatz) gibt es besondere Schätze wie Glühwürmchen oder einen Regenbogen. Das Kind legt alles selbst in seinen Teich. |
 | **Für Erwachsene** | Hintergrundwissen, „Was hilft – was eher nicht“, Hilfe finden, Einstellungen, Sicherung. |
 | **Für Lehrkräfte** | Ein **Infoblatt (1 Seite A4)** und **8 Erklär-Karten** für Schule, Hort und Vereine – auf das Kind zugeschnitten. |
@@ -62,6 +63,10 @@ kostenlos und nur für die eigene Familie bereitstellt: **[docs/IPAD.md](docs/IP
 <tr>
 <td><img src="docs/bilder/suchbild.png" alt="Das Suchbild „Wo ist Sokrates?“"></td>
 <td><img src="docs/bilder/mein-teich.png" alt="Der eigene Teich mit gefundenen Schätzen"></td>
+</tr>
+<tr>
+<td><img src="docs/bilder/alarmzentrale.png" alt="Die Alarmzentrale: Hilfen machen die Alarmanlage leiser"></td>
+<td><img src="docs/bilder/detektiv.png" alt="Detektiv Sokrates: auf dem Schulhof nach Hinweisen suchen"></td>
 </tr>
 </table>
 

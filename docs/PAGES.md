@@ -116,6 +116,26 @@ Danach frei wählbar. Nichts ist gesperrt.
   „Tipp“ zeigt die Stelle, ein zweites Antippen zählt als gefunden (auch für Tastatur).
 - **Gefühle-Memory** `#spiel-memory`: 4 oder 6 Paare mit Sokrates-Gesichtern; zu jedem Paar ein Satz.
 
+## 8b. Abenteuer (seit Version 1.2)
+
+Größere Spiele für Kinder ab etwa 8 Jahren. Grundidee: Der Teich soll auch ein Ort sein, an dem man
+einfach Spaß hat – nicht jeder Klick ist eine Übung. Fortschritt wird gespeichert; Aufhören ist jederzeit möglich.
+
+- **Die versunkene Truhe** `#spiel-truhe`: vier Schlösser in beliebiger Reihenfolge – Zählen (Code aus
+  der Anzahl der Tiere), Muster ergänzen (3 Reihen), Logik (Tiere nach Hinweisen auf Steine setzen,
+  eindeutig lösbar erzeugt), Schiebebild 3×3. Falsche Versuche geben nur freundliche Hinweise. Belohnung:
+  Kristall und ein Schlüssel für den Detektivfall.
+- **Alarmzentrale** `#spiel-zentrale`: 8 Missionen (z. B. neue Lehrerin, Bäcker, Arzt). Jede Situation
+  besteht aus Faktoren (unbekannte Person, neuer Ort, viele Menschen, Frage, alle schauen …). Bis zu drei
+  Hilfen senken einzelne Faktoren; die Alarmanzeige reagiert sofort. Ziel: Alarm höchstens 3 von 10. Jede
+  Mission hat viele Lösungen; „Antworten zeigen“ und „Aufschreiben“ wirken gleich stark. Häufig gewählte
+  Hilfen sehen Erwachsene unter *Für Erwachsene*. Alle Missionen geschafft: Kompass.
+- **Detektiv Sokrates** `#spiel-fall`: Funkel, das kleinste Glühwürmchen, ist verschwunden. Vier Orte mit
+  je einem versteckten Hinweis und einer Person zum Fragen. Sechs Wege zu fragen (Freundin fragt mit,
+  Karte, Aufschreiben, Zeigen, Flüstern, selbst fragen) – **alle liefern denselben Hinweis**, damit Sprechen
+  nicht zum besseren Weg wird. Ab 6 Hinweisen: „Wo ist Funkel?“ → alte Bootshütte; die Tür öffnet der
+  Schlüssel aus der Truhe. Belohnung: Laterne.
+
 ## 9. Dein Teich – `#mein-teich` (seit Version 1.1)
 
 - **Zweck:** Belohnung sichtbar machen. Spiele bringen Tiere und Pflanzen, echter Mut (Mut-Steine,
