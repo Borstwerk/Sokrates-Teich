@@ -1,9 +1,13 @@
-/* Speichert Fortschritt und Einstellungen im Browser (localStorage). Verlässt nie den Computer. */
+/* Speichert Fortschritt und Einstellungen im Browser (localStorage).
+ * Anwendungsdaten bleiben lokal; Online-Vorlesestimmen sind davon getrennt und werden in vorlesen.js behandelt.
+ */
 (function (T) {
   var SCHLUESSEL = "sokrates-teich-v1";
+  var BACKUP_VERSION = 1;
 
   function standard() {
     return {
+      backupVersion: BACKUP_VERSION,
       name: "",
       vorlesen: true,
       tempo: 0.9,
@@ -41,12 +45,51 @@
     };
   }
 
+  // Sicherungen können persönliche Angaben enthalten. Beim Laden akzeptieren wir nur bekannte
+  // Top-Level-Felder und begrenzen Größe/Tiefe von Werten, damit kaputte oder manipulierte Dateien
+  // nicht unkontrolliert in den Anwendungsspeicher gelangen.
+  function sauberWert(wert, tiefe) {
+    if (tiefe > 8) return null;
+    if (wert === null || typeof wert === "boolean") return wert;
+    if (typeof wert === "string") return wert.slice(0, 2000);
+    if (typeof wert === "number") return Number.isFinite(wert) ? Math.max(-1000000, Math.min(1000000, wert)) : 0;
+    if (Array.isArray(wert)) return wert.slice(0, 500).map(function (v) { return sauberWert(v, tiefe + 1); });
+    if (typeof wert === "object") {
+      var aus = {};
+      Object.keys(wert).slice(0, 150).forEach(function (k) {
+        if (k === "__proto__" || k === "prototype" || k === "constructor" || k.length > 100) return;
+        aus[k] = sauberWert(wert[k], tiefe + 1);
+      });
+      return aus;
+    }
+    return null;
+  }
+
+  function bereinige(obj) {
+    if (!obj || typeof obj !== "object" || Array.isArray(obj)) throw new Error("ungültige Sicherung");
+    var basis = standard();
+    Object.keys(basis).forEach(function (k) {
+      if (Object.prototype.hasOwnProperty.call(obj, k)) basis[k] = sauberWert(obj[k], 0);
+    });
+    basis.backupVersion = BACKUP_VERSION;
+    return basis;
+  }
+
+  function istSicherung(obj) {
+    if (!obj || typeof obj !== "object" || Array.isArray(obj)) return false;
+    // Alte Sicherungen hatten noch keine Versionsnummer. Mindestens zwei typische Strukturen
+    // müssen vorhanden sein, damit nicht irgendeine JSON-Datei akzeptiert wird.
+    return Array.isArray(obj.schatz) &&
+      (obj.backupVersion === undefined || Number(obj.backupVersion) >= 1) &&
+      (obj.steine === undefined || (obj.steine && typeof obj.steine === "object" && !Array.isArray(obj.steine)));
+  }
+
   var daten = standard();
   var funktioniert = true;
 
   try {
     var roh = window.localStorage.getItem(SCHLUESSEL);
-    if (roh) daten = Object.assign(standard(), JSON.parse(roh));
+    if (roh) daten = bereinige(JSON.parse(roh));
   } catch (e) {
     funktioniert = false;
   }
@@ -65,7 +108,8 @@
     set: function (k, wert) { daten[k] = wert; sichern(); },
     aendere: function (k, fn) { daten[k] = fn(daten[k]); sichern(); },
     alles: function () { return JSON.parse(JSON.stringify(daten)); },
-    ersetze: function (obj) { daten = Object.assign(standard(), obj); sichern(); },
+    istSicherung: istSicherung,
+    ersetze: function (obj) { daten = bereinige(obj); sichern(); },
     zuruecksetzen: function () { daten = standard(); sichern(); },
     funktioniert: function () { return funktioniert; }
   };
