@@ -131,7 +131,12 @@ Fortschrittsdaten.
 
 Ausnahme beim Vorlesen: Online-Stimmen (z. B. die „Natural“-Stimmen in Edge oder „Google Deutsch“ in Chrome)
 werden vom Browser-Hersteller erzeugt; dabei wird der vorgelesene Text an dessen Dienst übertragen. Wer das
-nicht möchte, wählt im Elternbereich eine Stimme ohne „Online“ bzw. „Google“ im Namen.
+nicht möchte, wählt im Elternbereich eine lokale Stimme.
+
+**Sicherungen enthalten mehr als einen Spielstand:** Je nach Nutzung können darin Name des Kindes,
+Körper-Notizen, Personen und Situationen aus der Stimmen-Karte sowie Einträge zur Therapiesuche stehen.
+Sicherungsdateien deshalb bitte sicher aufbewahren und nicht öffentlich teilen. Beim Import werden nur
+bekannte Datenfelder übernommen und Größe sowie Struktur der Datei begrenzt.
 
 ## Anpassen
 
