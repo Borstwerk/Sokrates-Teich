@@ -158,24 +158,44 @@
   }
 
   $("e-export").addEventListener("click", function () {
-    var blob = new Blob([JSON.stringify(T.speicher.alles(), null, 2)], { type: "application/json" });
-    var a = T.el("a", { href: URL.createObjectURL(blob), download: "sokrates-teich-sicherung-" + new Date().toISOString().slice(0, 10) + ".json" });
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    T.dialog({
+      titel: "Sicherung speichern?",
+      inhalt: [
+        T.el("p", { text: "Die Sicherungsdatei kann persönliche Angaben über das Kind, Körper-Notizen, Personen und Situationen aus der Stimmen-Karte sowie Einträge zur Therapiesuche enthalten." }),
+        T.el("p", { text: "Bitte sicher aufbewahren und nicht öffentlich teilen." })
+      ],
+      knoepfe: [
+        { text: "Sicherung speichern", haupt: true, aktion: function () {
+          speichereDatei(
+            JSON.stringify(T.speicher.alles(), null, 2),
+            "sokrates-teich-sicherung-" + new Date().toISOString().slice(0, 10) + ".json",
+            "application/json"
+          );
+        } },
+        { text: "Abbrechen" }
+      ]
+    });
   });
 
   $("e-import").addEventListener("change", function (e) {
     var datei = e.target.files && e.target.files[0];
     if (!datei) return;
+    if (datei.size > 2 * 1024 * 1024) {
+      T.dialog({ titel: "Datei zu groß", inhalt: [T.el("p", { text: "Eine Sokrates-Sicherung sollte kleiner als 2 MB sein. Diese Datei wird nicht geladen." })] });
+      e.target.value = "";
+      return;
+    }
     var leser = new FileReader();
     leser.onload = function () {
       try {
         var obj = JSON.parse(leser.result);
-        if (!obj || typeof obj !== "object" || !Array.isArray(obj.schatz)) throw new Error("ungültig");
+        if (!T.speicher.istSicherung(obj)) throw new Error("ungültig");
         T.dialog({
           titel: "Sicherung laden?",
-          inhalt: [T.el("p", { text: "Der aktuelle Fortschritt wird durch die Sicherung ersetzt." })],
+          inhalt: [
+            T.el("p", { text: "Der aktuelle Fortschritt wird durch die Sicherung ersetzt." }),
+            T.el("p", { text: "Lade nur Sicherungen, die du selbst erstellt hast oder deren Herkunft du kennst." })
+          ],
           knoepfe: [
             { text: "Ja, laden", haupt: true, aktion: function () { T.speicher.ersetze(obj); fuelleFormular(); gespeichert(); } },
             { text: "Abbrechen" }
@@ -184,6 +204,10 @@
       } catch (err) {
         T.dialog({ titel: "Das hat nicht geklappt", inhalt: [T.el("p", { text: "Diese Datei ist keine gültige Sicherung von Sokrates' Teich." })] });
       }
+      e.target.value = "";
+    };
+    leser.onerror = function () {
+      T.dialog({ titel: "Das hat nicht geklappt", inhalt: [T.el("p", { text: "Die Sicherungsdatei konnte nicht gelesen werden." })] });
       e.target.value = "";
     };
     leser.readAsText(datei);
