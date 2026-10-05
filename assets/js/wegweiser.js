@@ -222,6 +222,10 @@
       var w = T.inhalt.zentrale.werkzeuge.find(function (x) { return x.id === id; }); return w ? w.name : id;
     });
     zeilen.push([K.hilfen, oft.length ? oft.join(", ") : K.nichts]);
+    // Stimmen-Karte (vom Kind gelegt)
+    if (T.stimmenKarteZonen) T.stimmenKarteZonen().forEach(function (g) {
+      zeilen.push([K.karte + ": " + g.zone.titel, g.namen.length ? g.namen.join(", ") : K.nichts]);
+    });
     return zeilen;
   }
 

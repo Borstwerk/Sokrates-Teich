@@ -34,6 +34,7 @@
     $("e-spiele").checked = T.spieleAn();
     alarmErgebnis();
     zentraleErgebnis();
+    stimmenErgebnis();
     koerperNotizen();
     $("e-belohnung").value = T.speicher.get("belohnung") || "";
     $("e-stimme-feld").hidden = !T.vorlesen.verfuegbar();
@@ -96,6 +97,25 @@
       ziel.focus({ preventScroll: true });
     });
   });
+
+  // Stimmen-Karte: wer in welchem Feld liegt und was sich zuletzt bewegt hat
+  function stimmenErgebnis() {
+    var box = $("e-stimmen");
+    box.textContent = "";
+    if (!T.stimmenKarteZonen) return;
+    var gruppen = T.stimmenKarteZonen(), verlauf = T.stimmenKarteVerlauf();
+    if (!gruppen.some(function (g) { return g.namen.length; })) { box.appendChild(T.el("p", { class: "leise", text: "Noch nichts eingetragen." })); return; }
+    box.appendChild(T.el("table", { class: "tabelle" }, [
+      T.el("thead", {}, [T.el("tr", {}, [T.el("th", { scope: "col", text: "Feld" }), T.el("th", { scope: "col", text: "Personen und Orte" })])]),
+      T.el("tbody", {}, gruppen.map(function (g) { return T.el("tr", {}, [T.el("td", { text: g.zone.titel }), T.el("td", { text: g.namen.join(", ") || "–" })]); }))
+    ]));
+    if (!verlauf.length) return;
+    function wann(zeit) { try { return new Date(zeit).toLocaleDateString("de-DE"); } catch (e) { return ""; } }
+    box.appendChild(T.el("p", { class: "leise", text: "Zuletzt bewegt:" }));
+    box.appendChild(T.el("ul", {}, verlauf.slice(0, 10).map(function (v) {
+      return T.el("li", { text: wann(v.zeit) + ": " + v.text + (v.naeher ? " ★" : "") });
+    })));
+  }
 
   function zentraleErgebnis() {
     var box = $("e-zentrale");
