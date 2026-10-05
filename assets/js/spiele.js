@@ -77,6 +77,7 @@
       var A = T.inhalt.abenteuer, F = A.fortschritt;
       var truhe = T.abenteuer("truhe"), zentrale = T.abenteuer("zentrale"), fall = T.abenteuer("fall");
       var code = T.abenteuer("code"), weg = T.abenteuer("weg"), fest = T.abenteuer("teichfest");
+      var post = T.abenteuer("funkelpost"), www = T.abenteuer("werwarwo"), bruecke = T.abenteuer("bruecke"), licht = T.abenteuer("licht");
       var anzahlEnden = Object.keys(T.inhalt.teichfest.seiten).filter(function (id) { return T.inhalt.teichfest.seiten[id].ende; }).length;
       var stand = {
         "spiel-truhe": truhe.fertig ? F.truheFertig : T.fuelle(F.truhe, { anzahl: (truhe.offen || []).length }),
@@ -85,12 +86,17 @@
         "spiel-teichfest": (fest.enden || []).length + " von " + anzahlEnden + " Enden entdeckt",
         "spiel-code": Math.min(code.stufe || 0, T.inhalt.code.botschaften.length) + " von " + T.inhalt.code.botschaften.length + " Botschaften",
         "spiel-weg": Math.min(weg.level || 0, T.inhalt.weg.level.length) + " von " + T.inhalt.weg.level.length + " Wegen",
-        "spiel-raetselbuch": T.inhalt.raetselbuch.auswahl
+        "spiel-raetselbuch": T.inhalt.raetselbuch.auswahl,
+        "spiel-funkelpost": (post.geloest || []).length + " von " + T.inhalt.funkelpost.briefe.length + " Briefen",
+        "spiel-werwarwo": (www.geloest || []).length + " von " + T.inhalt.werwarwo.raetsel.length + " Rätseln",
+        "spiel-bruecke": (bruecke.geschafft || []).length + " von " + T.inhalt.bruecke.level.length + " Brücken",
+        "spiel-licht": Math.min(licht.stufe || 0, T.inhalt.licht.stufen.length) + " von " + T.inhalt.licht.stufen.length + " Lichtzeichen"
       };
       var gruppen = {
         klein: I.liste.concat(T.inhalt.mehrKlein),
         knobeln: T.inhalt.knobeln,
         abenteuer: A.liste.concat(T.inhalt.mehrAbenteuer),
+        zuzweit: T.inhalt.zuzweit,
         gestalten: T.inhalt.gestalten
       };
       var box = $("spiele-gruppen");

@@ -238,6 +238,20 @@ Alarmzentrale und ihre Hilfen sind dort als Daten beschrieben und lassen sich er
 > *Detektiv Sokrates:* „Wie fragt Sokrates? Es gibt viele Wege. Alle funktionieren.“ – „Sokrates zeigt
 > ein Bild von Funkel. Der Hausmeister versteht sofort: …“
 
+## Neue Spielformen
+
+Texte in `assets/js/inhalt.js` (Abschnitte `funkelpost`, `werwarwo`, `bruecke`, `licht`, `comic`).
+Rätsel, Briefe, Baustellen und Lichtzeichen sind Daten und lassen sich erweitern; neue Wer-war-wo-Rätsel
+und Funkelpost-Briefe bitte mit dem Prüfgedanken anlegen (eine Lösung, keine Hälfte allein genügt).
+
+> *Funkelpost:* „Funkel bringt Post! Aber jeder Brief ist in zwei Hälften geteilt.“ – bei einem Fehler:
+> „Pilzwald kann es nicht sein. Dafür braucht ihr beide Karten zusammen.“
+
+> *Teich-Ingenieur:* „Platsch! Das Brett bei Punkt 0 hat am anderen Ende keine Stütze.“
+
+> *Lichtzeichen:* „Nachts sprechen die Glühwürmchen mit Licht.“ – Lexikon u. a. „Hallo!“ (kurz, kurz),
+> „Ich brauche Hilfe.“ (lang, kurz, lang), Funkels Antwort: „Ich bin hier! Hilfe holen ist mutig.“
+
 ## Mein Körper und „Fest und locker“
 
 Texte in `assets/js/inhalt.js` (Abschnitte `koerper` und `festLocker`), neue Geschichte-Seite „Mein Körper

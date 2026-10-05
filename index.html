@@ -74,6 +74,7 @@
 
     <symbol id="i-buch" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M24 13 C18 9 11 9 5 11 V38 C11 36 18 36 24 40 C30 36 37 36 43 38 V11 C37 9 30 9 24 13 Z" fill="#fff"/><path d="M24 13 V40" fill="none"/><path d="M10 18 Q14 17 19 18 M10 24 Q14 23 19 24 M29 18 Q34 17 38 18 M29 24 Q34 23 38 24" fill="none" stroke-width="2"/></g></symbol>
     <symbol id="i-steine" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="2.5"><ellipse cx="12" cy="37" rx="9" ry="5.5" fill="#F2B544"/><ellipse cx="25" cy="25" rx="9" ry="5.5" fill="#F2B544"/><ellipse cx="36" cy="13" rx="9" ry="5.5" fill="#CFC8B8"/></g></symbol>
+    <symbol id="i-bruecke" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="2.5" stroke-linejoin="round"><path d="M3 34 H45" stroke="#2F6F7E" stroke-dasharray="5 4" fill="none"/><path d="M17 36 Q16 26 20 24 H28 Q32 26 31 36 Z" fill="#CFC8B8"/><rect x="4" y="19" width="40" height="6" rx="2" fill="#C7964A"/><path d="M3 25 V40 M45 25 V40" fill="none"/></g></symbol>
     <symbol id="i-seerose" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="2.5" stroke-linejoin="round"><path d="M24 25 L38 16 A17 15 0 1 1 25 10 Z" fill="#9CC27A"/><path d="M22 22 C18 14 22 9 24 8 C26 9 30 14 26 22 Z" fill="#F4B6C2"/><path d="M24 22 C17 18 15 13 16 11 C19 11 25 15 25 21 Z M24 22 C31 18 33 13 32 11 C29 11 23 15 23 21 Z" fill="#F7CDD5"/></g></symbol>
     <symbol id="i-kiste" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="2.5" stroke-linejoin="round"><rect x="13" y="6" width="16" height="22" rx="3" fill="#fff" transform="rotate(-12 21 17)"/><rect x="21" y="5" width="16" height="22" rx="3" fill="#FCE9C2" transform="rotate(10 29 16)"/><rect x="6" y="22" width="36" height="20" rx="4" fill="#C9944A"/><path d="M6 29 H42" fill="none"/></g></symbol>
     <symbol id="i-glas" viewBox="0 0 48 48"><g stroke="#2E3A2F" stroke-width="2.5" stroke-linejoin="round"><circle cx="18" cy="36" r="5" fill="#F2B544"/><circle cx="29" cy="37" r="5" fill="#F2B544"/><circle cx="24" cy="28" r="5" fill="#F2B544"/><path d="M15 8 H33 V14 C38 17 39 21 39 26 V38 C39 42 37 44 33 44 H15 C11 44 9 42 9 38 V26 C9 21 10 17 15 14 Z" fill="rgba(220,239,242,.45)"/><rect x="13" y="4" width="22" height="6" rx="2" fill="#8C6230"/></g></symbol>
@@ -480,6 +481,44 @@
     <ul class="wk-sammlung" id="wk-sammlung"></ul>
   </section>
 
+  <!-- Zu zweit: Funkelpost -->
+  <section class="ansicht" id="ansicht-spiel-funkelpost" data-ansicht="spiel-funkelpost" hidden>
+    <h1 tabindex="-1" class="lesen">Funkelpost</h1>
+    <div class="blase ohne-pfeil" aria-live="polite"><div class="lesen" id="fp-blase"></div></div>
+    <div id="fp-spiel"></div>
+    <div id="fp-ende"></div>
+  </section>
+
+  <!-- Knobeln: Wer war wo? -->
+  <section class="ansicht" id="ansicht-spiel-werwarwo" data-ansicht="spiel-werwarwo" hidden>
+    <h1 tabindex="-1" class="lesen">Wer war wo?</h1>
+    <div class="blase ohne-pfeil" aria-live="polite"><div class="lesen" id="ww-blase"></div></div>
+    <div id="ww-spiel"></div>
+    <div id="ww-ende"></div>
+  </section>
+
+  <!-- Knobeln: Teich-Ingenieur -->
+  <section class="ansicht" id="ansicht-spiel-bruecke" data-ansicht="spiel-bruecke" hidden>
+    <h1 tabindex="-1" class="lesen">Teich-Ingenieur</h1>
+    <div class="blase ohne-pfeil" aria-live="polite"><div class="lesen" id="br-blase"></div></div>
+    <div id="br-spiel"></div>
+    <div id="br-ende"></div>
+  </section>
+
+  <!-- Knobeln: Lichtzeichen im Schilf -->
+  <section class="ansicht" id="ansicht-spiel-licht" data-ansicht="spiel-licht" hidden>
+    <h1 tabindex="-1" class="lesen">Lichtzeichen im Schilf</h1>
+    <div class="blase ohne-pfeil" aria-live="polite"><div class="lesen" id="li-blase"></div></div>
+    <div id="li-spiel"></div>
+  </section>
+
+  <!-- Gestalten: Comic-Werkstatt -->
+  <section class="ansicht" id="ansicht-spiel-comic" data-ansicht="spiel-comic" hidden>
+    <h1 tabindex="-1" class="lesen">Comic-Werkstatt</h1>
+    <div class="blase ohne-pfeil"><div class="lesen" id="cm-blase"></div></div>
+    <div id="cm-spiel"></div>
+  </section>
+
   <section class="ansicht" id="ansicht-spiel-gefuehle" data-ansicht="spiel-gefuehle" hidden>
     <h1 tabindex="-1" class="lesen">Wer fühlt was?</h1>
     <div class="blase ohne-pfeil"><div class="lesen" id="gf-blase"></div></div>
@@ -800,6 +839,11 @@
 <script src="assets/js/spiel-gefuehle.js"></script>
 <script src="assets/js/spiel-teichfest.js"></script>
 <script src="assets/js/spiel-werkstatt.js"></script>
+<script src="assets/js/spiel-funkelpost.js"></script>
+<script src="assets/js/spiel-werwarwo.js"></script>
+<script src="assets/js/spiel-bruecke.js"></script>
+<script src="assets/js/spiel-licht.js"></script>
+<script src="assets/js/spiel-comic.js"></script>
 <script src="assets/js/erwachsene.js"></script>
 <script src="assets/js/lehrkraefte.js"></script>
 <script src="assets/js/app.js"></script>

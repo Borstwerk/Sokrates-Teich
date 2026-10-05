@@ -4,7 +4,7 @@
  *
  * Nach Änderungen an Dateien: VERSION erhöhen, damit Geräte die neue Fassung laden.
  */
-var VERSION = "sokrates-teich-1.6.0";
+var VERSION = "sokrates-teich-1.7.0";
 
 var DATEIEN = [
   "./",
@@ -27,9 +27,13 @@ var DATEIEN = [
   "assets/js/speicher.js",
   "assets/js/spiel-alarm.js",
   "assets/js/spiel-boot.js",
+  "assets/js/spiel-bruecke.js",
   "assets/js/spiel-code.js",
+  "assets/js/spiel-comic.js",
   "assets/js/spiel-fall.js",
+  "assets/js/spiel-funkelpost.js",
   "assets/js/spiel-gefuehle.js",
+  "assets/js/spiel-licht.js",
   "assets/js/spiel-memory.js",
   "assets/js/spiel-raetselbuch.js",
   "assets/js/spiel-suchen.js",
@@ -37,6 +41,7 @@ var DATEIEN = [
   "assets/js/spiel-truhe.js",
   "assets/js/spiel-weg.js",
   "assets/js/spiel-werkstatt.js",
+  "assets/js/spiel-werwarwo.js",
   "assets/js/spiel-zeichen.js",
   "assets/js/spiel-zentrale.js",
   "assets/js/spiele.js",

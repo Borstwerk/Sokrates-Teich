@@ -663,12 +663,19 @@ Teich.inhalt = {
     { id: "klein", titel: "Kleine Spiele", unter: "Kurz, ruhig und ohne Verlieren" },
     { id: "knobeln", titel: "Knobeln", unter: "Rätsel, Codes und Wege" },
     { id: "abenteuer", titel: "Abenteuer", unter: "Größere Spiele zum Entdecken. Du kannst jederzeit aufhören und später weitermachen." },
+    { id: "zuzweit", titel: "Zu zweit", unter: "Für dich und eine zweite Person. Wie ihr euch Hinweise gebt, ist egal: zeigen, malen, schreiben oder sagen." },
     { id: "gestalten", titel: "Selber gestalten", unter: "Deine Ideen haben hier Platz. Es gibt keine Aufgabe." }
   ],
   knobeln: [
     { id: "spiel-raetselbuch", name: "Teich-Rätselbuch",   unter: "Jeden Tag drei neue Rätsel",      bild: "i-buch" },
     { id: "spiel-code",        name: "Geheime Zeichen",     unter: "Botschaften entschlüsseln",       bild: "i-schluessel" },
-    { id: "spiel-weg",         name: "Über den großen Teich", unter: "Plane deinen Weg",             bild: "i-steine" }
+    { id: "spiel-weg",         name: "Über den großen Teich", unter: "Plane deinen Weg",             bild: "i-steine" },
+    { id: "spiel-werwarwo",    name: "Wer war wo?",         unter: "Ein Logik-Gitter für Profis",     bild: "i-lupe" },
+    { id: "spiel-bruecke",     name: "Teich-Ingenieur",     unter: "Bau eine Brücke, die hält",       bild: "i-bruecke" },
+    { id: "spiel-licht",       name: "Lichtzeichen im Schilf", unter: "Funkels Lichtsprache lernen",  bild: "i-gluehwurm" }
+  ],
+  zuzweit: [
+    { id: "spiel-funkelpost",  name: "Funkelpost",          unter: "Zwei geheime Briefhälften – nur zusammen lösbar", bild: "i-karte" }
   ],
   mehrKlein: [
     { id: "spiel-gefuehle", name: "Wer fühlt was?", unter: "Beobachten und Möglichkeiten entdecken", bild: "i-nichtgut" }
@@ -677,8 +684,386 @@ Teich.inhalt = {
     { id: "spiel-teichfest", name: "Das Teichfest", unter: "Du entscheidest, wie es weitergeht", bild: "i-laterne" }
   ],
   gestalten: [
-    { id: "spiel-werkstatt", name: "Sokrates’ Werkstatt", unter: "Eigene Dinge für deinen Teich gestalten", bild: "i-stern" }
+    { id: "spiel-werkstatt", name: "Sokrates’ Werkstatt", unter: "Eigene Dinge für deinen Teich gestalten", bild: "i-stern" },
+    { id: "spiel-comic",     name: "Comic-Werkstatt",     unter: "Dein eigener Teich-Comic",        bild: "i-stift" }
   ],
+
+  /* ---------- Zu zweit: Funkelpost ---------- */
+  funkelpost: {
+    intro: [
+      "Funkel bringt Post! Aber jeder Brief ist in zwei Hälften geteilt.",
+      "Eine Person bekommt die blaue Hälfte, die andere die gelbe. Jede Hälfte ist geheim.",
+      "Nur wenn ihr eure Hinweise zusammenlegt, findet ihr die Lösung. Wie ihr sie euch verratet, ist egal: zeigen, malen, aufschreiben oder sagen."
+    ],
+    waehle: "Welchen Brief wollt ihr öffnen?",
+    alleGeloest: "Alle Briefe gelöst! Ihr könnt jeden noch einmal spielen – tauscht doch mal die Farben.",
+    spieler: {
+      blau: { name: "Blau", adj: "blauen", bild: "i-seerose" },
+      gelb: { name: "Gelb", adj: "gelben", bild: "i-stern" }
+    },
+    karteVon: "Briefhälfte für {name}",
+    geheim: "Geheim!",
+    schautAllein: "Jetzt schaut nur {name}.",
+    wegschauen: "{andere}, bitte kurz wegschauen.",
+    aufdecken: "Ich bin {name}: aufdecken",
+    verdecken: "Gemerkt? Karte verdecken",
+    spaeter: "Keine Sorge: Ihr könnt eure Karte später noch einmal ansehen.",
+    brettTipp: "Verratet euch eure Hinweise. Streicht durch, was nicht sein kann. Dann tippt auf „Hier!“.",
+    nochmalAnsehen: "{name}: Karte ansehen",
+    nurFuer: "Nur für {name}",
+    durchstreichen: "{name} durchstreichen",
+    hier: "Hier!",
+    hierLabel: "Hier ist es: {name}",
+    falschEine: "{name} kann es nicht sein. Auf der {adj} Karte steht ein Hinweis dazu.",
+    falschBeide: "{name} kann es nicht sein. Dafür braucht ihr beide Karten zusammen.",
+    geschafft: "Gelöst – zusammen!",
+    zusammen: "So haben eure Hälften zusammengepasst:",
+    andere: "Anderen Brief öffnen",
+    drucken: "Diesen Brief zum Ausdrucken",
+    druckTitel: "Funkelpost: {titel}",
+    druckHinweis: "An der Linie durchschneiden. Jede Person bekommt eine Hälfte und hält sie geheim. Die Orte in der Mitte dürfen beide sehen.",
+    schnitt: "✂ hier durchschneiden",
+    briefe: [
+      { id: "ball", titel: "Der versteckte Ball", frage: "Wo hat Quaki seinen Ball versteckt?",
+        orte: [["steg", "Bootssteg", "i-boot"], ["schilf", "Schilf", "i-schilf"], ["wiese", "Blumenwiese", "i-blume"], ["pilz", "Pilzwald", "i-pilz"]],
+        loesung: "schilf",
+        blau: [{ text: "Der Ball ist nicht am Bootssteg.", nicht: ["steg"] }, { text: "Der Ball ist nicht im Pilzwald.", nicht: ["pilz"] }],
+        gelb: [{ text: "Der Ball ist nicht auf der Blumenwiese.", nicht: ["wiese"] }, { text: "Quaki sagt: Es ist ein super Versteck!", nicht: [] }],
+        ende: "Im Schilf! Quaki freut sich – und wirft den Ball gleich wieder weg." },
+      { id: "funkel", titel: "Wo schläft Funkel?", frage: "Wo schläft Funkel heute?",
+        orte: [["steg", "Bootssteg", "i-boot"], ["schilf", "Schilf", "i-schilf"], ["wiese", "Blumenwiese", "i-blume"], ["pilz", "Pilzwald", "i-pilz"]],
+        loesung: "steg",
+        blau: [{ text: "Funkel schläft beim Frosch.", nicht: [] }, { text: "Funkel schläft nicht im Schilf.", nicht: ["schilf"] }],
+        gelb: [{ text: "Der Frosch war heute nur an zwei Orten: am Bootssteg und im Schilf.", nicht: [] }, { text: "Die Ente schläft auf der Blumenwiese.", nicht: [] }],
+        ende: "Am Bootssteg! Funkel kuschelt sich neben Quaki und leuchtet ganz leise." },
+      { id: "schal", titel: "Der rote Schal", frage: "Wo hat Sokrates seinen roten Schal verloren?",
+        orte: [["steg", "Bootssteg", "i-boot"], ["wiese", "Blumenwiese", "i-blume"], ["pilz", "Pilzwald", "i-pilz"], ["muschel", "Muschelbank", "i-muschel"], ["seerose", "Seerosenfeld", "i-seerose"]],
+        loesung: "muschel",
+        blau: [{ text: "Der Schal liegt dort, wo die Schnecke heute war.", nicht: [] }, { text: "Im Pilzwald liegt er nicht.", nicht: ["pilz"] }],
+        gelb: [{ text: "Die Schnecke war heute im Pilzwald, auf der Blumenwiese und auf der Muschelbank.", nicht: [] }, { text: "Auf der Blumenwiese hat Quaki schon alles abgesucht. Da ist nichts.", nicht: ["wiese"] }],
+        ende: "Auf der Muschelbank! Die Schnecke hat gut auf den Schal aufgepasst." },
+      { id: "brief", titel: "Wer hat den Brief?", frage: "Wer hat Sokrates’ Brief?",
+        orte: [["frosch", "Quaki, der Frosch", "i-frosch"], ["ente", "Die Ente", "i-ente"], ["fisch", "Der Fisch", "i-fisch"], ["schnecke", "Die Schnecke", "i-schnecke"], ["schmetterling", "Der Schmetterling", "i-schmetterling"], ["funkel", "Funkel", "i-gluehwurm"]],
+        loesung: "schmetterling",
+        blau: [{ text: "Wer den Brief hat, kann fliegen.", nicht: ["frosch", "fisch", "schnecke"] }, { text: "Funkel war es nicht.", nicht: ["funkel"] }],
+        gelb: [{ text: "Die Ente hat heute keinen Brief gesehen.", nicht: ["ente"] }, { text: "Der Fisch hat nasse Flossen.", nicht: [] }],
+        ende: "Der Schmetterling! Er hat den Brief nur kurz als Sonnenschirm benutzt." },
+      { id: "lampe", titel: "Funkels Lampe", frage: "Wo liegt Funkels kleine Lampe?",
+        orte: [["steg", "Bootssteg", "i-boot"], ["schilf", "Schilf", "i-schilf"], ["wiese", "Blumenwiese", "i-blume"], ["pilz", "Pilzwald", "i-pilz"], ["muschel", "Muschelbank", "i-muschel"], ["seerose", "Seerosenfeld", "i-seerose"]],
+        loesung: "wiese",
+        blau: [{ text: "Die Lampe liegt bei dem Tier, das sein Haus auf dem Rücken trägt.", nicht: [] }, { text: "Neben der Lampe wachsen keine Pilze.", nicht: ["pilz"] }],
+        gelb: [{ text: "Die Schnecke wohnt im Pilzwald. Ihre Schwester wohnt auf der Blumenwiese.", nicht: [] }, { text: "Der Fisch schwimmt beim Seerosenfeld.", nicht: [] }],
+        ende: "Auf der Blumenwiese, bei der Schnecken-Schwester! Sie hat die Lampe als Nachtlicht benutzt." },
+      { id: "club", titel: "Der Geheimclub", frage: "Wo trifft sich heute der Geheimclub?",
+        orte: [["steg", "Bootssteg", "i-boot"], ["schilf", "Schilf", "i-schilf"], ["wiese", "Blumenwiese", "i-blume"], ["pilz", "Pilzwald", "i-pilz"], ["muschel", "Muschelbank", "i-muschel"], ["seerose", "Seerosenfeld", "i-seerose"]],
+        loesung: "steg",
+        blau: [{ text: "Der Club trifft sich dort, wo Quaki nie hingeht.", nicht: [] }, { text: "Im Pilzwald ist es dafür zu dunkel.", nicht: ["pilz"] }],
+        gelb: [{ text: "Quaki, der Frosch, geht jeden Tag zum Schilf, zum Seerosenfeld und zur Muschelbank.", nicht: [] }, { text: "Auf der Blumenwiese ist es abends zu windig.", nicht: ["wiese"] }],
+        ende: "Am Bootssteg! Das Passwort für den Club: zweimal kurz blinken. Frag mal Funkel, was das heißt." }
+    ]
+  },
+
+  /* ---------- Knobeln: Wer war wo? ---------- */
+  werwarwo: {
+    intro: [
+      "Hier brauchst du deinen Detektiv-Kopf.",
+      "Lies die Hinweise. Trag im Gitter ein, was nicht sein kann (✗) und was sein muss (✓).",
+      "Tipp auf ein Feld: einmal für ✗, zweimal für ✓, dreimal ist es wieder leer."
+    ],
+    waehle: "Such dir ein Rätsel aus. Sie werden immer kniffliger.",
+    alleGeloest: "Alle Rätsel gelöst! Du denkst wie eine echte Detektivin oder ein echter Detektiv.",
+    hinweiseTitel: "Die Hinweise",
+    abhaken: "Hinweis {nr} abhaken",
+    gitterTitel: "Dein Gitter",
+    gitterInfo: "Jede Figur war an genau einem Ort. An jedem Ort war genau eine Figur.",
+    helfer: "Kreuze automatisch setzen",
+    helferInfo: "Wenn du ein ✓ setzt, kommen in dieselbe Reihe und Spalte automatisch ✗.",
+    pruefen: "Stimmt alles bis jetzt?",
+    tipp: "Tipp, bitte",
+    leeren: "Gitter leeren",
+    alle: "Alle Rätsel",
+    allesGut: "Alles, was du eingetragen hast, stimmt! Weiter so.",
+    nochNichts: "Trag erst etwas ein. Dann schaue ich nach.",
+    fehler1: "Ein Feld passt noch nicht zu den Hinweisen. Es ist rot umrandet.",
+    fehlerN: "{anzahl} Felder passen noch nicht zu den Hinweisen. Sie sind rot umrandet.",
+    tippText: "Tipp: {wer} war {wo}.",
+    zelle: { leer: "leer", nein: "war nicht dort", ja: "war dort", auto: "kann nicht sein" },
+    wasser: "am Wasser",
+    weg: "Die Orte liegen an einem Weg – genau in dieser Reihenfolge:",
+    geschafft: "Rätsel gelöst!",
+    loesung: "So war es:",
+    naechstes: "Nächstes Rätsel →",
+    figuren: {
+      sokrates: ["Sokrates", "sokrates-1", "Sokrates"], quaki: ["Quaki", "i-frosch", "Quaki"], ente: ["Ente", "i-ente", "Die Ente"],
+      schnecke: ["Schnecke", "i-schnecke", "Die Schnecke"], funkel: ["Funkel", "i-gluehwurm", "Funkel"], fisch: ["Fisch", "i-fisch", "Der Fisch"],
+      schmetterling: ["Schmetterling", "i-schmetterling", "Der Schmetterling"]
+    },
+    orte: {
+      steg: ["Bootssteg", "i-boot", "am Bootssteg", true], schilf: ["Schilf", "i-schilf", "im Schilf", true],
+      wiese: ["Wiese", "i-blume", "auf der Wiese", false], pilz: ["Pilzwald", "i-pilz", "im Pilzwald", false],
+      seerose: ["Seerose", "i-seerose", "auf der Seerose", true], huette: ["Hütte", "i-haus", "in der Hütte", false],
+      markt: ["Markt", "i-broetchen", "auf dem Markt", false], schule: ["Schule", "i-tafel", "in der Schule", false]
+    },
+    raetsel: [
+      { id: "picknick", titel: "Das Picknick", frage: "Wer hat wo gepicknickt?",
+        figuren: ["sokrates", "quaki", "ente"], orte: ["steg", "schilf", "wiese"],
+        hinweise: [
+          { text: "Quaki war nicht auf der Wiese.", logik: [["nicht", "quaki", "wiese"]] },
+          { text: "Die Ente war am Bootssteg.", logik: [["ist", "ente", "steg"]] }
+        ],
+        loesung: { ente: "steg", quaki: "schilf", sokrates: "wiese" } },
+      { id: "schlafen", titel: "Gute Nacht!", frage: "Wer hat wo geschlafen?",
+        figuren: ["sokrates", "schnecke", "funkel"], orte: ["pilz", "seerose", "huette"],
+        hinweise: [
+          { text: "Funkel schlief weder im Pilzwald noch auf der Seerose.", logik: [["nicht", "funkel", "pilz"], ["nicht", "funkel", "seerose"]] },
+          { text: "Die Schnecke kann nicht schwimmen. Die Seerose liegt mitten im Teich.", logik: [["nicht", "schnecke", "seerose"]] }
+        ],
+        loesung: { funkel: "huette", schnecke: "pilz", sokrates: "seerose" } },
+      { id: "schultag", titel: "Ein Tag am Teich", frage: "Wer war heute Vormittag wo?",
+        figuren: ["sokrates", "quaki", "ente", "schnecke"], orte: ["steg", "markt", "schule", "schilf"],
+        hinweise: [
+          { text: "Sokrates war nicht am Bootssteg und nicht im Schilf.", logik: [["nicht", "sokrates", "steg"], ["nicht", "sokrates", "schilf"]] },
+          { text: "Die Ente war dort, wo kein Wasser ist.", logik: [["oder", "ente", ["markt", "schule"]]] },
+          { text: "Die Schnecke war weder am Bootssteg noch in der Schule.", logik: [["nicht", "schnecke", "steg"], ["nicht", "schnecke", "schule"]] },
+          { text: "Die Ente hat heute nichts gelernt. In der Schule lernt man aber immer etwas.", logik: [["nicht", "ente", "schule"]] }
+        ],
+        loesung: { ente: "markt", sokrates: "schule", schnecke: "schilf", quaki: "steg" } },
+      { id: "verstecken", titel: "Verstecken spielen", frage: "Wer hat sich wo versteckt?",
+        figuren: ["quaki", "funkel", "fisch", "schmetterling"], orte: ["seerose", "steg", "wiese", "pilz"],
+        hinweise: [
+          { text: "Der Fisch hat sich im Wasser versteckt.", logik: [["oder", "fisch", ["seerose", "steg"]]] },
+          { text: "Der Schmetterling mag Blüten. Er war auf der Wiese oder auf der Seerose.", logik: [["oder", "schmetterling", ["wiese", "seerose"]]] },
+          { text: "Funkel war auf dem Land, nicht am Wasser.", logik: [["oder", "funkel", ["wiese", "pilz"]]] },
+          { text: "Funkel leuchtet. Im dunklen Pilzwald hätte man Funkel sofort entdeckt. Deshalb war Funkel nicht dort.", logik: [["nicht", "funkel", "pilz"]] }
+        ],
+        loesung: { funkel: "wiese", schmetterling: "seerose", fisch: "steg", quaki: "pilz" } },
+      { id: "geschenke", titel: "Geschenke fürs Teichfest", frage: "Wer hat wo ein Geschenk versteckt?",
+        figuren: ["sokrates", "quaki", "ente", "funkel"], orte: ["markt", "schule", "steg", "schilf"],
+        hinweise: [
+          { text: "Quaki und die Ente waren beide am Wasser.", logik: [["oder", "quaki", ["steg", "schilf"]], ["oder", "ente", ["steg", "schilf"]]] },
+          { text: "Sokrates war nicht in der Schule.", logik: [["nicht", "sokrates", "schule"]] },
+          { text: "Die Ente war nicht im Schilf. Dort kitzelt es sie immer am Bauch.", logik: [["nicht", "ente", "schilf"]] }
+        ],
+        loesung: { ente: "steg", quaki: "schilf", sokrates: "markt", funkel: "schule" } },
+      { id: "spaziergang", titel: "Der Abendspaziergang", frage: "Wer stand wo am Weg?", weg: true,
+        figuren: ["sokrates", "schnecke", "funkel", "quaki"], orte: ["steg", "schilf", "wiese", "pilz"],
+        hinweise: [
+          { text: "Die Schnecke war an einem Ende des Weges.", logik: [["oder", "schnecke", ["steg", "pilz"]]] },
+          { text: "Funkel war direkt neben der Schnecke.", logik: [["neben", "funkel", "schnecke"]] },
+          { text: "Quaki war am Wasser.", logik: [["oder", "quaki", ["steg", "schilf"]]] },
+          { text: "Sokrates stand nicht neben Funkel.", logik: [["nichtNeben", "sokrates", "funkel"]] }
+        ],
+        loesung: { schnecke: "pilz", funkel: "wiese", sokrates: "steg", quaki: "schilf" } },
+      { id: "grosses", titel: "Das große Teich-Rätsel", frage: "Wer war wo am langen Weg?", weg: true,
+        figuren: ["sokrates", "quaki", "ente", "schnecke", "funkel"], orte: ["markt", "schule", "wiese", "schilf", "steg"],
+        hinweise: [
+          { text: "Funkel war ganz am Anfang oder ganz am Ende des Weges.", logik: [["oder", "funkel", ["markt", "steg"]]] },
+          { text: "Quaki war am Wasser.", logik: [["oder", "quaki", ["schilf", "steg"]]] },
+          { text: "Die Ente war direkt neben Quaki.", logik: [["neben", "ente", "quaki"]] },
+          { text: "Sokrates war weder in der Schule noch auf der Wiese.", logik: [["nicht", "sokrates", "schule"], ["nicht", "sokrates", "wiese"]] },
+          { text: "Funkel war nicht neben Quaki.", logik: [["nichtNeben", "funkel", "quaki"]] }
+        ],
+        loesung: { funkel: "markt", schnecke: "schule", ente: "wiese", quaki: "schilf", sokrates: "steg" } }
+    ]
+  },
+
+  /* ---------- Knobeln: Teich-Ingenieur ---------- */
+  bruecke: {
+    intro: [
+      "Ich will über das Wasser. Baust du mir eine Brücke?",
+      "Wähl unten ein Bauteil. Dann tipp auf einen Punkt im Bild. Bretter und Seile reichen von dort nach rechts.",
+      "Wenn du fertig bist: Probefahrt! Dann sehen wir, ob alles hält."
+    ],
+    waehle: "Such dir eine Baustelle aus.",
+    alleGeschafft: "Alle Brücken stehen! Du bist eine echte Teich-Ingenieurin oder ein echter Teich-Ingenieur.",
+    regelnTitel: "So hält eine Brücke",
+    regeln: [
+      ["i-steine", "Ein Brett braucht an beiden Enden eine Stütze: Ufer, Insel oder Stein."],
+      ["i-regen", "Steine passen nur ins flache Wasser. Im tiefen Wasser gehen sie unter."],
+      ["i-schilf", "Das Seil braucht an beiden Enden einen festen Pfosten: am Ufer oder auf einer Insel."]
+    ],
+    teile: {
+      kurz: { name: "Kurzes Brett", laenge: 2, info: "reicht 2 Felder weit" },
+      lang: { name: "Langes Brett", laenge: 3, info: "reicht 3 Felder weit" },
+      seil: { name: "Seilbrücke", laenge: 4, info: "reicht 4 Felder weit" },
+      stein: { name: "Stein", info: "für flaches Wasser" }
+    },
+    uebrig: "noch {anzahl}",
+    punkt: "Punkt {nr}",
+    punktArt: { L: "Ufer", I: "Insel", s: "flaches Wasser", t: "tiefes Wasser" },
+    mitStein: "mit Stein",
+    erstWaehlen: "Wähl zuerst unten ein Bauteil.",
+    keinsMehr: "Davon hast du keins mehr.",
+    zuTief: "Hier ist das Wasser zu tief. Der Stein würde untergehen.",
+    keinWasser: "Hier ist kein Wasser. Da braucht man keinen Stein.",
+    zuWeit: "So weit reicht das Teil nicht. Es würde über das Ufer hinausragen.",
+    schonBelegt: "Hier liegt schon etwas.",
+    gebautTitel: "Gebaut",
+    nochNichts: "Noch nichts gebaut.",
+    vonBis: "{name} von Punkt {von} bis {bis}",
+    steinBei: "Stein bei Punkt {nr}",
+    abbauen: "abbauen",
+    allesAbbauen: "Alles abbauen",
+    probefahrt: "Probefahrt!",
+    wischen: "Wisch über das Bild, um die ganze Baustelle zu sehen.",
+    nochmalBauen: "Weiterbauen",
+    alle: "Alle Baustellen",
+    wer: { sokrates: "Sokrates", schnecke: "Die Schnecke", quaki: "Quaki" },
+    werKommt: "Diesmal wollen hinüber:",
+    fehler: {
+      luecke: "Platsch! Bei Punkt {nr} fehlt ein Stück Weg.",
+      brettEnde: "Platsch! Das Brett bei Punkt {nr} hat am anderen Ende keine Stütze.",
+      seilPfosten: "Das Seil bei Punkt {nr} braucht an beiden Enden einen festen Pfosten: am Ufer oder auf einer Insel.",
+      schneckeSeil: "Die Schnecke traut sich nicht auf das wackelige Seil. Sie braucht feste Bretter."
+    },
+    hinueber: "{wer} ist drüben!",
+    geschafft: "Die Brücke hält!",
+    teileGebraucht: "Du hast {anzahl} Teile gebraucht.",
+    profi: "Profi-Stern: Mit weniger Teilen geht es nicht!",
+    profiTipp: "Profi-Rätsel: Es geht sogar mit {anzahl} Teilen. Findest du den Weg?",
+    naechste: "Nächste Baustelle →",
+    level: [
+      { id: "bach", titel: "Der kleine Bach", punkte: "LssssL", wanderer: ["sokrates"], teile: { kurz: 1, lang: 1, stein: 1 },
+        text: "Ein kleiner Bach. Das Wasser ist überall flach." },
+      { id: "insel", titel: "Die Felsen-Insel", punkte: "LsssIssL", wanderer: ["sokrates"], teile: { kurz: 2, lang: 1, stein: 1 },
+        text: "In der Mitte liegt eine Felsen-Insel. Sie kann ein Brett tragen." },
+      { id: "tief", titel: "Tiefes Wasser", punkte: "LtttIsL", wanderer: ["sokrates"], teile: { kurz: 1, lang: 1, seil: 1 },
+        text: "Vorne ist das Wasser sehr tief. Hier hilft nur ein Seil." },
+      { id: "schnecke", titel: "Die Schnecke kommt mit", punkte: "LstsIsssL", wanderer: ["sokrates", "schnecke"], teile: { kurz: 1, lang: 2, seil: 1, stein: 2 },
+        text: "Die Schnecke will auch hinüber. Auf ein wackeliges Seil traut sie sich nicht." },
+      { id: "quaki", titel: "Quaki hüpft", punkte: "LsstsL", wanderer: ["quaki"], teile: { kurz: 1, stein: 3 },
+        text: "Quaki kann hüpfen: von einem Stein auf den nächsten, wenn er direkt daneben liegt. Bretter mag er auch." },
+      { id: "finale", titel: "Die große Brücke", punkte: "LsstsIttIsL", wanderer: ["sokrates", "schnecke", "quaki"], teile: { kurz: 2, lang: 2, seil: 1, stein: 2 },
+        text: "Alle wollen zum Teichfest auf die andere Seite. Teil dir die Bauteile gut ein!" }
+    ]
+  },
+
+  /* ---------- Knobeln: Lichtzeichen im Schilf ---------- */
+  licht: {
+    intro: [
+      "Nachts sprechen die Glühwürmchen mit Licht.",
+      "Kurz blinken und lang leuchten – daraus wird eine ganze Sprache. Funkel bringt sie dir bei.",
+      "Lass dir jedes Zeichen so oft zeigen, wie du willst. Es gibt keine Eile."
+    ],
+    funkel: "Funkel",
+    laterne: "Deine Laterne",
+    kurz: "kurz",
+    lang: "lang",
+    kurzKnopf: "Kurz",
+    langKnopf: "Lang",
+    loeschen: "Zurück",
+    senden: "Senden",
+    zeigen: "Noch mal zeigen",
+    alsZeichen: "Als Zeichen zeigen",
+    deineFolge: "Deine Lichtfolge",
+    nochLeer: "Tipp auf Kurz oder Lang.",
+    aufgabe: "Aufgabe {nr} von {von}",
+    arten: {
+      nach: "Funkel blinkt dir etwas vor. Mach es nach!",
+      blind: "Jetzt ohne Hilfe: Schau genau hin und mach es nach.",
+      lesen: "Was sagt Funkel? Schau im Lexikon nach.",
+      schreiben: "Sag es Funkel mit Licht: „{text}“"
+    },
+    richtig: ["Genau so!", "Funkel blinkt vor Freude.", "Du sprichst Licht!"],
+    falsch: "Fast! Schau noch mal genau hin.",
+    falschLesen: "Hmm, das hat Funkel nicht gesagt. Lass es dir noch mal zeigen.",
+    weiter: "Nächstes Lichtzeichen →",
+    endeTitel: "Du sprichst Glühwürmchen!",
+    ende: ["Du kannst jetzt alle Lichtzeichen lesen und senden.", "Unten kannst du Funkel frei Nachrichten schicken."],
+    lexikonTitel: "Das Lichter-Lexikon",
+    lexikonText: "Diese Zeichen kennt jedes Glühwürmchen am Teich. Die Geheime Zeichen-Schrift ist für den Tag – das Licht ist für die Nacht.",
+    freiTitel: "Frei funken",
+    freiText: "Schick Funkel ein Zeichen aus dem Lexikon. Funkel antwortet dir.",
+    unbekannt: "Dieses Zeichen kenne ich noch nicht! Vielleicht erfindest du eine neue Bedeutung dafür?",
+    drucken: "Lexikon zum Ausdrucken",
+    druckTitel: "Das Lichter-Lexikon vom Teich",
+    druckText: "Funkt mit einer Taschenlampe! Kurz: einmal kurz an und aus. Lang: so lange an, wie man langsam bis zwei zählt. Zwischen den Zeichen eine kleine Pause.",
+    zeichen: [
+      { id: "l",   text: "Ja!",                bild: "i-ja",      antwort: "l",  sagt: "Ja!" },
+      { id: "kk",  text: "Hallo!",             bild: "i-winken",  antwort: "kk", sagt: "Hallo zurück!" },
+      { id: "ll",  text: "Gute Nacht!",        bild: "i-stern",   antwort: "ll", sagt: "Gute Nacht! Schlaf gut." },
+      { id: "kl",  text: "Komm mit!",          bild: "i-zeigen",  antwort: "l",  sagt: "Ja, ich komme mit!" },
+      { id: "lk",  text: "Ich bin hier.",      bild: "i-ort",     antwort: "kk", sagt: "Da bist du ja! Hallo!" },
+      { id: "kkk", text: "Alles gut?",         bild: "i-frage",   antwort: "l",  sagt: "Ja, alles gut. Danke, dass du fragst." },
+      { id: "klk", text: "Danke!",             bild: "i-herz",    antwort: "kk", sagt: "Gern geschehen!" },
+      { id: "lkl", text: "Ich brauche Hilfe.", bild: "i-hilfe",   antwort: "lk", sagt: "Ich bin hier! Hilfe holen ist mutig." },
+      { id: "lkk", text: "Pause, bitte.",      bild: "i-stopp",   antwort: "l",  sagt: "Klar. Wir machen Pause." },
+      { id: "kll", text: "Spielst du mit?",    bild: "i-ball",    antwort: "l",  sagt: "Ja! Fang mich doch!" }
+    ],
+    stufen: [
+      ["nach", "kk"], ["nach", "kl"], ["nach", "klk"],
+      ["blind", "lk"], ["blind", "kkk"], ["blind", "lkl"],
+      ["lesen", "kk"], ["lesen", "klk"], ["lesen", "lkl"],
+      ["schreiben", "ll"], ["schreiben", "kll"], ["schreiben", "lkk"]
+    ]
+  },
+
+  /* ---------- Gestalten: Comic-Werkstatt ---------- */
+  comic: {
+    intro: [
+      "Hier machst du deinen eigenen Teich-Comic. Drei Bilder, deine Geschichte.",
+      "Wähl einen Ort, Figuren und Blasen. Figuren können sagen, denken, flüstern, eine Karte zeigen oder etwas zeigen.",
+      "Alles darf lustig, leise oder ganz verrückt sein."
+    ],
+    titelFeld: "Titel von deinem Comic",
+    titelBeispiel: "z. B. Quaki und die Muffins",
+    bild: "Bild {nr}",
+    bearbeiten: "Bild {nr} bearbeiten",
+    ortTitel: "Wo spielt das Bild?",
+    links: "Figur links",
+    rechts: "Figur rechts",
+    figurTitel: "Wer ist da?",
+    stimmung: "Wie geht es Sokrates?",
+    blaseTitel: "Was macht die Figur?",
+    textFeld: "Text",
+    gesteTitel: "Was zeigt die Figur?",
+    vorlagenTitel: "Neu anfangen",
+    vorlageFrage: "Womit willst du anfangen? Dein jetziger Comic wird ersetzt. Wenn du ihn behalten willst, leg ihn vorher ins Comic-Heft.",
+    neu: "Neuer Comic",
+    ablegen: "Ins Comic-Heft legen",
+    abgelegt: "Liegt jetzt in deinem Comic-Heft!",
+    drucken: "Drucken",
+    heftTitel: "Mein Comic-Heft",
+    heftLeer: "Noch leer. Leg deinen ersten Comic hinein!",
+    oeffnen: "Öffnen",
+    loeschen: "Löschen",
+    loeschenFrage: "Diesen Comic wirklich löschen?",
+    ohneTitel: "Mein Comic",
+    voll: "Das Comic-Heft ist voll (20 Comics). Lösch einen alten, dann passt wieder einer hinein.",
+    orte: [
+      { id: "teich", name: "Teich", bild: "i-seerose" }, { id: "markt", name: "Markt", bild: "i-broetchen" },
+      { id: "schule", name: "Schule", bild: "i-tafel" }, { id: "wiese", name: "Wiese", bild: "i-blume" },
+      { id: "nacht", name: "Nacht", bild: "i-stern" }
+    ],
+    figuren: [
+      { id: "", name: "Niemand", bild: "i-nein" }, { id: "sokrates", name: "Sokrates", bild: "sokrates-1" },
+      { id: "quaki", name: "Quaki", bild: "i-frosch" }, { id: "ente", name: "Ente", bild: "i-ente" },
+      { id: "schnecke", name: "Schnecke", bild: "i-schnecke" }, { id: "funkel", name: "Funkel", bild: "i-gluehwurm" },
+      { id: "fisch", name: "Fisch", bild: "i-fisch" }
+    ],
+    stimmungen: [{ id: 1, name: "fröhlich" }, { id: 3, name: "unsicher" }, { id: 5, name: "im Panzer" }],
+    blasen: [
+      { id: "", name: "Nichts" }, { id: "sagt", name: "sagt" }, { id: "denkt", name: "denkt" },
+      { id: "fluestert", name: "flüstert" }, { id: "karte", name: "zeigt eine Karte" }, { id: "zeigt", name: "zeigt etwas" }
+    ],
+    gesten: [
+      { id: "i-zeigen", name: "Zeigen" }, { id: "i-winken", name: "Winken" }, { id: "i-nicken", name: "Nicken" },
+      { id: "i-ja", name: "Ja" }, { id: "i-nein", name: "Nein" }, { id: "i-herz", name: "Herz" }, { id: "i-frage", name: "Frage" }
+    ],
+    vorlagen: [
+      { id: "baecker", name: "Beim Bäcker", titel: "Kuchen ohne Worte", bilder: [
+        { ort: "markt", links: { wer: "sokrates", lvl: 3, art: "denkt", text: "Ich will Kuchen …" }, rechts: { wer: "ente", art: "sagt", text: "Was möchtest du?" } },
+        { ort: "markt", links: { wer: "sokrates", lvl: 3, art: "zeigt", geste: "i-zeigen" }, rechts: { wer: "ente", art: "sagt", text: "Erdbeer? Kommt sofort!" } },
+        { ort: "markt", links: { wer: "sokrates", lvl: 1, art: "denkt", text: "Lecker! Geschafft!" }, rechts: { wer: "quaki", art: "fluestert", text: "Ich nehm drei Muffins." } }
+      ] },
+      { id: "schule", name: "Neu in der Schule", titel: "Der erste Tag", bilder: [
+        { ort: "schule", links: { wer: "sokrates", lvl: 5, art: "denkt", text: "So viele Leute …" }, rechts: { wer: "schnecke", art: "sagt", text: "Ich bin auch neu." } },
+        { ort: "schule", links: { wer: "sokrates", lvl: 3, art: "karte", text: "Ich bin Sokrates." }, rechts: { wer: "schnecke", art: "sagt", text: "Sitzen wir zusammen?" } },
+        { ort: "wiese", links: { wer: "sokrates", lvl: 1, art: "zeigt", geste: "i-nicken" }, rechts: { wer: "schnecke", art: "denkt", text: "Ein neuer Freund!" } }
+      ] },
+      { id: "leer", name: "Leere Seiten", titel: "", bilder: [{ ort: "teich" }, { ort: "wiese" }, { ort: "nacht" }] }
+    ]
+  },
 
   /* ---------- Geheime Zeichen ---------- */
   code: {
