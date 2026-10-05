@@ -4,6 +4,26 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 
 ## [Unreleased]
 
+### Red-Team-Härtung
+- **Körpertexte** vorsichtiger formuliert: Angst kann echte Körpergefühle auslösen, neue/starke/häufige
+  Beschwerden werden aber nicht pauschal als harmlos eingeordnet.
+- **Exposition/Mut-Schritte:** „machbar statt angstfrei“; etwas Anspannung darf dabei sein, Überforderung nicht.
+  Die Alarmanlagen-Metapher beschreibt Lernen jetzt als wiederholte Erfahrung statt als garantierten Effekt
+  nach einem einzelnen Schritt.
+- **PCIT-SM:** Spielzeit ohne Fragen als CDI-nahe Alltagsidee gekennzeichnet; PCIT-SM selbst bleibt eine
+  angeleitete Therapie mit weiteren Phasen.
+- **Stimmen-Karte:** Personen und Situationen werden ausdrücklich getrennt denkbar gemacht; Kontext zählt,
+  Änderungen sind Beobachtungen und keine Messwerte.
+- **Wegweiser:** feste Zahl von Praxisabsagen für § 13 Abs. 3 SGB V entfernt; Hinweise zu 116117/PTV 11 und
+  § 35a SGB VIII gegen offizielle Quellen präzisiert.
+- **Sicherung:** Backup-Version eingeführt, Import auf bekannte Felder/Datengrößen begrenzt und Warnung vor
+  persönlichen Kind-, Körper- und Therapiesuchdaten ergänzt.
+- **Startseite:** Kinderhilfen in „Wie geht es mir?“, „Was hilft mir jetzt?“ und „Meine kleinen Schritte“
+  gegliedert.
+- **Security/Datenschutz:** Online-Vorlesestimmen als mögliche Datenübertragung konsistent dokumentiert.
+- Offline-Cache auf **1.9.1** erhöht.
+
+
 ### Neu: Stimmen-Karte und „Was ihr selbst tun könnt“
 - **Meine Stimmen-Karte** (bei „Was hilft mir gerade?“): eine Sprech-Landkarte. Das Kind legt Personen und Orte
   in vier Felder – spreche ich, flüstere ich, zeige oder nicke ich, noch still. Eigene Einträge, Druck,
