@@ -4,6 +4,27 @@ Alle nennenswerten Änderungen an Sokrates' Teich.
 
 ## [Unreleased]
 
+### Neu: Stimmen-Karte und „Was ihr selbst tun könnt“
+- **Meine Stimmen-Karte** (bei „Was hilft mir gerade?“): eine Sprech-Landkarte. Das Kind legt Personen und Orte
+  in vier Felder – spreche ich, flüstere ich, zeige oder nicke ich, noch still. Eigene Einträge, Druck,
+  „Näher gerückt“-Rückmeldung und auf Wunsch eine Mut-Stein-Idee für „Mein eigener Weg“.
+- Änderungen erscheinen mit Datum unter „Für Erwachsene“ und im Steckbrief des Wegweisers.
+- **Was ihr selbst tun könnt** (Für Erwachsene): sieben Bausteine aus der Therapie für den Alltag –
+  Spielzeit ohne Fragen, Ausgangspunkt finden, kleine Schritte, Sliding-in, gute Fragen, Mut sichtbar machen,
+  Familie einweihen (mit Druckblatt) – plus Warnzeichen und ein Abschnitt für die Eltern selbst.
+- Quellen und Prüfstand: `docs/recherche/04-selbst-tun.md`.
+
+### Neu: Wegweiser „Hilfe finden“
+- Eigene Seite unter „Für Erwachsene“: acht Wege zu Hilfe in Deutschland – Kinderarzt, Logopädie mit
+  Mutismus-Schwerpunkt, Psychotherapie (116117, PTV 11), Kostenerstattung nach § 13 Abs. 3 SGB V,
+  SPZ/Kinder- und Jugendpsychiatrie, Erziehungsberatung und Schulpsychologie, Jugendamt (§ 35a SGB VIII),
+  Selbsthilfe. Mit dem klaren Hinweis: Nicht-Sprechen ist kein Grund gegen eine Therapie.
+- **Unsere Therapieplatz-Suche:** Anfragen notieren (Praxis, Datum, Antwort, Wartezeit) und als
+  Kontaktprotokoll drucken – zum Beispiel für die Kostenerstattung.
+- **Brief an Praxen** (drucken oder als E-Mail-Text kopieren) und **Steckbrief** fürs Erstgespräch, ergänzt um
+  das, was das Kind auf der Seite gezeigt hat (Mut-Schatz, Mut-Steine, Körper-Notizen, Hilfen).
+- Recherche mit Quellen und Prüfstand: `docs/recherche/03-hilfe-finden.md`.
+
 ### Neu: Spielformen
 - **Funkelpost** (neuer Bereich „Zu zweit“): ein Brief in zwei geheimen Hälften, nur zusammen lösbar.
   Gerät weitergeben oder als Bastelbogen ausdrucken. Sechs Briefe.

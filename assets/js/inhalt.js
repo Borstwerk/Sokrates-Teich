@@ -16,7 +16,7 @@ Teich.inhalt = {
     ],
     startHier: "Fang hier an!",
     gruppen: [
-      { id: "hilfen", titel: "Was hilft mir gerade?", orte: ["panzer-meter", "koerper", "ruhe-ecke", "karten", "mut-steine"] },
+      { id: "hilfen", titel: "Was hilft mir gerade?", orte: ["panzer-meter", "koerper", "ruhe-ecke", "karten", "mut-steine", "stimmen-karte"] },
       { id: "sammeln", titel: "Spielen und sammeln", ohneSpiele: "Mut sammeln", orte: ["spiele", "mein-teich", "mut-schatz"] }
     ]
   },
@@ -26,6 +26,7 @@ Teich.inhalt = {
     { id: "panzer-meter", name: "Panzer-Meter",     unter: "Wie geht es dir gerade?",           bild: "sokrates-3" },
     { id: "koerper",      name: "Mein Körper",      unter: "Wo spürst du die Alarmanlage?",      bild: "i-koerper" },
     { id: "mut-steine",   name: "Mut-Steine",       unter: "Kleine mutige Schritte",             bild: "i-steine" },
+    { id: "stimmen-karte", name: "Meine Stimmen-Karte", unter: "Wo ist deine Stimme schon zu Hause?", bild: "i-ort" },
     { id: "ruhe-ecke",    name: "Ruhe-Ecke",        unter: "Ganz ruhig atmen",                   bild: "i-seerose" },
     { id: "karten",       name: "Karten-Kiste",     unter: "Karten zum Zeigen",                  bild: "i-kiste" },
     { id: "mut-schatz",   name: "Mut-Schatz",       unter: "Hier sammelst du deinen Mut",        bild: "i-glas" },
@@ -644,6 +645,253 @@ Teich.inhalt = {
     nochmal: "Fall noch mal spielen"
   },
 
+  /* ---------- Meine Stimmen-Karte (Sprech-Landkarte) ---------- */
+  stimmenKarte: {
+    intro: [
+      "Das ist deine Stimmen-Karte. Hier zeigst du, wo deine Stimme schon zu Hause ist.",
+      "Es gibt kein Richtig und kein Falsch. Die Karte zeigt nur, wie es gerade ist. Jeder Platz ist in Ordnung.",
+      "Tipp auf einen Namen im Korb. Dann tipp auf das Feld, das passt."
+    ],
+    zonen: [
+      { id: "sprechen",  titel: "Hier spreche ich",       unter: "ganz normal, laut oder leise", bild: "i-sprechen" },
+      { id: "fluestern", titel: "Hier flüstere ich",      unter: "oder spreche ganz leise",      bild: "i-fluestern" },
+      { id: "zeigen",    titel: "Hier zeige oder nicke ich", unter: "oder zeige eine Karte",     bild: "i-zeigen" },
+      { id: "still",     titel: "Hier bin ich noch still", unter: "Das ist okay. Mein Panzer passt auf mich auf.", bild: "sokrates-5" }
+    ],
+    korb: "Mein Korb",
+    korbLeer: "Alles ist auf der Karte. Du kannst jederzeit etwas verschieben.",
+    korbText: "Tipp auf einen Namen. Dann auf das passende Feld.",
+    gewaehlt: "Wohin gehört „{name}“? Tipp auf ein Feld.",
+    zurueckInKorb: "Zurück in den Korb",
+    hierhin: "{name} hierhin legen",
+    hierhinKurz: "Hierhin legen",
+    vorschlaege: [
+      { text: "Mama", bild: "i-herz" }, { text: "Papa", bild: "i-herz" }, { text: "Geschwister", bild: "i-gruppe" },
+      { text: "Oma und Opa", bild: "i-haus" }, { text: "Beste Freundin oder bester Freund", bild: "i-laecheln" },
+      { text: "Lehrerin oder Lehrer", bild: "i-tafel" }, { text: "Kinder in der Klasse", bild: "i-gruppe" },
+      { text: "Hort oder Betreuung", bild: "i-person" }, { text: "Ärztin oder Arzt", bild: "i-arzt" },
+      { text: "Im Laden", bild: "i-broetchen" }, { text: "Trainerin oder Trainer", bild: "i-ball" }, { text: "Am Telefon", bild: "i-telefon" }
+    ],
+    eigenTitel: "Fehlt jemand?",
+    eigenFeld: "Name oder Ort",
+    eigenBeispiel: "z. B. Tante Uli, Musikschule",
+    eigenDazu: "Dazulegen",
+    entfernen: "Von der Karte nehmen",
+    entfernenFrage: "„{name}“ ganz von der Karte nehmen?",
+    naeher: [
+      "Wow! „{name}“ ist auf deiner Karte ein Stück näher gerückt.",
+      "Das ist ein mutiger Schritt. Die Alarmanlage hat etwas gelernt."
+    ],
+    weiter: "Okay. Manchmal ist es an einem Tag schwerer. Das ist in Ordnung.",
+    gleich: "Gut, dass du es zeigst.",
+    ideeTitel: "Eine Mut-Stein-Idee",
+    ideen: {
+      still: "{name}: Ich nicke oder zeige, wenn ich etwas gefragt werde.",
+      zeigen: "{name}: Ich mache ein Geräusch oder flüstere ein Wort.",
+      fluestern: "{name}: Ich sage ein Wort mit meiner normalen Stimme."
+    },
+    ideeKnopf: "Als Mut-Stein merken",
+    ideeGemerkt: "Liegt jetzt bei den Mut-Steinen unter „Mein eigener Weg“.",
+    ideeHinweis: "Nur, wenn du magst. Du bestimmst das Tempo.",
+    drucken: "Karte drucken",
+    druckTitel: "Meine Stimmen-Karte",
+    druckDatum: "Stand: {datum}",
+    erwachseneTitel: "Für Erwachsene",
+    erwachsene: "Die Stimmen-Karte ist eine Sprech-Landkarte: Sie zeigt, mit wem und wo das Kind spricht, flüstert, sich ohne Worte verständigt oder noch still ist. So findet ihr den Ausgangspunkt für kleine Schritte. Änderungen werden mit Datum gespeichert und erscheinen unter „Für Erwachsene“ und im Steckbrief.",
+    verlaufTitel: "Stimmen-Karte: Was sich bewegt hat",
+    verlaufLeer: "Noch keine Änderungen.",
+    verlaufZeile: "{name}: {von} → {nach}"
+  },
+
+  /* ---------- Für Erwachsene: Was ihr selbst tun könnt ---------- */
+  selbstTun: {
+    intro: "Eine Therapie lässt sich nicht ersetzen. Aber viele Bausteine, mit denen Therapeutinnen und Therapeuten arbeiten, können Eltern schon jetzt im Alltag nutzen – vorsichtig, in kleinen Schritten und ohne Druck.",
+    evidenz: "Dass Eltern so wirksam helfen können, ist für Ängste im Kindesalter belegt: In einer Studie erholten sich Kinder deutlich häufiger, wenn ihre Eltern mit fachlicher Anleitung verhaltenstherapeutische Grundsätze im Alltag anwendeten. Für selektiven Mutismus selbst ist die Studienlage kleiner. Holt euch deshalb, sobald es geht, fachliche Begleitung dazu.",
+    grundsaetzeTitel: "Drei Grundsätze",
+    grundsaetze: [
+      ["i-herz", "Erst Sicherheit, dann Schritte.", "Das Kind muss sich wohlfühlen, bevor es etwas Neues wagt."],
+      ["i-steine", "Ein Schritt, der leicht ist.", "Lieber zu klein als zu groß. Erst weiter, wenn der Schritt sicher klappt."],
+      ["i-stern", "Mut bemerken.", "Jeden Schritt – auch Nicken oder Zeigen – freundlich und konkret anerkennen."]
+    ],
+    bausteine: [
+      { id: "spielzeit", bild: "i-spiel", titel: "Spielzeit ohne Fragen", text: "Täglich 5 bis 10 Minuten, in denen das Kind bestimmt, was gespielt wird. Ziel: Nähe und Sicherheit, kein Sprechen. Das ist die erste Phase einer bewährten Eltern-Kind-Therapie (PCIT).",
+        tun: ["Konkret loben: „Du hast den Turm ganz vorsichtig gebaut.“", "Beschreiben, was das Kind tut: „Du malst die Sonne gelb.“", "Wiederholen, was es sagt – und Mitspielen, Nachmachen, Freude zeigen."],
+        lassen: ["Fragen („Was baust du?“)", "Anweisungen („Mach mal …“)", "Kritik oder Verbesserungen"] },
+      { id: "karte", bild: "i-ort", titel: "Den Ausgangspunkt finden", text: "Schaut gemeinsam auf die Stimmen-Karte: Mit wem und wo spricht, flüstert oder zeigt das Kind? Der nächste Schritt liegt immer am Rand des Gewohnten – zum Beispiel bei einer Person, bei der das Kind schon nickt.",
+        link: ["stimmen-karte", "Zur Stimmen-Karte"] },
+      { id: "schritte", bild: "i-steine", titel: "Kleine Schritte zum Sprechen", text: "Kommunikation wächst in Stufen. Jede Stufe zählt – das Kind muss nicht sofort sprechen.",
+        stufen: ["Da sein, ohne etwas zu müssen", "Nicken, zeigen, Karte zeigen", "Geräusche, Lachen, „Mhm“", "Flüstern zu einer vertrauten Person, während andere in der Nähe sind", "Einzelne Wörter, vorhersehbare Antworten (zählen, Farben, Ja/Nein)", "Kurze Sätze, dann freieres Sprechen"],
+        nachsatz: "Plant die Schritte mit dem Kind, zum Beispiel als eigenen Weg bei den Mut-Steinen. Ein Schritt wird so oft wiederholt, bis er leicht ist.",
+        link: ["mut-steine", "Zu den Mut-Steinen"] },
+      { id: "sliding", bild: "i-person", titel: "Eine neue Person langsam dazunehmen", text: "Diese Methode heißt „Sliding-in“ (auf Deutsch etwa: hineingleiten). Das Kind spricht mit einer vertrauten Person, und eine neue Person kommt Schritt für Schritt dazu. Gut geeignet für Großeltern, Babysitter oder später die Lehrkraft.",
+        stufen: ["Kind und Mama oder Papa spielen in einem ruhigen Raum ein Spiel mit kurzen, vorhersehbaren Antworten (zählen, Farben benennen, Memory-Karten benennen).", "Die neue Person ist in Hörweite, beschäftigt sich mit etwas anderem und schaut nicht hin.", "Sie kommt mit der Zeit näher und setzt sich schließlich dazu – ohne das Kind anzusprechen.", "Sie macht beim Spiel mit. Das Kind spricht weiter zu Mama oder Papa.", "Das Kind antwortet im Spiel auch der neuen Person – erst mit einem Wort, dann mehr.", "Mama oder Papa ziehen sich langsam zurück."],
+        nachsatz: "Kurze Einheiten (10 bis 15 Minuten), lieber oft als lang. Erst zum nächsten Schritt, wenn der vorige entspannt klappt. Geht etwas schief: einen Schritt zurück, ohne Kommentar." },
+      { id: "fragen", bild: "i-frage", titel: "Fragen, die leicht zu beantworten sind", text: "Wie man fragt, macht einen großen Unterschied.",
+        tun: ["Wahlfragen: „Apfel oder Banane?“", "Nach einer Frage mindestens 5 Sekunden warten.", "Nonverbale Antworten freundlich annehmen."],
+        lassen: ["Für das Kind antworten", "„Sag doch mal …“, überreden oder bitten", "Offene Fragen in angespannten Momenten"] },
+      { id: "lob", bild: "i-glas", titel: "Mut sichtbar machen", text: "Mut wird gestärkt, wenn er bemerkt wird.",
+        tun: ["Nach einem geschafften Schritt konkret und ruhig loben – gern unter vier Augen.", "Kleine Belohnungen für vereinbarte Schritte, zum Beispiel über den Mut-Schatz.", "Sprechen, wenn es passiert, ganz normal aufnehmen – ohne großes Aufheben."],
+        lassen: ["Belohnungen vorher als Druckmittel versprechen („Wenn du sprichst, …“)", "Enttäuschung zeigen, wenn es nicht klappt"],
+        link: ["mut-schatz", "Zum Mut-Schatz"] },
+      { id: "umfeld", bild: "i-gruppe", titel: "Familie und Freunde einweihen", text: "Gut gemeinte Sätze wie „Na, hast du deine Zunge verschluckt?“ machen es schwerer. Ein kurzes Blatt für Großeltern, Verwandte, Nachbarn und Freunde hilft.",
+        druck: true }
+    ],
+    umfeldBlatt: {
+      knopf: "Blatt für Familie und Freunde drucken",
+      titel: "Wenn ein Kind manchmal nicht spricht",
+      untertitel: "Ein paar Sätze für Familie, Freunde und Nachbarn",
+      absaetze: [
+        "Das Kind hat selektiven Mutismus. Das ist eine Angst, keine Schüchternheit und kein Trotz. Zu Hause spricht es ganz normal. Bei anderen Menschen bleibt die Stimme manchmal weg, obwohl es gern sprechen würde.",
+        "Was hilft: freundlich begrüßen, ohne eine Antwort zu erwarten. Fragen stellen, die man mit Nicken oder Zeigen beantworten kann. Geduldig warten. Nicken, Zeigen und Lächeln sind echte Antworten.",
+        "Was es schwerer macht: zum Sprechen auffordern („Sag doch mal Hallo“), das Schweigen kommentieren, das Kind „schüchtern“ nennen oder vor anderen auf das Schweigen ansprechen.",
+        "Und wenn das Kind doch spricht: ganz normal antworten und nicht staunen. Das ist das beste Lob.",
+        "Danke, dass ihr mithelft!"
+      ]
+    },
+    warnTitel: "Bitte nicht allein lassen",
+    warn: [
+      "Wenn das Kind auch zu Hause verstummt, sich stark zurückzieht, kaum noch isst oder schläft oder sehr traurig wirkt: zeitnah zur Kinderärztin oder zum Kinderarzt oder in die Kinder- und Jugendpsychiatrie.",
+      "Wenn ihr euch Sorgen um die Sicherheit des Kindes macht: Notruf 112."
+    ],
+    elternTitel: "Und ihr?",
+    eltern: [
+      "Ihr seid nicht schuld. Selektiver Mutismus hat viele Ursachen, und niemand hat ihn „anerzogen“.",
+      "Rückschläge gehören dazu. Ein schwerer Tag macht keinen Fortschritt zunichte.",
+      "Austausch hilft: Selbsthilfegruppen und Elternkreise gibt es online und in vielen Städten (siehe Wegweiser)."
+    ],
+    tunTitel: "Hilft",
+    lassenTitel: "Lieber lassen",
+    stufenTitel: "Schritt für Schritt"
+  },
+
+  /* ---------- Für Erwachsene: Wegweiser „Hilfe finden“ ---------- */
+  wegweiser: {
+    intro: "Ein Therapieplatz für ein Kind mit selektivem Mutismus ist oft schwer zu finden. Hier stehen die Wege, die es in Deutschland gibt, und Werkzeuge für die Suche: eine Liste für eure Anfragen, ein Brief an Praxen und ein Steckbrief für das Erstgespräch.",
+    stand: "Stand: Oktober 2026 · für gesetzlich Versicherte in Deutschland",
+    wichtigTitel: "Gut zu wissen",
+    wichtig: [
+      "Dass ein Kind nicht spricht, ist kein Grund gegen eine Therapie. Es ist der Ausgangspunkt. Mutismus-Therapie beginnt bewusst ohne Sprechen: erst Vertrauen und nonverbale Antworten, dann kleine Schritte – ohne Sprechdruck.",
+      "Sagt eine Praxis deshalb ab, fehlt dort meist die Erfahrung mit Mutismus. Fragt gezielt nach Mutismus-Erfahrung und sucht weiter. Ihr macht nichts falsch."
+    ],
+    wegeTitel: "Die Wege im Überblick",
+    wege: [
+      { bild: "i-arzt", titel: "Kinderärztin oder Kinderarzt", punkte: [
+        "Erste Anlaufstelle: Hören, Sprachentwicklung und andere Ursachen abklären lassen.",
+        "Kann ein Rezept für Sprachtherapie (Logopädie) ausstellen und an ein Sozialpädiatrisches Zentrum (SPZ) oder die Kinder- und Jugendpsychiatrie überweisen.",
+        "Tipp: Brief und Steckbrief von dieser Seite ausdrucken und mitnehmen."
+      ] },
+      { bild: "i-sprechen", titel: "Logopädie mit Mutismus-Schwerpunkt", punkte: [
+        "Viele Mutismus-Konzepte kommen aus der Sprachtherapie, zum Beispiel KoMut, DortMuT oder SYMUT. Fragt gezielt nach Praxen, die damit arbeiten.",
+        "Verordnet wird mit einem Heilmittel-Rezept. Aber: Mutismus selbst steht nicht im Heilmittelkatalog, die Kostenübernahme ist nicht einheitlich geregelt. Bittet die Ärztin oder den Arzt, sich an den Hinweisen für Ärzt:innen von StillLeben e.V. zu orientieren, und fragt vorher bei eurer Krankenkasse nach.",
+        "Kinder und Jugendliche unter 18 Jahren zahlen für Heilmittel nichts zu."
+      ] },
+      { bild: "i-herz", titel: "Psychotherapie für Kinder und Jugendliche", punkte: [
+        "Erster Schritt ist eine psychotherapeutische Sprechstunde. Einen Termin vermittelt die Terminservicestelle: Telefon 116117 oder 116117.de.",
+        "Nach der Sprechstunde bekommt ihr das Formular PTV 11. Es hält fest, ob eine Behandlung nötig ist (und ob sie dringend ist). Gut aufheben!",
+        "Parallel auf mehrere Wartelisten setzen lassen und jede Anfrage unten in „Unsere Therapieplatz-Suche“ notieren.",
+        "Gut passt eine Praxis, die schrittweise arbeitet (meist Verhaltenstherapie) und Eltern und Schule einbezieht."
+      ] },
+      { bild: "i-kiste", titel: "Kein Kassenplatz? Kostenerstattung", punkte: [
+        "Findet ihr in zumutbarer Zeit keinen Kassenplatz, kann die Krankenkasse eine Therapie bei einer approbierten Privatpraxis bezahlen (Kostenerstattung nach § 13 Abs. 3 SGB V).",
+        "Dafür braucht ihr meist: das PTV 11, eine Liste eurer Anfragen mit Absagen und Wartezeiten (oft reichen 5 bis 10) und eine Privatpraxis, die einen Platz anbietet.",
+        "Den Antrag vor Beginn der Therapie bei der Krankenkasse stellen. Die Liste unten lässt sich dafür ausdrucken.",
+        "Kassen entscheiden unterschiedlich. Gegen eine Ablehnung könnt ihr Widerspruch einlegen."
+      ] },
+      { bild: "i-haus", titel: "SPZ oder Kinder- und Jugendpsychiatrie", punkte: [
+        "Mit Überweisung: gründliche Abklärung durch ein Team aus Ärzt:innen, Psycholog:innen und Therapeut:innen.",
+        "Eine Diagnose von hier braucht ihr oft für Anträge beim Jugendamt.",
+        "Viele Kliniken haben Ambulanzen, die auch ambulant behandeln."
+      ] },
+      { bild: "i-gruppe", titel: "Erziehungsberatung und Schulpsychologie", punkte: [
+        "Erziehungsberatungsstellen sind kostenlos und ohne Überweisung erreichbar. Sie beraten Eltern und kennen oft Angebote in der Nähe.",
+        "Der schulpsychologische Dienst berät Schule und Eltern, etwa zu Absprachen im Unterricht und zum Nachteilsausgleich bei mündlichen Leistungen."
+      ] },
+      { bild: "i-hand", titel: "Jugendamt: Eingliederungshilfe", punkte: [
+        "Schränkt der Mutismus die Teilhabe deutlich ein – etwa in der Schule – und voraussichtlich länger als sechs Monate, kann Eingliederungshilfe nach § 35a SGB VIII beantragt werden, zum Beispiel eine Schulbegleitung.",
+        "Nötig sind ein schriftlicher Antrag und eine fachliche Stellungnahme (z. B. Kinder- und Jugendpsychiatrie oder SPZ), oft auch eine Stellungnahme der Schule.",
+        "Die Jugendämter entscheiden unterschiedlich. Lasst euch dabei beraten, zum Beispiel von einer Selbsthilfe-Organisation."
+      ] },
+      { bild: "i-ort", titel: "Selbsthilfe und Fachleute-Listen", punkte: [
+        "Mutismus Selbsthilfe Deutschland e.V. (mutismus.de) und StillLeben e.V. (selektiver-mutismus.de) bieten Informationen, Ansprechpersonen und Hinweise auf Fachleute.",
+        "Austausch mit anderen Eltern entlastet – und sie kennen oft Praxen in eurer Gegend."
+      ] }
+    ],
+    wartenTitel: "Während ihr wartet",
+    warten: [
+      "Die Wartezeit ist nicht verloren. Druck herausnehmen, nonverbale Antworten annehmen, kleine Mut-Schritte gehen: Das sind dieselben Grundsätze, mit denen auch eine Therapie arbeitet.",
+      "Mit Schule oder Kita sprechen und das Infoblatt mitgeben.",
+      "Mut-Steine und Mut-Schatz nutzen. Was das Kind dort geschafft hat, erscheint im Steckbrief und hilft der Therapie beim Einstieg."
+    ],
+    hinweis: "Sorgfältig recherchiert, aber keine Rechts- oder Sozialberatung. Krankenkassen und Ämter entscheiden im Einzelfall. In Österreich und der Schweiz gelten andere Wege.",
+
+    suche: {
+      titel: "Unsere Therapieplatz-Suche",
+      text: "Notiert jede Anfrage, auch wenn niemand zurückruft. So behaltet ihr den Überblick, und für eine Kostenerstattung habt ihr die Liste gleich parat. Die Einträge bleiben auf diesem Gerät.",
+      praxis: "Praxis oder Name", art: "Art", datum: "Datum", weg: "Wie angefragt", antwort: "Antwort", wartezeit: "Genannte Wartezeit", notiz: "Notiz",
+      arten: ["Psychotherapie", "Logopädie", "SPZ oder Klinik", "Beratung", "Sonstiges"],
+      wege: ["Telefon", "E-Mail", "Anrufbeantworter", "Persönlich", "Online-Formular"],
+      antworten: ["Absage", "Warteliste", "Kein Rückruf", "Termin angeboten", "Noch offen"],
+      eintragen: "Anfrage eintragen",
+      fehltPraxis: "Bitte mindestens die Praxis oder den Namen eintragen.",
+      leer: "Noch keine Anfragen notiert.",
+      zaehler: "{anzahl} Anfragen · davon {absagen} Absagen oder ohne Rückruf",
+      loeschen: "Löschen",
+      loeschenFrage: "Diesen Eintrag löschen?",
+      drucken: "Liste drucken",
+      druckTitel: "Kontaktprotokoll: Suche nach einem Therapieplatz",
+      druckFelder: ["Kind (Name, Geburtsdatum)", "Versichert bei / Versichertennummer", "PTV 11 vom"],
+      druckFuss: "Erstellt mit „Sokrates' Teich“.",
+      unterschrift: "Ort, Datum, Unterschrift"
+    },
+
+    brief: {
+      titel: "Brief an Praxen",
+      text: "Zum Ausdrucken oder als Text für eine E-Mail. Er erklärt kurz, warum Nicht-Sprechen kein Hindernis für eine Therapie ist. Name und Kontakt kommen aus den Feldern hier und aus „Für Lehrkräfte“.",
+      alter: "Alter des Kindes", alterBeispiel: "z. B. 9 Jahre",
+      absender: "Unterschrift (Eltern)", kontakt: "Telefon oder E-Mail",
+      drucken: "Brief drucken", kopieren: "Text kopieren", kopiert: "Kopiert – jetzt in eine E-Mail einfügen.",
+      kopierenGeht: "Kopieren ging nicht. Bitte den Text unten markieren und kopieren.",
+      betreff: "Anfrage Therapieplatz – selektiver Mutismus",
+      anrede: "Sehr geehrte Damen und Herren,",
+      absaetze: [
+        "wir suchen einen Therapieplatz für unser Kind{name}{alter}. Unser Kind hat selektiven Mutismus: Zu Hause spricht es normal, in der Schule und bei fremden Menschen bleibt die Stimme aus Angst aus.",
+        "Selektiver Mutismus ist eine Angststörung (ICD-10 F94.0, ICD-11 6B06). Dass unser Kind in Ihrer Praxis anfangs nicht sprechen wird, gehört zum Störungsbild. Es ist der Ausgangspunkt der Behandlung, kein Hindernis: Bewährte Ansätze beginnen ohne Sprechanforderung, lassen nonverbale Antworten zu und bauen das Sprechen in kleinen Schritten auf (schrittweise Annäherung, Stimulus Fading, Shaping), möglichst unter Einbezug von Eltern und Schule.",
+        "Wir unterstützen die Therapie gern aktiv und bringen Beobachtungen mit: wo und mit wem unser Kind spricht, flüstert oder sich ohne Worte verständigt.",
+        "Haben Sie Erfahrung mit selektivem Mutismus oder einen Platz auf Ihrer Warteliste? Bitte geben Sie uns auch bei einer Absage kurz Bescheid. Das hilft uns bei der weiteren Suche."
+      ],
+      gruss: "Mit freundlichen Grüßen",
+      quellen: "Fachliche Grundlage u. a.: ASHA Practice Portal „Selective Mutism“; Hipolito et al. (2023), systematische Übersicht zu Interventionen bei selektivem Mutismus; Leitlinien des Interdisziplinären Mutismus-Forums."
+    },
+
+    steckbrief: {
+      titel: "Steckbrief für Therapie und Ärztin",
+      text: "Fasst zusammen, was ihr beobachtet und was das Kind auf dieser Seite selbst gezeigt hat. Das spart beim Erstgespräch Zeit, gerade wenn das Kind dort noch nicht spricht. Alle Felder sind freiwillig.",
+      felder: [
+        ["wgSprichtMit", "Spricht mit …", "z. B. Eltern, Bruder, Oma – zu Hause, im Auto"],
+        ["wgFluestert", "Flüstert oder spricht leise mit …", "z. B. beste Freundin, nur wenn niemand zuhört"],
+        ["wgZeigt", "Verständigt sich ohne Worte (nicken, zeigen, schreiben) mit …", "z. B. Klassenlehrerin, Trainer"],
+        ["wgStill", "Bleibt ganz still bei …", "z. B. Ärztinnen, Verkäufer, vor der Klasse"],
+        ["wgSeit", "Seit wann fällt es auf?", "z. B. seit dem Kita-Start mit 3 Jahren"],
+        ["wgHilft", "Was hilft?", "z. B. Wahlfragen, vertraute Person dabei, Zeit"],
+        ["wgSchwer", "Was ist besonders schwer?", "z. B. Toilette in der Schule, Telefonieren"],
+        ["wgBisher", "Bisherige Hilfe", "z. B. Diagnostik im SPZ, Logopädie, Absprachen mit der Schule"]
+      ],
+      ausSeite: "Aus „Sokrates' Teich“",
+      ausSeiteText: "Vom Kind selbst gewählt oder eingetragen – Gesprächsanlässe, keine Messwerte.",
+      mutSchatz: "Mutige Momente im Mut-Schatz",
+      mutSteine: "Geschaffte Mut-Steine",
+      keineSteine: "noch keine",
+      koerper: "Körper-Notizen (wo die Alarmanlage gespürt wird)",
+      alarm: "Laute Alarmanlage (Alarmanlagen-Detektiv)",
+      hilfen: "Häufig gewählte Hilfen (Alarmzentrale)",
+      karte: "Stimmen-Karte",
+      nichts: "–",
+      drucken: "Steckbrief drucken",
+      druckTitel: "Steckbrief: selektiver Mutismus",
+      druckUnter: "Von den Eltern ausgefüllt. Zum Erstgespräch mitbringen."
+    }
+  },
+
   /* ---------- Navigation: Rückweg je nach Bereich ---------- */
   navi: {
     teich: "← Zum Teich",
@@ -652,6 +900,10 @@ Teich.inhalt = {
     weiter: {
       erwachsene: { bild: "i-buch", titel: "Für Erwachsene", unter: "Wissen, Einstellungen, Material für die Schule" },
       lehrkraefte: { bild: "i-tafel", titel: "Für Lehrkräfte", unter: "Infoblatt und Erklär-Karten zum Ausdrucken" },
+      wegweiser: { bild: "i-hand", titel: "Hilfe finden: der Wegweiser", unter: "Wege zur Therapie, Liste für die Suche, Brief an Praxen" },
+      "selbst-tun": { bild: "i-haus", titel: "Was ihr selbst tun könnt", unter: "Bausteine aus der Therapie für den Alltag" },
+      "stimmen-karte": { bild: "i-ort", titel: "Meine Stimmen-Karte", unter: "Wo ist deine Stimme schon zu Hause?" },
+      "mut-steine": { bild: "i-steine", titel: "Mut-Steine", unter: "Kleine mutige Schritte" },
       teich: { bild: "i-frosch", titel: "Dein Teich", unter: "Hier wohnen deine Schätze" },
       spiele: { bild: "i-spiel", titel: "Spiele", unter: "Noch etwas spielen?" },
       "spiel-werkstatt": { bild: "i-stern", titel: "In die Werkstatt", unter: "Gestalte etwas Eigenes für deinen Teich" }

@@ -266,6 +266,32 @@ schlägt, Warnzeichen, Körper-Notizen) · Alltag · Schule · Aus den Spielen �
 
 ---
 
+## 3c. Meine Stimmen-Karte – `#stimmen-karte` (seit Version 1.9)
+
+- **Zweck:** Sprech-Landkarte für das Kind. Personen und Orte aus dem Korb in vier Felder legen: spreche ich ·
+  flüstere ich · zeige oder nicke ich · noch still („Das ist okay“). Kein Richtig und Falsch.
+- **Bedienung:** Namen antippen (ausgewählt), dann „Hierhin legen“ im passenden Feld; „Zurück in den Korb“,
+  „Von der Karte nehmen“, eigene Einträge. Ein gewählter Eintrag zeigt auf Wunsch eine Mut-Stein-Idee.
+- **Verlauf:** Jede Verschiebung wird mit Datum gemerkt; Bewegung zur Mitte wird gefeiert, keine Belohnung.
+  Erscheint unter „Für Erwachsene → Was das Kind in den Spielen zeigt“ und im Steckbrief.
+
+## 10c. Was ihr selbst tun könnt – `#selbst-tun` (seit Version 1.9)
+
+- Sieben Bausteine mit Sprungmarken, je mit „Hilft“/„Lieber lassen“ oder „Schritt für Schritt“, Links zu
+  Stimmen-Karte, Mut-Steinen und Mut-Schatz; Druckblatt für Familie und Freunde; Warnzeichen; „Und ihr?“.
+- Erreichbar über Weiter-Karten in „Im Alltag“ und im Wegweiser („Während ihr wartet“).
+
+## 10b. Wegweiser „Hilfe finden“ – `#wegweiser` (seit Version 1.8)
+
+- **Zweck:** Familien ohne Therapieplatz Orientierung und Werkzeuge geben. Ersetzt keine Therapie und keine
+  Beratung; Stand und Geltungsbereich (Deutschland, gesetzlich versichert) stehen oben.
+- **Aufbau:** Sprungmarken · Kasten „Gut zu wissen“ (Nicht-Sprechen ist kein Ausschlussgrund) · acht Wege als
+  nummerierte Karten · „Während ihr wartet“ · **Unsere Therapieplatz-Suche** (Formular, Tabelle, Druck als
+  Kontaktprotokoll mit Unterschriftszeile) · **Brief an Praxen** (Vorschau, Druck, Text kopieren; nutzt Name,
+  Alter, Eltern und Kontakt) · **Steckbrief** (acht Beobachtungsfelder + Daten aus der Seite).
+- **Erreichbar** über die Weiter-Karte im Abschnitt „Hilfe finden“ auf „Für Erwachsene“; Zurück führt dorthin.
+- Quellen und Prüfstand: `docs/recherche/03-hilfe-finden.md`.
+
 ## Offene Punkte
 
 - Soll das Panzer-Meter Einträge speichern (Verlauf über Tage)? Vorschlag: **nein** für den Anfang – es ist

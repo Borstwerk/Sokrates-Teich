@@ -220,6 +220,28 @@
   </section>
 
   <!-- ================= Mut-Steine ================= -->
+  <section class="ansicht" id="ansicht-stimmen-karte" data-ansicht="stimmen-karte" hidden>
+    <h1 tabindex="-1" class="lesen">Meine Stimmen-Karte</h1>
+    <div class="mit-blase kompakt">
+      <div id="sk-szene"></div>
+      <div class="blase" aria-live="polite"><div class="lesen" id="sk-blase"></div></div>
+    </div>
+    <section class="sk-korb" aria-labelledby="sk-korb-titel">
+      <h2 class="lesen" id="sk-korb-titel"></h2>
+      <p class="leise lesen" id="sk-korb-text"></p>
+      <ul class="sk-chips" id="sk-korb"></ul>
+      <form class="sk-eigen" id="sk-eigen" onsubmit="return false"></form>
+    </section>
+    <div class="sk-karte" id="sk-karte"></div>
+    <div id="sk-idee"></div>
+    <div class="knoepfe"><button class="knopf" type="button" id="sk-drucken"></button></div>
+    <details>
+      <summary id="sk-erw-titel"></summary>
+      <p id="sk-erw-text"></p>
+    </details>
+    <nav class="weiter" data-weiter="mut-steine" aria-label="Mut-Steine"></nav>
+  </section>
+
   <section class="ansicht" id="ansicht-mut-steine" data-ansicht="mut-steine" hidden>
     <h1 tabindex="-1" class="lesen">Die Mut-Steine</h1>
     <div class="mit-blase kompakt">
@@ -668,6 +690,7 @@
           <tr><td>Ruhig und ohne Drama über den Mutismus sprechen</td><td>Belohnung vorher an Sprechen knüpfen („Wenn du sprichst, bekommst du …“)</td></tr>
         </tbody>
       </table>
+      <nav class="weiter" data-weiter="selbst-tun" aria-label="Was ihr selbst tun könnt"></nav>
     </section>
 
     <section class="e-abschnitt" id="e-schule" tabindex="-1">
@@ -686,16 +709,16 @@
       <h3>Alarmzentrale</h3>
       <p>In diesem Abenteuer sucht das Kind Hilfen aus, die eine Situation leichter machen (z. B. „Freundin dabei“, „Antworten darf ich zeigen“). Die Hilfen, die es am häufigsten wählt, können ein guter Gesprächsanlass sein – auch mit der Schule.</p>
       <div id="e-zentrale"></div>
+
+      <h3>Stimmen-Karte</h3>
+      <p>Auf der Stimmen-Karte zeigt das Kind, wo es spricht, flüstert, sich ohne Worte verständigt oder noch still ist. Eine Bewegung zur Mitte ist ein echter Fortschritt – und ein guter Gesprächsanlass.</p>
+      <div id="e-stimmen"></div>
     </section>
 
     <section class="e-abschnitt" id="e-hilfe" tabindex="-1">
       <h2><svg class="e-icon" aria-hidden="true"><use href="#i-hand"/></svg>Hilfe finden</h2>
-      <ul>
-        <li>Erster Weg: <strong>Kinderärztin oder Kinderarzt</strong> ansprechen.</li>
-        <li>Behandelt wird selektiver Mutismus vor allem von <strong>Kinder- und Jugendlichenpsychotherapeut:innen</strong> (meist Verhaltenstherapie) und von <strong>Logopäd:innen mit Mutismus-Schwerpunkt</strong>. Gut ist, wenn Eltern und Schule einbezogen werden.</li>
-        <li>Für einen ersten Termin in einer psychotherapeutischen Sprechstunde hilft die <strong>Terminservicestelle 116117</strong>.</li>
-        <li>Selbsthilfe und Therapeutenlisten: <strong>Mutismus Selbsthilfe Deutschland e.V.</strong> (mutismus.de) und <strong>StillLeben e.V.</strong> (selektiver-mutismus.de).</li>
-      </ul>
+      <p>Behandelt wird selektiver Mutismus vor allem von <strong>Kinder- und Jugendlichenpsychotherapeut:innen</strong> (meist Verhaltenstherapie) und von <strong>Logopäd:innen mit Mutismus-Schwerpunkt</strong>. Der Wegweiser zeigt alle Wege zu einem Platz – mit einer Liste für eure Anfragen, einem Brief an Praxen und einem Steckbrief fürs Erstgespräch.</p>
+      <nav class="weiter" data-weiter="wegweiser" aria-label="Wegweiser: Hilfe finden"></nav>
 
       <h3>Buchtipps</h3>
       <ul>
@@ -764,9 +787,78 @@
       </div>
 
       <h3>Quellen</h3>
-      <p>Die Inhalte beruhen auf einer Recherche mit Quellenangaben: <a href="docs/recherche/01-synthese.md">docs/recherche/01-synthese.md</a> und zu Körperzeichen: <a href="docs/recherche/02-koerper.md">docs/recherche/02-koerper.md</a> (u. a. Fachübersichten von 2023 und 2025, Leitlinien des Interdisziplinären Mutismus Forums, Child Mind Institute, SMIRA).</p>
+      <p>Die Inhalte beruhen auf einer Recherche mit Quellenangaben: <a href="docs/recherche/01-synthese.md">docs/recherche/01-synthese.md</a> und zu Körperzeichen: <a href="docs/recherche/02-koerper.md">docs/recherche/02-koerper.md</a>, zu Hilfe und Therapieplätzen: <a href="docs/recherche/03-hilfe-finden.md">docs/recherche/03-hilfe-finden.md</a> und zu den Eltern-Bausteinen: <a href="docs/recherche/04-selbst-tun.md">docs/recherche/04-selbst-tun.md</a> (u. a. Fachübersichten von 2023 und 2025, Leitlinien des Interdisziplinären Mutismus Forums, Child Mind Institute, SMIRA).</p>
     </section>
 
+  </section>
+
+  <!-- Für Erwachsene: Was ihr selbst tun könnt -->
+  <section class="ansicht erwachsene" id="ansicht-selbst-tun" data-ansicht="selbst-tun" hidden>
+    <h1 tabindex="-1">Was ihr selbst tun könnt</h1>
+    <p id="st-intro"></p>
+    <nav class="e-navi" aria-label="Abschnitte" id="st-navi"></nav>
+    <div class="kasten" id="st-evidenz"></div>
+    <h2 id="st-grund-titel"></h2>
+    <ul class="st-grundsaetze" id="st-grund"></ul>
+    <div id="st-bausteine"></div>
+    <section class="e-abschnitt" id="st-warn-box" tabindex="-1">
+      <div class="kasten warnung"><h2 id="st-warn-titel"></h2><ul id="st-warn"></ul></div>
+      <h2 id="st-eltern-titel"></h2>
+      <ul id="st-eltern"></ul>
+    </section>
+    <nav class="weiter" data-weiter="wegweiser" aria-label="Wegweiser: Hilfe finden"></nav>
+  </section>
+
+  <!-- Für Erwachsene: Wegweiser „Hilfe finden“ -->
+  <section class="ansicht erwachsene" id="ansicht-wegweiser" data-ansicht="wegweiser" hidden>
+    <h1 tabindex="-1">Hilfe finden: der Wegweiser</h1>
+    <p id="wg-intro"></p>
+    <p class="leise" id="wg-stand"></p>
+    <nav class="e-navi" aria-label="Abschnitte">
+      <button class="knopf klein" type="button" data-ziel="wg-wege">Wege</button>
+      <button class="knopf klein" type="button" data-ziel="wg-suche">Unsere Suche</button>
+      <button class="knopf klein" type="button" data-ziel="wg-brief">Brief an Praxen</button>
+      <button class="knopf klein" type="button" data-ziel="wg-steckbrief">Steckbrief</button>
+    </nav>
+    <div class="kasten wg-wichtig" id="wg-wichtig"></div>
+
+    <section class="e-abschnitt" id="wg-wege" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-ort"/></svg><span id="wg-wege-titel"></span></h2>
+      <ol class="wg-wege" id="wg-wege-liste"></ol>
+      <h3 id="wg-warten-titel"></h3>
+      <ul id="wg-warten"></ul>
+      <nav class="weiter" data-weiter="selbst-tun" aria-label="Was ihr selbst tun könnt"></nav>
+      <p class="leise" id="wg-hinweis"></p>
+    </section>
+
+    <section class="e-abschnitt" id="wg-suche" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-kiste"/></svg><span id="wg-suche-titel"></span></h2>
+      <p id="wg-suche-text"></p>
+      <form class="wg-form" id="wg-suche-form" onsubmit="return false"></form>
+      <p class="raetsel-meldung" id="wg-suche-meldung" aria-live="polite"></p>
+      <p class="leise" id="wg-suche-zaehler" aria-live="polite"></p>
+      <div class="wg-tabelle-rahmen" id="wg-suche-liste"></div>
+    </section>
+
+    <section class="e-abschnitt" id="wg-brief" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-sprechen"/></svg><span id="wg-brief-titel"></span></h2>
+      <p id="wg-brief-text"></p>
+      <form class="wg-form" id="wg-brief-form" onsubmit="return false"></form>
+      <div class="knoepfe">
+        <button class="knopf haupt" type="button" id="wg-brief-drucken"></button>
+        <button class="knopf" type="button" id="wg-brief-kopieren"></button>
+      </div>
+      <p class="leise" id="wg-brief-meldung" aria-live="polite"></p>
+      <div class="blatt-rahmen"><div id="wg-brief-vorschau"></div></div>
+    </section>
+
+    <section class="e-abschnitt" id="wg-steckbrief" tabindex="-1">
+      <h2><svg class="e-icon" aria-hidden="true"><use href="#i-person"/></svg><span id="wg-steck-titel"></span></h2>
+      <p id="wg-steck-text"></p>
+      <form class="wg-form" id="wg-steck-form" onsubmit="return false"></form>
+      <div class="knoepfe"><button class="knopf haupt" type="button" id="wg-steck-drucken"></button></div>
+      <div class="blatt-rahmen"><div id="wg-steck-vorschau"></div></div>
+    </section>
   </section>
 
   <!-- ================= Für Lehrkräfte ================= -->
@@ -820,6 +912,7 @@
 <script src="assets/js/panzer-meter.js"></script>
 <script src="assets/js/koerper.js"></script>
 <script src="assets/js/mut-steine.js"></script>
+<script src="assets/js/stimmen-karte.js"></script>
 <script src="assets/js/ruhe-ecke.js"></script>
 <script src="assets/js/karten.js"></script>
 <script src="assets/js/mut-schatz.js"></script>
@@ -846,6 +939,8 @@
 <script src="assets/js/spiel-comic.js"></script>
 <script src="assets/js/erwachsene.js"></script>
 <script src="assets/js/lehrkraefte.js"></script>
+<script src="assets/js/wegweiser.js"></script>
+<script src="assets/js/selbst-tun.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/webapp.js"></script>
 </body>

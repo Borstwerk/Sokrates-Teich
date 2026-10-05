@@ -1386,3 +1386,93 @@ body.ruhig .kreis, body.ruhig .kreis.gross { transform: scale(.95); }
   .cm-druck .cm-seite { grid-template-columns: 1fr; justify-items: center; gap: 5mm; }
   .cm-druck .cm-bild { width: 110mm; box-shadow: none; }
 }
+
+/* ---------- Für Erwachsene: Wegweiser ---------- */
+.erwachsene textarea, .erwachsene input[type="date"] { width: 100%; max-width: 560px; min-height: 52px; padding: 8px 14px; border: var(--line) solid var(--ink); border-radius: 14px; background: var(--weiss); }
+.erwachsene textarea { min-height: 76px; resize: vertical; line-height: 1.4; }
+.wg-wichtig p:last-child { margin-bottom: 0; }
+.wg-wege { list-style: none; padding: 0; margin: 12px 0 8px; display: grid; gap: 12px; counter-reset: weg; }
+.wg-weg { padding: 10px 16px 4px; background: var(--paper); border: 2px solid var(--ink); border-radius: 16px; counter-increment: weg; }
+.wg-weg .lk-kopf h3::before { content: counter(weg) ". "; }
+.wg-weg .lk-kopf { display: flex; align-items: center; gap: 10px; }
+.wg-weg .lk-kopf svg { flex: none; width: 40px; height: 40px; }
+.wg-weg .lk-kopf h3 { margin: 4px 0; font-size: 21px; }
+.wg-weg ul { margin: 4px 0 8px; }
+.wg-raster { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap: 0 18px; }
+.wg-raster .feld { margin: 10px 0; }
+.wg-raster input, .wg-raster select { width: 100%; }
+.wg-tabelle-rahmen { overflow-x: auto; }
+.wg-tabelle { font-size: 16px; }
+.wg-tabelle td .knopf { min-height: 40px; padding: 2px 10px; font-size: 15px; }
+.wg-brief p { margin: 0 0 10px; }
+.wg-betreff { font-weight: 700; }
+.wg-gruss { margin-top: 16px !important; }
+.wg-kopie { display: block; width: 100%; margin: 0 0 12px; font-size: 15px; }
+.wg-seite-zeile ul { margin: 0; padding-left: 20px; }
+@media print {
+  .wg-druck .wg-blatt h1 { font-size: 18pt; margin: 0 0 4mm; }
+  .wg-druck .wg-blatt { font-size: 11pt; line-height: 1.4; }
+  .wg-druck .wg-blatt .lk-zeile { margin: 2.5mm 0; }
+  .wg-druck .wg-blatt .lk-label { width: 62mm; font-size: 11pt; }
+  .wg-druck .wg-druck-felder { margin-bottom: 4mm; }
+  .wg-druck .tabelle { font-size: 9.5pt; }
+  .wg-druck .tabelle th, .wg-druck .tabelle td { border-width: 0.3mm; padding: 1.5mm 2mm; }
+  .wg-druck .wg-unterschrift { margin-top: 12mm; }
+  .wg-druck .blatt { max-width: none; padding: 0; box-shadow: none; font-size: 11pt; line-height: 1.45; }
+  .wg-druck .wg-steckbrief { font-size: 10pt; line-height: 1.35; }
+  .wg-druck .lk-fuss { font-size: 8pt; margin-top: 4mm; }
+  .wg-druck .leise { font-size: 9pt; }
+}
+
+/* ---------- Meine Stimmen-Karte ---------- */
+.sk-korb { margin: 8px 0 18px; padding: 12px 16px; background: var(--weiss); border: var(--line) dashed var(--ink); border-radius: 24px; }
+.sk-korb h2 { margin: 0 0 4px; font-size: 24px; }
+.sk-chips { list-style: none; padding: 0; margin: 8px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.sk-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 4px 14px 4px 6px; font-weight: 700; font-size: 18px; line-height: 1.2; text-align: left; color: var(--ink); background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 99px; box-shadow: 0 3px 0 rgba(46,58,47,.18); cursor: pointer; }
+.sk-chip svg { flex: none; width: 34px; height: 34px; padding: 3px; background: var(--paper); border: 2px solid var(--ink); border-radius: 50%; }
+.sk-chip[aria-pressed="true"] { background: var(--star); outline: 3px solid var(--ink); outline-offset: 2px; }
+.sk-eigen-zeile { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.sk-eigen-zeile input { flex: 1 1 220px; min-height: 48px; }
+.sk-eigen .werkzeug-titel { margin: 10px 0 4px; font-weight: 700; }
+.sk-karte { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.sk-zone { position: relative; padding: 12px 16px 14px; border: var(--line) solid var(--ink); border-radius: 26px; box-shadow: var(--paper-shadow); min-height: 150px; }
+.sk-zone.sprechen { background: #FCE3A6; }
+.sk-zone.fluestern { background: #F6E9C8; }
+.sk-zone.zeigen { background: #DCEFF2; }
+.sk-zone.still { background: #E3E8EA; }
+.sk-zone.ziel { outline: 4px dashed var(--water-deep); outline-offset: 3px; }
+.sk-zone-kopf { display: flex; align-items: center; gap: 10px; }
+.sk-zone-kopf > svg { flex: none; width: 46px; height: 46px; }
+.sk-zone-kopf > svg.sokrates { width: 70px; height: auto; }
+.sk-zone-kopf h2 { margin: 0; font-size: 23px; }
+.sk-zone-kopf p { margin: 0; font-size: 16px; }
+.sk-ablegen { margin-top: 6px; }
+.sk-aktionen { grid-column: 1 / -1; margin: 0; }
+.sk-idee { margin: 16px 0 6px; padding: 12px 16px; background: var(--weiss); border: var(--line) solid var(--ink); border-radius: 22px; box-shadow: var(--paper-shadow); }
+.sk-idee h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; }
+.sk-idee h3 svg { width: 34px; height: 34px; }
+@media (max-width: 760px) {
+  .sk-karte { grid-template-columns: 1fr; }
+  .sk-zone { min-height: 0; }
+}
+@media print {
+  .sk-druck .sk-blatt h1 { font-size: 24pt; margin: 0 0 1mm; }
+  .sk-druck .sk-karte { grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 4mm; }
+  .sk-druck .sk-zone { box-shadow: none; min-height: 60mm; border-width: 0.5mm; border-radius: 5mm; padding: 3mm 4mm; }
+  .sk-druck .sk-zone h2 { font-size: 15pt; }
+  .sk-druck .sk-zone li { font-size: 13pt; }
+}
+
+/* ---------- Für Erwachsene: Was ihr selbst tun könnt ---------- */
+.st-grundsaetze { list-style: none; padding: 0 !important; display: grid; gap: 10px; }
+.st-grundsaetze li { display: flex; align-items: flex-start; gap: 12px; }
+.st-grundsaetze svg { flex: none; width: 38px; height: 38px; }
+.st-stufen { counter-reset: none; }
+.st-stufen li { margin-bottom: 6px; }
+.st-tun { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 10px 0; }
+.st-spalte { padding: 8px 14px; border: 2px solid var(--ink); border-radius: 16px; background: #EEF6E8; }
+.st-spalte.lassen { background: #F8EEE9; }
+.st-spalte h3 { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 19px; }
+.st-spalte h3 svg { width: 28px; height: 28px; }
+.st-blatt p { margin: 0 0 3mm; }
+@media (max-width: 760px) { .st-tun { grid-template-columns: 1fr; } }
