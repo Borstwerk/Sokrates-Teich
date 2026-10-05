@@ -145,7 +145,9 @@ a { color: var(--water-deep); }
 .teich-gruppe { margin-top: 32px; }
 .teich-gruppe h2 { margin: 0 0 14px; font-size: 26px; }
 .teich-gruppe .orte { margin-top: 0; }
-.teich-gruppe.hilfen .orte { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.teich-gruppe.befinden .orte,
+.teich-gruppe.jetzt .orte,
+.teich-gruppe.schritte .orte { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .teich-gruppe.sammeln .ort .bild { background: var(--sand); }
 
 /* ---------- Geschichte ---------- */
@@ -397,7 +399,9 @@ details summary { font-weight: 700; cursor: pointer; min-height: 40px; display: 
   .mit-blase, .buchseite .mit-blase, .schatz-oben { grid-template-columns: 1fr; }
   .blase::before { left: 48px; top: -16px; border-left: var(--line) solid var(--ink); border-top: var(--line) solid var(--ink); border-bottom: none; }
   .orte { grid-template-columns: 1fr; }
-  .teich-gruppe.hilfen .orte { grid-template-columns: 1fr; }
+  .teich-gruppe.befinden .orte,
+  .teich-gruppe.jetzt .orte,
+  .teich-gruppe.schritte .orte { grid-template-columns: 1fr; }
   .mit-blase.kompakt { grid-template-columns: 1fr; }
   .kompakt .szene { max-width: 360px; width: 100%; }
   .stufen { grid-template-columns: repeat(2, 1fr); }
