@@ -41,9 +41,9 @@ kostenlos und nur für die eigene Familie bereitstellt: **[docs/IPAD.md](docs/IP
 |---|---|
 | **Sokrates erzählt** | Ein Bilderbuch in 9 Seiten: die Alarmanlage im Kopf, warum sich die Stimme versteckt, „Das ist nicht deine Schuld“, „Langsam ist auch mutig“. |
 | **Panzer-Meter** | Gefühle zeigen ohne Worte: Sokrates zieht sich in 5 Stufen in den Panzer zurück. |
-| **Mein Körper** | Wo spürt das Kind die Alarmanlage – Kopf, Hals, Herz, Bauch, Hände, Beine oder „ganz müde“? Kindgerechte Erklärung („Das Weh ist echt. Und es ist nicht gefährlich.“), was helfen kann, eine Karte zum Zeigen und „Für Mama oder Papa merken“. |
+| **Mein Körper** | Wo spürt das Kind die Alarmanlage – Kopf, Hals, Herz, Bauch, Hände, Beine oder „ganz müde“? Kindgerechte Erklärung, dass Angst echte Körpergefühle machen kann – mit Hinweis, neue, starke oder häufige Beschwerden Erwachsenen zu zeigen –, dazu Hilfen, eine Karte zum Zeigen und „Für Mama oder Papa merken“. |
 | **Mut-Steine** | Kleine Schritte über den Teich – drei fertige Wege (*Jemand Neues*, *Viele Menschen*, *Ein neuer Ort*) und ein eigener Weg. Die ersten Steine sind immer ohne Worte. |
-| **Meine Stimmen-Karte** | Eine Sprech-Landkarte: Das Kind legt Personen und Orte in vier Felder – *spreche ich*, *flüstere ich*, *zeige oder nicke ich*, *noch still*. Zeigt den Ausgangspunkt für kleine Schritte und, mit Datum, was sich bewegt hat. |
+| **Meine Stimmen-Karte** | Eine Sprech-Landkarte: Das Kind legt Personen **oder Situationen** in vier Felder – *spreche ich*, *flüstere ich*, *zeige oder nicke ich*, *noch still*. Dieselbe Person darf je nach Kontext mehrfach vorkommen; so wird sichtbar, wo kleine Schritte ansetzen können. |
 | **Ruhe-Ecke** | Atmen mit Sokrates und eine „Panzer-Pause“. |
 | **Karten-Kiste** | Karten zum Zeigen („Ja“, „Nein“, „Ich muss aufs Klo“, „Ich brauche Hilfe“ …), groß auf dem Bildschirm, vorlesbar und druckbar in jeder Größe. Eigene Karten möglich. |
 | **Mut-Schatz** | Jeder mutige Moment – auch Nicken, Zeigen oder Hingehen – wird ein Steinchen im Glas. |
