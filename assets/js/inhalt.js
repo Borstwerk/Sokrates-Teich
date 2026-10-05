@@ -16,7 +16,9 @@ Teich.inhalt = {
     ],
     startHier: "Fang hier an!",
     gruppen: [
-      { id: "hilfen", titel: "Was hilft mir gerade?", orte: ["panzer-meter", "koerper", "ruhe-ecke", "karten", "mut-steine", "stimmen-karte"] },
+      { id: "befinden", titel: "Wie geht es mir?", orte: ["panzer-meter", "koerper"] },
+      { id: "jetzt", titel: "Was hilft mir jetzt?", orte: ["ruhe-ecke", "karten"] },
+      { id: "schritte", titel: "Meine kleinen Schritte", orte: ["mut-steine", "stimmen-karte"] },
       { id: "sammeln", titel: "Spielen und sammeln", ohneSpiele: "Mut sammeln", orte: ["spiele", "mein-teich", "mut-schatz"] }
     ]
   },
@@ -49,7 +51,7 @@ Teich.inhalt = {
       text: ["Wenn die Alarmanlage piept, ziehe ich den Kopf ein.", "Dann bleibt meine Stimme im Panzer.", "Ich will etwas sagen. Aber die Wörter kommen nicht raus.", "Das fühlt sich doof an."],
       bild: { level: 4, lampe: 0.75 } },
     { titel: "Mein Körper merkt es auch",
-      text: ["Wenn die Alarmanlage piept, merkt das auch mein Körper.", "Mein Bauch zwickt. Mein Kopf brummt. Mein Herz klopft schnell.", "Das Weh ist echt. Und es ist nicht gefährlich.", "Wenn die Alarmanlage leiser wird, wird es meistens auch im Körper besser."],
+      text: ["Wenn die Alarmanlage piept, merkt das auch mein Körper.", "Mein Bauch zwickt. Mein Kopf brummt. Mein Herz klopft schnell.", "Das Weh ist echt. Die Alarmanlage kann solche Körpergefühle machen.", "Wenn etwas stark, neu oder oft da ist, zeige ich es einem Erwachsenen."],
       bild: { level: 3, lampe: 0.5, deko: [["i-kopfweh", "Kopf"], ["i-herz", "Herz"], ["i-bauchweh", "Bauch"]] } },
     { titel: "Das ist nicht meine Schuld",
       text: ["Ich bin nicht frech. Ich mache das nicht mit Absicht.", "Meine Alarmanlage ist nur zu laut eingestellt.", "Viele Kinder kennen das. Du bist nicht allein."],
@@ -61,7 +63,7 @@ Teich.inhalt = {
       text: ["Schildkröten sind langsam. Das ist gut so!", "Ich mache nur kleine Schritte.", "Erst gucke ich. Dann nicke ich. Dann zeige ich auf etwas.", "Jeder kleine Schritt zählt."],
       bild: { level: 1, spaziert: true, deko: [["i-auge", "gucken"], ["i-nicken", "nicken"], ["i-zeigen", "zeigen"]] } },
     { titel: "Meine Alarmanlage lernt dazu",
-      text: ["Jedes Mal, wenn ich etwas Mutiges mache, merkt sich meine Alarmanlage:", "„Hier ist es sicher.“", "Dann piept sie ein bisschen leiser.", "Ganz langsam. Schritt für Schritt."],
+      text: ["Mit vielen kleinen Erfahrungen kann meine Alarmanlage lernen:", "„Das kann ich schaffen.“", "Manchmal wird es schnell leichter. Manchmal braucht sie viele Wiederholungen.", "Ganz langsam. Schritt für Schritt."],
       bild: { level: 2, lampe: 0.15 } },
     { titel: "Kommst du mit?",
       text: ["Willst du mit mir üben, {name}?", "Du bestimmst, wie schnell wir gehen."],
@@ -93,7 +95,7 @@ Teich.inhalt = {
     frage: "Hast du diesen Schritt geschafft?",
     geschafft: "Hab ich geschafft!",
     nochNicht: "Noch nicht",
-    lob: ["Super! Das war mutig. Der Stein leuchtet jetzt.", "Wow, ein mutiger Schritt! Ich bin stolz auf dich.", "Geschafft! Deine Alarmanlage hat etwas gelernt."],
+    lob: ["Super! Das war mutig. Der Stein leuchtet jetzt.", "Wow, ein mutiger Schritt! Ich bin stolz auf dich.", "Geschafft! Du hast deiner Alarmanlage eine neue Erfahrung gegeben."],
     oft: "Du kannst jeden Stein so oft machen, wie du willst.",
     wege: [
       { id: "neu", name: "Jemand Neues", bild: "i-person", steine: [
@@ -201,7 +203,7 @@ Teich.inhalt = {
       { titel: "So helfen Sie", bild: "i-ja", punkte: [
         "Freundlich ansprechen – ohne eine gesprochene Antwort zu erwarten.",
         "Ja/Nein- oder Wahlfragen stellen („Möchtest du Rot oder Blau?“).",
-        "Nach einer Frage in Ruhe warten (mindestens 5 Sekunden).",
+        "Nach einer Frage in Ruhe etwa 5 Sekunden Zeit lassen – bei Bedarf auch länger.",
         "Ein vertrautes Kind als Partner; lieber Kleingruppe als ganze Klasse.",
         "Kurz und ruhig loben, gern unter vier Augen oder mit einem Lächeln."
       ] },
@@ -653,7 +655,7 @@ Teich.inhalt = {
       "Tipp auf einen Namen im Korb. Dann tipp auf das Feld, das passt."
     ],
     zonen: [
-      { id: "sprechen",  titel: "Hier spreche ich",       unter: "ganz normal, laut oder leise", bild: "i-sprechen" },
+      { id: "sprechen",  titel: "Hier spreche ich",       unter: "laut oder leise",              bild: "i-sprechen" },
       { id: "fluestern", titel: "Hier flüstere ich",      unter: "oder spreche ganz leise",      bild: "i-fluestern" },
       { id: "zeigen",    titel: "Hier zeige oder nicke ich", unter: "oder zeige eine Karte",     bild: "i-zeigen" },
       { id: "still",     titel: "Hier bin ich noch still", unter: "Das ist okay. Mein Panzer passt auf mich auf.", bild: "sokrates-5" }
@@ -673,14 +675,14 @@ Teich.inhalt = {
       { text: "Im Laden", bild: "i-broetchen" }, { text: "Trainerin oder Trainer", bild: "i-ball" }, { text: "Am Telefon", bild: "i-telefon" }
     ],
     eigenTitel: "Fehlt jemand?",
-    eigenFeld: "Name oder Ort",
-    eigenBeispiel: "z. B. Tante Uli, Musikschule",
+    eigenFeld: "Person oder Situation",
+    eigenBeispiel: "z. B. Tante Uli, Frau Müller allein, Bäckerei mit Papa",
     eigenDazu: "Dazulegen",
     entfernen: "Von der Karte nehmen",
     entfernenFrage: "„{name}“ ganz von der Karte nehmen?",
     naeher: [
-      "Wow! „{name}“ ist auf deiner Karte ein Stück näher gerückt.",
-      "Das ist ein mutiger Schritt. Die Alarmanlage hat etwas gelernt."
+      "Wow! Bei „{name}“ war heute ein bisschen mehr Kommunikation möglich.",
+      "Das ist ein mutiger Schritt. Heute war es dort etwas leichter."
     ],
     weiter: "Okay. Manchmal ist es an einem Tag schwerer. Das ist in Ordnung.",
     gleich: "Gut, dass du es zeigst.",
@@ -697,7 +699,7 @@ Teich.inhalt = {
     druckTitel: "Meine Stimmen-Karte",
     druckDatum: "Stand: {datum}",
     erwachseneTitel: "Für Erwachsene",
-    erwachsene: "Die Stimmen-Karte ist eine Sprech-Landkarte: Sie zeigt, mit wem und wo das Kind spricht, flüstert, sich ohne Worte verständigt oder noch still ist. So findet ihr den Ausgangspunkt für kleine Schritte. Änderungen werden mit Datum gespeichert und erscheinen unter „Für Erwachsene“ und im Steckbrief.",
+    erwachsene: "Die Stimmen-Karte ist eine Sprech-Landkarte: Sie zeigt, mit wem und in welcher Situation das Kind spricht, flüstert, sich ohne Worte verständigt oder noch still ist. Dieselbe Person kann je nach Ort, Gruppe oder Situation mehrfach eingetragen werden. So findet ihr den Ausgangspunkt für kleine Schritte. Änderungen werden mit Datum gespeichert und erscheinen unter „Für Erwachsene“ und im Steckbrief.",
     verlaufTitel: "Stimmen-Karte: Was sich bewegt hat",
     verlaufLeer: "Noch keine Änderungen.",
     verlaufZeile: "{name}: {von} → {nach}"
@@ -709,12 +711,12 @@ Teich.inhalt = {
     evidenz: "Dass Eltern so wirksam helfen können, ist für Ängste im Kindesalter belegt: In einer Studie erholten sich Kinder deutlich häufiger, wenn ihre Eltern mit fachlicher Anleitung verhaltenstherapeutische Grundsätze im Alltag anwendeten. Für selektiven Mutismus selbst ist die Studienlage kleiner. Holt euch deshalb, sobald es geht, fachliche Begleitung dazu.",
     grundsaetzeTitel: "Drei Grundsätze",
     grundsaetze: [
-      ["i-herz", "Erst Sicherheit, dann Schritte.", "Das Kind muss sich wohlfühlen, bevor es etwas Neues wagt."],
-      ["i-steine", "Ein Schritt, der leicht ist.", "Lieber zu klein als zu groß. Erst weiter, wenn der Schritt sicher klappt."],
+      ["i-herz", "Machbar statt angstfrei.", "Ein bisschen Kribbeln darf dabei sein – Überforderung nicht."],
+      ["i-steine", "Ein kleiner Schritt.", "Lieber zu klein als zu groß. Erst weiter, wenn der Schritt deutlich leichter geworden ist."],
       ["i-stern", "Mut bemerken.", "Jeden Schritt – auch Nicken oder Zeigen – freundlich und konkret anerkennen."]
     ],
     bausteine: [
-      { id: "spielzeit", bild: "i-spiel", titel: "Spielzeit ohne Fragen", text: "Täglich 5 bis 10 Minuten, in denen das Kind bestimmt, was gespielt wird. Ziel: Nähe und Sicherheit, kein Sprechen. Das ist die erste Phase einer bewährten Eltern-Kind-Therapie (PCIT).",
+      { id: "spielzeit", bild: "i-spiel", titel: "Spielzeit ohne Fragen", text: "Täglich 5 bis 10 Minuten, in denen das Kind bestimmt, was gespielt wird. Ziel: Nähe und Sicherheit, kein Sprechen. Diese Spielzeit ist an die Child-Directed Interaction (CDI) aus PCIT-SM angelehnt. PCIT-SM selbst ist eine angeleitete Therapie mit weiteren Bausteinen.",
         tun: ["Konkret loben: „Du hast den Turm ganz vorsichtig gebaut.“", "Beschreiben, was das Kind tut: „Du malst die Sonne gelb.“", "Wiederholen, was es sagt – und Mitspielen, Nachmachen, Freude zeigen."],
         lassen: ["Fragen („Was baust du?“)", "Anweisungen („Mach mal …“)", "Kritik oder Verbesserungen"] },
       { id: "karte", bild: "i-ort", titel: "Den Ausgangspunkt finden", text: "Schaut gemeinsam auf die Stimmen-Karte: Mit wem und wo spricht, flüstert oder zeigt das Kind? Der nächste Schritt liegt immer am Rand des Gewohnten – zum Beispiel bei einer Person, bei der das Kind schon nickt.",
@@ -725,9 +727,9 @@ Teich.inhalt = {
         link: ["mut-steine", "Zu den Mut-Steinen"] },
       { id: "sliding", bild: "i-person", titel: "Eine neue Person langsam dazunehmen", text: "Diese Methode heißt „Sliding-in“ (auf Deutsch etwa: hineingleiten). Das Kind spricht mit einer vertrauten Person, und eine neue Person kommt Schritt für Schritt dazu. Gut geeignet für Großeltern, Babysitter oder später die Lehrkraft.",
         stufen: ["Kind und Mama oder Papa spielen in einem ruhigen Raum ein Spiel mit kurzen, vorhersehbaren Antworten (zählen, Farben benennen, Memory-Karten benennen).", "Die neue Person ist in Hörweite, beschäftigt sich mit etwas anderem und schaut nicht hin.", "Sie kommt mit der Zeit näher und setzt sich schließlich dazu – ohne das Kind anzusprechen.", "Sie macht beim Spiel mit. Das Kind spricht weiter zu Mama oder Papa.", "Das Kind antwortet im Spiel auch der neuen Person – erst mit einem Wort, dann mehr.", "Mama oder Papa ziehen sich langsam zurück."],
-        nachsatz: "Kurze Einheiten (10 bis 15 Minuten), lieber oft als lang. Erst zum nächsten Schritt, wenn der vorige entspannt klappt. Geht etwas schief: einen Schritt zurück, ohne Kommentar." },
+        nachsatz: "Kurze Einheiten (10 bis 15 Minuten), lieber oft als lang. Erst zum nächsten Schritt, wenn der vorige deutlich leichter geworden ist. Wird es zu viel: einen Schritt zurück, ohne Drama." },
       { id: "fragen", bild: "i-frage", titel: "Fragen, die leicht zu beantworten sind", text: "Wie man fragt, macht einen großen Unterschied.",
-        tun: ["Wahlfragen: „Apfel oder Banane?“", "Nach einer Frage mindestens 5 Sekunden warten.", "Nonverbale Antworten freundlich annehmen."],
+        tun: ["Wahlfragen: „Apfel oder Banane?“", "Nach einer Frage etwa 5 Sekunden Zeit lassen – bei Bedarf auch länger.", "Nonverbale Antworten freundlich annehmen."],
         lassen: ["Für das Kind antworten", "„Sag doch mal …“, überreden oder bitten", "Offene Fragen in angespannten Momenten"] },
       { id: "lob", bild: "i-glas", titel: "Mut sichtbar machen", text: "Mut wird gestärkt, wenn er bemerkt wird.",
         tun: ["Nach einem geschafften Schritt konkret und ruhig loben – gern unter vier Augen.", "Kleine Belohnungen für vereinbarte Schritte, zum Beispiel über den Mut-Schatz.", "Sprechen, wenn es passiert, ganz normal aufnehmen – ohne großes Aufheben."],
@@ -770,8 +772,8 @@ Teich.inhalt = {
     stand: "Stand: Oktober 2026 · für gesetzlich Versicherte in Deutschland",
     wichtigTitel: "Gut zu wissen",
     wichtig: [
-      "Dass ein Kind nicht spricht, ist kein Grund gegen eine Therapie. Es ist der Ausgangspunkt. Mutismus-Therapie beginnt bewusst ohne Sprechen: erst Vertrauen und nonverbale Antworten, dann kleine Schritte – ohne Sprechdruck.",
-      "Sagt eine Praxis deshalb ab, fehlt dort meist die Erfahrung mit Mutismus. Fragt gezielt nach Mutismus-Erfahrung und sucht weiter. Ihr macht nichts falsch."
+      "Dass ein Kind anfangs nicht spricht, ist kein Grund gegen eine Therapie. Ein Erstkontakt kann auch mit nonverbaler Kommunikation und sehr kleinen Schritten beginnen – ohne Sprechdruck.",
+      "Wenn eine Praxis wegen des fehlenden Sprechens unsicher ist, fragt gezielt nach Erfahrung mit selektivem Mutismus. Ein Erstkontakt setzt nicht voraus, dass das Kind bereits sprechen kann."
     ],
     wegeTitel: "Die Wege im Überblick",
     wege: [
@@ -793,13 +795,13 @@ Teich.inhalt = {
       ] },
       { bild: "i-kiste", titel: "Kein Kassenplatz? Kostenerstattung", punkte: [
         "Findet ihr in zumutbarer Zeit keinen Kassenplatz, kann die Krankenkasse eine Therapie bei einer approbierten Privatpraxis bezahlen (Kostenerstattung nach § 13 Abs. 3 SGB V).",
-        "Dafür braucht ihr meist: das PTV 11, eine Liste eurer Anfragen mit Absagen und Wartezeiten (oft reichen 5 bis 10) und eine Privatpraxis, die einen Platz anbietet.",
-        "Den Antrag vor Beginn der Therapie bei der Krankenkasse stellen. Die Liste unten lässt sich dafür ausdrucken.",
+        "Dokumentiert eure Anfragen, Absagen und genannten Wartezeiten. Welche Nachweise eure Krankenkasse im konkreten Fall verlangt, solltet ihr vor Beginn einer privaten Behandlung direkt mit ihr klären.",
+        "Den Antrag möglichst vor Beginn der privaten Behandlung mit der Krankenkasse klären. Die Liste unten lässt sich als Kontaktprotokoll ausdrucken.",
         "Kassen entscheiden unterschiedlich. Gegen eine Ablehnung könnt ihr Widerspruch einlegen."
       ] },
       { bild: "i-haus", titel: "SPZ oder Kinder- und Jugendpsychiatrie", punkte: [
         "Mit Überweisung: gründliche Abklärung durch ein Team aus Ärzt:innen, Psycholog:innen und Therapeut:innen.",
-        "Eine Diagnose von hier braucht ihr oft für Anträge beim Jugendamt.",
+        "Für einen Antrag nach § 35a SGB VIII wird eine qualifizierte fachliche Stellungnahme benötigt. Welche Unterlagen konkret erforderlich sind, klärt ihr am besten mit dem zuständigen Jugendamt.",
         "Viele Kliniken haben Ambulanzen, die auch ambulant behandeln."
       ] },
       { bild: "i-gruppe", titel: "Erziehungsberatung und Schulpsychologie", punkte: [
@@ -1546,7 +1548,7 @@ Teich.inhalt = {
     intro: [
       "Wenn meine Alarmanlage piept, merkt das auch mein Körper.",
       "Manchmal zwickt mein Bauch. Oder mein Kopf brummt.",
-      "Das Weh ist echt. Und es ist nicht gefährlich.",
+      "Das Weh ist echt. Die Alarmanlage kann solche Körpergefühle machen.",
       "Wo spürst du es? Tipp auf die Stelle."
     ],
     frage: "Wo spürst du die Alarmanlage?",
@@ -1570,7 +1572,7 @@ Teich.inhalt = {
         hilft: [["Eine Karte zeigen statt sprechen.", "karten"], ["Einen Schluck Wasser trinken.", null], ["Ganz langsam ausatmen.", "ruhe-ecke"]] },
       { id: "herz", name: "Im Herz", karte: ["i-nichtgut", "Mir geht es nicht gut."],
         fuehlt: ["Das Herz klopft ganz schnell.", "Ich atme schnell.", "Die Brust fühlt sich eng an."],
-        warum: "Die Alarmanlage macht den Körper bereit zum Wegrennen. Dafür klopft das Herz schneller. Das ist nicht gefährlich.",
+        warum: "Bei Angst kann das Herz schneller klopfen. Das kann sich komisch oder unangenehm anfühlen und wird meistens wieder ruhiger.",
         hilft: [["Eine Hand auf den Bauch legen. Atmen, bis der Bauch rund wird wie ein Ballon.", "ruhe-ecke"], ["Langsam bis fünf zählen.", null]] },
       { id: "bauch", name: "Im Bauch", karte: ["i-bauchweh", "Ich habe Bauchweh."],
         fuehlt: ["Bauchweh oder Kribbeln im Bauch.", "Mir ist übel.", "Ich muss dringend aufs Klo.", "Ich habe keinen Hunger."],
@@ -1586,7 +1588,7 @@ Teich.inhalt = {
         hilft: [["Die Füße fest auf den Boden drücken.", null], ["Die Zehen bewegen.", null], ["Wenn es geht: kurz laufen oder hüpfen.", null]] },
       { id: "muede", name: "Ganz müde", karte: ["i-warten", "Bitte warte kurz."],
         fuehlt: ["Nach der Schule bin ich ganz müde.", "Ich kann schlecht einschlafen.", "Ich will nur noch meine Ruhe."],
-        warum: "Wenn die Alarmanlage lange an war, braucht der Körper danach viel Pause. Das ist ganz normal.",
+        warum: "Nach einem anstrengenden Tag kann der Körper sehr müde sein und Ruhe brauchen.",
         hilft: [["Eine Panzer-Pause machen.", "ruhe-ecke"], ["Etwas Ruhiges machen: malen, kuscheln, lesen.", null], ["Früh ins Bett gehen.", null]] }
     ]
   },
