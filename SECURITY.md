@@ -2,13 +2,17 @@
 
 ## Worum es geht
 
-Sokrates' Teich ist eine statische Webseite: kein Server, kein Konto, keine externen Skripte, keine
-Datenübertragung. Fortschritt und Einstellungen liegen nur im Browser des Geräts (`localStorage`).
+Sokrates' Teich ist eine statische Webseite: kein eigener Server, kein Konto, keine externen Skripte und
+kein Tracking. Fortschritt und Einstellungen liegen nur im Browser des Geräts (`localStorage`).
+
+**Ausnahme Vorlesen:** Je nach gewählter Browser-Stimme kann der Browser den vorzulesenden Text an den
+jeweiligen Sprachanbieter übertragen (z. B. Online-/Natural-Stimmen). Wer das vermeiden möchte, verwendet
+eine lokale Stimme.
 
 Trotzdem können Fehler sicherheitsrelevant sein, zum Beispiel:
 
 - eingegebener Text (eigene Karten, eigene Mut-Steine, Kontaktfelder) wird als Code ausgeführt;
-- eine manipulierte Sicherungsdatei („Sicherung laden“) richtet Schaden an;
+- eine manipulierte oder unerwartet große Sicherungsdatei („Sicherung laden“) richtet Schaden an;
 - die Seite lädt oder sendet unerwartet Daten über das Internet;
 - gespeicherte Angaben über das Kind werden für andere sichtbar.
 
