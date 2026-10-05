@@ -4,7 +4,7 @@
  *
  * Nach Änderungen an Dateien: VERSION erhöhen, damit Geräte die neue Fassung laden.
  */
-var VERSION = "sokrates-teich-1.9.0";
+var VERSION = "sokrates-teich-1.9.1";
 
 var DATEIEN = [
   "./",
